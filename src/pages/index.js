@@ -236,11 +236,12 @@ const IndexPage = ({ data }) => (
           <Text mb={2}>
             Recently, I joined the Alumni Leadership Council (ALC) for the
             Conrad Foundation as an Observer, after a year as a Student Alumni
-            Ambassador. For the next two months, I’m going to try out the ALC
-            and figure out whether it’s a good fit for me.
+            Ambassador. For the next two months, I’m going to work on different
+            projects for the ALC to figure out whether it’s a good fit for me.
           </Text>
           <Text>
-            I’m also working on an applied machine learning project in medicine.
+            I’m also working on a project to automate the analysis of acid
+            reflux tests, which are time-consuming for humans to read.
           </Text>
         </Box>
         <Box variant="boxes.right">
