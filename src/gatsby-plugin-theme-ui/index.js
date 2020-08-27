@@ -33,6 +33,11 @@ const theme = {
     heading: 600,
     title: 400,
   },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.5,
+    title: 1.3,
+  },
   text: {
     body: {
       fontFamily: 'body',
@@ -122,11 +127,6 @@ const theme = {
     ul: {
       ...lists,
     },
-  },
-  lineHeights: {
-    body: 1.5,
-    heading: 1.5,
-    title: 1.25,
   },
   layout: {
     navbar: {},
