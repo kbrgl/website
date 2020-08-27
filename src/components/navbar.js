@@ -44,7 +44,10 @@ const Navbar = () => (
                   alignItems: 'center',
                 }}
               >
-                <Image sx={{ mr: 1 }} fixed={data.file.childImageSharp.fixed} />
+                <Image
+                  sx={{ mr: 1, borderRadius: 3, overflow: 'hidden' }}
+                  fixed={data.file.childImageSharp.fixed}
+                />
                 <Text variant="logotype">Kabir Goel</Text>
               </Link>
             </div>
