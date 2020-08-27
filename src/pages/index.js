@@ -124,30 +124,44 @@ const Me = ({ data }) => {
   const context = useThemeUI()
   const { theme } = context
   const breakpoint = theme.breakpoints[0]
-  const sources = [
-    {
-      ...data.me.childImageSharp.fluid,
-      media: `(min-width: ${breakpoint})`,
-    },
-    {
-      ...data.meMobile.childImageSharp.fluid,
-      media: `(max-width: ${breakpoint})`,
-    },
-  ]
+  const desktopSource = {
+    ...data.me.childImageSharp.fluid,
+    media: `(min-width: ${breakpoint})`,
+  }
+  const mobileSource = {
+    ...data.meMobile.childImageSharp.fixed,
+    media: `(max-width: ${breakpoint})`,
+  }
   return (
-    <div
-      sx={{
-        [`@media screen and (max-width: ${breakpoint})`]: {
-          maxWidth: 128,
-          maxHeight: 128,
-          borderRadius: '50%',
+    <>
+      <div
+        sx={{
+          [`@media screen and (max-width: ${breakpoint})`]: {
+            display: 'none',
+          },
+          borderRadius: 3,
           overflow: 'hidden',
-        },
-        boxShadow: defaultShadow,
-      }}
-    >
-      <Image loading="auto" fluid={sources} alt="Me" />
-    </div>
+          boxShadow: defaultShadow,
+        }}
+      >
+        <Image loading="auto" fluid={desktopSource} alt="Me" />
+      </div>
+      <div
+        sx={{
+          [`@media screen and (max-width: ${breakpoint})`]: {
+            maxWidth: 128,
+            maxHeight: 128,
+            borderRadius: 3,
+            overflow: 'hidden',
+            display: 'block',
+          },
+          display: 'none',
+          boxShadow: defaultShadow,
+        }}
+      >
+        <Image loading="auto" fixed={mobileSource} alt="Me" />
+      </div>
+    </>
   )
 }
 
@@ -298,11 +312,12 @@ export const IndexQuery = graphql`
     }
     meMobile: file(relativePath: { eq: "me-mobile.png" }) {
       childImageSharp {
-        fluid(
-          maxWidth: 250
+        fixed(
+          width: 128
+          height: 128
           duotone: { highlight: "#ffffff", shadow: "#250051" }
         ) {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFixed
         }
       }
     }
