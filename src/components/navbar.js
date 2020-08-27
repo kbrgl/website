@@ -4,6 +4,7 @@ import { jsx, Text, Container, Box, Link as ALink } from 'theme-ui'
 import React from 'react'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import Image from 'gatsby-image'
+import { boxBorderColor } from '../gatsby-plugin-theme-ui'
 
 const Navbar = () => (
   <StaticQuery
@@ -30,7 +31,7 @@ const Navbar = () => (
               pt: 3,
               pb: [1, 2],
               borderBottom: '1px solid',
-              borderBottomColor: 'text',
+              borderBottomColor: boxBorderColor,
               display: ['block', 'flex'],
               alignItems: 'center',
               justifyContent: 'space-between',

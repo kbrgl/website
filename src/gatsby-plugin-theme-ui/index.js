@@ -6,6 +6,8 @@ const lists = {
   },
 }
 
+export const boxBorderColor = `rgba(255, 255, 255, 0.5)`
+
 const theme = {
   colors: {
     primary: '#ffffff',
@@ -96,10 +98,14 @@ const theme = {
       },
       WebkitFontSmoothing: 'antialiased',
       MozOsxFontSmoothing: 'grayscale',
+      fontKerning: 'normal',
+      fontVariantLigatures: 'common-ligatures contextual',
+      fontFeatureSettings: "'kern', 'liga', 'clig', 'calt'",
+      textRendering: 'optimizeLegibility',
       '& :focus': {
         outlineWidth: 1,
         outlineStyle: 'dotted',
-        outlineColor: 'primary',
+        outlineColor: boxBorderColor,
       },
       '& ::selection': {
         backgroundColor: 'highlight',
@@ -117,6 +123,7 @@ const theme = {
       border: 0,
       borderTop: '1px solid',
       borderColor: 'primary',
+      opacity: 0.5,
     },
     a: {
       textDecoration: 'underline',
@@ -142,7 +149,7 @@ const theme = {
       pl: 0,
       pr: [0, 3],
       borderBottom: '1px solid',
-      borderColor: 'primary',
+      borderColor: boxBorderColor,
     },
     right: {
       flex: 1 / 2.222,
@@ -150,12 +157,12 @@ const theme = {
       pr: 0,
       pl: [0, 3],
       borderBottom: '1px solid',
-      borderLeft: [0, '1px solid'],
-      borderColor: 'primary',
+      borderColor: boxBorderColor,
+      borderLeft: [0, `1px solid ${boxBorderColor}`],
     },
     full: {
       borderBottom: '1px solid',
-      borderColor: 'primary',
+      borderColor: boxBorderColor,
       py: 3,
     },
   },

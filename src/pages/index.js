@@ -14,7 +14,7 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
 import formatDate from '../utils/format-date'
-import { defaultShadow } from '../gatsby-plugin-theme-ui'
+import { defaultShadow, boxBorderColor } from '../gatsby-plugin-theme-ui'
 
 import Layout from '../components/layout'
 import Row from '../components/row'
@@ -171,7 +171,7 @@ const IndexPage = ({ data }) => (
       <Row
         sx={{
           borderBottom: '1px solid',
-          borderColor: 'primary',
+          borderColor: boxBorderColor,
           py: 3,
         }}
       >
