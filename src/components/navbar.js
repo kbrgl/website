@@ -84,7 +84,7 @@ const Navbar = () => (
                   <a
                     target="_blank"
                     rel="noopener noreferrer"
-                    href="https://www.dropbox.com/s/k3bvk9ls3yzv0a6/r%C3%A9sum%C3%A9.pdf?dl=0"
+                    href="https://www.notion.so/kabirgoel/Kabir-Goel-d168ad4ac63f4e7fad8c601f6e679331"
                   >
                     Résumé
                   </a>
