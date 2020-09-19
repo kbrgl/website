@@ -1,0 +1,47 @@
+.picture {
+  position: relative;
+  display: inline-block;
+}
+
+.picture::after {
+  content: "";
+  position: absolute;
+  background: url(/arrow.png);
+  background-size: contain;
+  width: 100px;
+  height: 40px;
+  bottom: 20px;
+  right: calc(-100% + 20px);
+}
+
+.picture img {
+  margin: 40px 0 10px;
+  height: 120px;
+  width: 120px;
+}
+
+.light {
+  color: #666;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.list li {
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: space-between;
+}
+
+.list .date {
+  color: #666;
+}
+
+@media screen and (max-width: 600px) {
+  .list li {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+}
