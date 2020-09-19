@@ -1,0 +1,19 @@
+.content ol {
+  padding-left: 1em;
+}
+
+.content :global(.footnote-backref) {
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.content hr {
+  height: 0;
+  color: #666;
+  border: 0;
+  border-top: 1px solid #666;
+}
+
+.meta {
+  color: #666;
+}
