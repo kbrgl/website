@@ -1,0 +1,15 @@
+.main {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.main h1:first-of-type {
+  padding-right: 10px;
+  border-right: 2px solid #ccc;
+}
+
+.main h1:last-of-type {
+  padding-left: 10px;
+  font-weight: 400;
+}
