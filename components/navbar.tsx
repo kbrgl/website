@@ -11,9 +11,7 @@ export default function Navbar() {
             <Link href="/">
               <a>Home</a>
             </Link>
-            <a href="https://www.notion.so/kabirgoel/Kabir-Goel-d168ad4ac63f4e7fad8c601f6e679331">
-              Résumé
-            </a>
+            <a href="https://kabirgoel.substack.com">Newsletter</a>
             <a href="mailto:kabirgoel.kg@gmail.com">Email</a>
             <a href="https://github.com/kbrgl">GitHub</a>
           </div>

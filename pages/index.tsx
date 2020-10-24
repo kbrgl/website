@@ -7,6 +7,20 @@ import Layout from "../components/layout";
 import Container from "../components/container";
 import styles from "../styles/Home.module.css";
 
+function Newsletter() {
+  return (
+    <div className={styles.card}>
+      <div style={{ backgroundImage: "url(/great-stuff-wordmark.png)" }} />
+      <img src="/great-stuff-logo.png" alt="Newsletter logo" />
+      <p>
+        You’ll find most of my writing on my newsletter, Great&nbsp;Stuff, where
+        I share insights from what I’m reading, listening to, and watching.{" "}
+        <a href="https://kabirgoel.substack.com">Subscribe now!</a>
+      </p>
+    </div>
+  );
+}
+
 export default function Home({ notes }) {
   return (
     <Layout>
@@ -27,14 +41,14 @@ export default function Home({ notes }) {
           as an Observer, and collaborating on research projects in healthcare
           and disinformation. Follow me on{" "}
           <a
-            style={{ color: "#1da1f2", textDecorationColor: "currentColor" }}
+            style={{ color: "#146ba1", textDecorationColor: "currentColor" }}
             href="https://twitter.com/KabirGoel"
           >
             Twitter
           </a>{" "}
           or{" "}
           <a
-            style={{ color: "#1db954", textDecorationColor: "currentColor" }}
+            style={{ color: "#118339", textDecorationColor: "currentColor" }}
             href="https://open.spotify.com/user/12181834510?si=bmVw93WRQrOy0m0wBwXbAw"
           >
             Spotify
@@ -46,6 +60,7 @@ export default function Home({ notes }) {
           opportunity, shoot me an email!
         </p>
         <h2>Writing</h2>
+        <Newsletter />
         <ul className={styles.list}>
           {notes.map((note) => (
             <li key={note.title}>

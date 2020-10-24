@@ -21,6 +21,15 @@ strong {
   font-weight: 500;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
 * {
   box-sizing: border-box;
 }
