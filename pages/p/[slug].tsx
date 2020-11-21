@@ -32,7 +32,12 @@ export default function Note({
           <meta name="description" content={subtitle} />
           <meta property="og:title" content={title} />
           <meta property="og:description" content={subtitle} />
-          <meta property="og:image" content="https://kabirgoel.com/me.png" />
+          <meta
+            property="og:image"
+            content={`https://og-image-swart.vercel.app/${encodeURIComponent(
+              `**${title}**`
+            )}?md=1`}
+          />
           <meta property="og:url" content={`https://kabirgoel.com/p/${slug}`} />
           <meta property="og:type" content="blog" />
           <meta name="twitter:card" content="summary_large_image" />
