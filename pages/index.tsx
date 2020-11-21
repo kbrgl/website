@@ -1,4 +1,5 @@
-import fs from "fs";
+// eslint-disable-next-line import/no-unresolved
+import fs from "fs/promises";
 import path from "path";
 import Link from "next/link";
 import matter from "gray-matter";
@@ -21,6 +22,12 @@ function Newsletter() {
   );
 }
 
+type NoteMetadata = {
+  title: string;
+  date: string;
+  slug: string;
+};
+
 export default function Home({ notes }) {
   return (
     <Layout>
@@ -36,7 +43,7 @@ export default function Home({ notes }) {
             style={{ color: "#15489f", textDecorationColor: "currentColor" }}
             href="https://www.conradchallenge.org/alumni-leadership-council"
           >
-            Conrad Foundation
+            Conrad&nbsp;Foundation
           </a>{" "}
           as an Observer, and collaborating on research projects in healthcare
           and disinformation. Follow me on{" "}
@@ -62,9 +69,9 @@ export default function Home({ notes }) {
         <h2>Writing</h2>
         <Newsletter />
         <ul className={styles.list}>
-          {notes.map((note) => (
+          {notes.map((note: NoteMetadata) => (
             <li key={note.title}>
-              <Link href={`/notes/${note.slug}`}>
+              <Link href={`/p/${note.slug}`}>
                 <a>{note.title}</a>
               </Link>
               <span className={styles.date}>
@@ -86,21 +93,24 @@ type Frontmatter = {
 
 export async function getStaticProps() {
   const postsDirectory = path.join(process.cwd(), "content", "notes");
-  const filenames = await fs.readdirSync(postsDirectory);
+  const filenames = await fs.readdir(postsDirectory);
 
-  const notes = filenames
-    .map(
-      (filename): Frontmatter => {
-        const filePath = path.join(postsDirectory, filename);
-        const fileContents = fs.readFileSync(filePath, "utf8");
-        const frontmatter = matter(fileContents).data as Frontmatter;
+  const notes = (
+    await Promise.all(
+      filenames.map(
+        async (filename): Promise<Frontmatter> => {
+          const filePath = path.join(postsDirectory, filename);
+          const fileContents = await fs.readFile(filePath, "utf8");
+          const frontmatter = matter(fileContents).data as Frontmatter;
 
-        return {
-          ...frontmatter,
-          slug: path.basename(filename, path.extname(filename)),
-        };
-      }
+          return {
+            ...frontmatter,
+            slug: path.basename(filename, path.extname(filename)),
+          };
+        }
+      )
     )
+  )
     .sort((a, b) => Number(b.date) - Number(a.date))
     .map((data) => ({
       ...data,

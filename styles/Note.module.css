@@ -1,5 +1,15 @@
+.title {
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 21px;
+  font-weight: 400;
+  color: #333;
+}
+
 .content ol {
-  padding-left: 1em;
+  padding-left: 2em;
 }
 
 .content :global(.footnote-backref) {
@@ -9,11 +19,16 @@
 
 .content hr {
   height: 0;
-  color: #666;
   border: 0;
   border-top: 1px solid #666;
 }
 
 .meta {
   color: #666;
+}
+
+@media screen and (max-width: 600px) {
+  .content h1 {
+    font-size: 28px;
+  }
 }

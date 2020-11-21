@@ -1,9 +1,18 @@
 ---
-extends: [airbnb, prettier, prettier/react]
-parser: babel-eslint
+extends:
+  [airbnb, prettier, prettier/react, plugin:@typescript-eslint/recommended]
+parser: "@typescript-eslint/parser"
+plugins: ["@typescript-eslint"]
+settings:
+  import/resolver:
+    node:
+      extensions: [.js, .jsx, .ts, .tsx]
 rules:
   react/jsx-filename-extension: off
   react/prop-types: off
   react/react-in-jsx-scope: off
+  jsx-a11y/anchor-is-valid: off
+  "@typescript-eslint/explicit-module-boundary-types": off
+  import/extensions: off
 env:
   browser: true
