@@ -21,6 +21,12 @@ strong {
   font-weight: 500;
 }
 
+hr {
+  height: 0;
+  border-style: none;
+  border-top: 1px solid #666;
+}
+
 h1,
 h2,
 h3,

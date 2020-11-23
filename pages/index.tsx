@@ -22,13 +22,19 @@ function Newsletter() {
   );
 }
 
-type NoteMetadata = {
-  title: string;
-  date: string;
+type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
+
+type Frontmatter = {
+  date: Date;
   slug: string;
+  title: string;
 };
 
-export default function Home({ notes }) {
+type HomeProps = {
+  notes: Array<Omit<Frontmatter, "date"> & { dateString: string }>;
+};
+
+export default function Home({ notes }: HomeProps) {
   return (
     <Layout>
       <Container>
@@ -69,27 +75,29 @@ export default function Home({ notes }) {
         <h2>Writing</h2>
         <Newsletter />
         <ul className={styles.list}>
-          {notes.map((note: NoteMetadata) => (
-            <li key={note.title}>
-              <Link href={`/p/${note.slug}`}>
-                <a>{note.title}</a>
-              </Link>
-              <span className={styles.date}>
-                {formatDate(new Date(note.date))}
-              </span>
-            </li>
-          ))}
+          {notes
+            .map((note) => ({
+              ...note,
+              date: new Date(note.dateString),
+            }))
+            .sort((a: Frontmatter, b: Frontmatter) => +b.date - +a.date)
+            .map((note: Frontmatter) => (
+              <li key={note.title}>
+                <Link href={`/p/${note.slug}`}>
+                  <a>{note.title}</a>
+                </Link>
+                <span className={styles.date}>{formatDate(note.date)}</span>
+              </li>
+            ))}
         </ul>
+        <hr />
+        <p className={styles.light}>
+          “Man who make mistake in elevator is wrong on many levels.”—Confucius
+        </p>
       </Container>
     </Layout>
   );
 }
-
-type Frontmatter = {
-  date: Date;
-  slug: string;
-  title: string;
-};
 
 export async function getStaticProps() {
   const postsDirectory = path.join(process.cwd(), "content", "notes");
@@ -110,12 +118,10 @@ export async function getStaticProps() {
         }
       )
     )
-  )
-    .sort((a, b) => Number(b.date) - Number(a.date))
-    .map((data) => ({
-      ...data,
-      date: String(data.date),
-    }));
+  ).map(({ date, ...data }) => ({
+    ...data,
+    dateString: String(date),
+  }));
 
   return {
     props: {
