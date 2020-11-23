@@ -17,12 +17,6 @@
   margin-left: 5px;
 }
 
-.content hr {
-  height: 0;
-  border: 0;
-  border-top: 1px solid #666;
-}
-
 .meta {
   color: #666;
 }
