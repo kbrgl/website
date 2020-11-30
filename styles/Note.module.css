@@ -12,17 +12,45 @@
   padding-left: 2em;
 }
 
+.content figure {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content figcaption {
+  margin-top: -10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
+
+.content img {
+  width: calc(100% + 4vw);
+  margin: 20px auto;
+  transform: translateX(-2vw);
+  border: 1px solid #0002;
+  border-radius: 6px;
+  box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.1);
+}
+
 .content :global(.footnote-backref) {
-  text-decoration: none;
   margin-left: 5px;
+  text-decoration: none;
 }
 
 .meta {
   color: #666;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .content h1 {
     font-size: 28px;
+  }
+
+  .content img {
+    width: 100%;
+    transform: translateX(0);
   }
 }

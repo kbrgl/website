@@ -1,5 +1,6 @@
 ---
 title: The Motivation Behind Unslant
+subtitle: An exploration of politics and tech.
 date: 2020-01-09
 draft: false
 ---
