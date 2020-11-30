@@ -28,6 +28,7 @@ type Frontmatter = {
   date: Date;
   slug: string;
   title: string;
+  subtitle: string;
 };
 
 type HomeProps = {
@@ -84,9 +85,16 @@ export default function Home({ notes }: HomeProps) {
             .map((note: Frontmatter) => (
               <li key={note.title}>
                 <Link href={`/p/${note.slug}`}>
-                  <a>{note.title}</a>
+                  <a>
+                    <div className={styles.meta}>
+                      <span className={styles.title}>{note.title}</span>
+                      <span className={styles.date}>
+                        {formatDate(note.date)}
+                      </span>
+                    </div>
+                    <p className={styles.subtitle}>{note.subtitle}</p>
+                  </a>
                 </Link>
-                <span className={styles.date}>{formatDate(note.date)}</span>
               </li>
             ))}
         </ul>
