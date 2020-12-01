@@ -6,6 +6,11 @@ canonical: https://kabirgoel.substack.com/p/why-are-we-so-bad-at-introducing
 draft: false
 ---
 
+<figure>
+  <img src="/static/bad-introductions.jpeg" alt="Person holding sticker that says Hello" />
+  <figcaption>Photo by <a href="https://unsplash.com/@lemonvlad?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Vladislav Klapin</a> on <a href="https://unsplash.com/s/photos/introduction?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></figcaption>
+</figure>
+
 Welcome to the second issue of Great Stuff! Big news: the newsletter is now weekly—I’m way too impatient to wait two weeks between issues! For this week, I’m sharing an essay I wrote about introductions.
 
 Introductions are just about the most common thing people do. We introduce ourselves in class, to friends of friends, to strangers on flights, and even in our Instagram and Twitter bios. We use introductions to differentiate ourselves, but also to find what we have in common. We hope that some part of them resonates with others or kick-starts a conversation. Despite this important role, we absolutely suck at introducing ourselves. In this essay, I talk about the problems in our intros and concrete ways in which we can improve.
