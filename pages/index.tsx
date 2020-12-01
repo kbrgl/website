@@ -12,12 +12,19 @@ import styles from "../styles/Home.module.css";
 function Newsletter() {
   return (
     <div className={styles.card}>
-      <div style={{ backgroundImage: "url(/great-stuff-wordmark.png)" }} />
-      <img src="/great-stuff-logo.png" alt="Newsletter logo" />
-      <p>
+      <div
+        className={styles.background}
+        style={{ backgroundImage: "url(/great-stuff-wordmark.png)" }}
+      />
+      <img
+        className={styles.logo}
+        src="/great-stuff-logo.png"
+        alt="Newsletter logo"
+      />
+      <p className={styles.text}>
         You’ll find most of my writing on my newsletter, Great&nbsp;Stuff, where
-        I share insights from what I’m reading, listening to, and watching.{" "}
-        <a href="https://kabirgoel.substack.com">Subscribe now!</a>
+        I talk about human interactions, design, and productivity.{" "}
+        <a href="https://kabirgoel.substack.com">Subscribe&nbsp;&rarr;</a>
       </p>
     </div>
   );
@@ -76,9 +83,9 @@ export default function Home({ posts }: HomeProps) {
           I’m looking for summer internships for 2021. If you have an
           opportunity, shoot me an email!
         </p>
-        <h2>Writing</h2>
+        <h2 id="writing">Writing</h2>
         <Newsletter />
-        <ul className={styles.list}>
+        <ul className={styles.posts}>
           {posts
             .map((post) => ({
               ...post,
@@ -99,9 +106,8 @@ export default function Home({ posts }: HomeProps) {
               </li>
             ))}
         </ul>
-        <hr />
-        <p className={styles.light}>
-          “Man who make mistake in elevator is wrong on many levels.”—Confucius
+        <p className={styles.footer}>
+          “Man who make mistake in elevator, wrong on many levels.”—Confucius
         </p>
       </Container>
     </Layout>
