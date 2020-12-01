@@ -8,7 +8,7 @@ draft: false
 
 Welcome to the fifth issue of Great Stuff! In this issue, I’ll be talking about a surprisingly common phenomenon: the pressure to fall in line with those around us.
 
-I was motivated to write about this because of something I observed last weekend. I visited a farmers market with a couple of friends, and we found ourselves in front of a lemonade stand selling all kinds of flavors. My friends both went with plain lemonade. Even though the stand was selling some pretty interesting flavors, I somehow felt pressured to go the traditional route as well. When I got home, I was struck by the absurdity of this feeling. There was no time constraint, no possibility of judgment, no real reason not to go with something else. It was just lemonade. Yet there was something at the back of my head that said, “Don’t be a special little snowflake! Get what everyone else is getting!”
+I was motivated to write about this because of something I observed last weekend. I visited a farmers market with a couple of friends, and we found ourselves in front of a lemonade stand selling all kinds of flavors. My friends both went with plain lemonade. Even though the stand was selling some pretty interesting flavors, I somehow felt pressured to go the traditional route as well. When I got home, I was struck by the absurdity of this feeling. There was no time constraint, no possibility of judgment, no real reason not to go with something else. _It was just lemonade._ Yet there was something at the back of my head that said, “Don’t be a special little snowflake! Get what everyone else is getting!”
 
 I was sure this feeling was fairly common, so I decided to do a little more research. What I found was pretty insane:
 

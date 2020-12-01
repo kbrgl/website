@@ -73,7 +73,7 @@ export default function Note({
             >
               Discuss on Twitter
             </a>{" "}
-            · <a href={`mailto:kabirgoel.kg@gmail.com`}>Shoot me an email</a>
+            · <a href="mailto:kabirgoel.kg@gmail.com">Shoot me an email</a>
           </p>
         </div>
       </Container>
