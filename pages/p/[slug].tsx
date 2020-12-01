@@ -60,7 +60,7 @@ export default function Note({
 
 export async function getStaticProps({ params: { slug } }) {
   const filename = `${slug}.md`;
-  const postsDirectory = path.join(process.cwd(), "content", "notes");
+  const postsDirectory = path.join(process.cwd(), "content", "posts");
   const filePath = path.join(postsDirectory, filename);
   const fileContents = await fs.readFile(filePath, "utf8");
   const frontmatter = matter(fileContents).data;
@@ -88,7 +88,7 @@ export async function getStaticProps({ params: { slug } }) {
 }
 
 export async function getStaticPaths() {
-  const postsDirectory = path.join(process.cwd(), "content", "notes");
+  const postsDirectory = path.join(process.cwd(), "content", "posts");
   const filenames = await fs.readdir(postsDirectory, "utf8");
 
   return {
