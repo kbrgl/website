@@ -4,6 +4,7 @@ import path from "path";
 import Link from "next/link";
 import matter from "gray-matter";
 import formatDate from "../utils/format-date";
+import parseDate from "../utils/parse-date";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import styles from "../styles/Home.module.css";
@@ -31,11 +32,13 @@ type Frontmatter = {
   subtitle: string;
 };
 
+type Note = Omit<Frontmatter, "date"> & { dateString: string };
+
 type HomeProps = {
-  notes: Array<Omit<Frontmatter, "date"> & { dateString: string }>;
+  posts: Note[];
 };
 
-export default function Home({ notes }: HomeProps) {
+export default function Home({ posts }: HomeProps) {
   return (
     <Layout>
       <Container>
@@ -76,23 +79,21 @@ export default function Home({ notes }: HomeProps) {
         <h2>Writing</h2>
         <Newsletter />
         <ul className={styles.list}>
-          {notes
-            .map((note) => ({
-              ...note,
-              date: new Date(note.dateString),
+          {posts
+            .map((post) => ({
+              ...post,
+              date: parseDate(post.dateString),
             }))
             .sort((a: Frontmatter, b: Frontmatter) => +b.date - +a.date)
-            .map((note: Frontmatter) => (
-              <li key={note.title}>
-                <Link href={`/p/${note.slug}`}>
+            .map((post: Note) => (
+              <li key={post.title}>
+                <Link href={`/p/${post.slug}`}>
                   <a>
                     <div className={styles.meta}>
-                      <span className={styles.title}>{note.title}</span>
-                      <span className={styles.date}>
-                        {formatDate(note.date)}
-                      </span>
+                      <span className={styles.title}>{post.title}</span>
+                      <span className={styles.date}>{post.dateString}</span>
                     </div>
-                    <p className={styles.subtitle}>{note.subtitle}</p>
+                    <p className={styles.subtitle}>{post.subtitle}</p>
                   </a>
                 </Link>
               </li>
@@ -108,10 +109,10 @@ export default function Home({ notes }: HomeProps) {
 }
 
 export async function getStaticProps() {
-  const postsDirectory = path.join(process.cwd(), "content", "notes");
+  const postsDirectory = path.join(process.cwd(), "content", "posts");
   const filenames = await fs.readdir(postsDirectory);
 
-  const notes = (
+  const posts = (
     await Promise.all(
       filenames.map(
         async (filename): Promise<Frontmatter> => {
@@ -128,12 +129,12 @@ export async function getStaticProps() {
     )
   ).map(({ date, ...data }) => ({
     ...data,
-    dateString: String(date),
+    dateString: formatDate(date),
   }));
 
   return {
     props: {
-      notes,
+      posts,
     },
   };
 }
