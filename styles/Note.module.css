@@ -9,7 +9,26 @@
 }
 
 .content ol {
-  padding-left: 2em;
+  padding-left: 0;
+  list-style-type: none;
+  counter-reset: list-counter 0;
+}
+
+.content ol li {
+  counter-increment: list-counter;
+  display: flex;
+  align-items: baseline;
+}
+
+.content ol li p {
+  margin: 5px 0;
+}
+
+.content ol li::before {
+  content: "(" counter(list-counter) ")";
+  margin-right: 10px;
+  font-weight: 600;
+  color: #666;
 }
 
 .content figure {
