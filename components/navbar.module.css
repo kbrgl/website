@@ -12,6 +12,7 @@
 
 .navbar a::before {
   position: absolute;
+  z-index: -1;
   left: 0;
   right: 0;
   top: 0;
@@ -23,7 +24,7 @@
 }
 
 .navbar a:hover::before {
-  background: rgba(200, 200, 200, 0.2);
+  background: #f4f4f4;
 }
 
 .links {

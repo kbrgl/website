@@ -24,37 +24,37 @@
   color: #666;
 }
 
-.list {
+.posts {
   margin-top: 25px;
   list-style-type: none;
   padding: 0;
 }
 
-.list li {
+.posts li {
   margin-bottom: 20px;
 }
 
-.list a {
+.posts a {
   text-decoration: none;
 }
 
-.list .meta {
+.posts .meta {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
 
-.list .title {
+.posts .title {
   font-size: 20px;
   font-weight: 500;
 }
 
-.list .date {
+.posts .date {
   color: #666;
   font-size: 16px;
 }
 
-.list .subtitle {
+.posts .subtitle {
   margin-top: 0px;
   color: #333;
 }
@@ -71,7 +71,7 @@
   color: #fff;
 }
 
-.card div {
+.card .background {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -89,19 +89,28 @@
   pointer-events: none;
 }
 
-.card img {
+.card .logo {
+  width: 108px;
   height: 108px;
   margin-right: 20px;
   border-radius: 6px;
   box-shadow: 0 3px 18px 0 rgba(0, 0, 0, 0.2);
 }
 
-.card p {
+.card .text {
   margin: 0;
 }
 
+.footer {
+  color: #666;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+  font-size: 16px;
+  margin: 40px 0;
+}
+
 @media screen and (max-width: 600px) {
-  .list .meta {
+  .posts .meta {
     flex-direction: column;
     justify-content: flex-start;
   }

@@ -44,6 +44,33 @@
   color: #666;
 }
 
+.footer {
+  margin-bottom: 40px;
+}
+
+.author {
+  margin: 40px 0 20px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.author img {
+  margin-right: 15px;
+  height: 72px;
+  width: 72px;
+}
+
+.author p {
+  margin: 0;
+}
+
+.share {
+  font-size: 16px;
+  color: #666;
+  margin-top: 5px;
+}
+
 @media screen and (max-width: 640px) {
   .content h1 {
     font-size: 28px;

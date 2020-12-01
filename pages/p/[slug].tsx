@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 // eslint-disable-next-line import/no-unresolved
 import fs from "fs/promises";
 import path from "path";
@@ -24,6 +25,7 @@ export default function Note({
   canonical,
   readingTime,
 }) {
+  const postLink = `https://kabirgoel.com/p/${slug}`;
   return (
     <Layout>
       <Container>
@@ -38,7 +40,7 @@ export default function Note({
               `**${title}**`
             )}?md=1`}
           />
-          <meta property="og:url" content={`https://kabirgoel.com/p/${slug}`} />
+          <meta property="og:url" content={postLink} />
           <meta property="og:type" content="blog" />
           <meta name="twitter:card" content="summary_large_image" />
           {canonical ? <link rel="canonical" href={canonical} /> : null}
@@ -53,6 +55,27 @@ export default function Note({
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: html }}
         />
+        <div className={styles.footer}>
+          <div className={styles.author}>
+            <img src="/me.png" alt="Me" />
+            <p>
+              Written by Kabir Goel, a freshman at Berkeley.{" "}
+              <Link href="/#writing">
+                <a>Read&nbsp;more&nbsp;&rarr;</a>
+              </Link>
+            </p>
+          </div>
+          <p className={styles.share}>
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
+                postLink
+              )}`}
+            >
+              Discuss on Twitter
+            </a>{" "}
+            · <a href={`mailto:kabirgoel.kg@gmail.com`}>Shoot me an email</a>
+          </p>
+        </div>
       </Container>
     </Layout>
   );
