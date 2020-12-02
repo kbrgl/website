@@ -1,5 +1,5 @@
 .navbar {
-  border-bottom: 1px solid #0003;
+  border-bottom: 1px solid #ccc;
   padding: 18px 0;
 }
 
@@ -29,4 +29,9 @@
 
 .links {
   display: flex;
+}
+
+.links .name {
+  font-weight: 500;
+  margin-right: 20px;
 }

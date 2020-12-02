@@ -1,11 +1,41 @@
+.header {
+  margin: 40px 0;
+}
+
+.meta {
+  font-size: 16px;
+  color: #888;
+}
+
 .title {
-  margin-bottom: 0;
+  margin: 10px 0;
 }
 
 .subtitle {
-  font-size: 21px;
+  margin: 0;
+  font-size: 22px;
   font-weight: 400;
   color: #333;
+}
+
+.content figure {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.content figcaption {
+  margin-top: -10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #666;
+}
+
+.content img {
+  width: calc(100% + 10vw);
+  margin: 20px auto;
+  transform: translateX(-5vw);
 }
 
 .content ol {
@@ -31,36 +61,9 @@
   color: #666;
 }
 
-.content figure {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.content figcaption {
-  margin-top: -10px;
-  padding-bottom: 10px;
-  text-align: center;
-  font-size: 16px;
-  color: #666;
-}
-
-.content img {
-  width: calc(100% + 4vw);
-  margin: 20px auto;
-  transform: translateX(-2vw);
-  border: 1px solid #0002;
-  border-radius: 6px;
-  box-shadow: 0 0 10px -5px rgba(0, 0, 0, 0.1);
-}
-
 .content :global(.footnote-backref) {
   margin-left: 5px;
   text-decoration: none;
-}
-
-.meta {
-  color: #666;
 }
 
 .footer {
@@ -90,7 +93,7 @@
   margin-top: 5px;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 770px) {
   .content h1 {
     font-size: 28px;
   }
