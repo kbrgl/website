@@ -28,28 +28,30 @@ export default function Note({
   const postLink = `https://kabirgoel.com/p/${slug}`;
   return (
     <Layout>
+      <Head>
+        <title>{title} · Kabir Goel</title>
+        <meta name="description" content={subtitle} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={subtitle} />
+        <meta
+          property="og:image"
+          content={`https://og-image-swart.vercel.app/${encodeURIComponent(
+            `**${title}**`
+          )}?md=1`}
+        />
+        <meta property="og:url" content={postLink} />
+        <meta property="og:type" content="blog" />
+        <meta name="twitter:card" content="summary_large_image" />
+        {canonical ? <link rel="canonical" href={canonical} /> : null}
+      </Head>
       <Container>
-        <Head>
-          <title>{title} · Kabir Goel</title>
-          <meta name="description" content={subtitle} />
-          <meta property="og:title" content={title} />
-          <meta property="og:description" content={subtitle} />
-          <meta
-            property="og:image"
-            content={`https://og-image-swart.vercel.app/${encodeURIComponent(
-              `**${title}**`
-            )}?md=1`}
-          />
-          <meta property="og:url" content={postLink} />
-          <meta property="og:type" content="blog" />
-          <meta name="twitter:card" content="summary_large_image" />
-          {canonical ? <link rel="canonical" href={canonical} /> : null}
-        </Head>
-        <h1 className={styles.title}>{title}</h1>
-        <h2 className={styles.subtitle}>{subtitle}</h2>
-        <p className={styles.meta}>
-          {formatDate(new Date(date))} · {readingTime}
-        </p>
+        <div className={styles.header}>
+          <p className={styles.meta}>
+            {formatDate(new Date(date))} · {readingTime}
+          </p>
+          <h1 className={styles.title}>{title}</h1>
+          <h2 className={styles.subtitle}>{subtitle}</h2>
+        </div>
         <div
           className={styles.content}
           // eslint-disable-next-line react/no-danger

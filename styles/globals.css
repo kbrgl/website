@@ -10,6 +10,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
+  color: #212121;
 }
 
 a {
@@ -33,7 +34,8 @@ h3,
 h4,
 h5,
 h6 {
-  line-height: 1.4;
+  line-height: 1.2;
+  margin: 25px 0;
 }
 
 * {

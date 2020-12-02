@@ -9,8 +9,10 @@ export default function Navbar() {
         <div className={styles.links}>
           <div>
             <Link href="/">
-              <a>Home</a>
+              <a className={styles.name}>Kabir Goel</a>
             </Link>
+          </div>
+          <div>
             <a href="https://kabirgoel.substack.com">Newsletter</a>
             <a href="mailto:kabirgoel.kg@gmail.com">Email</a>
             <a href="https://github.com/kbrgl">GitHub</a>
