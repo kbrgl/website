@@ -61,8 +61,8 @@ export default function Home({ posts }: HomeProps) {
             href="https://www.conradchallenge.org/alumni-leadership-council"
           >
             Conrad&nbsp;Foundation
-          </a>{" "}
-          as an Observer, and collaborating on research projects in healthcare
+          </a>
+          , and collaborating on research projects in healthcare
           and disinformation. Follow me on{" "}
           <a
             style={{ color: "#146ba1", textDecorationColor: "currentColor" }}
