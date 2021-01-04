@@ -13,15 +13,12 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script
-            async
-            defer
-            src="https://scripts.simpleanalyticscdn.com/latest.js"
-          />
+          <script async defer src="https://a7s.kabirgoel.com/latest.js" />
           <noscript>
             <img
-              src="https://queue.simpleanalyticscdn.com/noscript.gif"
+              src="https://a7s.kabirgoel.com/noscript.gif"
               alt=""
+              referrerpolicy="no-referrer-when-downgrade"
             />
           </noscript>
         </body>
