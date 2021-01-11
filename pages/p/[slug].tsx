@@ -20,12 +20,18 @@ export default function Note({
   title,
   subtitle,
   date,
+  preview,
   html,
   slug,
   canonical,
   readingTime,
 }) {
   const postLink = `https://kabirgoel.com/p/${slug}`;
+  const imageLink =
+    preview ||
+    `https://og-image-swart.vercel.app/${encodeURIComponent(
+      `**${title}**`
+    )}?md=1`;
   return (
     <Layout>
       <Head>
@@ -33,12 +39,7 @@ export default function Note({
         <meta name="description" content={subtitle} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={subtitle} />
-        <meta
-          property="og:image"
-          content={`https://og-image-swart.vercel.app/${encodeURIComponent(
-            `**${title}**`
-          )}?md=1`}
-        />
+        <meta property="og:image" content={imageLink} />
         <meta property="og:url" content={postLink} />
         <meta property="og:type" content="blog" />
         <meta name="twitter:card" content="summary_large_image" />
