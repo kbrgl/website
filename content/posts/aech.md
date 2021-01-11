@@ -3,6 +3,7 @@ title: "Aech: An Ergonomic CSS Helper"
 subtitle: Making it easier to style my new web projects.
 date: 2021-01-11
 draft: false
+preview: https://kabirgoel.com/static/aech.png
 ---
 
 <figure>
