@@ -18,7 +18,7 @@ type Frontmatter = {
   subtitle: string;
 };
 
-type Note = Omit<Frontmatter, "date"> & { dateString: string };
+type Post = Omit<Frontmatter, "date"> & { dateString: string };
 
 function Intro() {
   return (
@@ -89,7 +89,7 @@ function Newsletter() {
 }
 
 type WritingProps = {
-  posts: Note[];
+  posts: Post[];
 };
 function Writing({ posts }: WritingProps) {
   return (
@@ -103,7 +103,7 @@ function Writing({ posts }: WritingProps) {
             date: parseDate(post.dateString),
           }))
           .sort((a: Frontmatter, b: Frontmatter) => +b.date - +a.date)
-          .map((post: Note) => (
+          .map((post: Post) => (
             <li key={post.title}>
               <Link href={`/p/${post.slug}`}>
                 <a>

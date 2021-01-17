@@ -14,9 +14,9 @@ import formatDate from "../../utils/format-date";
 import Layout from "../../components/layout";
 import Container from "../../components/container";
 
-import styles from "../../styles/Note.module.css";
+import styles from "../../styles/Post.module.css";
 
-export default function Note({
+export default function Post({
   title,
   subtitle,
   date,
