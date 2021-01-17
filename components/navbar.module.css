@@ -13,6 +13,12 @@
   align-items: stretch;
 }
 
+@media screen and (max-width: 500px) {
+  .links {
+    flex-direction: column;
+  }
+}
+
 .name {
   border-right: 1px solid var(--color-stroke);
   padding: var(--s) var(--m);
@@ -28,6 +34,13 @@
   flex: 1;
   color: var(--color-text-secondary);
   padding: var(--s) var(--m);
+}
+
+@media screen and (max-width: 500px) {
+  .list {
+    padding-top: 0;
+    padding-left: 0;
+  }
 }
 
 .list a {

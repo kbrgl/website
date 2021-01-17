@@ -27,6 +27,7 @@
 
 .email {
   padding: calc(var(--xxs) / 2) var(--xxs);
+  line-height: var(--line-height-loose);
 
   border: 1px solid var(--color-stroke);
   border-radius: 8px;

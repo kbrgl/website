@@ -1,6 +1,5 @@
 // eslint-disable-next-line import/no-unresolved
 import fs from "fs/promises";
-import { useState } from "react";
 import path from "path";
 import Link from "next/link";
 import matter from "gray-matter";
@@ -22,29 +21,17 @@ type Frontmatter = {
 type Post = Omit<Frontmatter, "date"> & { dateString: string };
 
 function Email() {
-  const [copied, setCopied] = useState(false);
   return (
     <span className={styles.email}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         className={styles.icon}
-        onClick={() => {
-          navigator.clipboard.writeText("kabirgoel.kg@gmail.com");
-          setCopied(true);
-          setTimeout(() => {
-            setCopied(false);
-          }, 1000);
-        }}
       >
         <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
       </svg>
-      {copied ? (
-        <span className={styles.message}>Copied! 🎉</span>
-      ) : (
-        <a href="mailto:kabirgoel.kg@gmail.com">kabirgoel.kg@gmail.com</a>
-      )}
+      <a href="mailto:kabirgoel.kg@gmail.com">kabirgoel.kg@gmail.com</a>
     </span>
   );
 }
