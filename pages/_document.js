@@ -9,7 +9,11 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <title>Kabir Goel</title>
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="stylesheet" href="https://use.typekit.net/vyk7kso.css" />
+        </Head>
         <body>
           <Main />
           <NextScript />

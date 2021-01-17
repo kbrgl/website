@@ -1,16 +1,21 @@
-import Layout from "../components/layout";
+import Link from "next/link";
 import Container from "../components/container";
 import styles from "../styles/404.module.css";
 
 export default function NotFound() {
   return (
-    <Layout>
+    <main className={styles.main}>
       <Container>
-        <div className={styles.main}>
-          <h1>404</h1>
-          <h1>Not Found</h1>
-        </div>
+        <h1>404 Epic Fail</h1>
+        <img src="https://cataas.com/c/fail" alt="" />
+        <p>
+          Looks like you’re lost. The gentlemanly thing would be to{" "}
+          <Link href="/">
+            <a>send you home</a>
+          </Link>
+          , but you can also refresh to see more cats. 🐱
+        </p>
       </Container>
-    </Layout>
+    </main>
   );
 }

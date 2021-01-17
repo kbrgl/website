@@ -1,15 +1,10 @@
 .main {
-  height: 80vh;
+  height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
-.main h1:first-of-type {
-  padding-right: var(--xs);
-  border-right: 2px solid #ccc;
-}
-
-.main h1:last-of-type {
-  padding-left: var(--xs);
-  font-weight: 400;
+.main img {
+  border-radius: 8px;
 }

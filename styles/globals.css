@@ -1,4 +1,11 @@
 :root {
+  --color-wash: #f4f4f4;
+  --color-stroke: #eee;
+  --color-text-tertiary: #888;
+  --color-text-secondary: #666;
+  --color-text: #212121;
+  --color-accent: #000;
+
   /* Margin, padding, or anything else that needs a size */
   --xxl: 60px;
   --xl: 40px;
@@ -8,23 +15,43 @@
   --xs: 10px;
   --xxs: 5px;
 
-  /* Headings and large text */
-  --line-height-tight: 1.4;
+  /* Large text */
+  --line-height-tight: 1.25;
+
+  /* Medium-sized text */
+  --line-height-snug: 1.4;
+
+  /* Body text */
+  --line-height-loose: 1.75;
+
   /* Everything else */
   --line-height-normal: 1.6;
 
+  /* Ensure that transitions are consistently timed */
+  --transition-duration: 150ms;
+  --font-family-mono: "JetBrains Mono", consolas, menlo, monaco,
+    "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
+    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono",
+    "Nimbus Mono L", "Courier New", courier, monospace;
+
   /* Titles */
   --font-size-xxl: 36px;
+
   /* Headings */
   --font-size-xl: 30px;
+
   /* Subheadings */
   --font-size-l: 24px;
+
   /* Body text */
   --font-size-m: 20px;
+
   /* Default for all interface elements */
   --font-size-s: 18px;
+
   /* Buttons, navbar links, footer content, and so on */
   --font-size-xs: 16px;
+
   /* Breadcrumbs, tags, and smallcaps */
   --font-size-xxs: 14px;
 }
@@ -39,14 +66,21 @@ body {
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
   line-height: var(--line-height-normal);
-  color: #212121;
+  color: var(--color-text);
 }
 
 a {
   color: inherit;
   text-decoration: underline;
+  text-decoration-color: var(--color-text-tertiary);
+  transition-property: color, text-decoration-color;
+  transition-duration: var(--transition-duration);
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration-color: var(--color-accent);
 }
 
 strong {
@@ -55,19 +89,27 @@ strong {
 
 hr {
   height: 0;
-  border-style: none;
-  border-top: 1px solid #ccc;
-}
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: var(--line-height-tight);
+  border-style: none;
+  border-top: 2px solid var(--color-stroke);
 }
 
 * {
   box-sizing: border-box;
+}
+
+h1 {
+  line-height: var(--line-height-tight);
+  font-size: var(--font-size-xxl);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-l);
 }

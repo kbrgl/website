@@ -4,21 +4,23 @@ import styles from "./navbar.module.css";
 
 export default function Navbar() {
   return (
-    <div className={styles.navbar}>
+    <nav className={styles.navbar}>
       <Container>
         <div className={styles.links}>
-          <div>
+          <div className={styles.name}>
             <Link href="/">
-              <a className={styles.name}>Kabir Goel</a>
+              <a>Kabir Goel</a>
             </Link>
           </div>
-          <div>
-            <a href="https://kabirgoel.substack.com">Newsletter</a>
+          <div className={styles.list}>
             <a href="mailto:kabirgoel.kg@gmail.com">Email</a>
-            <a href="https://github.com/kbrgl">GitHub</a>
+            <a href="https://www.notion.so/kabirgoel/2b3224f21629468580551a14edae4616?v=5a2db9f0bb944564ae019709de328801">
+              Playlist
+            </a>
+            <a href="https://kabirgoel.substack.com">Newsletter</a>
           </div>
         </div>
       </Container>
-    </div>
+    </nav>
   );
 }
