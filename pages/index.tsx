@@ -49,13 +49,20 @@ function Intro() {
           href="https://twitter.com/KabirGoel"
         >
           Twitter
-        </a>{" "}
-        or{" "}
+        </a>
+        ,{" "}
         <a
           style={{ color: "#118339", textDecorationColor: "currentColor" }}
           href="https://open.spotify.com/user/12181834510?si=bmVw93WRQrOy0m0wBwXbAw"
         >
           Spotify
+        </a>
+        , or{" "}
+        <a
+          style={{ color: "#000", textDecorationColor: "currentColor" }}
+          href="https://github.com/kbrgl"
+        >
+          GitHub
         </a>
         !
       </p>
