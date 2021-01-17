@@ -15,7 +15,7 @@
 }
 
 .picture img {
-  margin: 40px 0 10px;
+  margin: var(--xl) 0 var(--xs);
   height: 120px;
   width: 120px;
 }
@@ -25,37 +25,29 @@
 }
 
 .posts {
-  margin-top: 25px;
+  margin-top: var(--m);
   list-style-type: none;
   padding: 0;
 }
 
-.posts li {
-  margin-bottom: 20px;
-}
-
 .posts a {
+  padding: var(--xs) 0;
+  display: block;
   text-decoration: none;
 }
 
-.posts .meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
 .posts .title {
-  font-size: 20px;
+  font-size: var(--font-size-m);
   font-weight: 500;
 }
 
 .posts .date {
   color: #666;
-  font-size: 16px;
+  font-size: var(--font-size-xs);
 }
 
 .posts .subtitle {
-  margin-top: 0px;
+  margin: 0;
   color: #333;
 }
 
@@ -67,7 +59,7 @@
 
   border-radius: 6px;
   background: #0008;
-  padding: 15px;
+  padding: var(--s);
   color: #fff;
 }
 
@@ -92,7 +84,7 @@
 .card .logo {
   width: 108px;
   height: 108px;
-  margin-right: 20px;
+  margin-right: var(--m);
   border-radius: 6px;
   box-shadow: 0 3px 18px 0 rgba(0, 0, 0, 0.2);
 }
@@ -104,9 +96,9 @@
 .footer {
   color: #666;
   border-top: 1px solid #ccc;
-  padding-top: 10px;
-  font-size: 16px;
-  margin: 40px 0;
+  padding-top: var(--xs);
+  font-size: var(--font-size-xs);
+  margin: var(--xl) 0;
 }
 
 @media screen and (max-width: 600px) {
@@ -116,12 +108,12 @@
   }
 
   .card {
-    padding: 20px;
+    padding: var(--m);
     flex-direction: column;
     align-items: flex-start;
   }
 
   .card img {
-    margin-bottom: 15px;
+    margin-bottom: var(--s);
   }
 }

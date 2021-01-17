@@ -1,30 +1,13 @@
 .navbar {
+  background: #ffffff;
   border-bottom: 1px solid #ccc;
   padding: 18px 0;
 }
 
 .navbar a {
   text-decoration: none;
-  font-size: 16px;
-  margin-right: 10px;
-  position: relative;
-}
-
-.navbar a::before {
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  content: "";
-  margin: -5px;
-  border-radius: 6px;
-  transition: background 0.15s ease-in-out;
-}
-
-.navbar a:hover::before {
-  background: #f4f4f4;
+  font-size: var(--font-size-xs);
+  margin-right: var(--xs);
 }
 
 .links {
@@ -33,5 +16,5 @@
 
 .links .name {
   font-weight: 500;
-  margin-right: 20px;
+  margin-right: var(--m);
 }
