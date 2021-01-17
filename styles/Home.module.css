@@ -72,6 +72,7 @@
   border-radius: 8px;
   background: #0008;
   padding: var(--s);
+  font-size: var(--font-size-s);
   color: #fff;
 }
 
