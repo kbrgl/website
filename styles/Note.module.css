@@ -1,19 +1,19 @@
 .header {
-  margin: 40px 0;
+  margin: var(--xl) 0;
 }
 
 .meta {
-  font-size: 16px;
+  font-size: var(--font-size-xs);
   color: #888;
 }
 
 .title {
-  margin: 10px 0;
+  margin: var(--xxs) 0;
 }
 
 .subtitle {
   margin: 0;
-  font-size: 22px;
+  font-size: var(--font-size-l);
   font-weight: 400;
   color: #333;
 }
@@ -25,16 +25,16 @@
 }
 
 .content figcaption {
-  margin-top: -10px;
-  padding-bottom: 10px;
+  margin-top: calc(-1 * var(--xs));
+  padding-bottom: var(--xs);
   text-align: center;
-  font-size: 16px;
+  font-size: var(--font-size-xs);
   color: #666;
 }
 
 .content img {
   width: calc(100% + 10vw);
-  margin: 20px auto;
+  margin: var(--m) auto;
   transform: translateX(-5vw);
 }
 
@@ -51,36 +51,37 @@
 }
 
 .content ol li p {
-  margin: 5px 0;
+  margin: var(--xxs) 0;
 }
 
 .content ol li::before {
   content: "(" counter(list-counter) ")";
-  margin-right: 10px;
+  margin-right: var(--xs);
   font-weight: 600;
   color: #666;
 }
 
 .content :global(.footnote-backref) {
-  margin-left: 5px;
+  margin-left: var(--xxs);
   text-decoration: none;
 }
 
 .footer {
-  margin-bottom: 40px;
+  font-size: var(--font-size-xs);
+  margin-bottom: var(--xl);
 }
 
 .author {
-  margin: 40px 0 20px;
+  margin: var(--xl) 0 var(--m);
   border-radius: 6px;
   display: flex;
   align-items: center;
 }
 
 .author img {
-  margin-right: 15px;
-  height: 72px;
-  width: 72px;
+  margin-right: var(--s);
+  height: 48px;
+  width: 48px;
 }
 
 .author p {
@@ -88,14 +89,13 @@
 }
 
 .share {
-  font-size: 16px;
   color: #666;
-  margin-top: 5px;
+  margin-top: var(--xxs);
 }
 
 @media screen and (max-width: 770px) {
   .content h1 {
-    font-size: 28px;
+    font-size: var(--font-size-xl);
   }
 
   .content img {

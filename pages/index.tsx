@@ -62,8 +62,14 @@ export default function Home({ posts }: HomeProps) {
           >
             Conrad&nbsp;Foundation
           </a>
-          , and collaborating on research projects in healthcare
-          and disinformation. Follow me on{" "}
+          , and writing a weekly newsletter called{" "}
+          <a
+            style={{ color: "#6143a7", textDecorationColor: "currentColor" }}
+            href="https://kabirgoel.substack.com"
+          >
+            Great Stuff
+          </a>
+          . Follow me on{" "}
           <a
             style={{ color: "#146ba1", textDecorationColor: "currentColor" }}
             href="https://twitter.com/KabirGoel"
@@ -98,7 +104,9 @@ export default function Home({ posts }: HomeProps) {
                   <a>
                     <div className={styles.meta}>
                       <span className={styles.title}>{post.title}</span>
-                      <span className={styles.date}>{post.dateString}</span>
+                      <span className={styles.date}>
+                        &nbsp;&middot;&nbsp;{post.dateString}
+                      </span>
                     </div>
                     <p className={styles.subtitle}>{post.subtitle}</p>
                   </a>
