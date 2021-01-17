@@ -1,20 +1,44 @@
 .navbar {
-  background: #ffffff;
-  border-bottom: 1px solid #ccc;
-  padding: 18px 0;
+  background: var(--color-wash);
+  border-bottom: 1px solid var(--color-stroke);
 }
 
 .navbar a {
   text-decoration: none;
   font-size: var(--font-size-xs);
-  margin-right: var(--xs);
 }
 
 .links {
   display: flex;
+  align-items: stretch;
 }
 
-.links .name {
-  font-weight: 500;
-  margin-right: var(--m);
+.name {
+  border-right: 1px solid var(--color-stroke);
+  padding: var(--s) var(--m);
+  padding-left: 0;
+}
+
+.name a {
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+.list {
+  flex: 1;
+  color: var(--color-text-secondary);
+  padding: var(--s) var(--m);
+}
+
+.list a {
+  margin-left: var(--s);
+  transition: color var(--transition-duration);
+}
+
+.list a:first-child {
+  margin-left: 0;
+}
+
+.list a:hover {
+  color: var(--color-accent);
 }

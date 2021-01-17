@@ -5,13 +5,14 @@
 
 .picture::after {
   content: "";
-  position: absolute;
-  background: url(/arrow.png);
-  background-size: contain;
   width: 100px;
   height: 40px;
+  position: absolute;
   bottom: 20px;
   right: calc(-100% + 20px);
+
+  background: url(/arrow.png);
+  background-size: contain;
 }
 
 .picture img {
@@ -24,28 +25,61 @@
   font-size: var(--font-size-s);
 }
 
+.email {
+  padding: calc(var(--xxs) / 2) var(--xxs);
+
+  border: 1px solid var(--color-stroke);
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.email .icon {
+  vertical-align: calc(-1 * var(--xxs));
+  width: 20px;
+  height: 20px;
+  margin-right: var(--xxs);
+
+  cursor: copy;
+  stroke: var(--color-text-secondary);
+  fill: none;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke var(--transition-duration);
+}
+
+.email .icon:hover {
+  stroke: var(--color-text);
+}
+
 .light {
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .posts {
-  list-style-type: none;
-  padding: 0;
   margin: var(--m) 0 0;
-  border: 1px solid #eee;
-  border-radius: 8px;
+  padding: 0;
   overflow: hidden;
+  list-style-type: none;
+
+  border: 1px solid var(--color-stroke);
+  border-radius: 8px;
+}
+
+.post {
+  transition: background var(--transition-duration);
+}
+
+.post:hover {
+  background: var(--color-wash);
 }
 
 .post a {
   padding: var(--m) var(--m);
   display: block;
-  text-decoration: none;
-  border-bottom: 1px solid #eee;
-}
 
-.post:hover {
-  background: #fafafa;
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-stroke);
 }
 
 .post:last-child a {
@@ -58,14 +92,15 @@
 }
 
 .post .date {
-  color: #888;
+  color: var(--color-text-tertiary);
   font-size: var(--font-size-xs);
 }
 
 .post .subtitle {
-  font-size: var(--font-size-s);
   margin: 0;
-  color: #666;
+
+  font-size: var(--font-size-s);
+  color: var(--color-text-secondary);
 }
 
 .card {
@@ -73,17 +108,15 @@
   display: flex;
   align-items: center;
   overflow: hidden;
+  padding: var(--s);
 
   border-radius: 8px;
   background: #0008;
-  padding: var(--s);
   font-size: var(--font-size-s);
   color: #fff;
 }
 
 .card .background {
-  background-size: cover;
-  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -91,8 +124,10 @@
   right: 0;
   top: 0;
   bottom: 0;
-
   z-index: -1;
+
+  background-size: cover;
+  background-repeat: no-repeat;
   filter: blur(10px);
   transform: scale(1.5);
   opacity: 0.75;
@@ -102,6 +137,7 @@
 .card .logo {
   width: 108px;
   height: 108px;
+
   margin-right: var(--m);
   border-radius: 8px;
   box-shadow: 0 3px 18px 0 rgba(0, 0, 0, 0.2);
@@ -111,16 +147,8 @@
   margin: 0;
 }
 
-.footer {
-  color: #666;
-  border-top: 1px solid #ccc;
-  padding-top: var(--xs);
-  font-size: var(--font-size-xs);
-  margin: var(--xl) 0;
-}
-
 @media screen and (max-width: 600px) {
-  .posts .meta {
+  .post .meta {
     flex-direction: column;
     justify-content: flex-start;
   }

@@ -4,18 +4,41 @@
 
 .meta {
   font-size: var(--font-size-xs);
-  color: #888;
+  color: var(--color-text-tertiary);
 }
 
 .title {
-  margin: var(--xxs) 0;
+  margin: var(--xs) 0;
+
+  line-height: var(--line-height-tight);
+  font-size: var(--font-size-xxl);
+  font-weight: 500;
 }
 
 .subtitle {
   margin: 0;
+
+  line-height: var(--line-height-snug);
   font-size: var(--font-size-l);
   font-weight: 400;
-  color: #333;
+  color: var(--color-text-secondary);
+}
+
+.content {
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-loose);
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content h5,
+.content h6 {
+  margin: var(--xxl) 0 var(--l);
+
+  font-weight: 500;
+  font-size: var(--font-size-xl);
 }
 
 .content figure {
@@ -27,9 +50,10 @@
 .content figcaption {
   margin-top: calc(-1 * var(--xs));
   padding-bottom: var(--xs);
+
   text-align: center;
   font-size: var(--font-size-xs);
-  color: #666;
+  color: var(--color-text-tertiary);
 }
 
 .content img {
@@ -41,13 +65,19 @@
 .content ol {
   padding-left: 0;
   list-style-type: none;
+
   counter-reset: list-counter 0;
 }
 
 .content ol li {
-  counter-increment: list-counter;
   display: flex;
   align-items: baseline;
+
+  counter-increment: list-counter;
+}
+
+.author p {
+  margin: 0;
 }
 
 .content ol li p {
@@ -55,48 +85,46 @@
 }
 
 .content ol li::before {
-  content: "(" counter(list-counter) ")";
+  content: counter(list-counter) ".";
   margin-right: var(--xs);
-  font-weight: 600;
-  color: #666;
+
+  font-weight: 500;
 }
 
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
 .content :global(.footnote-backref) {
   margin-left: var(--xxs);
+
   text-decoration: none;
 }
 
 .footer {
-  font-size: var(--font-size-xs);
   margin-bottom: var(--xl);
 }
 
 .author {
+  padding: var(--m);
   margin: var(--xl) 0 var(--m);
   display: flex;
   align-items: center;
+
+  border: 1px solid var(--color-stroke);
+  border-radius: 8px;
 }
 
 .author img {
   margin-right: var(--s);
-  height: 48px;
-  width: 48px;
-}
-
-.author p {
-  margin: 0;
+  height: 64px;
+  width: 64px;
 }
 
 .share {
-  color: #666;
   margin-top: var(--xxs);
+
+  color: var(--color-text-secondary);
 }
 
 @media screen and (max-width: 770px) {
-  .content h1 {
-    font-size: var(--font-size-xl);
-  }
-
   .content img {
     width: 100%;
     transform: translateX(0);

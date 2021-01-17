@@ -9,6 +9,7 @@ import remarkHtml from "remark-html";
 import retextSmartypants from "retext-smartypants";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkFootnotes from "remark-footnotes";
+import remarkPrism from "remark-prism";
 import calculateReadingTime from "reading-time";
 import formatDate from "../../utils/format-date";
 import Layout from "../../components/layout";
@@ -44,6 +45,11 @@ export default function Post({
         <meta property="og:type" content="blog" />
         <meta name="twitter:card" content="summary_large_image" />
         {canonical ? <link rel="canonical" href={canonical} /> : null}
+        <style>
+          {`:root {
+            --container-size: 720px;
+          }`}
+        </style>
       </Head>
       <Container>
         <div className={styles.header}>
@@ -94,6 +100,7 @@ export async function getStaticProps({ params: { slug } }) {
     .use(remarkFrontmatter)
     .use(retextSmartypants)
     .use(remarkFootnotes)
+    .use(remarkPrism)
     .use(remarkHtml);
   const file = processor.processSync(fileContents);
 
