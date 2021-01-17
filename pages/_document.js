@@ -18,7 +18,7 @@ class MyDocument extends Document {
             <img
               src="https://a7s.kabirgoel.com/noscript.gif"
               alt=""
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             />
           </noscript>
         </body>
