@@ -20,6 +20,10 @@
   width: 120px;
 }
 
+.intro {
+  font-size: var(--font-size-s);
+}
+
 .light {
   color: #666;
 }
@@ -59,6 +63,7 @@
 }
 
 .post .subtitle {
+  font-size: var(--font-size-s);
   margin: 0;
   color: #666;
 }
