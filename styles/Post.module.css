@@ -73,7 +73,6 @@
 
 .author {
   margin: var(--xl) 0 var(--m);
-  border-radius: 6px;
   display: flex;
   align-items: center;
 }
