@@ -88,6 +88,27 @@ function Newsletter() {
   );
 }
 
+type PostProps = {
+  post: Post;
+};
+function Post({ post }: PostProps) {
+  return (
+    <li key={post.title} className={styles.post}>
+      <Link href={`/p/${post.slug}`}>
+        <a>
+          <div className={styles.meta}>
+            <span className={styles.title}>{post.title}</span>
+            <span className={styles.date}>
+              &nbsp;&middot;&nbsp;{post.dateString}
+            </span>
+          </div>
+          <p className={styles.subtitle}>{post.subtitle}</p>
+        </a>
+      </Link>
+    </li>
+  );
+}
+
 type WritingProps = {
   posts: Post[];
 };
@@ -104,19 +125,7 @@ function Writing({ posts }: WritingProps) {
           }))
           .sort((a: Frontmatter, b: Frontmatter) => +b.date - +a.date)
           .map((post: Post) => (
-            <li key={post.title}>
-              <Link href={`/p/${post.slug}`}>
-                <a>
-                  <div className={styles.meta}>
-                    <span className={styles.title}>{post.title}</span>
-                    <span className={styles.date}>
-                      &nbsp;&middot;&nbsp;{post.dateString}
-                    </span>
-                  </div>
-                  <p className={styles.subtitle}>{post.subtitle}</p>
-                </a>
-              </Link>
-            </li>
+            <Post post={post} />
           ))}
       </ul>
     </div>

@@ -25,30 +25,42 @@
 }
 
 .posts {
-  margin-top: var(--m);
   list-style-type: none;
   padding: 0;
+  margin: var(--m) 0 0;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.posts a {
-  padding: var(--xs) 0;
+.post a {
+  padding: var(--m) var(--m);
   display: block;
   text-decoration: none;
+  border-bottom: 1px solid #eee;
 }
 
-.posts .title {
+.post:hover {
+  background: #fafafa;
+}
+
+.post:last-child a {
+  border-bottom: 0;
+}
+
+.post .title {
   font-size: var(--font-size-m);
   font-weight: 500;
 }
 
-.posts .date {
-  color: #666;
+.post .date {
+  color: #888;
   font-size: var(--font-size-xs);
 }
 
-.posts .subtitle {
+.post .subtitle {
   margin: 0;
-  color: #333;
+  color: #666;
 }
 
 .card {
@@ -57,7 +69,7 @@
   align-items: center;
   overflow: hidden;
 
-  border-radius: 6px;
+  border-radius: 8px;
   background: #0008;
   padding: var(--s);
   color: #fff;
@@ -85,7 +97,7 @@
   width: 108px;
   height: 108px;
   margin-right: var(--m);
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: 0 3px 18px 0 rgba(0, 0, 0, 0.2);
 }
 
