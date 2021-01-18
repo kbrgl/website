@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { promises as fs } from "fs";
 import path from "path";
 import Link from "next/link";
@@ -42,7 +43,16 @@ function Intro() {
   return (
     <div>
       <div className={styles.picture}>
-        <img src="/me.png" alt="Me" />
+        <Image
+          className={styles.me}
+          layout="fixed"
+          height={120}
+          width={120}
+          priority
+          quality={100}
+          src="/me.png"
+          alt="Me"
+        />
       </div>
       <p>
         Hi, I’m Kabir! I’m studying <span className={styles.cs}>CS</span> and{" "}
@@ -102,11 +112,13 @@ function Newsletter() {
         className={styles.background}
         style={{ backgroundImage: "url(/great-stuff-wordmark.png)" }}
       />
-      <img
-        className={styles.logo}
-        src="/great-stuff-logo.png"
-        alt="Newsletter logo"
-      />
+      <div className={styles.logo}>
+        <Image
+          layout="fill"
+          src="/great-stuff-logo.png"
+          alt="Newsletter logo"
+        />
+      </div>
       <p className={styles.text}>
         You’ll find most of my writing on my newsletter, Great&nbsp;Stuff, where
         I talk about human interactions, design, and productivity.{" "}
