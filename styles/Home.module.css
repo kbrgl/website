@@ -1,6 +1,7 @@
 .picture {
   position: relative;
   display: inline-block;
+  margin: var(--xl) 0 var(--xs);
 }
 
 .picture::after {
@@ -8,17 +9,11 @@
   width: 100px;
   height: 40px;
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   right: calc(-100% + 20px);
 
   background: url(/arrow.png);
   background-size: contain;
-}
-
-.picture img {
-  margin: var(--xl) 0 var(--xs);
-  height: 120px;
-  width: 120px;
 }
 
 .intro {
@@ -136,11 +131,13 @@
 }
 
 .card .logo {
-  width: 108px;
+  position: relative;
   height: 108px;
-
+  width: 108px;
   margin-right: var(--m);
   border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
   box-shadow: 0 3px 18px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -160,7 +157,7 @@
     align-items: flex-start;
   }
 
-  .card img {
+  .card .logo {
     margin-bottom: var(--s);
   }
 }

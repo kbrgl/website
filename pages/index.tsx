@@ -1,5 +1,6 @@
 // eslint-disable-next-line import/no-unresolved
 import fs from "fs/promises";
+import Image from "next/image";
 import path from "path";
 import Link from "next/link";
 import matter from "gray-matter";
@@ -27,6 +28,9 @@ function Email() {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         className={styles.icon}
+        onClick={() => {
+          navigator.clipboard.writeText("kabirgoel.kg@gmail.com");
+        }}
       >
         <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
@@ -40,7 +44,16 @@ function Intro() {
   return (
     <div>
       <div className={styles.picture}>
-        <img src="/me.png" alt="Me" />
+        <Image
+          className={styles.me}
+          layout="fixed"
+          height={120}
+          width={120}
+          priority
+          quality={100}
+          src="/me.png"
+          alt="Me"
+        />
       </div>
       <p>
         Hi, I’m Kabir! I’m studying <span className={styles.cs}>CS</span> and{" "}
@@ -100,11 +113,13 @@ function Newsletter() {
         className={styles.background}
         style={{ backgroundImage: "url(/great-stuff-wordmark.png)" }}
       />
-      <img
-        className={styles.logo}
-        src="/great-stuff-logo.png"
-        alt="Newsletter logo"
-      />
+      <div className={styles.logo}>
+        <Image
+          layout="fill"
+          src="/great-stuff-logo.png"
+          alt="Newsletter logo"
+        />
+      </div>
       <p className={styles.text}>
         You’ll find most of my writing on my newsletter, Great&nbsp;Stuff, where
         I talk about human interactions, design, and productivity.{" "}
