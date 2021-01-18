@@ -79,8 +79,8 @@ a {
 }
 
 a:hover {
-  color: var(--color-accent);
-  text-decoration-color: var(--color-accent);
+  color: inherit;
+  text-decoration-color: currentColor;
 }
 
 strong {
