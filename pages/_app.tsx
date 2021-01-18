@@ -8,6 +8,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <title>Kabir Goel</title>
+        <meta
+          name="description"
+          content="The website and blog of Kabir Goel, a writer, maker, and freshman at the University of California, Berkeley."
+        />
       </Head>
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}
       <Component {...pageProps} />
