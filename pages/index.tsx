@@ -133,7 +133,7 @@ type PostProps = {
 };
 function Post({ post }: PostProps) {
   return (
-    <li key={post.title} className={styles.post}>
+    <li className={styles.post}>
       <Link href={`/p/${post.slug}`}>
         <a>
           <div className={styles.meta}>
@@ -165,7 +165,7 @@ function Writing({ posts }: WritingProps) {
           }))
           .sort((a: Frontmatter, b: Frontmatter) => +b.date - +a.date)
           .map((post: Post) => (
-            <Post post={post} />
+            <Post key={post.slug} post={post} />
           ))}
       </ul>
     </div>
