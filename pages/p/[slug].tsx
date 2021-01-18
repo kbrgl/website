@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Link from "next/link";
-// eslint-disable-next-line import/no-unresolved
-import fs from "fs/promises";
+import { promises as fs } from "fs";
 import path from "path";
 import matter from "gray-matter";
 import remark from "remark";
