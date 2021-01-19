@@ -1,0 +1,8 @@
+.heading {
+  margin: 0;
+}
+
+.description {
+  margin: var(--xs) 0 var(--xl);
+  color: var(--color-text-secondary);
+}

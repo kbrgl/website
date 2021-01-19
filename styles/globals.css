@@ -70,6 +70,10 @@ body {
   color: var(--color-text);
 }
 
+main {
+  padding: var(--xl) 0;
+}
+
 a {
   color: inherit;
   text-decoration: underline;
@@ -89,6 +93,7 @@ strong {
 
 hr {
   height: 0;
+  margin: var(--m) 0;
 
   border-style: none;
   border-top: 2px solid var(--color-stroke);
@@ -96,6 +101,16 @@ hr {
 
 * {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: var(--xl) 0 var(--m);
 }
 
 h1 {

@@ -1,6 +1,5 @@
 .footer {
   padding: var(--xxs) 0;
-  margin: var(--xl) 0 0;
 
   color: var(--color-text-secondary);
   background: var(--color-wash);

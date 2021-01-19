@@ -13,7 +13,7 @@
   align-items: stretch;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .links {
     flex-direction: column;
   }
@@ -36,7 +36,7 @@
   padding: var(--s) var(--m);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .list {
     padding-top: 0;
     padding-left: 0;

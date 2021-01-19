@@ -3,11 +3,13 @@ import { promises as fs } from "fs";
 import path from "path";
 import Link from "next/link";
 import matter from "gray-matter";
+import NowPlaying from "../components/now-playing";
 import formatDate from "../utils/format-date";
 import parseDate from "../utils/parse-date";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import styles from "../styles/Home.module.css";
+import ImageCard from "../components/image-card";
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
 
@@ -21,15 +23,40 @@ type Frontmatter = {
 type Post = Omit<Frontmatter, "date"> & { dateString: string };
 
 function Email() {
+  const TEXT_TO_COPY = "kabirgoel.kg@gmail.com";
+
+  const copy = () => {
+    const textArea = document.createElement("textarea") as HTMLTextAreaElement;
+    textArea.readOnly = true;
+    textArea.contentEditable = "true";
+    textArea.value = TEXT_TO_COPY;
+    document.body.appendChild(textArea);
+
+    let range;
+    let selection;
+
+    if (navigator.userAgent.match(/ipad|iphone/i)) {
+      range = document.createRange();
+      range.selectNodeContents(textArea);
+      selection = window.getSelection();
+      selection.removeAllRanges();
+      selection.addRange(range);
+      textArea.setSelectionRange(0, 999999);
+    } else {
+      textArea.select();
+    }
+
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+  };
+
   return (
     <span className={styles.email}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         className={styles.icon}
-        onClick={() => {
-          navigator.clipboard.writeText("kabirgoel.kg@gmail.com");
-        }}
+        onClick={copy}
       >
         <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
@@ -107,24 +134,19 @@ function Intro() {
 
 function Newsletter() {
   return (
-    <div className={styles.card}>
-      <div
-        className={styles.background}
-        style={{ backgroundImage: "url(/great-stuff-wordmark.png)" }}
-      />
-      <div className={styles.logo}>
-        <Image
-          layout="fill"
-          src="/great-stuff-logo.png"
-          alt="Newsletter logo"
-        />
-      </div>
+    <ImageCard
+      className={styles.newsletter}
+      src="/great-stuff-logo.png"
+      alt="Logo"
+      height={108}
+      width={108}
+    >
       <p className={styles.text}>
         You’ll find most of my writing on my newsletter, Great&nbsp;Stuff, where
         I talk about human interactions, design, and productivity.{" "}
         <a href="https://kabirgoel.substack.com">Subscribe&nbsp;&rarr;</a>
       </p>
-    </div>
+    </ImageCard>
   );
 }
 
@@ -172,6 +194,17 @@ function Writing({ posts }: WritingProps) {
   );
 }
 
+function Music() {
+  return (
+    <div className={styles.music}>
+      <NowPlaying />
+      <p className={styles.seeMore}>
+        See what I’ve been <Link href="/spotify">listening to &rarr;</Link>
+      </p>
+    </div>
+  );
+}
+
 type HomeProps = WritingProps;
 export default function Home({ posts }: HomeProps) {
   return (
@@ -179,6 +212,7 @@ export default function Home({ posts }: HomeProps) {
       <Container>
         <Intro />
         <Writing posts={posts} />
+        <Music />
       </Container>
     </Layout>
   );
