@@ -14,7 +14,7 @@ export default function ImageCard({
 
   useEffect(() => {
     if (imageRef.current?.complete) setImageLoaded(true);
-  });
+  }, []);
 
   const backgroundImage = imageLoaded ? `url(${src})` : null;
   const loadStyles = {

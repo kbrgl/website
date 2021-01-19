@@ -3,7 +3,6 @@ import { promises as fs } from "fs";
 import path from "path";
 import Link from "next/link";
 import matter from "gray-matter";
-import { useRef } from "react";
 import NowPlaying from "../components/now-playing";
 import formatDate from "../utils/format-date";
 import parseDate from "../utils/parse-date";
@@ -24,7 +23,6 @@ type Frontmatter = {
 type Post = Omit<Frontmatter, "date"> & { dateString: string };
 
 function Email() {
-  const anchorRef = useRef(null);
   const TEXT_TO_COPY = "kabirgoel.kg@gmail.com";
 
   const copy = () => {
@@ -63,9 +61,7 @@ function Email() {
         <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
       </svg>
-      <a ref={anchorRef} href="mailto:kabirgoel.kg@gmail.com">
-        kabirgoel.kg@gmail.com
-      </a>
+      <a href="mailto:kabirgoel.kg@gmail.com">kabirgoel.kg@gmail.com</a>
     </span>
   );
 }
