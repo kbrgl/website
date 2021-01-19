@@ -1,0 +1,25 @@
+.list {
+  list-style-type: none;
+  padding: 0;
+  border: 1px solid var(--color-stroke);
+  border-radius: 8px;
+}
+
+.list li {
+  padding: var(--m);
+  border-top: 1px solid var(--color-stroke);
+}
+
+.list li:first-child {
+  border-top: 0;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.artist {
+  margin: 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}

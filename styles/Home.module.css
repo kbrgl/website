@@ -1,7 +1,7 @@
 .picture {
   position: relative;
   display: inline-block;
-  margin: var(--xl) 0 var(--xs);
+  margin-bottom: var(--xs);
 }
 
 .picture::after {
@@ -52,6 +52,10 @@
   color: var(--color-text-secondary);
 }
 
+.newsletter .text {
+  margin: 0;
+}
+
 .posts {
   margin: var(--m) 0 0;
   padding: 0;
@@ -82,14 +86,26 @@
   border-bottom: 0;
 }
 
+.post .meta {
+  margin-bottom: calc(var(--xxs) / 2);
+  line-height: var(--line-height-snug);
+}
+
 .post .title {
   font-size: var(--font-size-m);
   font-weight: 500;
 }
 
+@media screen and (max-width: 600px) {
+  .post .title {
+    font-size: var(--font-size-s);
+  }
+}
+
 .post .date {
   color: var(--color-text-tertiary);
   font-size: var(--font-size-xs);
+  white-space: nowrap;
 }
 
 .post .subtitle {
@@ -99,66 +115,25 @@
   color: var(--color-text-secondary);
 }
 
-.card {
-  position: relative;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  padding: var(--s);
-
-  border-radius: 8px;
-  background: #0008;
-  font-size: var(--font-size-s);
-  color: #fff;
+@media screen and (max-width: 600px) {
+  .post .subtitle {
+    font-size: var(--font-size-xs);
+  }
 }
 
-.card .background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  filter: blur(10px);
-  transform: scale(1.5);
-  opacity: 0.75;
-  pointer-events: none;
+.music {
+  margin-top: var(--xl);
 }
 
-.card .logo {
-  position: relative;
-  height: 108px;
-  width: 108px;
-  margin-right: var(--m);
-  overflow: hidden;
-  flex-shrink: 0;
-
-  border-radius: 8px;
-  box-shadow: 0 3px 18px 0 rgba(0, 0, 0, 0.2);
-}
-
-.card .text {
-  margin: 0;
+.music .seeMore {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin: var(--s) 0 0;
 }
 
 @media screen and (max-width: 600px) {
   .post .meta {
     flex-direction: column;
     justify-content: flex-start;
-  }
-
-  .card {
-    padding: var(--m);
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .card .logo {
-    margin-bottom: var(--s);
   }
 }

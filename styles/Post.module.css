@@ -1,5 +1,5 @@
 .header {
-  margin: var(--xl) 0;
+  margin-bottom: var(--xl);
 }
 
 .meta {
@@ -15,6 +15,12 @@
   font-weight: 500;
 }
 
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: var(--font-size-xl);
+  }
+}
+
 .subtitle {
   margin: 0;
 
@@ -24,9 +30,21 @@
   color: var(--color-text-secondary);
 }
 
+@media screen and (max-width: 600px) {
+  .subtitle {
+    font-size: var(--font-size-m);
+  }
+}
+
 .content {
   font-size: var(--font-size-m);
   line-height: var(--line-height-loose);
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    font-size: inherit;
+  }
 }
 
 .content h1,
@@ -60,6 +78,13 @@
   width: calc(100% + 10vw);
   margin: var(--m) auto;
   transform: translateX(-5vw);
+}
+
+@media screen and (max-width: 800px) {
+  .content img {
+    width: 100%;
+    transform: translateX(0);
+  }
 }
 
 .content ol {
@@ -98,10 +123,6 @@
   text-decoration: none;
 }
 
-.footer {
-  margin-bottom: var(--xl);
-}
-
 .author {
   padding: var(--m);
   margin: var(--xl) 0 var(--m);
@@ -122,11 +143,4 @@
   margin-top: var(--xxs);
 
   color: var(--color-text-secondary);
-}
-
-@media screen and (max-width: 770px) {
-  .content img {
-    width: 100%;
-    transform: translateX(0);
-  }
 }
