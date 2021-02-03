@@ -3,7 +3,6 @@ title: Why do we feel pressured to fall in line?
 subtitle: An essay about lessons learned from lines and lemonade.
 date: 2020-11-30
 canonical: https://kabirgoel.substack.com/p/why-do-we-feel-pressured-to-fall
-draft: false
 ---
 
 Welcome to the fifth issue of Great Stuff! In this issue, I’ll be talking about a surprisingly common phenomenon: the pressure to fall in line with those around us.

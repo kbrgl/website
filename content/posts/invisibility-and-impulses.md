@@ -3,7 +3,6 @@ title: Invisibility & Impulses
 subtitle: An essay on the hidden world of design.
 date: 2020-11-23
 canonical: https://kabirgoel.substack.com/p/invisibility-and-impulses
-draft: false
 ---
 
 Welcome to the fourth issue of Great Stuff. The newsletter is one month in! This issue is slightly different—rather than discussing human interactions, I’m going to introduce you to the hidden world of design.

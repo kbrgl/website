@@ -3,7 +3,6 @@ title: How can we compete better?
 subtitle: And why it's important to figure out what you value.
 date: 2020-11-16
 canonical: https://kabirgoel.substack.com/p/reflecting-on-mimetic-traps
-draft: false
 ---
 
 Welcome to the third issue of Great Stuff! In this issue, I discuss and reflect upon Brian Timar’s blog post “[Mimetic Traps](https://www.briantimar.com/notes/mimetic/mimetic/),” which is about the human tendency to imitate those around us. I follow up with some of my own reflections. This is going to be short—and fairly raw—because the last week has been busier than usual. (An alternate explanation is that I planned poorly, but I’d rather not admit that.)
