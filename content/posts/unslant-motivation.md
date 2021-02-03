@@ -2,7 +2,6 @@
 title: The Motivation Behind Unslant
 subtitle: An exploration of politics and tech.
 date: 2020-01-09
-draft: false
 ---
 
 When was the last time you went out of your way to explore different perspectives on a news story? If you’re like most people, probably never. In fact, odds are that you’re reading news from the same five sources every day. This is by design: social media recommendation algorithms are built to personalize content based on your interests.

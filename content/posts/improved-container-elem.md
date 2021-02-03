@@ -2,7 +2,6 @@
 title: An improved React container component
 subtitle: Simplify your layout code with this one weird trick.
 date: 2021-01-18
-draft: false
 ---
 
 In most of my web projects, I use a dead simple container component to constrain the layout:
