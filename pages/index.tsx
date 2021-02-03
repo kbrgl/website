@@ -18,6 +18,7 @@ type Frontmatter = {
   slug: string;
   title: string;
   subtitle: string;
+  hidden?: string;
 };
 
 type Post = Omit<Frontmatter, "date"> & { dateString: string };
@@ -237,10 +238,12 @@ export async function getStaticProps() {
         }
       )
     )
-  ).map(({ date, ...data }) => ({
-    ...data,
-    dateString: formatDate(date),
-  }));
+  )
+    .filter(({ hidden }) => !hidden)
+    .map(({ date, ...data }) => ({
+      ...data,
+      dateString: formatDate(date),
+    }));
 
   return {
     props: {
