@@ -1,0 +1,21 @@
+.me {
+  border-radius: 50%;
+}
+
+.picture {
+  position: relative;
+  display: inline-block;
+  margin-bottom: var(--xs);
+}
+
+.picture::after {
+  content: "";
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  bottom: 10px;
+  right: calc(-100% + 20px);
+
+  background: url(/arrow.png);
+  background-size: contain;
+}

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { promises as fs } from "fs";
 import path from "path";
 import Link from "next/link";
@@ -9,6 +8,7 @@ import parseDate from "../utils/parse-date";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import styles from "../styles/Home.module.css";
+import Me from "../components/me";
 import ImageCard from "../components/image-card";
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
@@ -70,18 +70,7 @@ function Email() {
 function Intro() {
   return (
     <div>
-      <div className={styles.picture}>
-        <Image
-          className={styles.me}
-          layout="fixed"
-          height={120}
-          width={120}
-          priority
-          quality={100}
-          src="/me.png"
-          alt="Me"
-        />
-      </div>
+      <Me />
       <p>
         Hi, I’m Kabir! I’m studying <span className={styles.cs}>CS</span> and{" "}
         <span className={styles.cogSci}>Cognitive Science</span> at UC Berkeley,

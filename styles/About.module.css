@@ -1,0 +1,8 @@
+.cover {
+  width: 100%;
+  max-width: 500px;
+  transform: rotate(-1deg);
+
+  border: var(--xs) solid #fff;
+  filter: drop-shadow(0 8px 20px #0002);
+}
