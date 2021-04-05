@@ -1,6 +1,6 @@
 ---
 title: Why I Chose Cognitive Science
-subtitle: …as my double major. And a cognitive science reading list.
+subtitle: And a cognitive science reading list.
 date: 2021-03-14
 ---
 
