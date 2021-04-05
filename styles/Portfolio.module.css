@@ -1,0 +1,13 @@
+.description {
+  color: var(--color-text-secondary);
+}
+
+.subheading {
+  margin-top: var(--xxl);
+  font-size: var(--font-size-s);
+}
+
+.ending {
+  margin: var(--xl) 0 0;
+  color: var(--color-text-secondary);
+}

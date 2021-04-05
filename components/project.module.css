@@ -1,0 +1,29 @@
+.project {
+  margin-top: var(--l);
+  border-top: 1px solid var(--color-accent);
+  display: flex;
+}
+
+.projectImage {
+  margin-right: var(--s);
+}
+
+.projectLink {
+  display: block;
+  text-decoration: none;
+}
+
+.projectName {
+  font-weight: 500;
+}
+
+.projectDescription {
+  margin-left: var(--xxs);
+  color: var(--color-text-secondary);
+}
+
+@media screen and (max-width: 650px) {
+  .project {
+    flex-direction: column;
+  }
+}
