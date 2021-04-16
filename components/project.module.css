@@ -4,20 +4,21 @@
   display: flex;
 }
 
-.projectImage {
+.image {
   margin-right: var(--s);
+  align-self: flex-start;
 }
 
-.projectLink {
+.link {
   display: block;
   text-decoration: none;
 }
 
-.projectName {
+.name {
   font-weight: 500;
 }
 
-.projectDescription {
+.description {
   margin-left: var(--xxs);
   color: var(--color-text-secondary);
 }
