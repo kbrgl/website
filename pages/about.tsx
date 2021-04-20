@@ -6,6 +6,16 @@ export default function About() {
   return (
     <Layout>
       <Container>
+        <p className={styles.intro}>
+          <strong>Hi, I’m Kabir.</strong> I’m a freshman at UC Berkeley, where
+          I’m studying CS and Cognitive Science. I serve on the Alumni
+          Leadership Council of the{" "}
+          <a href="https://www.conradchallenge.org/alumni-leadership-council">
+            Conrad&nbsp;Foundation
+          </a>{" "}
+          and write a weekly newsletter called{" "}
+          <a href="https://kabirgoel.substack.com">Great&nbsp;Stuff</a>.
+        </p>
         <img
           height="756"
           width="1008"
@@ -13,18 +23,6 @@ export default function About() {
           alt="Me"
           src="/cover.jpeg"
         />
-        <h1>Hey there, I’m Kabir!</h1>
-        <hr />
-        <p>
-          I’m a freshman at the University of California, Berkeley, where I’m
-          studying CS and Cognitive Science—a lethal combo I like to call
-          CS-squared. I serve on the Alumni Leadership Council of the{" "}
-          <a href="https://www.conradchallenge.org/alumni-leadership-council">
-            Conrad Foundation
-          </a>{" "}
-          and write a weekly newsletter called{" "}
-          <a href="https://kabirgoel.substack.com">Great Stuff</a>.
-        </p>
         <p>
           I grew up in New Delhi, India, where I attended
           Delhi&nbsp;Public&nbsp;School, R.K.&nbsp;Puram. There, I led{" "}
