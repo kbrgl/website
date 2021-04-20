@@ -41,9 +41,7 @@ export default function About() {
         <p>
           Even earlier, I spent my early childhood running around my parents’
           factory in Ambala, a small town a few hours northwest of
-          New&nbsp;Delhi. The factory manufactured science lab equipment; in it,
-          I gained a fascination with science and the world that I hold to this
-          day.
+          New&nbsp;Delhi.
         </p>
         <p>
           At some point in the future, I want to either start my own company or
