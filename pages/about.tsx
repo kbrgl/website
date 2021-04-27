@@ -14,7 +14,10 @@ export default function About() {
             Conrad&nbsp;Foundation
           </a>{" "}
           and write a weekly newsletter called{" "}
-          <a href="https://kabirgoel.substack.com">Great&nbsp;Stuff</a>.
+          <a href="https://kabirgoel.substack.com">
+            Kabir&nbsp;Talks&nbsp;About&nbsp;Stuff
+          </a>
+          .
         </p>
         <img
           height="756"

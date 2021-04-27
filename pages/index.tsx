@@ -81,12 +81,12 @@ function Intro() {
         >
           Conrad&nbsp;Foundation
         </a>
-        , and writing a weekly newsletter called{" "}
+        , and writing my newsletter,{" "}
         <a
           style={{ color: "#6143a7", textDecorationColor: "currentColor" }}
           href="https://kabirgoel.substack.com"
         >
-          Great Stuff
+          Kabir Talks About Stuff
         </a>
         .
       </p>
@@ -130,14 +130,15 @@ function Newsletter() {
   return (
     <ImageCard
       className={styles.newsletter}
-      src="/great-stuff-logo.png"
+      src="/newsletter-logo.png"
       alt="Logo"
       height={108}
       width={108}
     >
       <p className={styles.text}>
-        You’ll find most of my writing on my newsletter, Great&nbsp;Stuff, where
-        I talk about human interactions, design, and productivity.{" "}
+        You’ll find most of my writing on my newsletter,
+        Kabir&nbsp;Talks&nbsp;About&nbsp;Stuff, where I discuss all the little
+        things that fascinate me.{" "}
         <a href="https://kabirgoel.substack.com">Subscribe&nbsp;&rarr;</a>
       </p>
     </ImageCard>
