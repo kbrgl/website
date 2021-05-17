@@ -128,3 +128,14 @@ h5,
 h6 {
   font-size: var(--font-size-l);
 }
+
+input[type="number"] {
+  outline: 0;
+  padding: var(--xs) var(--xs);
+  border: 1px solid var(--color-stroke);
+  width: 100%;
+}
+
+input[type="number"]:focus {
+  border: 1px solid var(--color-accent);
+}
