@@ -207,10 +207,10 @@ export default function GradeCalc() {
               <p>
                 <label htmlFor="lowestHomework">
                   Lowest homework score (out of 10)
-                  <p style={{ fontSize: "0.8em", margin: 0 }}>
+                  <div style={{ fontSize: "0.8em" }}>
                     Get this from Gradescope. Please rescale it to be out of 10
                     using score / total * 10.
-                  </p>
+                  </div>
                   <Field
                     name="lowestHomework"
                     id="lowestHomework"
