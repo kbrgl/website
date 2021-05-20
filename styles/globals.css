@@ -129,13 +129,44 @@ h6 {
   font-size: var(--font-size-l);
 }
 
+input[type="text"],
+input[type="password"],
 input[type="number"] {
-  outline: 0;
-  padding: var(--xs) var(--xs);
-  border: 1px solid var(--color-stroke);
+  padding: var(--s);
   width: 100%;
+  height: var(--xxl);
+
+  outline: 0;
+  font-family: inherit;
+  font-size: inherit;
+  appearance: none;
+  border: 2px solid var(--color-stroke);
+  border-radius: 8px;
+  box-shadow: none;
+  transition: box-shadow var(--transition-duration),
+    border var(--transition-duration);
 }
 
+input[type="text"]:focus,
+input[type="password"]:focus,
 input[type="number"]:focus {
-  border: 1px solid var(--color-accent);
+  border-color: #365fe4;
+  box-shadow: 0 0 0 3px #365fe411;
+}
+
+button {
+  margin: var(--m) 0;
+  padding: var(--s) var(--l);
+  height: var(--xxl);
+
+  font-weight: 500;
+  font-size: var(--font-size-xs);
+  cursor: pointer;
+  border-radius: 8px;
+  background: #1ec178;
+  border: 2px solid #1baa6a;
+  color: #fff;
+  outline: 0;
+  appearance: none;
+  font-family: inherit;
 }

@@ -1,0 +1,38 @@
+.wrapper {
+  padding: var(--l);
+  background: rgb(247, 247, 247);
+  border-radius: 8px;
+}
+
+.wrapper h2 {
+  margin-top: 0;
+}
+
+.wrapper p {
+  margin-bottom: 0;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+}
+
+.form button,
+.form input {
+  width: auto;
+}
+
+.form button {
+  align-self: stretch;
+  margin: 0;
+}
+
+.form input {
+  flex: 1;
+  margin-right: var(--s);
+}
+
+.message {
+  font-size: var(--font-size-xxs);
+  color: #e84b53;
+}
