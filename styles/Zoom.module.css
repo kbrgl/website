@@ -1,11 +1,17 @@
 .wrapper {
   padding: var(--l);
-  background: rgb(247, 247, 247);
+  background: var(--color-wash);
   border-radius: 8px;
 }
 
 .wrapper h2 {
   margin-top: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper h2 {
+    font-size: var(--font-size-l);
+  }
 }
 
 .wrapper p {
@@ -29,7 +35,26 @@
 
 .form input {
   flex: 1;
+  margin: 0;
   margin-right: var(--s);
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    flex-direction: column;
+  }
+
+  .form input {
+    align-self: stretch;
+    margin: 0;
+    margin-bottom: var(--s);
+  }
+
+  .form button {
+    align-self: flex-start;
+
+    height: 50px;
+  }
 }
 
 .message {
