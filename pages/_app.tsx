@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Kabir Goel</title>
         <meta
           name="description"
-          content="The website and blog of Kabir Goel, a writer, maker, and freshman at the University of California, Berkeley."
+          content="The website and blog of Kabir Goel, a writer, maker, and sophomore at the University of California, Berkeley."
         />
       </Head>
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}

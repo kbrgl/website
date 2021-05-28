@@ -7,7 +7,7 @@ export default function About() {
     <Layout>
       <Container>
         <p className={styles.intro}>
-          <strong>Hi, I’m Kabir.</strong> I’m a freshman at UC Berkeley, where
+          <strong>Hi, I’m Kabir.</strong> I’m a sophomore at UC Berkeley, where
           I’m studying CS and Cognitive Science. I serve on the Alumni
           Leadership Council of the{" "}
           <a href="https://www.conradchallenge.org/alumni-leadership-council">
