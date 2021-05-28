@@ -7,6 +7,11 @@
   color: #fff;
 }
 
+.plain.card {
+  border: 1px solid var(--color-stroke);
+  color: inherit;
+}
+
 @media screen and (max-width: 600px) {
   .card {
     padding: var(--m);
@@ -32,8 +37,16 @@
   pointer-events: none;
 }
 
+.plain .backgroundImage {
+  visibility: hidden;
+}
+
 .backgroundColor {
   background-color: #0008;
+}
+
+.plain .backgroundColor {
+  background-color: transparent;
 }
 
 .image {
@@ -51,12 +64,14 @@
   }
 }
 
-.content {
+.wrapper {
   position: relative;
+  z-index: 1;
+}
+
+.content {
   display: flex;
   align-items: center;
-  z-index: 1;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 600px) {

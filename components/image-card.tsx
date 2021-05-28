@@ -7,6 +7,9 @@ export default function ImageCard({
   height,
   width,
   children,
+  header = null,
+  footer = null,
+  plain = false,
   className = "",
 }) {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -23,7 +26,7 @@ export default function ImageCard({
   };
 
   return (
-    <div className={`${styles.card} ${className}`}>
+    <div className={`${styles.card} ${plain ? styles.plain : ""} ${className}`}>
       <div
         className={styles.backgroundImage}
         style={{
@@ -32,22 +35,26 @@ export default function ImageCard({
         }}
       />
       <div className={styles.backgroundColor} />
-      <div className={styles.content}>
-        <img
-          width={width}
-          height={height}
-          className={styles.image}
-          ref={imageRef}
-          src={src}
-          alt={alt}
-          style={{
-            ...loadStyles,
-          }}
-          onLoad={() => {
-            setImageLoaded(true);
-          }}
-        />
-        <div className={styles.children}>{children}</div>
+      <div className={styles.wrapper}>
+        {header}
+        <div className={styles.content}>
+          <img
+            width={width}
+            height={height}
+            className={styles.image}
+            ref={imageRef}
+            src={src}
+            alt={alt}
+            style={{
+              ...loadStyles,
+            }}
+            onLoad={() => {
+              setImageLoaded(true);
+            }}
+          />
+          <div className={styles.children}>{children}</div>
+        </div>
+        {footer}
       </div>
     </div>
   );
