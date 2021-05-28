@@ -1,0 +1,45 @@
+.subscribe {
+  transition: opacity calc(2 * var(--transition-duration));
+}
+
+.loading {
+  opacity: 0.75;
+}
+
+.loading,
+.loading * {
+  cursor: wait;
+}
+
+.form {
+  margin-top: var(--m);
+  display: flex;
+  align-items: center;
+}
+
+.form input {
+  flex: 1;
+  margin-right: var(--s);
+}
+
+.form input:focus {
+  box-shadow: inset 0 0 0 2px var(--color-accent);
+}
+
+.form button {
+  background: var(--color-accent);
+  align-self: stretch;
+  margin: 0;
+}
+
+.message {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+  margin: var(--m) 0 0;
+}
+
+.icon {
+  height: 1em;
+  width: 1em;
+  vertical-align: -2px;
+}

@@ -10,6 +10,7 @@ import Container from "../components/container";
 import styles from "../styles/Home.module.css";
 import Me from "../components/me";
 import ImageCard from "../components/image-card";
+import Subscribe from "../components/subscribe";
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
 
@@ -83,8 +84,8 @@ function Intro() {
         </a>
         , and writing my newsletter,{" "}
         <a
-          style={{ color: "#6143a7", textDecorationColor: "currentColor" }}
-          href="https://kabirgoel.substack.com"
+          style={{ color: "#382394", textDecorationColor: "currentColor" }}
+          href="https://buttondown.email/kabir"
         >
           Kabir Talks About Stuff
         </a>
@@ -126,12 +127,13 @@ function Newsletter() {
       alt="Logo"
       height={108}
       width={108}
+      plain
+      footer={<Subscribe />}
     >
       <p className={styles.text}>
-        You’ll find most of my writing on my newsletter,
-        Kabir&nbsp;Talks&nbsp;About&nbsp;Stuff, where I discuss all the little
-        things that fascinate me.{" "}
-        <a href="https://kabirgoel.substack.com">Subscribe&nbsp;&rarr;</a>
+        <strong>Get my writing in your inbox.</strong> I write about the little
+        things that fascinate me, from human interactions, design, and
+        productivity to programming, cognitive science, and life in general.
       </p>
     </ImageCard>
   );
