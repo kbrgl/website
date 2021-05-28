@@ -4,7 +4,7 @@
   --color-text-tertiary: #888;
   --color-text-secondary: #666;
   --color-text: #212121;
-  --color-accent: #000;
+  --color-accent: #382394;
 
   /* Margin, padding, or anything else that needs a size */
   --xxl: 60px;
@@ -131,40 +131,44 @@ h6 {
 
 input[type="text"],
 input[type="password"],
-input[type="number"] {
+input[type="number"],
+input[type="email"] {
   padding: var(--s);
   width: 100%;
-  height: var(--xxl);
 
   outline: 0;
   font-family: inherit;
   font-size: var(--font-size-xs);
-  color: var(--color-text-secondary);
+  color: var(--color-text);
   appearance: none;
-  border: 2px solid var(--color-stroke);
+  border: 0;
   border-radius: 8px;
-  box-shadow: none;
-  transition: box-shadow var(--transition-duration),
-    border var(--transition-duration);
+  box-shadow: inset 0 0 0 1px var(--color-stroke);
+  transition: box-shadow var(--transition-duration);
+}
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="number"]::placeholder,
+input[type="email"]::placeholder {
+  color: var(--color-text-secondary);
 }
 
 input[type="text"]:focus,
 input[type="password"]:focus,
-input[type="number"]:focus {
-  border-color: #365fe4;
-  box-shadow: 0 0 0 3px #365fe411;
+input[type="number"]:focus,
+input[type="email"]:focus {
+  box-shadow: inset 0 0 0 2px #365fe4;
 }
 
 button {
-  margin: var(--m) 0;
-  padding: 0 var(--l);
-  height: var(--xxl);
+  padding: var(--s) var(--l);
 
   font-weight: 500;
   font-size: var(--font-size-xs);
   cursor: pointer;
   border-radius: 8px;
-  background: #1ec178;
+  background-color: var(--color-accent);
   border: 0;
   color: #fff;
   outline: 0;
