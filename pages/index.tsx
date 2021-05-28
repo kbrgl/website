@@ -114,14 +114,6 @@ function Intro() {
         </a>
         !
       </p>
-      <p className={styles.light}>
-        I’m looking for summer internships for 2021. If you have an opportunity,
-        shoot me an email! My portfolio is{" "}
-        <Link href="/portfolio">
-          <a>here</a>
-        </Link>
-        .
-      </p>
     </div>
   );
 }
