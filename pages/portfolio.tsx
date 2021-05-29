@@ -82,7 +82,7 @@ export default function Portfolio() {
   return (
     <Layout>
       <Container>
-        <h1>Portfolio</h1>
+        <h1 className={styles.title}>Portfolio</h1>
         <p className={styles.description}>
           This is a small portion of the work that I’ve done—it only includes
           things polished enough to include on my website. If you’re interested
