@@ -1,14 +1,19 @@
-.intro {
-  font-size: var(--font-size-s);
+.intro p:first-of-type {
+  margin-top: 0;
+  hyphens: manual;
 }
 
 .email {
-  padding: calc(var(--xxs) / 2) var(--xxs);
+  padding: 0 var(--xxs);
   line-height: var(--line-height-loose);
 
-  border: 1px solid var(--color-stroke);
+  background: var(--color-wash);
   border-radius: 8px;
   white-space: nowrap;
+}
+
+.email a {
+  text-decoration: none;
 }
 
 .email .icon {
@@ -27,15 +32,15 @@
 }
 
 .email .icon:hover {
-  stroke: var(--color-text);
-}
-
-.light {
-  color: var(--color-text-secondary);
+  stroke: currentColor;
 }
 
 .newsletter .text {
   margin: 0;
+}
+
+.newsletter .subscribe {
+  margin-top: var(--m);
 }
 
 .posts {
@@ -57,7 +62,7 @@
 }
 
 .post a {
-  padding: var(--m) var(--m);
+  padding: var(--m);
   display: block;
 
   text-decoration: none;
@@ -78,12 +83,6 @@
   font-weight: 500;
 }
 
-@media screen and (max-width: 600px) {
-  .post .title {
-    font-size: var(--font-size-s);
-  }
-}
-
 .post .date {
   color: var(--color-text-tertiary);
   font-size: var(--font-size-xs);
@@ -95,12 +94,6 @@
 
   font-size: var(--font-size-s);
   color: var(--color-text-secondary);
-}
-
-@media screen and (max-width: 600px) {
-  .post .subtitle {
-    font-size: var(--font-size-xs);
-  }
 }
 
 .music {

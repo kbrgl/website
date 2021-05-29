@@ -1,10 +1,18 @@
 :root {
+  /* Standard interface colors */
+  --color-accent: #382394;
   --color-wash: #f4f4f4;
   --color-stroke: #eee;
+
+  /* Interface text */
   --color-text-tertiary: #888;
   --color-text-secondary: #666;
-  --color-text: #212121;
-  --color-accent: #382394;
+  --color-text-primary: #212121;
+
+  /* All other text */
+  --color-text: #444;
+
+  /* States */
   --color-success: #238828;
   --color-error: #bb4123;
 
@@ -43,7 +51,7 @@
   --font-size-xl: 30px;
 
   /* Subheadings */
-  --font-size-l: 24px;
+  --font-size-l: 26px;
 
   /* Body text */
   --font-size-m: 20px;
@@ -56,6 +64,25 @@
 
   /* Breadcrumbs, tags, and smallcaps */
   --font-size-xxs: 14px;
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --xxl: 56px;
+    --xl: 36px;
+    --l: 28px;
+    --m: 18px;
+    --s: 12px;
+    --xs: 8px;
+    --xxs: 4px;
+    --font-size-xxl: 28px;
+    --font-size-xl: 24px;
+    --font-size-l: 20px;
+    --font-size-m: 18px;
+    --font-size-s: 17px;
+    --font-size-xs: 16px;
+    --font-size-xxs: 13px;
+  }
 }
 
 html,
@@ -79,18 +106,24 @@ main {
 a {
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: var(--color-text-tertiary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+  text-decoration-color: var(--color-stroke);
   transition-property: color, text-decoration-color;
   transition-duration: var(--transition-duration);
 }
 
 a:hover {
   color: inherit;
-  text-decoration-color: currentColor;
+}
+
+p {
+  margin: var(--m) 0;
 }
 
 strong {
   font-weight: 500;
+  color: var(--color-text-primary);
 }
 
 hr {
@@ -113,6 +146,8 @@ h4,
 h5,
 h6 {
   margin: var(--xl) 0 var(--m);
+
+  color: var(--color-text-primary);
 }
 
 h1 {
@@ -141,7 +176,7 @@ input[type="email"] {
   outline: 0;
   font-family: inherit;
   font-size: var(--font-size-xs);
-  color: var(--color-text);
+  color: var(--color-text-primary);
   appearance: none;
   border: 0;
   border-radius: 8px;

@@ -11,10 +11,6 @@
   cursor: wait;
 }
 
-.form {
-  margin-top: var(--m);
-}
-
 .message {
   margin: var(--xs) 0 0;
 }

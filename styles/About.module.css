@@ -1,11 +1,14 @@
+.intro {
+  margin-top: 0;
+
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-snug);
+}
+
 .cover {
   width: 100%;
   height: auto;
   margin: var(--m) 0;
 
-  filter: drop-shadow(0 8px 20px #0002);
-}
-
-.intro {
-  font-size: var(--font-size-m);
+  border-radius: 8px;
 }

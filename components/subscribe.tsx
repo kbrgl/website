@@ -3,7 +3,7 @@ import SingleFieldForm from "./single-field-form";
 import StatusMessage from "./status-message";
 import styles from "./subscribe.module.css";
 
-export default function Subscribe() {
+export default function Subscribe({ className = "" }) {
   const [loading, setLoading] = useState(false);
   const [ok, setOk] = useState(null);
 
@@ -30,12 +30,15 @@ export default function Subscribe() {
   };
 
   return (
-    <div className={`${styles.subscribe} ${loading ? styles.loading : ""}`}>
+    <div
+      className={`${styles.subscribe} ${
+        loading ? styles.loading : ""
+      } ${className}`}
+    >
       <SingleFieldForm
         type="email"
         placeholder="Your email..."
         onSubmit={handleSubmit}
-        className={styles.form}
         action="Sign up"
       />
       {ok !== null ? (

@@ -15,6 +15,7 @@ import Layout from "../../components/layout";
 import Container from "../../components/container";
 
 import styles from "../../styles/Post.module.css";
+import Subscribe from "../../components/subscribe";
 
 export default function Post({
   title,
@@ -64,14 +65,9 @@ export default function Post({
           dangerouslySetInnerHTML={{ __html: html }}
         />
         <div className={styles.footer}>
-          <div className={styles.author}>
-            <img src="/me.png" alt="Me" />
-            <p>
-              Written by Kabir, a sophomore at Berkeley.{" "}
-              <Link href="/#writing">
-                <a>Read&nbsp;more&nbsp;&rarr;</a>
-              </Link>
-            </p>
+          <div className={styles.newsletter}>
+            <p className={styles.blurb}>Get more like this in your inbox.</p>
+            <Subscribe />
           </div>
           <p className={styles.share}>
             <a

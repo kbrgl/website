@@ -70,50 +70,41 @@ function Email() {
 
 function Intro() {
   return (
-    <div>
+    <div className={styles.intro}>
       <Me />
       <p>
-        Hi, I’m Kabir! I’m studying <span className={styles.cs}>CS</span> and{" "}
-        <span className={styles.cogSci}>Cognitive Science</span> at UC Berkeley,
-        serving on the Alumni Leadership Council of the{" "}
+        <strong>Hi, I’m Kabir!</strong> I’m studying computing and cognition at
+        Berkeley, serving on the Alumni Leader&shy;ship Council of the{" "}
         <a
-          style={{ color: "#15489f", textDecorationColor: "currentColor" }}
+          style={{ color: "#15489f" }}
           href="https://www.conradchallenge.org/alumni-leadership-council"
         >
-          Conrad&nbsp;Foundation
+          Conrad Foundation
         </a>
-        , and writing my newsletter,{" "}
-        <a
-          style={{ color: "#382394", textDecorationColor: "currentColor" }}
-          href="https://buttondown.email/kabir"
-        >
+        , and writing my news&shy;letter,{" "}
+        <a style={{ color: "#382394" }} href="https://buttondown.email/kabir">
           Kabir Talks About Stuff
         </a>
         .
       </p>
       <p>
-        You can email me at <Email /> or follow me on{" "}
-        <a
-          style={{ color: "#146ba1", textDecorationColor: "currentColor" }}
-          href="https://twitter.com/KabirGoel"
-        >
+        You can email me at &nbsp;
+        <Email /> or follow me on{" "}
+        <a style={{ color: "#146ba1" }} href="https://twitter.com/KabirGoel">
           Twitter
         </a>
         ,{" "}
         <a
-          style={{ color: "#118339", textDecorationColor: "currentColor" }}
+          style={{ color: "#118339" }}
           href="https://open.spotify.com/user/12181834510?si=bmVw93WRQrOy0m0wBwXbAw"
         >
           Spotify
         </a>
         , or{" "}
-        <a
-          style={{ color: "#033175", textDecorationColor: "currentColor" }}
-          href="https://github.com/kbrgl"
-        >
+        <a style={{ color: "#033175" }} href="https://github.com/kbrgl">
           GitHub
         </a>
-        !
+        .
       </p>
     </div>
   );
@@ -128,7 +119,7 @@ function Newsletter() {
       height={108}
       width={108}
       plain
-      footer={<Subscribe />}
+      footer={<Subscribe className={styles.subscribe} />}
     >
       <p className={styles.text}>
         <strong>Get my writing in your inbox.</strong> I write about the little
@@ -166,7 +157,7 @@ type WritingProps = {
 function Writing({ posts }: WritingProps) {
   return (
     <div>
-      <h2 id="writing">Writing</h2>
+      <h2 id="writing">Posts</h2>
       <Newsletter />
       <ul className={styles.posts}>
         {posts
