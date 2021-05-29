@@ -14,7 +14,7 @@ export default function About() {
             Conrad&nbsp;Foundation
           </a>{" "}
           and write a weekly newsletter called{" "}
-          <a href="https://kabirgoel.substack.com">
+          <a href="https://buttondown.email/kabir">
             Kabir&nbsp;Talks&nbsp;About&nbsp;Stuff
           </a>
           .
