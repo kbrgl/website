@@ -2,6 +2,12 @@
   overflow: hidden;
 }
 
+.card a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
+  text-decoration-color: var(--color-text-tertiary);
+}
+
 .metadata {
   overflow: hidden;
 }
