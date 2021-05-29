@@ -67,7 +67,7 @@ export default function Post({
           <div className={styles.author}>
             <img src="/me.png" alt="Me" />
             <p>
-              Written by Kabir Goel, a sophomore at Berkeley.{" "}
+              Written by Kabir, a sophomore at Berkeley.{" "}
               <Link href="/#writing">
                 <a>Read&nbsp;more&nbsp;&rarr;</a>
               </Link>
