@@ -1,8 +1,6 @@
 .footer {
   padding: var(--xxs) 0;
 
-  color: var(--color-text-secondary);
-  background: var(--color-wash);
-  border-top: 1px solid var(--color-stroke);
+  color: var(--color-text-tertiary);
   font-size: var(--font-size-xs);
 }
