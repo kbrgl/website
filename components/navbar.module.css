@@ -33,6 +33,7 @@
 
 .name a {
   font-weight: 600;
+  color: var(--color-text);
 }
 
 .list {
@@ -50,6 +51,7 @@
 
 .list a {
   margin-left: var(--s);
+
   transition: color var(--transition-duration);
 }
 
