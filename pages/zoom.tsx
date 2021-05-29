@@ -1,16 +1,15 @@
 import { useState } from "react";
 import Container from "../components/container";
 import Layout from "../components/layout";
+import StatusMessage from "../components/status-message";
+import SingleFieldForm from "../components/single-field-form";
 
 import styles from "../styles/Zoom.module.css";
 
 export default function Zoom() {
-  const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
+  const handleSubmit = async (password) => {
     let json;
     try {
       const res = await fetch("/api/zoom", {
@@ -37,18 +36,20 @@ export default function Zoom() {
       <Container>
         <div className={styles.wrapper}>
           <h2>Kabir’s Zoom Room</h2>
-          <form onSubmit={handleSubmit} className={styles.form}>
-            <input
-              value={password}
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-              type="password"
-              placeholder="Enter the magic word..."
+          <SingleFieldForm
+            onSubmit={handleSubmit}
+            className={styles.form}
+            type="password"
+            placeholder="Enter the magic word..."
+            action="Join Room"
+          />
+          {message !== "" ? (
+            <StatusMessage
+              className={styles.message}
+              ok={false}
+              message={message}
             />
-            <button type="submit">Join Room</button>
-          </form>
-          {message !== "" ? <p className={styles.message}>{message}</p> : null}
+          ) : null}
         </div>
       </Container>
     </Layout>

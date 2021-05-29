@@ -18,46 +18,6 @@
   margin-bottom: 0;
 }
 
-.form {
-  display: flex;
-  align-items: center;
-}
-
-.form button,
-.form input {
-  width: auto;
-}
-
-.form button {
-  align-self: stretch;
-  margin: 0;
-}
-
-.form input {
-  flex: 1;
-  margin: 0;
-  margin-right: var(--s);
-}
-
-@media screen and (max-width: 600px) {
-  .form {
-    flex-direction: column;
-  }
-
-  .form input {
-    align-self: stretch;
-    margin: 0;
-    margin-bottom: var(--s);
-  }
-
-  .form button {
-    align-self: flex-start;
-
-    height: 50px;
-  }
-}
-
 .message {
-  font-size: var(--font-size-xxs);
-  color: #e84b53;
+  margin: var(--xs) 0 0;
 }
