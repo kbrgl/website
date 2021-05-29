@@ -25,6 +25,12 @@
   padding-left: 0;
 }
 
+@media screen and (max-width: 600px) {
+  .name {
+    border-right: 0;
+  }
+}
+
 .name a {
   font-weight: 600;
 }
