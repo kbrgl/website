@@ -105,8 +105,19 @@
 }
 
 /* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+.content :global(.footnotes) li {
+  margin-bottom: var(--xs);
+}
+
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+.content :global(.footnotes) li:last-of-type {
+  margin-bottom: 0;
+}
+
+/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
 .content :global(.footnote-backref) {
-  margin-left: var(--xxs);
+  margin-left: auto;
+  padding-left: var(--xs);
 
   text-decoration: none;
 }
