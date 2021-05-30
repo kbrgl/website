@@ -1,6 +1,6 @@
 .navbar {
-  background: var(--color-wash);
-  border-bottom: 1px solid var(--color-stroke);
+  border-top: 5px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-stroke);
 }
 
 .navbar a {
@@ -51,8 +51,6 @@
 
 .list a {
   margin-left: var(--s);
-
-  transition: color var(--transition-duration);
 }
 
 .list a:first-child {
