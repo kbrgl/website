@@ -117,6 +117,10 @@ a:hover {
   color: inherit;
 }
 
+p a:hover {
+  color: var(--color-accent);
+}
+
 p {
   margin: var(--m) 0;
 }
@@ -131,7 +135,7 @@ hr {
   margin: var(--m) 0;
 
   border-style: none;
-  border-top: 2px solid var(--color-stroke);
+  border-top: 1px solid var(--color-stroke);
 }
 
 * {
