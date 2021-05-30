@@ -8,6 +8,10 @@
   text-decoration-color: var(--color-text-tertiary);
 }
 
+.card a:hover {
+  color: inherit;
+}
+
 .metadata {
   overflow: hidden;
 }
