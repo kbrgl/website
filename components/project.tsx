@@ -15,7 +15,7 @@ export default function Project({ project }) {
             width={175}
           />
           <p>
-            <span className={styles.name}>{name}</span>
+            <strong className={styles.name}>{name}</strong>
             <span className={styles.description}>{description}</span>
           </p>
         </div>
