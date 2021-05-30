@@ -5,6 +5,10 @@
   line-height: var(--line-height-snug);
 }
 
+.intro span {
+  color: var(--color-text-tertiary);
+}
+
 .cover {
   width: 100%;
   height: auto;

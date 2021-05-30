@@ -7,8 +7,9 @@ export default function About() {
     <Layout>
       <Container>
         <h1 className={styles.intro}>
-          Kabir is a sophomore studying CS and Cognitive Science at
-          UC&nbsp;Berkeley.
+          Kabir is a sophomore studying CS&nbsp;
+          <span>⌨</span> and Cognitive Science&nbsp;
+          <span>✽</span> at UC&nbsp;Berkeley.
         </h1>
         <p>
           In his free time, he serves on the
