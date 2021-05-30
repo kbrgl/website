@@ -68,10 +68,10 @@
 
 @media screen and (max-width: 600px) {
   :root {
-    --xxl: 56px;
-    --xl: 36px;
-    --l: 28px;
-    --m: 18px;
+    --xxl: 48px;
+    --xl: 32px;
+    --l: 24px;
+    --m: 16px;
     --s: 12px;
     --xs: 8px;
     --xxs: 4px;
@@ -135,7 +135,7 @@ hr {
   margin: var(--m) 0;
 
   border-style: none;
-  border-top: 1px solid var(--color-stroke);
+  border-top: 1px dashed var(--color-stroke);
 }
 
 * {

@@ -11,7 +11,7 @@
   margin: var(--xs) 0;
 
   line-height: var(--line-height-tight);
-  font-size: var(--font-size-xxl);
+  font-size: var(--font-size-xl);
   font-weight: 600;
 }
 
@@ -19,7 +19,7 @@
   margin: 0;
 
   line-height: var(--line-height-snug);
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-m);
   font-weight: 400;
   color: var(--color-text-secondary);
 }
@@ -27,12 +27,6 @@
 .content {
   color: var(--color-text);
   line-height: var(--line-height-normal);
-}
-
-.content a {
-  text-decoration-color: var(--color-stroke);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 2px;
 }
 
 .content h1,
@@ -58,25 +52,33 @@
   margin-top: calc(-1 * var(--xs));
   padding-bottom: var(--xs);
 
-  text-align: center;
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-xxs);
   color: var(--color-text-tertiary);
 }
 
 .content img {
   margin: var(--m) auto;
-  transform: translateX(-5vw);
 }
 
 .content figure img {
-  width: calc(100% + 10vw);
+  width: 100%;
 }
 
-@media screen and (max-width: 800px) {
-  .content figure img {
-    width: 100%;
-    transform: translateX(0);
-  }
+.content ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.content ul li {
+  display: flex;
+  align-items: baseline;
+}
+
+.content ul li::before {
+  content: "–";
+  margin-right: var(--xs);
+
+  font-weight: 500;
 }
 
 .content ol {
@@ -130,12 +132,14 @@
 }
 
 .footer {
+  padding: var(--xxl) 0 var(--m);
+
   font-size: var(--font-size-xs);
   border-top: 1px dashed var(--color-stroke);
 }
 
 .newsletter {
-  margin: var(--xxl) 0 var(--m);
+  margin: 0 0 var(--m);
 }
 
 .blurb {
@@ -146,7 +150,7 @@
 }
 
 .share {
-  margin-top: var(--xxs);
+  margin: var(--xxs) 0 0;
 
   color: var(--color-text-secondary);
 }
