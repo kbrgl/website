@@ -19,11 +19,10 @@ export default function Navbar() {
             <Link href="/portfolio">
               <a>Portfolio</a>
             </Link>
-            <a href="mailto:kabirgoel.kg@gmail.com">Email</a>
             <a href="https://www.notion.so/kabirgoel/2b3224f21629468580551a14edae4616?v=5a2db9f0bb944564ae019709de328801">
-              Playlist
+              Playlist &#x2197;
             </a>
-            <a href="https://buttondown.email/kabir">Newsletter</a>
+            <a href="https://buttondown.email/kabir">Newsletter &#x2197;</a>
           </div>
         </div>
       </Container>
