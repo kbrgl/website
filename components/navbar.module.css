@@ -38,14 +38,16 @@
 
 .list {
   flex: 1;
-  color: var(--color-text-secondary);
+  overflow: auto;
   padding: var(--s) var(--m);
+
+  color: var(--color-text-secondary);
 }
 
 @media screen and (max-width: 600px) {
   .list {
     padding-top: 0;
-    padding-left: 0;
+    margin: 0 calc(-1 * var(--m));
   }
 }
 
