@@ -40,6 +40,7 @@
   flex: 1;
   overflow: auto;
   padding: var(--s) var(--m);
+  white-space: nowrap;
 
   color: var(--color-text-secondary);
 }
