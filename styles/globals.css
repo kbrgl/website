@@ -1,7 +1,7 @@
 :root {
   /* Standard interface colors */
   --color-accent: #382394;
-  --color-wash: #f4f4f4;
+  --color-wash: #f6f6f6;
   --color-stroke: #eee;
 
   /* Interface text */
@@ -125,6 +125,21 @@ p {
   margin: var(--m) 0;
 }
 
+ul {
+  padding-left: 1em;
+  list-style-type: none;
+}
+
+ul li {
+  margin: var(--xs) 0;
+}
+
+ul li::before {
+  content: "–";
+  margin-left: -1em;
+  float: left;
+}
+
 strong {
   font-weight: 500;
   color: var(--color-text-primary);
@@ -151,11 +166,12 @@ h5,
 h6 {
   margin: var(--xl) 0 var(--m);
 
+  line-height: var(--line-height-snug);
   color: var(--color-text-primary);
+  font-size: var(--font-size-l);
 }
 
 h1 {
-  line-height: var(--line-height-tight);
   font-size: var(--font-size-xxl);
 }
 
