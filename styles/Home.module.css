@@ -45,9 +45,7 @@
 
 .posts {
   margin: var(--m) 0 0;
-  padding: 0;
   overflow: hidden;
-  list-style-type: none;
 
   border: 1px solid var(--color-stroke);
   border-radius: 8px;

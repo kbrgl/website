@@ -135,7 +135,7 @@ type PostProps = {
 };
 function Post({ post }: PostProps) {
   return (
-    <li className={styles.post}>
+    <div className={styles.post}>
       <Link href={`/p/${post.slug}`}>
         <a>
           <div className={styles.meta}>
@@ -147,7 +147,7 @@ function Post({ post }: PostProps) {
           <p className={styles.subtitle}>{post.subtitle}</p>
         </a>
       </Link>
-    </li>
+    </div>
   );
 }
 
@@ -156,10 +156,10 @@ type WritingProps = {
 };
 function Writing({ posts }: WritingProps) {
   return (
-    <div>
+    <section>
       <h2 id="writing">Posts</h2>
       <Newsletter />
-      <ul className={styles.posts}>
+      <div className={styles.posts}>
         {posts
           .map((post) => ({
             ...post,
@@ -169,8 +169,8 @@ function Writing({ posts }: WritingProps) {
           .map((post: Post) => (
             <Post key={post.slug} post={post} />
           ))}
-      </ul>
-    </div>
+      </div>
+    </section>
   );
 }
 
