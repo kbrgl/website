@@ -5,12 +5,12 @@
   border-radius: 8px;
 }
 
-.list li {
+.list .item {
   padding: var(--m);
   border-top: 1px solid var(--color-stroke);
 }
 
-.list li:first-child {
+.list .item:first-child {
   border-top: 0;
 }
 

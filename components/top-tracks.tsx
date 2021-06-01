@@ -7,21 +7,21 @@ export default function TopTracks() {
 
   if (data) {
     return (
-      <ul className={styles.list}>
+      <div className={styles.list}>
         {data.tracks.map((track) => (
-          <li>
+          <div className={styles.item}>
             <a className={styles.title} href={track.songUrl}>
               {track.title}
             </a>
             <p className={styles.artist}>{track.artist}</p>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     );
   }
   return (
-    <ul className={styles.list}>
-      <li>Loading...</li>
-    </ul>
+    <div className={styles.list}>
+      <div className={styles.item}>Loading...</div>
+    </div>
   );
 }
