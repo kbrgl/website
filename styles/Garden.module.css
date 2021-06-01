@@ -99,21 +99,22 @@
 .patch h3::before {
   content: counter(patch);
 
-  flex-shrink: 0;
+  --dimen: var(--m);
   display: flex;
-  height: calc(1.5em - 3px);
-  padding-bottom: 3px;
-  width: 1.5em;
+  padding-bottom: 2px;
+  height: calc(var(--dimen) - 2px);
+  width: var(--dimen);
   margin-bottom: var(--xxs);
-  border-radius: 50%;
   justify-content: center;
+  align-items: center;
 
+  border-radius: 50%;
+  font-size: var(--font-size-xxs);
   background: var(--accent);
   color: #fff;
 }
 
 .patch h3::after {
-  align-self: flex-start;
   content: "\00a0\2197";
 }
 

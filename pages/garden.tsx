@@ -15,9 +15,11 @@ function opacity(hex, alpha) {
   return `rgba(${r}, ${g}, ${b}, ${alpha})`;
 }
 
-function Patch({ accent, title, description, link = "#", className = "" }) {
+function Patch({ accent, title, description, link, className = "" }) {
   return (
     <a
+      target="_blank"
+      rel="noreferrer"
       href={link}
       className={`${styles.patch} ${className}`}
       style={{
@@ -36,7 +38,7 @@ export default function Garden() {
   return (
     <Layout>
       <Container>
-        <h1 className={styles.title}>Digital Garden</h1>
+        <h1 className={styles.title}>Digital Garden 🏡</h1>
         <h2 className={styles.subtitle}>
           Welcome to my digital garden, a personal wiki where I collect notes
           and links.
@@ -65,16 +67,19 @@ export default function Garden() {
           <p className={styles.description}>Currently thinking about...</p>
           <Patches>
             <Patch
+              link="https://www.notion.so/kabirgoel/How-people-think-de3048dc355e47e1965885b681a498cb"
               accent="#2664a7"
               title="How people think"
               description="Mechanisms of thought on a biological, psychological, and social level."
             />
             <Patch
+              link="https://www.notion.so/kabirgoel/Design-on-the-web-e205809578344f559f1b4c987288651a"
               accent="#087720"
               title="Design on the web"
               description="Design and typography on the web, and methods that make life easier."
             />
             <Patch
+              link="https://www.notion.so/kabirgoel/Free-speech-2aeba8c1f12c40e4b18e093a81ed6ddb"
               accent="#bb2b4a"
               title="Free speech"
               description="Censorship, the Internet, and the things that make and break it."
@@ -90,6 +95,7 @@ export default function Garden() {
               description="A Notion board with everything I’m reading, listening to, and watching."
             />
             <Patch
+              link="https://www.notion.so/kabirgoel/Pixel-Art-594611d3b3f34aa3b2321a23f5734cf1"
               accent="#00a6a6"
               title="Pixel art"
               description="Visual work using just pixels."
