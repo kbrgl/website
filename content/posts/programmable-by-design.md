@@ -2,6 +2,7 @@
 title: "Opinionated by Default,\nProgrammable by Design"
 subtitle: Why don’t more tools leverage programming experience?
 date: 2021-06-02
+preview: https://kabirgoel.com/static/programmable-by-design.jpg
 ---
 
 <figure>
