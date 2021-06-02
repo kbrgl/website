@@ -1,3 +1,5 @@
+/* stylelint-disable selector-pseudo-class-no-unknown */
+
 .header {
   margin-bottom: var(--xl);
 }
@@ -13,6 +15,7 @@
   line-height: var(--line-height-tight);
   font-size: var(--font-size-xl);
   font-weight: 600;
+  white-space: pre-line;
 }
 
 .subtitle {
@@ -76,7 +79,7 @@
 }
 
 .content ol li p {
-  margin: var(--xxs) 0;
+  margin: var(--xs) 0;
 }
 
 .content ol li::before {
@@ -84,20 +87,31 @@
   margin-right: var(--xs);
   float: left;
 
-  font-weight: 500;
+  font-weight: 600;
 }
 
-/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+.content :global(.footnotes) {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-xs);
+}
+
 .content :global(.footnotes) li {
   margin-bottom: var(--xs);
 }
 
-/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
 .content :global(.footnotes) li:last-of-type {
   margin-bottom: 0;
 }
 
-/* stylelint-disable-next-line selector-pseudo-class-no-unknown */
+.content sup[id^="fnref"] {
+  line-height: 0;
+}
+
+.content :global(.footnote-ref) {
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
 .content :global(.footnote-backref) {
   margin-left: auto;
   padding-left: var(--xs);
