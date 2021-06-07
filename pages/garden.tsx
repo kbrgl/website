@@ -67,19 +67,19 @@ export default function Garden() {
           <p className={styles.description}>Currently thinking about...</p>
           <Patches>
             <Patch
-              link="https://www.notion.so/kabirgoel/How-people-think-de3048dc355e47e1965885b681a498cb"
+              link="https://www.notion.so/kabirgoel/fb693c34be3b42ce813e8cf8ff84d6f7?v=382cc5989e894a7c825ae694001d54f3"
               accent="#2664a7"
               title="How people think"
               description="Mechanisms of thought on a biological, psychological, and social level."
             />
             <Patch
-              link="https://www.notion.so/kabirgoel/Design-on-the-web-e205809578344f559f1b4c987288651a"
+              link="https://www.notion.so/kabirgoel/fb693c34be3b42ce813e8cf8ff84d6f7?v=5fc36f2c52de489c8866d5c5de15fea0"
               accent="#087720"
               title="Design on the web"
               description="Design and typography on the web, and methods that make life easier."
             />
             <Patch
-              link="https://www.notion.so/kabirgoel/Free-speech-2aeba8c1f12c40e4b18e093a81ed6ddb"
+              link="https://www.notion.so/kabirgoel/fb693c34be3b42ce813e8cf8ff84d6f7?v=fc022ab9d23648f69a3d8eb283b275dc"
               accent="#bb2b4a"
               title="Free speech"
               description="Censorship, the Internet, and the things that make and break it."
