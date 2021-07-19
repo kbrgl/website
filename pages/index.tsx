@@ -20,6 +20,7 @@ type Frontmatter = {
   title: string;
   subtitle: string;
   hidden?: string;
+  preview?: string;
 };
 
 type Post = Omit<Frontmatter, "date"> & { dateString: string };
@@ -73,7 +74,7 @@ function Intro() {
     <div className={styles.intro}>
       <Me />
       <p>
-        <strong>Hi, I’m Kabir!</strong> I’m studying computing and cognition at
+        <strong>Hi, I’m Kabir!</strong> I’m studying computing and design at
         Berkeley, serving on the Alumni Leader&shy;ship Council of the{" "}
         <a
           style={{ color: "#15489f" }}
@@ -138,13 +139,15 @@ function Post({ post }: PostProps) {
     <div className={styles.post}>
       <Link href={`/p/${post.slug}`}>
         <a>
-          <div className={styles.meta}>
-            <span className={styles.title}>{post.title}</span>
-            <span className={styles.date}>
-              &nbsp;&middot;&nbsp;{post.dateString}
-            </span>
+          <div className={styles.details}>
+            <div className={styles.meta}>
+              <span className={styles.title}>{post.title}</span>
+              <span className={styles.date}>
+                &nbsp;&middot;&nbsp;{post.dateString}
+              </span>
+            </div>
+            <p className={styles.subtitle}>{post.subtitle}</p>
           </div>
-          <p className={styles.subtitle}>{post.subtitle}</p>
         </a>
       </Link>
     </div>
