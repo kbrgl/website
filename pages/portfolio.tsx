@@ -5,6 +5,13 @@ import styles from "../styles/Portfolio.module.css";
 
 const products = [
   {
+    name: "Lipwig",
+    description:
+      "Provides an email address for your Discord or Slack community, which you can use to sign up for newsletters, forward emails from your support team’s inbox, and more.",
+    link: "https://lipwig.email",
+    image: "lipwig.png",
+  },
+  {
     name: "Unslant",
     description:
       "Browser extension that surfaces contrasting takes on political news as you read. Available for Chrome.",
