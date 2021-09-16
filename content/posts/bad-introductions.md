@@ -3,6 +3,7 @@ title: Why are we so bad at introducing ourselves?
 subtitle: An essay about the gaps in our introductions and how to do better.
 date: 2020-11-09
 canonical: https://kabirgoel.substack.com/p/why-are-we-so-bad-at-introducing
+preview: https://kabirgoel.com/static/bad-introductions.jpeg
 ---
 
 <figure>

@@ -61,24 +61,37 @@
 
 .post a {
   padding: var(--m);
-  display: block;
+  display: flex;
+  align-items: stretch;
+  flex-direction: row;
 
   text-decoration: none;
   border-bottom: 1px solid var(--color-stroke);
+}
+
+@media screen and (max-width: 600px) {
+  .post a {
+    flex-direction: column;
+  }
 }
 
 .post:last-child a {
   border-bottom: 0;
 }
 
+.post .details {
+  flex: 1;
+}
+
 .post .meta {
-  margin-bottom: calc(var(--xxs) / 2);
+  margin-bottom: var(--xxs);
   line-height: var(--line-height-snug);
 }
 
 .post .title {
   font-size: var(--font-size-m);
   font-weight: 500;
+  line-height: var(--line-height-tight);
 }
 
 .post .date {
@@ -92,6 +105,7 @@
 
   font-size: var(--font-size-s);
   color: var(--color-text-secondary);
+  line-height: var(--line-height-snug);
 }
 
 .music {

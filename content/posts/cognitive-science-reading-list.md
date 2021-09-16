@@ -2,6 +2,7 @@
 title: Why I Chose Cognitive Science
 subtitle: And a cognitive science reading list.
 date: 2021-03-14
+preview: https://kabirgoel.com/static/why-i-chose-cognitive-science.svg
 ---
 
 <figure>

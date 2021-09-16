@@ -2,6 +2,7 @@
 title: The White House in Your Brain
 subtitle: “A most judicious choice, sire.”
 date: 2021-01-06
+preview: https://kabirgoel.com/static/the-white-house-in-your-brain/intro.jpeg
 ---
 
 <figure>
