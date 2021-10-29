@@ -11,7 +11,7 @@ export default function Me() {
         width={120}
         priority
         quality={100}
-        src="/me.png"
+        src="/me.jpg"
         alt="Me"
       />
     </div>
