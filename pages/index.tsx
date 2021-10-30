@@ -74,15 +74,19 @@ function Intro() {
     <div className={styles.intro}>
       <Me />
       <p>
-        <strong>Hi, I’m Kabir!</strong> I’m studying computing and design at
-        Berkeley, serving on the Alumni Leader&shy;ship Council of the{" "}
+        <strong>Hi, I’m Kabir!</strong> I’m a sophomore at Berkeley designing
+        for impact at{" "}
+        <a style={{ color: "#3d78bb" }} href="https://calblueprint.org">
+          Blueprint
+        </a>
+        , serving on the Alumni Leader&shy;ship Council of the{" "}
         <a
           style={{ color: "#15489f" }}
           href="https://www.conradchallenge.org/alumni-leadership-council"
         >
           Conrad Foundation
         </a>
-        , and writing my news&shy;letter,{" "}
+        , and writing{" "}
         <a style={{ color: "#382394" }} href="https://buttondown.email/kabir">
           Kabir Talks About Stuff
         </a>
@@ -90,7 +94,7 @@ function Intro() {
       </p>
       <p>
         You can email me at &nbsp;
-        <Email /> or follow me on{" "}
+        <Email /> or find me on{" "}
         <a style={{ color: "#146ba1" }} href="https://twitter.com/KabirGoel">
           Twitter
         </a>

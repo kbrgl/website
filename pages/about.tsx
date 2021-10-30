@@ -36,8 +36,11 @@ export default function About() {
           at UC&nbsp;Berkeley.
         </h1>
         <p>
-          In his free time, he serves on the
-          Alumni&nbsp;Leader&shy;ship&nbsp;Council of the{" "}
+          He designs for social impact at{" "}
+          <a style={{ color: "#3d78bb" }} href="https://calblueprint.org">
+            Blueprint
+          </a>
+          , serves on the Alumni&nbsp;Leader&shy;ship&nbsp;Council of the{" "}
           <a
             style={{ color: "#15489f" }}
             href="https://www.conradchallenge.org/alumni-leadership-council"
