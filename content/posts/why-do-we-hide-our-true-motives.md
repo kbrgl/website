@@ -3,6 +3,7 @@ title: Why do we hide our true motives?
 subtitle: My highlights from this week's reading, The Elephant in the Brain.
 date: 2020-12-21
 preview: https://kabirgoel.com/static/motives-ape.jpeg
+hidden: true
 ---
 
 _Welcome to the seventh issue of Great Stuff! There was no newsletter last week because I had finals, but I’m back to posting now._

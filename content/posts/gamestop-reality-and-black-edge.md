@@ -3,6 +3,7 @@ title: GameStop, Reality, and Black Edge
 subtitle: A Great Stuff short.
 date: 2021-02-04
 preview: https://kabirgoel.com/static/gamestop-david.jpeg
+hidden: true
 ---
 
 <figure>

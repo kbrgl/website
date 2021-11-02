@@ -3,6 +3,7 @@ title: Invisibility & Impulses
 subtitle: An essay on the hidden world of design.
 date: 2020-11-23
 canonical: https://kabirgoel.substack.com/p/invisibility-and-impulses
+hidden: true
 ---
 
 <div style="color: #888;">Note as of Jun 9, 2021: The idea behind this essay is pretty compelling, but the writing doesn’t make the argument clear. I might rewrite this at some point.</div>
