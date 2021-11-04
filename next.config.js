@@ -6,6 +6,11 @@ module.exports = {
         destination: "/p/:slug",
         permanent: true,
       },
+      {
+        source: "/about",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 };

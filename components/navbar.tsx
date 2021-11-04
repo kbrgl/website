@@ -13,9 +13,6 @@ export default function Navbar() {
             </Link>
           </div>
           <div className={styles.list}>
-            <Link href="/about">
-              <a>About</a>
-            </Link>
             <Link href="/portfolio">
               <a>Portfolio</a>
             </Link>
