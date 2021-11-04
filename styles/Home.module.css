@@ -3,6 +3,17 @@
   hyphens: manual;
 }
 
+.blurb {
+  margin-top: 0;
+
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-snug);
+}
+
+.intro span {
+  color: var(--color-text-tertiary);
+}
+
 .email {
   padding: 0 var(--xxs);
   line-height: var(--line-height-loose);
@@ -33,6 +44,10 @@
 
 .email .icon:hover {
   stroke: currentColor;
+}
+
+.writing {
+  margin: var(--xl) 0 0;
 }
 
 .newsletter .text {
