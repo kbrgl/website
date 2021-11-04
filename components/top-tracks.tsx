@@ -9,7 +9,7 @@ export default function TopTracks() {
     return (
       <div className={styles.list}>
         {data.tracks.map((track) => (
-          <div className={styles.item}>
+          <div className={styles.item} key={track.songUrl}>
             <a className={styles.title} href={track.songUrl}>
               {track.title}
             </a>
