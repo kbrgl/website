@@ -90,11 +90,9 @@ export default function Portfolio() {
     <Layout>
       <Container>
         <h1 className={styles.title}>Portfolio</h1>
-        <p className={styles.description}>
-          This is a small portion of the work that I’ve done—it only includes
-          things polished enough to include on my website. If you’re interested
-          in everything, you might find more on{" "}
-          <a href="https://github.com/kbrgl">my GitHub profile</a>!
+        <p>
+          These are most of the things I’ve built, but not all of them! You
+          might find more on my <a href="">GitHub profile</a>.
         </p>
         <section>
           <h2 className={styles.subheading}>Products</h2>
@@ -112,7 +110,7 @@ export default function Portfolio() {
             ))}
           </div>
         </section>
-        <p className={styles.ending}>That’s all, folks—at least for now!</p>
+        <p className={styles.ending}>That’s all—at least for now.</p>
       </Container>
     </Layout>
   );

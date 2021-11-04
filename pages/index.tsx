@@ -193,6 +193,8 @@ function Writing({ posts }: WritingProps) {
   return (
     <section className={styles.writing}>
       <Newsletter />
+
+      <h2 id="writing">Posts</h2>
       <div className={styles.posts}>
         {posts
           .map((post) => ({
