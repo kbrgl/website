@@ -1,234 +1,28 @@
-:root {
-  /* Standard interface colors */
-  --color-accent: #382394;
-  --color-wash: #f6f6f6;
-  --color-stroke: #eee;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  /* Interface text */
-  --color-text-tertiary: #888;
-  --color-text-secondary: #666;
-  --color-text-primary: #212121;
+@layer components {
+  .btn {
+    @apply inline-block bg-accent text-white font-bold py-3 px-8 rounded;
+  }
 
-  /* All other text */
-  --color-text: #444;
-
-  /* States */
-  --color-success: #238828;
-  --color-error: #bb4123;
-
-  /* Margin, padding, or anything else that needs a size */
-  --xxl: 60px;
-  --xl: 40px;
-  --l: 30px;
-  --m: 20px;
-  --s: 15px;
-  --xs: 10px;
-  --xxs: 5px;
-
-  /* Large text */
-  --line-height-tight: 1.25;
-
-  /* Medium-sized text */
-  --line-height-snug: 1.4;
-
-  /* Body text */
-  --line-height-loose: 1.75;
-
-  /* Everything else */
-  --line-height-normal: 1.6;
-
-  /* Ensure that transitions are consistently timed */
-  --transition-duration: 150ms;
-  --font-family-mono: "JetBrains Mono", consolas, menlo, monaco,
-    "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter",
-    "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono",
-    "Nimbus Mono L", "Courier New", courier, monospace;
-
-  /* Titles */
-  --font-size-xxl: 36px;
-
-  /* Headings */
-  --font-size-xl: 30px;
-
-  /* Subheadings */
-  --font-size-l: 26px;
-
-  /* Body text */
-  --font-size-m: 20px;
-
-  /* Default for all interface elements */
-  --font-size-s: 18px;
-
-  /* Buttons, navbar links, footer content, and so on */
-  --font-size-xs: 16px;
-
-  /* Breadcrumbs, tags, and smallcaps */
-  --font-size-xxs: 14px;
-}
-
-@media screen and (max-width: 600px) {
-  :root {
-    --xxl: 48px;
-    --xl: 32px;
-    --l: 24px;
-    --m: 16px;
-    --s: 12px;
-    --xs: 8px;
-    --xxs: 4px;
-    --font-size-xxl: 28px;
-    --font-size-xl: 24px;
-    --font-size-l: 20px;
-    --font-size-m: 18px;
-    --font-size-s: 17px;
-    --font-size-xs: 16px;
-    --font-size-xxs: 13px;
+  .field {
+    @apply block bg-white p-3 rounded w-full transition-colors border
+      border-gray-200 focus:outline-none focus:border-blue-500
+      focus:ring focus:ring-blue-100 duration-200;
   }
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
 
-  font-size: var(--font-size-s);
-  font-family: neue-haas-unica, system-ui, -apple-system, BlinkMacSystemFont,
-    Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-    Helvetica Neue, sans-serif;
-  text-rendering: optimizeLegibility;
-  line-height: var(--line-height-normal);
-  color: var(--color-text);
-}
-
-main {
-  padding: var(--xl) 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 2px;
-  text-decoration-color: var(--color-stroke);
-  transition-property: color, text-decoration-color;
-  transition-duration: var(--transition-duration);
-}
-
-a:hover {
-  color: inherit;
-}
-
-p a:hover {
-  color: var(--color-accent);
-}
-
-p {
-  margin: var(--m) 0;
-}
-
-ul {
-  padding-left: 1em;
-  list-style-type: none;
-}
-
-ul li {
-  margin: var(--xs) 0;
-}
-
-ul li::before {
-  content: "–";
-  margin-left: -1em;
-  float: left;
-}
-
-strong {
-  font-weight: 500;
-  color: var(--color-text-primary);
-}
-
-hr {
-  height: 0;
-  margin: var(--m) 0;
-
-  border-style: none;
-  border-top: 1px dashed var(--color-stroke);
-}
-
-* {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin: var(--xl) 0 var(--m);
-
-  line-height: var(--line-height-snug);
-  color: var(--color-text-primary);
-  font-size: var(--font-size-l);
-}
-
-h1 {
-  font-size: var(--font-size-xxl);
-}
-
-h2 {
-  font-size: var(--font-size-xl);
-}
-
-h3,
-h4,
-h5,
-h6 {
-  font-size: var(--font-size-l);
-}
-
-input[type="text"],
-input[type="password"],
-input[type="number"],
-input[type="email"] {
-  padding: var(--s);
-  width: 100%;
-
-  outline: 0;
-  font-family: inherit;
-  font-size: var(--font-size-xs);
-  color: var(--color-text-primary);
-  appearance: none;
-  border: 0;
-  border-radius: 8px;
-  box-shadow: inset 0 0 0 1px var(--color-stroke);
-  transition: box-shadow var(--transition-duration);
-}
-
-input[type="text"]::placeholder,
-input[type="password"]::placeholder,
-input[type="number"]::placeholder,
-input[type="email"]::placeholder {
-  color: var(--color-text-secondary);
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="number"]:focus,
-input[type="email"]:focus {
-  box-shadow: inset 0 0 0 2px var(--color-accent);
-}
-
-button {
-  padding: var(--s) var(--l);
-
-  font-weight: 500;
-  font-size: var(--font-size-xs);
-  cursor: pointer;
-  border-radius: 8px;
-  background-color: var(--color-accent);
-  border: 0;
-  color: #fff;
-  outline: 0;
-  appearance: none;
-  font-family: inherit;
+  html,
+  body {
+    @apply transition-colors antialiased;
+    background-color: #f9fafc;
+    font-size: 16px;
+  }
 }

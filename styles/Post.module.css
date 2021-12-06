@@ -1,34 +1,13 @@
-/* stylelint-disable selector-pseudo-class-no-unknown */
-
-.header {
-  margin-bottom: var(--xl);
-}
-
-.meta {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-tertiary);
-}
-
-.title {
-  margin: var(--xs) 0;
-
-  line-height: var(--line-height-tight);
-  font-size: var(--font-size-xl);
-  font-weight: 600;
-  white-space: pre-line;
-}
-
-.subtitle {
-  margin: 0;
-
-  font-size: var(--font-size-m);
-  font-weight: 400;
-  color: var(--color-text-secondary);
-}
-
 .content {
-  color: var(--color-text);
-  line-height: var(--line-height-normal);
+  @apply leading-normal mt-10;
+}
+
+.content p {
+  @apply my-5;
+}
+
+.content a {
+  @apply text-accent;
 }
 
 .content h1,
@@ -37,39 +16,35 @@
 .content h4,
 .content h5,
 .content h6 {
-  margin: var(--xl) 0 calc(-1 * var(--xxs));
-
-  color: var(--color-text);
-  font-weight: 600;
-  font-size: var(--font-size-l);
-  line-height: var(--line-height-tight);
+  @apply mt-10 font-bold text-lg leading-tight;
 }
 
 .content figure {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  @apply w-full m-0 p-0;
 }
 
 .content figcaption {
-  margin-top: calc(-1 * var(--xs));
-  padding-bottom: var(--xs);
-
-  font-size: var(--font-size-xxs);
-  color: var(--color-text-tertiary);
+  @apply text-gray-500 text-sm pb-3 mt-3;
 }
 
 .content img {
-  margin: var(--m) auto;
+  @apply mx-auto my-3;
 }
 
 .content figure img {
-  width: 100%;
+  @apply w-full;
+}
+
+.content ul {
+  @apply list-disc list-outside pl-5;
+}
+
+.content ul li {
+  @apply my-2.5;
 }
 
 .content ol {
-  padding-left: 0;
-  list-style-type: none;
+  @apply pl-0 list-none;
 
   counter-reset: list-counter 0;
 }
@@ -79,73 +54,38 @@
 }
 
 .content ol li p {
-  margin: var(--xs) 0;
+  @apply my-1 mx-0;
 }
 
 .content ol li::before {
+  @apply mr-1 font-bold float-left;
   content: counter(list-counter) ".";
-  margin-right: var(--xs);
-  float: left;
-
-  font-weight: 600;
 }
 
 .content :global(.footnotes) {
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-xs);
+  @apply text-gray-500 text-sm;
+}
+
+.content :global(.footnotes) ol {
+  @apply py-5;
 }
 
 .content :global(.footnotes) li {
-  margin-bottom: var(--xs);
+  @apply mb-1;
 }
 
 .content :global(.footnotes) li:last-of-type {
-  margin-bottom: 0;
-}
-
-.content sup[id^="fnref"] {
-  line-height: 0;
+  @apply mb-0;
 }
 
 .content :global(.footnote-ref) {
-  text-decoration: none;
-  color: var(--color-accent);
+  @apply text-accent;
 }
 
 .content :global(.footnote-backref) {
-  margin-left: auto;
-  padding-left: var(--xs);
-
-  text-decoration: none;
+  @apply ml-auto pl-1;
 }
 
 .content blockquote {
-  margin: 0;
-  padding-left: var(--m);
-
-  border-left: var(--xxs) solid var(--color-stroke);
-}
-
-.footer {
-  padding: var(--xxl) 0 var(--m);
-
-  font-size: var(--font-size-xs);
-  border-top: 1px dashed var(--color-stroke);
-}
-
-.newsletter {
-  margin: 0 0 var(--m);
-}
-
-.blurb {
-  margin: 0 0 var(--xxs);
-
-  color: var(--color-text-secondary);
-  font-size: var(--font-size-xxs);
-}
-
-.share {
-  margin: var(--xxs) 0 0;
-
-  color: var(--color-text-secondary);
+  @apply m-0 pl-3 border-l border-l-gray-300 border-l-2;
 }

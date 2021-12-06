@@ -1,7 +1,9 @@
 import Layout from "../components/layout";
 import Container from "../components/container";
 import Project from "../components/project";
-import styles from "../styles/Portfolio.module.css";
+import Header from "../components/header";
+import SectionHeading from "../components/section-heading";
+import Title from "../components/title";
 
 const products = [
   {
@@ -88,29 +90,35 @@ const code = [
 export default function Portfolio() {
   return (
     <Layout>
+      <Header />
       <Container>
-        <h1 className={styles.title}>Portfolio</h1>
-        <p>
+        <div className="pt-10" />
+        <Title>Portfolio</Title>
+        <p className="text-gray-500 mt-5 mb-10">
           These are most of the things I’ve built, but not all of them! You
-          might find more on my <a href="">GitHub profile</a>.
+          might find more on my{" "}
+          <a href="https://github.com/kbrgl">GitHub profile</a>.
         </p>
         <section>
-          <h2 className={styles.subheading}>Products</h2>
-          <div className={styles.projects}>
+          <SectionHeading>Products</SectionHeading>
+          <div className="pt-10" />
+          <div className="space-y-10">
             {products.map((product) => (
               <Project key={product.name} project={product} />
             ))}
           </div>
         </section>
+        <div className="pt-20" />
         <section>
-          <h2 className={styles.subheading}>Code</h2>
-          <div className={styles.projects}>
+          <SectionHeading>Code</SectionHeading>
+          <div className="pt-10" />
+          <div className="space-y-10">
             {code.map((project) => (
               <Project key={project.name} project={project} />
             ))}
           </div>
         </section>
-        <p className={styles.ending}>That’s all—at least for now.</p>
+        <div className="pt-10" />
       </Container>
     </Layout>
   );

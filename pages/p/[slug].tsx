@@ -12,9 +12,11 @@ import calculateReadingTime from "reading-time";
 import formatDate from "../../utils/format-date";
 import Layout from "../../components/layout";
 import Container from "../../components/container";
+import Header from "../../components/header";
+import Subscribe from "../../components/subscribe";
+import Title from "../../components/title";
 
 import styles from "../../styles/Post.module.css";
-import Subscribe from "../../components/subscribe";
 
 export default function Post({
   title,
@@ -44,41 +46,27 @@ export default function Post({
         <meta property="og:type" content="blog" />
         <meta name="twitter:card" content="summary_large_image" />
         {canonical ? <link rel="canonical" href={canonical} /> : null}
-        <style>
-          {`:root {
-            --container-size: 720px;
-          }`}
-        </style>
       </Head>
+      <Header />
       <Container>
-        <div className={styles.header}>
-          <p className={styles.meta}>
+        <div className="mt-10">
+          <p className="text-sm text-gray-500 mb-5">
             {formatDate(new Date(date))} · {readingTime}
           </p>
-          <h1 className={styles.title}>{title}</h1>
-          <h2 className={styles.subtitle}>{subtitle}</h2>
+          <h1 className="text-3xl font-bold mt-3 leading-tight whitespace-pre-line">
+            {title}
+          </h1>
+          <h2 className="text-xl text-gray-500 mt-2 leading-tight">
+            {subtitle}
+          </h2>
         </div>
         <div
           className={styles.content}
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        <div className={styles.footer}>
-          <div className={styles.newsletter}>
-            <p className={styles.blurb}>Get more like this in your inbox.</p>
-            <Subscribe />
-          </div>
-          <p className={styles.share}>
-            <a
-              href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(
-                postLink
-              )}`}
-            >
-              Discuss on Twitter
-            </a>{" "}
-            · <a href="mailto:kabirgoel.kg@gmail.com">Shoot me an email</a>
-          </p>
-        </div>
+
+        <Subscribe />
       </Container>
     </Layout>
   );

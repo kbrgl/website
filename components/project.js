@@ -1,22 +1,21 @@
 import Link from "next/link";
-import styles from "./project.module.css";
 
 export default function Project({ project }) {
   const { name, description, slug, link, image } = project;
 
   return (
     <Link href={link || `/p/${slug}`}>
-      <a className={styles.link}>
-        <div className={styles.project}>
+      <a className="block">
+        <div className="flex border-t border-t-accent">
           <img
-            className={styles.image}
+            className="self-start mr-3"
             src={`/projects/${image}`}
             alt=""
             width={175}
           />
-          <p>
-            <strong className={styles.name}>{name}</strong>
-            <span className={styles.description}>{description}</span>
+          <p className="my-3">
+            <strong className="font-medium">{name}</strong>
+            <span className="ml-1">{description}</span>
           </p>
         </div>
       </a>
