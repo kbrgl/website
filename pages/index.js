@@ -18,10 +18,20 @@ export default function Home({ posts }) {
       <Container>
         <div className="pt-10" />
         <Title>I’m a sophomore studying CS & math at UC Berkeley.</Title>
-        <p className="text-gray-500 mt-7">
-          I design for impact at Blueprint, serve on the Alumni Leader­ship
-          Council of the Conrad Foundation, and write a news­letter
-          descriptively titled Kabir Talks About Stuff.
+        <p className="text-gray-500 mt-7 max-w-prose">
+          I design for impact at{" "}
+          <a className="text-accent" href="https://calblueprint.org">
+            Cal Blueprint
+          </a>
+          , serve on the Alumni Leader­ship Council of the{" "}
+          <a className="text-accent" href="https://conradchallenge.org">
+            Conrad Foundation
+          </a>
+          , and write a news­letter descriptively titled{" "}
+          <a className="text-accent" href="https://buttondown.email/kabir">
+            Kabir&nbsp;Talks&nbsp;About&nbsp;Stuff
+          </a>
+          .
         </p>
         <section className="my-10">
           <SectionHeading>Posts</SectionHeading>
@@ -33,7 +43,7 @@ export default function Home({ posts }) {
               }))
               .sort((a, b) => +b.date - +a.date)
               .map((post) => (
-                <Link href={`/p/${post.slug}`}>
+                <Link href={`/p/${post.slug}`} key={post.slug}>
                   <a className="block" key={post.slug}>
                     <p className="font-medium">{post.title}</p>
                     <p className="text-sm text-gray-500">{post.dateString}</p>
