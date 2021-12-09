@@ -18,10 +18,10 @@ function NavbarLink({ internal = false, href, children }) {
 
 export default function Header() {
   return (
-    <div>
+    <div className="bg-[#f4f7fa]">
       <Container>
         <Link href="/">
-          <a className="flex items-center space-x-3 pt-10 pb-5">
+          <a className="flex items-center space-x-3 py-5">
             <img className="w-14 h-14 rounded-full" src="/me.jpg" alt="" />
             <p className="font-medium text-accent">Kabir Goel</p>
           </a>
