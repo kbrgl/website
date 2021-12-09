@@ -3,8 +3,8 @@ import Container from "../components/container";
 import Layout from "../components/layout";
 import StatusMessage from "../components/status-message";
 import SingleFieldForm from "../components/single-field-form";
-
-import styles from "../styles/Zoom.module.css";
+import Title from "../components/title";
+import Header from "../components/header";
 
 export default function Zoom() {
   const [message, setMessage] = useState("");
@@ -31,24 +31,22 @@ export default function Zoom() {
       setMessage("Wrong password. Please try again.");
     }
   };
+
   return (
     <Layout>
+      <Header />
       <Container>
-        <div className={styles.wrapper}>
-          <h2>Kabir’s Zoom Room</h2>
+        <div className="py-10">
+          <Title>Kabir’s Zoom Room</Title>
+          <div className="pt-5" />
           <SingleFieldForm
             onSubmit={handleSubmit}
-            className={styles.form}
             type="password"
             placeholder="Enter the magic word..."
             action="Join Room"
           />
           {message !== "" ? (
-            <StatusMessage
-              className={styles.message}
-              ok={false}
-              message={message}
-            />
+            <StatusMessage className="mt-2" ok={false} message={message} />
           ) : null}
         </div>
       </Container>
