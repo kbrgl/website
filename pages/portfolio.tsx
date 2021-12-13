@@ -94,15 +94,11 @@ export default function Portfolio() {
       <Container>
         <div className="pt-10" />
         <Title>Portfolio</Title>
-        <p className="text-gray-500 mt-5 mb-10">
-          These are most of the things I’ve built, but not all of them! You
-          might find more on my{" "}
-          <a href="https://github.com/kbrgl">GitHub profile</a>.
-        </p>
+        <div className="pt-10" />
         <section>
           <SectionHeading>Products</SectionHeading>
           <div className="pt-10" />
-          <div className="space-y-10">
+          <div className="space-y-8">
             {products.map((product) => (
               <Project key={product.name} project={product} />
             ))}
@@ -112,7 +108,7 @@ export default function Portfolio() {
         <section>
           <SectionHeading>Code</SectionHeading>
           <div className="pt-10" />
-          <div className="space-y-10">
+          <div className="space-y-8">
             {code.map((project) => (
               <Project key={project.name} project={project} />
             ))}
