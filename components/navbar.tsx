@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "./container";
+import Visualization from "./visualization";
 import styles from "./navbar.module.css";
 
 export default function Navbar() {
@@ -9,7 +10,8 @@ export default function Navbar() {
         <Container>
           <Link href="/">
             <a>
-              <strong>Kabir Goel</strong>, friendly neighborhood Spiderman.
+              <Visualization />
+              <strong>Kabir Goel</strong>, friendly neighborhood Spider-Man.
             </a>
           </Link>
         </Container>

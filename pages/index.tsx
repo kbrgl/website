@@ -9,7 +9,6 @@ import Layout from "../components/layout";
 import Container from "../components/container";
 import styles from "../styles/Home.module.css";
 import Me from "../components/me";
-import ImageCard from "../components/image-card";
 import Subscribe from "../components/subscribe";
 
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>;
