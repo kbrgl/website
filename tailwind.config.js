@@ -40,7 +40,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        accent: "#516e90",
+        accent: "#d4425c",
       },
     },
   },

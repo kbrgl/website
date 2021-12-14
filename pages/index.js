@@ -8,37 +8,36 @@ import Layout from "../components/layout";
 import Container from "../components/container";
 import Subscribe from "../components/subscribe";
 import Header from "../components/header";
-import SectionHeading from "../components/section-heading";
+import Footer from "../components/footer";
 import Title from "../components/title";
-import Visualization from "../components/visualization";
+import NowPlaying from "../components/now-playing";
 
 export default function Home({ posts }) {
   return (
     <Layout>
       <Header />
       <div className="pt-10" />
-      <Visualization />
       <Container>
         <Title>I’m a sophomore studying CS & math at UC Berkeley.</Title>
-        <p className="text-gray-500 my-7 max-w-prose">
+        <p className="text-gray-500 my-7 text-lg max-w-prose">
           I design for impact at{" "}
-          <a className="text-accent" href="https://calblueprint.org">
+          <a className="text-[#3d78bb]" href="https://calblueprint.org">
             Cal Blueprint
           </a>
           , serve on the Alumni Leader­ship Council of the{" "}
-          <a className="text-accent" href="https://conradchallenge.org">
+          <a className="text-[#15489f]" href="https://conradchallenge.org">
             Conrad Foundation
           </a>
           , and write a news­letter descriptively titled{" "}
-          <a className="text-accent" href="https://buttondown.email/kabir">
+          <a className="text-[#382394]" href="https://buttondown.email/kabir">
             Kabir&nbsp;Talks&nbsp;About&nbsp;Stuff
           </a>
           .
         </p>
-        <Subscribe box />
+        <Subscribe />
         <section className="my-10">
-          <SectionHeading>Posts</SectionHeading>
-          <ul className="mt-5 space-y-5">
+          <h2 className="text-3xl font-serif">Posts</h2>
+          <ul className="mt-5 mb-10 divide-y border rounded-lg overflow-hidden">
             {posts
               .map((post) => ({
                 ...post,
@@ -47,14 +46,32 @@ export default function Home({ posts }) {
               .sort((a, b) => +b.date - +a.date)
               .map((post) => (
                 <Link href={`/p/${post.slug}`} key={post.slug}>
-                  <a className="block" key={post.slug}>
+                  <a
+                    className="block p-5 hover:bg-gray-50 transition-colors"
+                    key={post.slug}
+                  >
                     <p className="font-medium">{post.title}</p>
                     <p className="text-sm text-gray-500">{post.dateString}</p>
                   </a>
                 </Link>
               ))}
           </ul>
+          <div>
+            <NowPlaying />
+            <p className="mt-3 text-gray-500">
+              See what I’ve been{" "}
+              <Link href="/spotify">
+                <a className="text-gray-700">
+                  <span className="decoration-gray-300 underline decoration-2">
+                    listening to
+                  </span>{" "}
+                  &rarr;
+                </a>
+              </Link>{" "}
+            </p>
+          </div>
         </section>
+        <Footer />
       </Container>
     </Layout>
   );

@@ -4,6 +4,7 @@ import Project from "../components/project";
 import Header from "../components/header";
 import SectionHeading from "../components/section-heading";
 import Title from "../components/title";
+import Footer from "../components/footer";
 
 const products = [
   {
@@ -23,7 +24,7 @@ const products = [
   {
     name: "Rucksack",
     description:
-      "Open source and self-hosted alternative to Substack and Revue with subscriber analytics, theming support, drafts, and a full-fledged dashboard. Built on Rails 6 and React.",
+      "Open source, self-hosted alternative to Substack and Revue with subscriber analytics, theming, drafts, and a dashboard. Built on Rails and React.",
     link: "https://github.com/kbrgl/rucksack",
     image: "rucksack.png",
   },
@@ -37,7 +38,7 @@ const products = [
   {
     name: "Exun 2018",
     description:
-      "Event app for Exun 2018, the 24th annual festival of Delhi Public School, R.K. Puram’s technology club. Used to deliver 55,000 notifications to hundreds of devices.",
+      "Event app for Exun 2018, the 24th annual festival of my high school technology club. Used to deliver 55,000 notifications to hundreds of devices.",
     link: "https://github.com/kbrgl/exun2018",
     image: "exun-2018.png",
   },
@@ -97,8 +98,8 @@ export default function Portfolio() {
         <div className="pt-10" />
         <section>
           <SectionHeading>Products</SectionHeading>
-          <div className="pt-10" />
-          <div className="space-y-8">
+          <div className="pt-7" />
+          <div className="space-y-5">
             {products.map((product) => (
               <Project key={product.name} project={product} />
             ))}
@@ -107,14 +108,15 @@ export default function Portfolio() {
         <div className="pt-20" />
         <section>
           <SectionHeading>Code</SectionHeading>
-          <div className="pt-10" />
-          <div className="space-y-8">
+          <div className="pt-7" />
+          <div className="space-y-5">
             {code.map((project) => (
               <Project key={project.name} project={project} />
             ))}
           </div>
         </section>
         <div className="pt-10" />
+        <Footer />
       </Container>
     </Layout>
   );

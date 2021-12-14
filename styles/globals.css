@@ -3,15 +3,6 @@
 @tailwind utilities;
 
 @layer components {
-  .btn {
-    @apply inline-block bg-accent text-white font-bold py-3 px-8 rounded;
-  }
-
-  .field {
-    @apply block bg-white p-3 rounded w-full transition-colors border
-      border-gray-200 focus:outline-none focus:border-blue-500
-      focus:ring focus:ring-blue-100 duration-200;
-  }
 }
 
 @layer base {
@@ -21,7 +12,7 @@
 
   html,
   body {
-    @apply transition-colors antialiased;
+    @apply transition-colors;
     font-size: 16px;
   }
 

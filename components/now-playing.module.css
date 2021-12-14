@@ -1,0 +1,29 @@
+.card {
+  @apply overflow-hidden;
+}
+
+.metadata {
+  @apply overflow-hidden;
+}
+
+.metadata > p {
+  @apply w-full block overflow-hidden m-0 whitespace-nowrap text-ellipsis;
+}
+
+.title {
+  @apply font-medium;
+}
+
+.artist {
+  line-height: var(--line-height-tight);
+  font-size: var(--font-size-xs);
+}
+
+.metadata .tag {
+  @apply text-sm opacity-75 tracking-wide;
+  font-variant: small-caps;
+}
+
+.spotify {
+  @apply font-normal opacity-75;
+}

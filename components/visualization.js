@@ -48,9 +48,10 @@ function Canvas({ height, width, time }) {
       canvasEl.current.height = height * dpr;
       canvasEl.current.width = width * dpr;
       ctx.scale(dpr, dpr);
-      ctx.lineWidth = 1;
+      ctx.lineWidth = 3;
+      ctx.lineCap = "round";
 
-      ctx.strokeStyle = "#ddd";
+      ctx.strokeStyle = "#d4425c";
       drawSine(ctx, {
         omega: 0.5,
         wavelength: width / (2 * Math.PI),
@@ -58,10 +59,18 @@ function Canvas({ height, width, time }) {
         height,
         time: secs,
       });
-      ctx.strokeStyle = "#eee";
+      ctx.strokeStyle = "#ccc";
       drawSine(ctx, {
-        omega: 1,
+        omega: 0.5,
         wavelength: width / Math.PI,
+        width,
+        height,
+        time: secs,
+      });
+      ctx.strokeStyle = "#4286d4";
+      drawSine(ctx, {
+        omega: 0.5,
+        wavelength: width,
         width,
         height,
         time: secs,
@@ -88,7 +97,7 @@ export default function Visualization() {
   });
 
   return (
-    <div className="w-full h-24 absolute -z-10" ref={containerEl}>
+    <div className="h-9 w-9 mb-3 rounded-lg shadow-md" ref={containerEl}>
       <Canvas width={width} height={height} time={time} />
     </div>
   );

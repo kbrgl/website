@@ -16,5 +16,16 @@
     "isolatedModules": true
   },
   "exclude": ["node_modules", "**/node_modules/*"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/now-playing.js",
+    "pages/zoom.js",
+    "pages/_app.js",
+    "pages/16a-grade-calc.js",
+    "pages/portfolio.js",
+    "components/image-card.js",
+    "pages/spotify.js"
+  ]
 }

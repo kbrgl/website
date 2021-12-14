@@ -1,5 +1,5 @@
 .content {
-  @apply leading-normal mt-10;
+  @apply leading-normal mt-10 text-lg text-gray-700;
 }
 
 .content p {
@@ -7,7 +7,7 @@
 }
 
 .content a {
-  @apply text-accent;
+  @apply text-cyan-600;
 }
 
 .content h1,
@@ -58,7 +58,7 @@
 }
 
 .content ol li::before {
-  @apply mr-1 font-bold float-left;
+  @apply mr-1 float-left;
   content: counter(list-counter) ".";
 }
 
@@ -79,13 +79,13 @@
 }
 
 .content :global(.footnote-ref) {
-  @apply text-accent;
+  @apply text-cyan-700;
 }
 
 .content :global(.footnote-backref) {
-  @apply ml-auto pl-1;
+  @apply ml-auto pl-1 text-cyan-900;
 }
 
 .content blockquote {
-  @apply m-0 pl-3 border-l border-l-gray-300 border-l-2;
+  @apply m-0 pl-3 border-l-gray-300 border-l-2;
 }

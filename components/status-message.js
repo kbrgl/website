@@ -38,7 +38,7 @@ export default function StatusMessage({ ok, message, className = "" }) {
   return (
     <div
       className={`text-sm max-w-prose ${
-        ok ? "text-green-600" : "text-red-600"
+        ok ? "text-green-600" : "text-red-700"
       } ${className}`}
     >
       {ok ? <SuccessIcon /> : <ErrorIcon />} {message}

@@ -14,7 +14,7 @@ import Layout from "../../components/layout";
 import Container from "../../components/container";
 import Header from "../../components/header";
 import Subscribe from "../../components/subscribe";
-import Title from "../../components/title";
+import Footer from "../../components/footer";
 
 import styles from "../../styles/Post.module.css";
 
@@ -66,7 +66,10 @@ export default function Post({
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
-        <Subscribe />
+        <div className="py-10 border-t">
+          <Subscribe />
+        </div>
+        <Footer />
       </Container>
     </Layout>
   );

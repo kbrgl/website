@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Visualization from "./visualization";
 import Container from "./container";
 
 function NavbarLink({ internal = false, href, children }) {
@@ -18,22 +19,30 @@ function NavbarLink({ internal = false, href, children }) {
 
 export default function Header() {
   return (
-    <div className="bg-[#f4f7fa]">
+    <div className="bg-gray-50">
       <Container>
         <Link href="/">
-          <a className="flex items-center space-x-3 py-5">
-            <img className="w-14 h-14 rounded-full" src="/me.jpg" alt="" />
-            <p className="font-medium text-accent">Kabir Goel</p>
+          <a className="block py-5 space-y-3">
+            <Visualization />
+
+            <p>
+              <span className="font-medium">Kabir Goel</span>
+              <span className="text-accent">
+                , friendly neighborhood Spider-Man.
+              </span>
+            </p>
           </a>
         </Link>
       </Container>
-      <nav className="border border-r-0 border-l-0 text-sm font-medium">
-        <Container className="space-x-3 py-1">
+      <nav className="border border-r-0 border-l-0 text-sm text-gray-500">
+        <Container className="space-x-4 py-1">
           <NavbarLink internal href="/portfolio">
             Portfolio
           </NavbarLink>
-          <NavbarLink href="https://twitter.com/KabirGoel">Twitter</NavbarLink>
-          <NavbarLink href="https://github.com/kbrgl">GitHub</NavbarLink>
+          <NavbarLink href="https://twitter.com/KabirGoel">
+            Twitter ↗
+          </NavbarLink>
+          <NavbarLink href="https://github.com/kbrgl">GitHub ↗</NavbarLink>
         </Container>
       </nav>
     </div>

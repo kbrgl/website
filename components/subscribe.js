@@ -1,38 +1,9 @@
 import { useState } from "react";
 import SingleFieldForm from "./single-field-form";
 import StatusMessage from "./status-message";
+import Loader from "./loader";
 
-function Loader() {
-  return (
-    <div className="w-full flex items-center justify-center">
-      <span>Signing up</span>
-
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-4 ml-1 animate-spin opacity-80"
-      >
-        <line x1="12" y1="2" x2="12" y2="6" />
-        <line x1="12" y1="18" x2="12" y2="22" />
-        <line x1="4.93" y1="4.93" x2="7.76" y2="7.76" />
-        <line x1="16.24" y1="16.24" x2="19.07" y2="19.07" />
-        <line x1="2" y1="12" x2="6" y2="12" />
-        <line x1="18" y1="12" x2="22" y2="12" />
-        <line x1="4.93" y1="19.07" x2="7.76" y2="16.24" />
-        <line x1="16.24" y1="7.76" x2="19.07" y2="4.93" />
-      </svg>
-    </div>
-  );
-}
-
-export default function Subscribe({ box = false }) {
+export default function Subscribe() {
   const [loading, setLoading] = useState(false);
   const [ok, setOk] = useState(null);
 
@@ -59,11 +30,22 @@ export default function Subscribe({ box = false }) {
   };
 
   return (
-    <div
-      className={`py-10 border-t ${box ? "border px-5 py-5 shadow-sm" : ""}`}
-    >
-      <p className="font-medium text-sm">Get my writing in your inbox</p>
-      <div className="mt-2 mb-2">
+    <div>
+      <div className="flex space-x-3 mb-5 items-center">
+        <p>
+          <span className="font-medium">Get my writing in your inbox.</span>{" "}
+          <span className="text-gray-500">
+            No spam, just occasional thoughts on design, productivity,
+            programming, and whatever else is on my mind.
+          </span>
+        </p>
+        <img
+          className="h-16 w-16 rounded-lg shadow-md rotate-3 -skew-x-3"
+          src="/newsletter-logo.png"
+          alt=""
+        />
+      </div>
+      <div className="mb-3">
         <SingleFieldForm
           action={loading ? <Loader /> : "Sign up"}
           type="email"
@@ -82,10 +64,6 @@ export default function Subscribe({ box = false }) {
           className="my-1"
         />
       ) : null}
-      <p className="text-gray-500 text-sm max-w-prose">
-        No spam, just occasional thoughts on design, productivity, programming,
-        and whatever else is on my mind.
-      </p>
     </div>
   );
 }

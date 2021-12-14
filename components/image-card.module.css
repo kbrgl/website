@@ -1,0 +1,45 @@
+.card {
+  @apply p-4 relative overflow-hidden rounded-lg text-white;
+}
+
+.backgroundImage,
+.backgroundColor {
+  @apply w-full h-full absolute top-0 left-0;
+}
+
+.backgroundImage {
+  @apply bg-cover bg-center bg-no-repeat scale-150 pointer-events-none opacity-50;
+  filter: blur(15px);
+}
+
+.backgroundColor {
+  @apply bg-[#0008];
+}
+
+.image {
+  @apply mr-4 overflow-hidden flex-shrink-0 rounded-lg shadow-xl;
+}
+
+@media screen and (max-width: 600px) {
+  .image {
+    @apply mb-2;
+  }
+}
+
+.wrapper {
+  @apply relative z-10;
+}
+
+.content {
+  @apply flex items-center;
+}
+
+@media screen and (max-width: 600px) {
+  .content {
+    @apply flex-col items-start;
+  }
+}
+
+.children {
+  @apply w-full overflow-hidden;
+}
