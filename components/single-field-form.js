@@ -1,12 +1,10 @@
 import { useState } from "react";
-import styles from "./single-field-form.module.css";
 
 export default function SingleFieldForm({
   action = "Submit",
   type = "text",
   onSubmit = (value) => value,
   placeholder = "",
-  className = "",
 }) {
   const [value, setValue] = useState("");
   return (
@@ -15,9 +13,10 @@ export default function SingleFieldForm({
         event.preventDefault();
         onSubmit(value);
       }}
-      className={`${styles.form} ${className}`}
+      className="flex flex-col space-y-2"
     >
       <input
+        className="p-3 flex-1 border-2 focus:border-gray-700 outline-none h-12 rounded-lg transition-colors"
         value={value}
         onChange={(event) => {
           setValue(event.target.value);
@@ -25,7 +24,12 @@ export default function SingleFieldForm({
         type={type}
         placeholder={placeholder}
       />
-      <button type="submit">{action}</button>
+      <button
+        className="bg-cyan-500 text-white h-10 w-24 font-bold text-sm border border-cyan-600 rounded-lg"
+        type="submit"
+      >
+        {action}
+      </button>
     </form>
   );
 }

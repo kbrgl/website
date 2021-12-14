@@ -98,13 +98,7 @@ export default function Visualization() {
 
   return (
     <div
-      style={{
-        width: 36,
-        height: 36,
-        boxShadow: "0 3px 8px 0 rgba(0, 0, 0, 0.05)",
-        borderRadius: 8,
-        marginBottom: "var(--s)",
-      }}
+      className="h-9 w-9 mb-3 rounded-lg shadow-md overflow-hidden"
       ref={containerEl}
     >
       <Canvas width={width} height={height} time={time} />

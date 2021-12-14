@@ -1,7 +1,10 @@
 import Layout from "../components/layout";
 import Container from "../components/container";
 import Project from "../components/project";
-import styles from "../styles/Portfolio.module.css";
+import Header from "../components/header";
+import SectionHeading from "../components/section-heading";
+import Title from "../components/title";
+import Footer from "../components/footer";
 
 const products = [
   {
@@ -21,7 +24,7 @@ const products = [
   {
     name: "Rucksack",
     description:
-      "Open source and self-hosted alternative to Substack and Revue with subscriber analytics, theming support, drafts, and a full-fledged dashboard. Built on Rails 6 and React.",
+      "Open source, self-hosted alternative to Substack and Revue with subscriber analytics, theming, drafts, and a dashboard. Built on Rails and React.",
     link: "https://github.com/kbrgl/rucksack",
     image: "rucksack.png",
   },
@@ -35,7 +38,7 @@ const products = [
   {
     name: "Exun 2018",
     description:
-      "Event app for Exun 2018, the 24th annual festival of Delhi Public School, R.K. Puram’s technology club. Used to deliver 55,000 notifications to hundreds of devices.",
+      "Event app for Exun 2018, the 24th annual festival of my high school technology club. Used to deliver 55,000 notifications to hundreds of devices.",
     link: "https://github.com/kbrgl/exun2018",
     image: "exun-2018.png",
   },
@@ -88,29 +91,32 @@ const code = [
 export default function Portfolio() {
   return (
     <Layout>
+      <Header />
       <Container>
-        <h1 className={styles.title}>Portfolio</h1>
-        <p>
-          These are most of the things I’ve built, but not all of them! You
-          might find more on my <a href="">GitHub profile</a>.
-        </p>
+        <div className="pt-10" />
+        <Title>Portfolio</Title>
+        <div className="pt-10" />
         <section>
-          <h2 className={styles.subheading}>Products</h2>
-          <div className={styles.projects}>
+          <SectionHeading>Products</SectionHeading>
+          <div className="pt-7" />
+          <div className="gap-5 grid auto-rows-max grid-cols-1">
             {products.map((product) => (
               <Project key={product.name} project={product} />
             ))}
           </div>
         </section>
+        <div className="pt-20" />
         <section>
-          <h2 className={styles.subheading}>Code</h2>
-          <div className={styles.projects}>
+          <SectionHeading>Code</SectionHeading>
+          <div className="pt-7" />
+          <div className="space-y-5">
             {code.map((project) => (
               <Project key={project.name} project={project} />
             ))}
           </div>
         </section>
-        <p className={styles.ending}>That’s all—at least for now.</p>
+        <div className="pt-10" />
+        <Footer />
       </Container>
     </Layout>
   );

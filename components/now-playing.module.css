@@ -1,33 +1,17 @@
 .card {
-  overflow: hidden;
-}
-
-.card a {
-  text-decoration-thickness: 1px;
-  text-underline-offset: 1px;
-  text-decoration-color: var(--color-text-tertiary);
-}
-
-.card a:hover {
-  color: inherit;
+  @apply overflow-hidden;
 }
 
 .metadata {
-  overflow: hidden;
+  @apply overflow-hidden;
 }
 
 .metadata > p {
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  margin: 0;
-
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  @apply w-full block overflow-hidden m-0 whitespace-nowrap text-ellipsis;
 }
 
 .title {
-  font-weight: 500;
+  @apply font-medium;
 }
 
 .artist {
@@ -36,13 +20,10 @@
 }
 
 .metadata .tag {
-  font-size: var(--font-size-xxs);
+  @apply text-sm opacity-75 tracking-wide;
   font-variant: small-caps;
-  letter-spacing: 1px;
-  opacity: 0.75;
 }
 
 .spotify {
-  font-weight: 400;
-  opacity: 0.75;
+  @apply font-normal opacity-75;
 }

@@ -1,5 +1,3 @@
-import styles from "./status-message.module.css";
-
 export function ErrorIcon() {
   return (
     <svg
@@ -8,7 +6,7 @@ export function ErrorIcon() {
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
-      className={styles.icon}
+      className="w-4 h-4 inline-block pb-0.5"
     >
       <path
         fill="currentColor"
@@ -26,7 +24,7 @@ export function SuccessIcon() {
       role="img"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
-      className={styles.icon}
+      className="w-4 h-4 inline-block pb-0.5"
     >
       <path
         fill="currentColor"
@@ -39,8 +37,8 @@ export function SuccessIcon() {
 export default function StatusMessage({ ok, message, className = "" }) {
   return (
     <div
-      className={`${styles.message} ${
-        ok ? styles.success : styles.error
+      className={`text-sm max-w-prose ${
+        ok ? "text-green-600" : "text-red-700"
       } ${className}`}
     >
       {ok ? <SuccessIcon /> : <ErrorIcon />} {message}
