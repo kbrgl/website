@@ -1,5 +1,5 @@
 .card {
-  @apply p-4 relative overflow-hidden rounded-lg text-white;
+  @apply p-4 relative overflow-hidden rounded-xl text-white;
 }
 
 .backgroundImage,
@@ -17,7 +17,7 @@
 }
 
 .image {
-  @apply mr-4 overflow-hidden flex-shrink-0 rounded-lg shadow-xl;
+  @apply mr-4 overflow-hidden flex-shrink-0 rounded-xl shadow-xl;
 }
 
 @media screen and (max-width: 600px) {
