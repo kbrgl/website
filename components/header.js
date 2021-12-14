@@ -6,7 +6,7 @@ function NavbarLink({ internal = false, href, children }) {
   const link = (
     <a
       href={internal ? "#" : href}
-      target={!internal && "_blank"}
+      target={!internal ? "_blank" : undefined}
       rel="noreferrer"
       className="hover:text-accent transition-colors duration-200"
     >
