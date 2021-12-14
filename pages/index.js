@@ -10,15 +10,17 @@ import Subscribe from "../components/subscribe";
 import Header from "../components/header";
 import SectionHeading from "../components/section-heading";
 import Title from "../components/title";
+import Visualization from "../components/visualization";
 
 export default function Home({ posts }) {
   return (
     <Layout>
       <Header />
+      <div className="pt-10" />
+      <Visualization />
       <Container>
-        <div className="pt-10" />
         <Title>I’m a sophomore studying CS & math at UC Berkeley.</Title>
-        <p className="text-gray-500 mt-7 max-w-prose">
+        <p className="text-gray-500 my-7 max-w-prose">
           I design for impact at{" "}
           <a className="text-accent" href="https://calblueprint.org">
             Cal Blueprint
@@ -33,6 +35,7 @@ export default function Home({ posts }) {
           </a>
           .
         </p>
+        <Subscribe box />
         <section className="my-10">
           <SectionHeading>Posts</SectionHeading>
           <ul className="mt-5 space-y-5">
@@ -52,7 +55,6 @@ export default function Home({ posts }) {
               ))}
           </ul>
         </section>
-        <Subscribe />
       </Container>
     </Layout>
   );

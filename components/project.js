@@ -6,7 +6,7 @@ export default function Project({ project }) {
   return (
     <Link href={link || `/p/${slug}`}>
       <a className="block">
-        <div className="flex flex-col md:flex-row border-t md:border transition-shadow md:hover:shadow">
+        <div className="flex flex-col md:flex-row border-t md:border md:shadow-sm transition-shadow md:hover:shadow">
           <img
             className="self-start"
             width={175}

@@ -13,10 +13,10 @@ export default function SingleFieldForm({
         event.preventDefault();
         onSubmit(value);
       }}
-      className="flex items-stretch space-x-2"
+      className="flex flex-col md:flex-row items-stretch space-y-2 md:space-y-0 md:space-x-2"
     >
       <input
-        className="p-3 text-sm flex-1 border focus:border-accent outline-none h-12"
+        className="p-3 text-sm flex-1 border focus:border-accent outline-none h-12 rounded-none"
         value={value}
         onChange={(event) => {
           setValue(event.target.value);
@@ -25,7 +25,7 @@ export default function SingleFieldForm({
         placeholder={placeholder}
       />
       <button
-        className="bg-accent text-white w-36 font-bold text-sm border border-[#405064]"
+        className="bg-accent text-white h-12 w-36 font-bold text-sm border border-[#405064]"
         type="submit"
       >
         {action}

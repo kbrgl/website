@@ -32,7 +32,7 @@ function Loader() {
   );
 }
 
-export default function Subscribe() {
+export default function Subscribe({ box = false }) {
   const [loading, setLoading] = useState(false);
   const [ok, setOk] = useState(null);
 
@@ -59,34 +59,33 @@ export default function Subscribe() {
   };
 
   return (
-    <div>
-      <hr />
-      <div className="py-10">
-        <p className="font-medium text-sm">Get my writing in your inbox</p>
-        <div className="mt-1 mb-2">
-          <SingleFieldForm
-            action={loading ? <Loader /> : "Sign up"}
-            type="email"
-            placeholder="Your email..."
-            onSubmit={handleSubmit}
-          />
-        </div>
-        {ok !== null ? (
-          <StatusMessage
-            ok={ok}
-            message={
-              ok
-                ? "Thanks for signing up! Please check your inbox."
-                : "Couldn’t sign you up. Are you sure your email is valid and you aren’t already subscribed?"
-            }
-            className="my-1"
-          />
-        ) : null}
-        <p className="text-gray-500 text-sm max-w-prose">
-          No spam, just occasional thoughts on design, productivity,
-          programming, and whatever else is on my mind.
-        </p>
+    <div
+      className={`py-10 border-t ${box ? "border px-5 py-5 shadow-sm" : ""}`}
+    >
+      <p className="font-medium text-sm">Get my writing in your inbox</p>
+      <div className="mt-2 mb-2">
+        <SingleFieldForm
+          action={loading ? <Loader /> : "Sign up"}
+          type="email"
+          placeholder="Your email..."
+          onSubmit={handleSubmit}
+        />
       </div>
+      {ok !== null ? (
+        <StatusMessage
+          ok={ok}
+          message={
+            ok
+              ? "Thanks for signing up! Please check your inbox."
+              : "Couldn’t sign you up. Are you sure your email is valid and you aren’t already subscribed?"
+          }
+          className="my-1"
+        />
+      ) : null}
+      <p className="text-gray-500 text-sm max-w-prose">
+        No spam, just occasional thoughts on design, productivity, programming,
+        and whatever else is on my mind.
+      </p>
     </div>
   );
 }

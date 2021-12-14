@@ -3,21 +3,12 @@
  */
 
 code:not([class*="language-"]) {
-  padding: var(--xxs);
-  border-radius: 8px;
-  border: 1px solid var(--color-stroke);
-
-  background: var(--color-wash);
-  font-family: var(--font-family-mono);
-  font-size: var(--font-size-xs);
-  line-height: var(--line-height-loose);
+  @apply p-0.5 rounded-sm border border-gray-100 bg-gray-50 font-mono text-sm;
 }
 
 code[class*="language-"],
 pre[class*="language-"] {
-  font-family: var(--font-family-mono);
-  font-size: var(--font-size-xs);
-  line-height: var(--line-height-loose);
+  @apply font-mono text-sm leading-loose bg-gray-50;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -27,7 +18,6 @@ pre[class*="language-"] {
   tab-size: 4;
 
   hyphens: none;
-  background: var(--color-wash);
   color: #728fcb;
 }
 
@@ -37,11 +27,8 @@ pre > code[class*="language-"] {
 
 /* Code blocks */
 pre[class*="language-"] {
-  padding: var(--m);
-  margin: var(--m) 0;
+  @apply p-5 my-5 border border-gray-100 rounded-sm;
   overflow: auto;
-  border-radius: 8px;
-  border: 1px solid var(--color-stroke);
 }
 
 pre[class*="language-"]::selection,

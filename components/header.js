@@ -27,15 +27,14 @@ export default function Header() {
           </a>
         </Link>
       </Container>
-      <nav className="border border-r-0 border-l-0 text-sm space-x-3 py-1 px-10 font-medium">
-        <NavbarLink internal href="/portfolio">
-          Portfolio
-        </NavbarLink>
-        <NavbarLink href="/resume.pdf">
-          Resume <span className="text-gray-500">&darr;</span>
-        </NavbarLink>
-        <NavbarLink href="https://twitter.com/KabirGoel">Twitter</NavbarLink>
-        <NavbarLink href="https://github.com/kbrgl">GitHub</NavbarLink>
+      <nav className="border border-r-0 border-l-0 text-sm font-medium">
+        <Container className="space-x-3 py-1">
+          <NavbarLink internal href="/portfolio">
+            Portfolio
+          </NavbarLink>
+          <NavbarLink href="https://twitter.com/KabirGoel">Twitter</NavbarLink>
+          <NavbarLink href="https://github.com/kbrgl">GitHub</NavbarLink>
+        </Container>
       </nav>
     </div>
   );

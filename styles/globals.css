@@ -22,7 +22,10 @@
   html,
   body {
     @apply transition-colors antialiased;
-    background-color: #f9fafc;
     font-size: 16px;
+  }
+
+  hr {
+    @apply border-t border-gray-200;
   }
 }
