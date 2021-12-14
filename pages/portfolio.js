@@ -99,7 +99,7 @@ export default function Portfolio() {
         <section>
           <SectionHeading>Products</SectionHeading>
           <div className="pt-7" />
-          <div className="space-y-5">
+          <div className="gap-5 grid auto-rows-max grid-cols-1">
             {products.map((product) => (
               <Project key={product.name} project={product} />
             ))}
