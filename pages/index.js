@@ -50,12 +50,12 @@ export default function Home({ posts }) {
                     className="block p-5 bg-gray-50 hover:text-white hover:bg-accent transition-colors rounded-xl group"
                     key={post.slug}
                   >
-                    <div className="flex text-lg">
-                      <p className="text-md font-medium">{post.title}&nbsp;</p>
-                      <div className="group-hover:translate-x-2 transition-transform">
+                    <p className="text-lg font-medium mb-1">
+                      {post.title}&nbsp;
+                      <span className="group-hover:ml-2 transition-[margin]">
                         &rarr;
-                      </div>
-                    </div>
+                      </span>
+                    </p>
                     <p className="text-gray-500 group-hover:text-white transition-colors pb-2">
                       {post.subtitle}
                     </p>

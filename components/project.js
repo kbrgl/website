@@ -5,17 +5,19 @@ export default function Project({ project }) {
 
   return (
     <Link href={link || `/p/${slug}`}>
-      <a className="block">
-        <div className="flex flex-col md:flex-row border-t md:border md:shadow-sm transition-shadow md:hover:shadow-md md:rounded-lg overflow-hidden">
-          <img
-            className="self-start"
-            width={175}
-            src={`/projects/${image}`}
-            alt=""
-          />
-          <p className="mt-4 md:m-4 text-lg">
-            <strong className="font-medium">{name}</strong>
-            <span className="ml-1 text-gray-500">{description}</span>
+      <a className="flex bg-gray-50 overflow-hidden rounded-xl group hover:bg-cyan-500 transition-colors hover:text-white min-h-[150px]">
+        <img
+          className="absolute w-36 object-cover rounded-xl group-hover:rotate-0 rotate-2 md:self-center shadow-sm border-2 border-gray-200 group-hover:border-cyan-600 origin-top-right transition-transform -translate-y-1 translate-x-4 md:translate-y-0 md:-translate-x-4"
+          src={`/projects/${image}`}
+          alt=""
+        />
+        <div className="p-5 text-md mt-28 md:mt-0 md:ml-32">
+          <p className="font-medium">
+            {name}&nbsp;
+            <span className="group-hover:ml-2 transition-[margin]">&rarr;</span>
+          </p>
+          <p className="text-gray-500 group-hover:text-white transition-colors">
+            {description}
           </p>
         </div>
       </a>
