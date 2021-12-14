@@ -1,6 +1,7 @@
 import { promises as fs } from "fs";
 import path from "path";
 import Link from "next/link";
+import Image from "next/image";
 import matter from "gray-matter";
 import formatDate from "../utils/format-date";
 import parseDate from "../utils/parse-date";
@@ -12,12 +13,31 @@ import Footer from "../components/footer";
 import Title from "../components/title";
 import NowPlaying from "../components/now-playing";
 
+function Me() {
+  return (
+    <div className="overflow-hidden relative inline-block">
+      <Image
+        className="rounded-full"
+        layout="fixed"
+        height={120}
+        width={120}
+        priority
+        quality={100}
+        src="/me.jpg"
+        alt="Me"
+      />
+    </div>
+  );
+}
+
 export default function Home({ posts }) {
   return (
     <Layout>
       <Header />
       <div className="pt-10" />
       <Container>
+        <Me />
+        <div className="pt-4" />
         <Title>I’m a sophomore studying CS & math at UC Berkeley.</Title>
         <p className="text-gray-500 my-7 text-lg max-w-prose">
           I design for impact at{" "}

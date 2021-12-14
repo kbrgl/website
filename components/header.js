@@ -6,9 +6,11 @@ function NavbarLink({ internal = false, href, children }) {
   const link = (
     <a
       href={internal ? "#" : href}
+      target="_blank"
+      rel="noreferrer"
       className="hover:text-accent transition-colors duration-200"
     >
-      {children}
+      {children} {!internal && "↗"}
     </a>
   );
   if (internal) {
@@ -39,10 +41,8 @@ export default function Header() {
           <NavbarLink internal href="/portfolio">
             Portfolio
           </NavbarLink>
-          <NavbarLink href="https://twitter.com/KabirGoel">
-            Twitter ↗
-          </NavbarLink>
-          <NavbarLink href="https://github.com/kbrgl">GitHub ↗</NavbarLink>
+          <NavbarLink href="https://twitter.com/KabirGoel">Twitter</NavbarLink>
+          <NavbarLink href="https://github.com/kbrgl">GitHub</NavbarLink>
         </Container>
       </nav>
     </div>
