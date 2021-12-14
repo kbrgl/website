@@ -31,7 +31,7 @@ export default function Subscribe() {
 
   return (
     <div>
-      <hr className="w-24 pb-5" />
+      <hr className="w-24 pb-8 md:pb-5" />
       <div className="flex space-x-3 mb-5 items-end -mt-3">
         <p>
           <span className="font-medium">Get my writing in your inbox.</span>{" "}
