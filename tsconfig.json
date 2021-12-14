@@ -26,6 +26,7 @@
     "pages/16a-grade-calc.js",
     "pages/portfolio.js",
     "components/image-card.js",
-    "pages/spotify.js"
+    "pages/spotify.js",
+    "pages/p/[slug].js"
   ]
 }

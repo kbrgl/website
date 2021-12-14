@@ -66,7 +66,7 @@ export default function Post({
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
-        <div className="py-10 border-t">
+        <div className="pb-10">
           <Subscribe />
         </div>
         <Footer />

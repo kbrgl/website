@@ -3,7 +3,7 @@ import Container from "../components/container";
 import Layout from "../components/layout";
 import StatusMessage from "../components/status-message";
 import SingleFieldForm from "../components/single-field-form";
-import Title from "../components/title";
+import Footer from "../components/footer";
 import Header from "../components/header";
 
 export default function Zoom() {
@@ -37,7 +37,7 @@ export default function Zoom() {
       <Header />
       <Container>
         <div className="py-10">
-          <Title>Kabir’s Zoom Room</Title>
+          <img className="mb-3 rounded-lg shadow-md" src="/zoom.jpg" alt="" />
           <div className="pt-5" />
           <SingleFieldForm
             onSubmit={handleSubmit}
@@ -49,6 +49,7 @@ export default function Zoom() {
             <StatusMessage className="mt-2" ok={false} message={message} />
           ) : null}
         </div>
+        <Footer />
       </Container>
     </Layout>
   );
