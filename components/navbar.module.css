@@ -1,6 +1,5 @@
 .navbar {
-  border-top: 5px solid var(--color-accent);
-  border-bottom: 2px solid var(--color-stroke);
+  background: var(--color-wash);
 }
 
 .navbar a {
@@ -8,51 +7,32 @@
   font-size: var(--font-size-xs);
 }
 
-.links {
-  display: flex;
-  align-items: stretch;
-}
-
-@media screen and (max-width: 600px) {
-  .links {
-    flex-direction: column;
-  }
-}
-
 .name {
-  border-right: 1px solid var(--color-stroke);
-  padding: var(--s) var(--m);
+  padding: var(--m) 0;
   padding-left: 0;
 }
 
-@media screen and (max-width: 600px) {
-  .name {
-    border-right: 0;
-  }
+.name a {
+  color: var(--color-accent);
 }
 
-.name a {
-  font-weight: 600;
-  color: var(--color-text-primary);
+.bordered {
+  border: 1px solid var(--color-stroke);
+  border-left: 0;
+  border-right: 0;
 }
 
 .list {
-  flex: 1;
   overflow: auto;
-  padding: var(--s) var(--m);
   white-space: nowrap;
+  padding: var(--xxs) 0;
+  display: flex;
 
   color: var(--color-text-secondary);
 }
 
-@media screen and (max-width: 600px) {
-  .list {
-    padding-top: 0;
-    margin: 0 calc(-1 * var(--m));
-  }
-}
-
 .list a {
+  font-size: var(--font-size-xxs);
   margin-left: var(--s);
 }
 

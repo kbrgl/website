@@ -1,16 +1,9 @@
-.form {
-  display: flex;
-  align-items: center;
-}
-
 .form input {
-  flex: 1;
-  margin-right: var(--xs);
+  margin-bottom: var(--xs);
 }
 
 .form button {
-  align-self: stretch;
-  margin: 0;
+  padding: var(--xs) var(--m);
 }
 
 @media screen and (max-width: 600px) {

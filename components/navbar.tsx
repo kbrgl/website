@@ -5,13 +5,17 @@ import styles from "./navbar.module.css";
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
-      <Container>
-        <div className={styles.links}>
-          <div className={styles.name}>
-            <Link href="/">
-              <a>Kabir Goel</a>
-            </Link>
-          </div>
+      <div className={styles.name}>
+        <Container>
+          <Link href="/">
+            <a>
+              <strong>Kabir Goel</strong>, friendly neighborhood Spiderman.
+            </a>
+          </Link>
+        </Container>
+      </div>
+      <div className={styles.bordered}>
+        <Container>
           <div className={styles.list}>
             <Link href="/portfolio">
               <a>Portfolio</a>
@@ -23,8 +27,8 @@ export default function Navbar() {
               Newsletter&nbsp;&#x2197;
             </a>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </nav>
   );
 }
