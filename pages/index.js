@@ -24,11 +24,11 @@ export default function Home({ posts }) {
           <a className="text-[#3d78bb]" href="https://calblueprint.org">
             Cal Blueprint
           </a>
-          , serve on the Alumni Leader­ship Council of the{" "}
+          , serve on the Alumni Leader&shy;ship Council of the{" "}
           <a className="text-[#15489f]" href="https://conradchallenge.org">
             Conrad Foundation
           </a>
-          , and write a news­letter descriptively titled{" "}
+          , and write a news&shy;letter descriptively titled{" "}
           <a className="text-[#382394]" href="https://buttondown.email/kabir">
             Kabir&nbsp;Talks&nbsp;About&nbsp;Stuff
           </a>
@@ -37,7 +37,7 @@ export default function Home({ posts }) {
         <Subscribe />
         <section className="my-10">
           <h2 className="text-3xl font-serif">Posts</h2>
-          <ul className="mt-5 mb-10 divide-y border rounded-lg overflow-hidden">
+          <ul className="mt-5 mb-10 space-y-3">
             {posts
               .map((post) => ({
                 ...post,
@@ -47,11 +47,21 @@ export default function Home({ posts }) {
               .map((post) => (
                 <Link href={`/p/${post.slug}`} key={post.slug}>
                   <a
-                    className="block p-5 hover:bg-gray-50 transition-colors"
+                    className="block p-5 bg-gray-50 hover:text-white hover:bg-accent transition-colors rounded-xl group"
                     key={post.slug}
                   >
-                    <p className="font-medium">{post.title}</p>
-                    <p className="text-sm text-gray-500">{post.dateString}</p>
+                    <div className="flex text-lg">
+                      <p className="text-md font-medium">{post.title}&nbsp;</p>
+                      <div className="group-hover:translate-x-2 transition-transform">
+                        &rarr;
+                      </div>
+                    </div>
+                    <p className="text-gray-500 group-hover:text-white transition-colors pb-2">
+                      {post.subtitle}
+                    </p>
+                    <p className="text-sm text-gray-500 group-hover:text-white transition-colors">
+                      {post.dateString}
+                    </p>
                   </a>
                 </Link>
               ))}

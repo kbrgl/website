@@ -15,6 +15,7 @@ import Container from "../../components/container";
 import Header from "../../components/header";
 import Subscribe from "../../components/subscribe";
 import Footer from "../../components/footer";
+import Title from "../../components/title";
 
 import styles from "../../styles/Post.module.css";
 
@@ -53,10 +54,8 @@ export default function Post({
           <p className="text-sm text-gray-500 mb-5">
             {formatDate(new Date(date))} · {readingTime}
           </p>
-          <h1 className="text-3xl font-bold mt-3 leading-tight whitespace-pre-line">
-            {title}
-          </h1>
-          <h2 className="text-xl text-gray-500 mt-2 leading-tight">
+          <Title>{title}</Title>
+          <h2 className="text-xl text-gray-500 leading-tight mt-4">
             {subtitle}
           </h2>
         </div>
