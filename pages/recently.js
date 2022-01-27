@@ -23,17 +23,18 @@ export default function Recently() {
         <center>
           <Title>Recently</Title>
           <p className="text-gray-600 mt-3 text-xl">
-            The things I've been up to.
+            The things I’ve been up to.
           </p>
         </center>
         <section className="mt-10">
+          {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
           <video
             controls
             className="h-[600px] rounded-3xl border mx-auto shadow"
             src="/twine-figma.mp4"
           />
           <p className="text-gray-400 text-sm text-center mt-3">Figma prototype of Twine</p>
-          <div className="pt-10"></div>
+          <div className="pt-10" />
           <SectionHeading>Twine</SectionHeading>
           <p className="mt-3 text-gray-600">
             I’m working on Twine, an iOS app for personal microblogs. Compose in
