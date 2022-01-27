@@ -1,3 +1,3 @@
 export default function SectionHeading({ children }) {
-  return <h2 className="text-lg font-semibold">{children}</h2>;
+  return <h2 className="text-lg font-medium">{children}</h2>;
 }

@@ -98,7 +98,7 @@ export default function Visualization() {
 
   return (
     <div
-      className="h-9 w-9 mb-3 rounded-lg shadow-md overflow-hidden"
+      className="h-9 w-9 rounded-lg shadow-md overflow-hidden"
       ref={containerEl}
     >
       <Canvas width={width} height={height} time={time} />

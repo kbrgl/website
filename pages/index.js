@@ -38,7 +38,7 @@ export default function Home({ posts }) {
       <Container>
         <Me />
         <div className="pt-4" />
-        <Title>I’m a sophomore studying CS & math at UC Berkeley.</Title>
+        <Title>I’m a sophomore studying CS &amp; design at UC Berkeley.</Title>
         <p className="text-gray-500 my-7 text-lg max-w-prose">
           I design for impact at{" "}
           <a className="text-[#3d78bb]" href="https://calblueprint.org">
