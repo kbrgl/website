@@ -66,7 +66,6 @@ export default function Recently() {
               code="PUBPOL 198"
               title="National Security &amp; Tech Policy"
             />
-            <Class code="NUSCTX 11" title="Intro to Toxicology" />
           </ul>
         </section>
         <Footer />
