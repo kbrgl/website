@@ -19,12 +19,12 @@ function NavbarLink({ internal = false, href, children }) {
   return link;
 }
 
-export default function Header() {
+export default function Header({ leftAlign = false }) {
   return (
-    <div className="bg-gray-50">
-      <Container>
+    <div className="bg-[#fafafacc] backdrop-blur-lg">
+      <Container className={leftAlign && "mx-0"}>
         <Link href="/">
-          <a className="block py-5 space-y-3 md:space-x-3 md:space-y-0 flex flex-col md:flex-row md:items-center">
+          <a className="py-5 space-y-3 md:space-x-3 md:space-y-0 flex flex-col md:flex-row md:items-center">
             <Visualization />
 
             <p>
@@ -37,11 +37,13 @@ export default function Header() {
         </Link>
       </Container>
       <nav className="border border-r-0 border-l-0 text-sm text-gray-500">
-        <Container className="space-x-2 py-1">
+        <Container className={`space-x-2 py-1 ${leftAlign && "mx-0"}`}>
           <NavbarLink internal href="/portfolio">
             Portfolio
           </NavbarLink>
-          <NavbarLink internal href="/recently">Recently</NavbarLink>
+          <NavbarLink internal href="/recently">
+            Recently
+          </NavbarLink>
           <NavbarLink href="https://twitter.com/KabirGoel">Twitter</NavbarLink>
           <NavbarLink href="https://github.com/kbrgl">GitHub</NavbarLink>
         </Container>

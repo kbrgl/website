@@ -1,5 +1,5 @@
 .content {
-  @apply leading-normal mt-10 text-lg text-gray-700;
+  @apply leading-normal mt-10 text-xl text-gray-800 font-body;
 }
 
 .content p {
@@ -24,7 +24,7 @@
 }
 
 .content figcaption {
-  @apply text-gray-500 text-sm pb-3 mt-3;
+  @apply text-gray-500 text-sm pb-3 mt-3 font-sans;
 }
 
 .content img {
@@ -63,7 +63,7 @@
 }
 
 .content :global(.footnotes) {
-  @apply text-gray-500 text-sm;
+  @apply text-gray-500 text-sm font-sans;
 }
 
 .content :global(.footnotes) ol {
@@ -87,5 +87,5 @@
 }
 
 .content blockquote {
-  @apply m-0 pl-3 border-l-gray-300 border-l-2;
+  @apply m-0 pl-5 border-l-cyan-500 border-l-4;
 }

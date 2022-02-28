@@ -48,8 +48,8 @@ export default function Post({
         <meta name="twitter:card" content="summary_large_image" />
         {canonical ? <link rel="canonical" href={canonical} /> : null}
       </Head>
-      <Header />
-      <Container>
+      <Header leftAlign />
+      <Container className="max-w-3xl">
         <div className="mt-10">
           <p className="text-sm text-gray-500 mb-5">
             {formatDate(new Date(date))} · {readingTime}
