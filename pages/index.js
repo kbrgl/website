@@ -7,7 +7,7 @@ import parseDate from "../utils/parse-date";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import Subscribe from "../components/subscribe";
-import Header from "../components/header";
+import Header, { NavbarLink } from "../components/header";
 import Footer from "../components/footer";
 import Title from "../components/title";
 import NowPlaying from "../components/now-playing";
@@ -63,30 +63,45 @@ const GlobeIcon = () => (
   </svg>
 );
 
-function Links() {
+function LinkCards() {
   return (
-    <div className="grid grid-cols-3 gap-4 my-5">
+    <div className="grid grid-cols-3 auto-rows-fr gap-4 my-5">
       <Link href="/portfolio">
-        <a className="p-4 pb-12 bg-gray-50 text-yellow-600 rounded-xl font-medium">
-          <p className="text-yellow-400 mb-1">
+        <a className="p-4 bg-[#f2f5fa] text-[#1e5097] rounded-xl">
+          <p className="mb-1">
             <PortfolioIcon />
           </p>
-          <p>Portfolio</p>
+          <p className="mb-3 font-medium">Portfolio</p>
+          <p className="font-normal text-zinc-600 text-sm">
+            My projects, including products and open-source code.
+          </p>
         </a>
       </Link>
       <Link href="/recently">
-        <a className="p-4 pb-12 bg-lime-50 text-lime-600 rounded-xl font-medium">
-          <p className="text-lime-400 mb-1">
+        <a className="p-4 bg-[#f2f7f1] text-[#116719] rounded-xl">
+          <p className="mb-1">
             <RecentlyIcon />
           </p>
-          <p>Recently</p>
+          <p className="mb-3 font-medium">Recently</p>
+          <p className="font-normal text-zinc-600 text-sm">
+            The things I’ve been up to, from projects to clubs to classes.
+          </p>
         </a>
       </Link>
-      <div className="p-4 pb-12 bg-gray-50 text-blue-600 rounded-xl font-medium">
-        <p className="text-blue-400 mb-1">
+      <div className="p-4 bg-amber-50 text-amber-700 rounded-xl">
+        <p className="mb-1 font-medium">
           <GlobeIcon />
         </p>
-        <p>On the Web</p>
+        <p className="mb-3 font-medium">On the Web</p>
+        <div className="text-zinc-600 text-sm">
+          <p>
+            Find me on{" "}
+            <NavbarLink href="https://twitter.com/KabirGoel">
+              Twitter
+            </NavbarLink>{" "}
+            or <NavbarLink href="https://github.com/kbrgl">GitHub</NavbarLink>
+          </p>
+        </div>
       </div>
     </div>
   );
@@ -116,7 +131,7 @@ export default function Home({ posts }) {
           </a>
           .
         </p>
-        <Links />
+        <LinkCards />
         <Subscribe />
         <section className="my-10">
           <h2 className="text-3xl font-serif font-bold">Posts</h2>
