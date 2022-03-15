@@ -24,7 +24,7 @@ export default function Header({ leftAlign = false }) {
     <div className="bg-[#fafafacc] backdrop-blur-lg">
       <Container className={leftAlign && "mx-0"}>
         <Link href="/">
-          <a className="py-5 space-y-3 md:space-x-3 md:space-y-0 flex flex-col md:flex-row md:items-center">
+          <a className="pt-5 pb-3 space-y-3 md:space-x-3 md:space-y-0 flex flex-col md:flex-row md:items-center">
             <Visualization />
 
             <p>
