@@ -12,6 +12,86 @@ import Footer from "../components/footer";
 import Title from "../components/title";
 import NowPlaying from "../components/now-playing";
 
+const PortfolioIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+    />
+  </svg>
+);
+
+const RecentlyIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+    />
+  </svg>
+);
+
+const GlobeIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+    />
+  </svg>
+);
+
+function Links() {
+  return (
+    <div className="grid grid-cols-3 gap-4 my-5">
+      <Link href="/portfolio">
+        <a className="p-4 pb-12 bg-gray-50 text-yellow-600 rounded-xl font-medium">
+          <p className="text-yellow-400 mb-1">
+            <PortfolioIcon />
+          </p>
+          <p>Portfolio</p>
+        </a>
+      </Link>
+      <Link href="/recently">
+        <a className="p-4 pb-12 bg-lime-50 text-lime-600 rounded-xl font-medium">
+          <p className="text-lime-400 mb-1">
+            <RecentlyIcon />
+          </p>
+          <p>Recently</p>
+        </a>
+      </Link>
+      <div className="p-4 pb-12 bg-gray-50 text-blue-600 rounded-xl font-medium">
+        <p className="text-blue-400 mb-1">
+          <GlobeIcon />
+        </p>
+        <p>On the Web</p>
+      </div>
+    </div>
+  );
+}
+
 export default function Home({ posts }) {
   return (
     <Layout>
@@ -36,6 +116,7 @@ export default function Home({ posts }) {
           </a>
           .
         </p>
+        <Links />
         <Subscribe />
         <section className="my-10">
           <h2 className="text-3xl font-serif font-bold">Posts</h2>
