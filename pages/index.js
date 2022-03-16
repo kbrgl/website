@@ -7,10 +7,105 @@ import parseDate from "../utils/parse-date";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import Subscribe from "../components/subscribe";
-import Header from "../components/header";
+import Header, { NavbarLink } from "../components/header";
 import Footer from "../components/footer";
 import Title from "../components/title";
 import NowPlaying from "../components/now-playing";
+
+const PortfolioIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+    />
+  </svg>
+);
+
+const RecentlyIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+    />
+  </svg>
+);
+
+const GlobeIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="h-6 w-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth={2}
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
+    />
+  </svg>
+);
+
+function LinkCards() {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-3 md:auto-rows-fr gap-4 my-5">
+      <Link href="/portfolio">
+        <a className="p-4 bg-[#f2f5fa] text-[#1e5097] rounded-xl">
+          <p className="mb-1">
+            <PortfolioIcon />
+          </p>
+          <p className="mb-3 font-medium">Portfolio</p>
+          <p className="font-normal text-zinc-600 text-sm">
+            My projects, including products and open-source code.
+          </p>
+        </a>
+      </Link>
+      <Link href="/recently">
+        <a className="p-4 bg-[#f2f7f1] text-[#116719] rounded-xl">
+          <p className="mb-1">
+            <RecentlyIcon />
+          </p>
+          <p className="mb-3 font-medium">Recently</p>
+          <p className="font-normal text-zinc-600 text-sm">
+            The things I’ve been up to, from projects to clubs to classes.
+          </p>
+        </a>
+      </Link>
+      <div className="p-4 bg-amber-50 text-amber-700 rounded-xl">
+        <p className="mb-1 font-medium">
+          <GlobeIcon />
+        </p>
+        <p className="mb-3 font-medium">On the Web</p>
+        <div className="text-zinc-600 text-sm">
+          <p>
+            Find me on{" "}
+            <NavbarLink href="https://twitter.com/KabirGoel">
+              Twitter
+            </NavbarLink>{" "}
+            or <NavbarLink href="https://github.com/kbrgl">GitHub</NavbarLink>
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home({ posts }) {
   return (
@@ -19,7 +114,7 @@ export default function Home({ posts }) {
       <div className="pt-10" />
       <Container>
         <Title className="text-center">
-          I’m a sophomore studying CS &amp; design at UC Berkeley.
+          I’m a sophomore studying computer science &amp; design at UC Berkeley.
         </Title>
         <p className="text-gray-500 my-7 text-lg max-w-prose">
           I design for impact at{" "}
@@ -36,6 +131,7 @@ export default function Home({ posts }) {
           </a>
           .
         </p>
+        <LinkCards />
         <Subscribe />
         <section className="my-10">
           <h2 className="text-3xl font-serif font-bold">Posts</h2>

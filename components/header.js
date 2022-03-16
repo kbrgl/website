@@ -2,7 +2,7 @@ import Link from "next/link";
 import Visualization from "./visualization";
 import Container from "./container";
 
-function NavbarLink({ internal = false, href, children }) {
+export function NavbarLink({ internal = false, href, children }) {
   const link = (
     <a
       href={internal ? "#" : href}
@@ -24,7 +24,7 @@ export default function Header({ leftAlign = false }) {
     <div className="bg-[#fafafacc] backdrop-blur-lg">
       <Container className={leftAlign && "mx-0"}>
         <Link href="/">
-          <a className="py-5 space-y-3 md:space-x-3 md:space-y-0 flex flex-col md:flex-row md:items-center">
+          <a className="pt-5 pb-3 space-y-3 md:space-x-3 md:space-y-0 flex flex-col md:flex-row md:items-center">
             <Visualization />
 
             <p>
@@ -36,8 +36,8 @@ export default function Header({ leftAlign = false }) {
           </a>
         </Link>
       </Container>
-      <nav className="border border-r-0 border-l-0 text-sm text-gray-500">
-        <Container className={`space-x-2 py-1 ${leftAlign && "mx-0"}`}>
+      <nav className="border-b border-b-black text-gray-500">
+        <Container className={`space-x-2 pb-4 ${leftAlign && "mx-0"}`}>
           <NavbarLink internal href="/portfolio">
             Portfolio
           </NavbarLink>
