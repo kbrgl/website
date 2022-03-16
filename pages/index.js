@@ -65,7 +65,7 @@ const GlobeIcon = () => (
 
 function LinkCards() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-fr gap-4 my-5">
+    <div className="grid grid-cols-1 md:grid-cols-3 md:auto-rows-fr gap-4 my-5">
       <Link href="/portfolio">
         <a className="p-4 bg-[#f2f5fa] text-[#1e5097] rounded-xl">
           <p className="mb-1">
