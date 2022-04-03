@@ -21,7 +21,7 @@ export default function Spotify() {
           .
         </p>
         <NowPlaying />
-        <h2 className="text-3xl font-title pt-12 pb-5">Most Played</h2>
+        <h2 className="text-2xl font-bold pt-12 pb-5">Most Played</h2>
         <TopTracks />
         <div className="pt-10" />
       </Container>
