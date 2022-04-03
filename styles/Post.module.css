@@ -1,5 +1,5 @@
 .content {
-  @apply leading-normal mt-10 text-xl text-gray-800 font-body;
+  @apply leading-normal mt-10 text-xl text-gray-800 font-serif;
 }
 
 .content p {
@@ -16,7 +16,7 @@
 .content h4,
 .content h5,
 .content h6 {
-  @apply mt-10 font-bold text-lg leading-tight;
+  @apply mt-10 font-bold text-xl leading-tight font-sans;
 }
 
 .content figure {
@@ -28,7 +28,7 @@
 }
 
 .content img {
-  @apply mx-auto my-3;
+  @apply mx-auto my-3 rounded;
 }
 
 .content figure img {

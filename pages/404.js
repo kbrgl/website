@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Container from "../components/container";
 import Layout from "../components/layout";
-import Footer from "../components/footer";
 import Header from "../components/header";
 import Title from "../components/title";
 
@@ -21,7 +20,6 @@ export default function NotFound() {
           </p>
           <img className="mt-8 w-full" src={imgSrc} alt="" />
         </div>
-        <Footer />
       </Container>
     </Layout>
   );

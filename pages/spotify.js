@@ -21,11 +21,11 @@ export default function Spotify() {
           .
         </p>
         <NowPlaying />
-        <h2 className="text-3xl font-serif pt-12 pb-5">Most Played</h2>
+        <h2 className="text-3xl font-title pt-12 pb-5">Most Played</h2>
         <TopTracks />
         <div className="pt-10" />
-        <Footer />
       </Container>
+      <Footer />
     </Layout>
   );
 }

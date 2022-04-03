@@ -49,8 +49,8 @@ export default function Zoom() {
             <StatusMessage className="mt-2" ok={false} message={message} />
           ) : null}
         </div>
-        <Footer />
       </Container>
+      <Footer />
     </Layout>
   );
 }

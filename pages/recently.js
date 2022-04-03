@@ -33,7 +33,9 @@ export default function Recently() {
             className="h-[600px] rounded-3xl border mx-auto shadow"
             src="/twine-figma.mp4"
           />
-          <p className="text-gray-400 text-sm text-center mt-3">Figma prototype of Twine</p>
+          <p className="text-gray-400 text-sm text-center mt-3">
+            Figma prototype of Twine
+          </p>
           <div className="pt-10" />
           <SectionHeading>Twine</SectionHeading>
           <p className="mt-3 text-gray-600">
@@ -68,8 +70,8 @@ export default function Recently() {
             />
           </ul>
         </section>
-        <Footer />
       </Container>
+      <Footer />
     </Layout>
   );
 }

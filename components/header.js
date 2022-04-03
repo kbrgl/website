@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Visualization from "./visualization";
 import Container from "./container";
 
 export function NavbarLink({ internal = false, href, children }) {
@@ -19,35 +18,14 @@ export function NavbarLink({ internal = false, href, children }) {
   return link;
 }
 
-export default function Header({ leftAlign = false }) {
+export default function Header() {
   return (
-    <div className="bg-[#fafafacc] backdrop-blur-lg">
-      <Container className={leftAlign && "mx-0"}>
+    <div className="bg-[#fafafacc] backdrop-blur-lg border-b border-black py-4">
+      <Container className="max-w-none">
         <Link href="/">
-          <a className="pt-5 pb-3 space-y-3 md:space-x-3 md:space-y-0 flex flex-col md:flex-row md:items-center">
-            <Visualization />
-
-            <p>
-              <span className="font-medium">Kabir Goel</span>
-              <span className="text-accent">
-                , friendly neighborhood Spider-Man.
-              </span>
-            </p>
-          </a>
+          <a className="font-bold">Kabir Goel</a>
         </Link>
       </Container>
-      <nav className="border-b border-b-black text-gray-500">
-        <Container className={`space-x-2 pb-4 ${leftAlign && "mx-0"}`}>
-          <NavbarLink internal href="/portfolio">
-            Portfolio
-          </NavbarLink>
-          <NavbarLink internal href="/recently">
-            Recently
-          </NavbarLink>
-          <NavbarLink href="https://twitter.com/KabirGoel">Twitter</NavbarLink>
-          <NavbarLink href="https://github.com/kbrgl">GitHub</NavbarLink>
-        </Container>
-      </nav>
     </div>
   );
 }

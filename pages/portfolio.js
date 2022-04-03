@@ -116,8 +116,8 @@ export default function Portfolio() {
           </div>
         </section>
         <div className="pt-10" />
-        <Footer />
       </Container>
+      <Footer />
     </Layout>
   );
 }

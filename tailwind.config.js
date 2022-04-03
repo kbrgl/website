@@ -20,8 +20,8 @@ module.exports = {
         "Helvetica Neue",
         "sans-serif",
       ],
-      serif: ["dashiell-fine", "Iowan Old Style", "Georgia", "serif"],
-      body: [
+      title: ["dashiell-fine", "Iowan Old Style", "Georgia", "serif"],
+      serif: [
         "dashiell-text",
         "neue-haas-unica",
         "system-ui",

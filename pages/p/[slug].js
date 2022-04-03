@@ -12,10 +12,9 @@ import calculateReadingTime from "reading-time";
 import formatDate from "../../utils/format-date";
 import Layout from "../../components/layout";
 import Container from "../../components/container";
-import Header from "../../components/header";
 import Subscribe from "../../components/subscribe";
+import Header from "../../components/header";
 import Footer from "../../components/footer";
-import Title from "../../components/title";
 
 import styles from "../../styles/Post.module.css";
 
@@ -48,14 +47,14 @@ export default function Post({
         <meta name="twitter:card" content="summary_large_image" />
         {canonical ? <link rel="canonical" href={canonical} /> : null}
       </Head>
-      <Header leftAlign />
-      <Container className="max-w-3xl">
+      <Header />
+      <Container className="max-w-prose">
         <div className="mt-10">
           <p className="text-sm text-gray-500 mb-5">
             {formatDate(new Date(date))} · {readingTime}
           </p>
-          <Title>{title}</Title>
-          <h2 className="text-xl text-gray-500 leading-tight mt-4">
+          <h1 className="font-sans text-4xl font-bold">{title}</h1>
+          <h2 className="text-xl text-gray-500 leading-tight mt-4 font-serif">
             {subtitle}
           </h2>
         </div>
@@ -68,8 +67,8 @@ export default function Post({
         <div className="pb-10">
           <Subscribe />
         </div>
-        <Footer />
       </Container>
+      <Footer />
     </Layout>
   );
 }

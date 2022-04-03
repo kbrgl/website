@@ -1,4 +1,11 @@
+import { useState } from "react";
 import { promises as fs } from "fs";
+import {
+  CollectionIcon,
+  GlobeAltIcon,
+  SparklesIcon,
+} from "@heroicons/react/outline";
+import { RssIcon } from "@heroicons/react/solid";
 import path from "path";
 import Link from "next/link";
 import matter from "gray-matter";
@@ -6,70 +13,18 @@ import formatDate from "../utils/format-date";
 import parseDate from "../utils/parse-date";
 import Layout from "../components/layout";
 import Container from "../components/container";
-import Subscribe from "../components/subscribe";
 import Header, { NavbarLink } from "../components/header";
 import Footer from "../components/footer";
-import Title from "../components/title";
 import NowPlaying from "../components/now-playing";
+import Subscribe from "../components/subscribe";
 
-const PortfolioIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-    />
-  </svg>
-);
-
-const RecentlyIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
-    />
-  </svg>
-);
-
-const GlobeIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    className="h-6 w-6"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth={2}
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
-    />
-  </svg>
-);
-
-function LinkCards() {
+function QuickLinks() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 md:auto-rows-fr gap-4 my-5">
+    <div className="grid grid-cols-1 md:grid-cols-3 md:auto-rows-fr gap-4 my-3">
       <Link href="/portfolio">
         <a className="p-4 bg-[#f2f5fa] text-[#1e5097] rounded-xl">
           <p className="mb-1">
-            <PortfolioIcon />
+            <CollectionIcon className="h-6 w-6" />
           </p>
           <p className="mb-3 font-medium">Portfolio</p>
           <p className="font-normal text-zinc-600 text-sm">
@@ -80,7 +35,7 @@ function LinkCards() {
       <Link href="/recently">
         <a className="p-4 bg-[#f2f7f1] text-[#116719] rounded-xl">
           <p className="mb-1">
-            <RecentlyIcon />
+            <SparklesIcon className="h-6 w-6" />
           </p>
           <p className="mb-3 font-medium">Recently</p>
           <p className="font-normal text-zinc-600 text-sm">
@@ -90,7 +45,7 @@ function LinkCards() {
       </Link>
       <div className="p-4 bg-amber-50 text-amber-700 rounded-xl">
         <p className="mb-1 font-medium">
-          <GlobeIcon />
+          <GlobeAltIcon className="h-6 w-6" />
         </p>
         <p className="mb-3 font-medium">On the Web</p>
         <div className="text-zinc-600 text-sm">
@@ -108,33 +63,73 @@ function LinkCards() {
 }
 
 export default function Home({ posts }) {
+  const [subscribeFormOpen, setSubscribeFormOpen] = useState(false);
+  const handleSubscribeClick = () => {
+    setSubscribeFormOpen(!subscribeFormOpen);
+  };
+
   return (
     <Layout>
       <Header />
-      <div className="pt-10" />
+      <img
+        className="w-full h-80 md:h-96 object-cover border-b border-black"
+        style={{
+          objectPosition: "50% 60%",
+        }}
+        src="/taj.jpeg"
+        alt=""
+      />
       <Container>
-        <Title className="text-center">
-          I’m a sophomore studying computer science &amp; design at UC Berkeley.
-        </Title>
-        <p className="text-gray-500 my-7 text-lg max-w-prose">
-          I design for impact at{" "}
-          <a className="text-[#3d78bb]" href="https://calblueprint.org">
+        <p className="text-gray-700 mt-10 mb-5 text-lg max-w-prose">
+          I’m a sophomore at UC&nbsp;Berkeley studying computer&nbsp;science,
+          design, and public&nbsp;policy.
+        </p>
+        <p className="text-gray-700 mb-8 text-lg max-w-prose">
+          I build tech for nonprofits at{" "}
+          <a
+            className="text-[#3d78bb] underline decoration-dotted underline-offset-4"
+            href="https://calblueprint.org"
+          >
             Cal Blueprint
           </a>
           , serve on the Alumni Leader&shy;ship Council of the{" "}
-          <a className="text-[#15489f]" href="https://conradchallenge.org">
+          <a
+            className="text-[#15489f] underline decoration-dotted underline-offset-4"
+            href="https://conradchallenge.org"
+          >
             Conrad Foundation
           </a>
-          , and write a news&shy;letter descriptively titled{" "}
-          <a className="text-[#382394]" href="https://buttondown.email/kabir">
-            Kabir&nbsp;Talks&nbsp;About&nbsp;Stuff
-          </a>
-          .
+          , and{" "}
+          <a
+            href="https://buttondown.email/kabir"
+            className="text-[#382394] underline decoration-dotted underline-offset-4"
+          >
+            write a newsletter
+          </a>{" "}
+          about design, productivity, and programming.
         </p>
-        <LinkCards />
-        <Subscribe />
+        <h2 className="font-medium text-gray-500 text-sm">Quick Links</h2>
+        <QuickLinks />
         <section className="my-10">
-          <h2 className="text-3xl font-serif font-bold">Posts</h2>
+          <div className="flex items-center justify-between">
+            <h2 className="text-3xl font-title font-bold">Posts</h2>
+            <button
+              type="button"
+              className="py-1 px-4 rounded-full border hover:bg-gray-50 transition-colors text-gray-500 flex items-center space-x-1"
+              onClick={handleSubscribeClick}
+            >
+              <RssIcon className="h-5 w-5" />
+              <span className="pb-px">Subscribe</span>
+            </button>
+          </div>
+          <p className="mt-1 font-sans text-gray-500 text-lg font-normal">
+            Favorites from my newsletter
+          </p>
+          {subscribeFormOpen && (
+            <div className="mt-4">
+              <Subscribe minimal />
+            </div>
+          )}
           <ul className="mt-5 mb-10 space-y-3">
             {posts
               .map((post) => ({
@@ -179,8 +174,8 @@ export default function Home({ posts }) {
             </p>
           </div>
         </section>
-        <Footer />
       </Container>
+      <Footer />
     </Layout>
   );
 }
