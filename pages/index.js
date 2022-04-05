@@ -80,7 +80,7 @@ export default function Home({ posts }) {
         alt=""
       />
       <Container>
-        <p className="text-gray-700 mt-10 mb-5 text-lg max-w-prose">
+        <p className="text-gray-700 mt-7 mb-5 text-lg max-w-prose">
           I’m a sophomore at UC&nbsp;Berkeley studying computer&nbsp;science,
           design, and public&nbsp;policy.
         </p>

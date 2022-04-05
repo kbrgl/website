@@ -1,5 +1,5 @@
 .content {
-  @apply leading-normal mt-10 text-xl text-gray-800 font-serif;
+  @apply leading-normal mt-10 text-lg text-gray-800 font-serif;
 }
 
 .content p {
