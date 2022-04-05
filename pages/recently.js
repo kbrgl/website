@@ -30,6 +30,7 @@ export default function Recently() {
           {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
           <video
             controls
+            muted
             className="h-[600px] rounded-3xl border mx-auto shadow"
             src="/twine-figma.mp4"
           />
