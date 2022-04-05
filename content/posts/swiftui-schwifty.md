@@ -44,4 +44,4 @@ What does the SwiftUI team need to do to fix the docs? For one, it could start b
 
 ---
 
-SwiftUI needs a lot more investment from Apple. I’m guessing the SwiftUI team is aware of these issues, but there’s organizational baggage preventing them from solving them. I wouldn't be surprised if it has something to do with Apple’s rapid release cycles. As things stand, it seems Xcode is bound to collapse under the weight of the features that keep getting strapped to it with every release. I don’t expect that its demise will be well documented.
+SwiftUI needs a lot more investment from Apple. I’m guessing the SwiftUI team is aware of these issues, but there’s organizational baggage preventing them from solving them. As things stand, it seems Xcode is bound to collapse under the weight of the features that keep getting strapped to it with every release. I don’t expect that its demise will be well documented.
