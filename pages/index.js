@@ -71,14 +71,6 @@ export default function Home({ posts }) {
   return (
     <Layout>
       <Header />
-      <img
-        className="w-full h-80 md:h-96 object-cover border-b border-black"
-        style={{
-          objectPosition: "50% 60%",
-        }}
-        src="/taj.jpeg"
-        alt=""
-      />
       <Container>
         <p className="text-gray-700 mt-7 mb-5 text-lg max-w-prose">
           I’m a sophomore at UC&nbsp;Berkeley studying computer&nbsp;science,
