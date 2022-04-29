@@ -23,10 +23,12 @@ function QuickLinks() {
     <div className="grid grid-cols-1 md:grid-cols-3 md:auto-rows-fr gap-4 my-3">
       <Link href="/portfolio">
         <a className="p-4 bg-[#f2f5fa] text-[#1e5097] rounded-xl">
-          <p className="mb-1">
-            <CollectionIcon className="h-6 w-6" />
-          </p>
-          <p className="mb-3 font-medium">Portfolio</p>
+          <div className="flex space-x-1">
+            <p className="mb-1">
+              <CollectionIcon className="h-6 w-6" />
+            </p>
+            <p className="mb-1 md:mb-3 font-medium">Portfolio</p>
+          </div>
           <p className="font-normal text-zinc-600 text-sm">
             My projects, including products and open-source code.
           </p>
@@ -34,20 +36,24 @@ function QuickLinks() {
       </Link>
       <Link href="/recently">
         <a className="p-4 bg-[#f2f7f1] text-[#116719] rounded-xl">
-          <p className="mb-1">
-            <SparklesIcon className="h-6 w-6" />
-          </p>
-          <p className="mb-3 font-medium">Recently</p>
+          <div className="flex space-x-1">
+            <p className="mb-1">
+              <SparklesIcon className="h-6 w-6" />
+            </p>
+            <p className="mb-1 md:mb-3 font-medium">Recently</p>
+          </div>
           <p className="font-normal text-zinc-600 text-sm">
             The things I’ve been up to, from projects to clubs to classes.
           </p>
         </a>
       </Link>
       <div className="p-4 bg-amber-50 text-amber-700 rounded-xl">
-        <p className="mb-1 font-medium">
-          <GlobeAltIcon className="h-6 w-6" />
-        </p>
-        <p className="mb-3 font-medium">On the Web</p>
+        <div className="flex space-x-1">
+          <p className="mb-1 font-medium">
+            <GlobeAltIcon className="h-6 w-6" />
+          </p>
+          <p className="mb-1 md:mb-3 font-medium">On the Web</p>
+        </div>
         <div className="text-zinc-600 text-sm">
           <p>
             Find me on{" "}
