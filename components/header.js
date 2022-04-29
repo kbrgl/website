@@ -27,7 +27,7 @@ export default function Header() {
             <a className="font-bold">Kabir Goel</a>
           </Link>
         </div>
-        <div className="space-x-4 font-medium text-xs md:text-sm flex">
+        <div className="space-x-4 font-medium text-sm flex">
           <Link href="/portfolio">
             <a className="text-gray-500 flex items-center space-x-1">
               <span>Portfolio</span>
