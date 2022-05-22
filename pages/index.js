@@ -109,7 +109,7 @@ export default function Home({ posts }) {
         <p className="text-gray-700 mt-3 mb-7 text-lg max-w-prose">
           This summer, I’m doing research in improving machine translation in
           high-stakes settings, advised by{" "}
-          <a href="https://niloufar.org">Prof. Niloufar Salehi</a>.
+          <a className="text-[#a5446d] underline decoration-dotted underline-offset-4" href="https://niloufar.org">Prof. Niloufar Salehi</a>.
         </p>
         <h2 className="font-medium text-gray-500 text-sm clear-both">
           Quick Links
