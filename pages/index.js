@@ -78,26 +78,26 @@ export default function Home({ posts }) {
     <Layout>
       <Header />
       <Container>
-        <p className="text-gray-700 mt-7 mb-5 text-lg max-w-prose">
-          I’m a sophomore at UC&nbsp;Berkeley studying computer&nbsp;science,
-          design, and public&nbsp;policy.
+        <img
+          className="float-right h-32 w-32 rounded-full"
+          style={{ shapeOutside: "circle()" }}
+          src="/me.jpg"
+          aria-label="A photograph of Kabir Goel with his face covered in colors"
+          alt=""
+        />
+        <p className="text-gray-700 mt-7 text-lg max-w-prose">
+          I’m a rising junior at UC&nbsp;Berkeley studying computer science,
+          design, and public policy.
         </p>
-        <p className="text-gray-700 mb-8 text-lg max-w-prose">
+        <p className="text-gray-700 mt-3 text-lg max-w-prose">
           I build tech for nonprofits at{" "}
           <a
             className="text-[#3d78bb] underline decoration-dotted underline-offset-4"
             href="https://calblueprint.org"
           >
             Cal Blueprint
-          </a>
-          , serve on the Alumni Leader&shy;ship Council of the{" "}
-          <a
-            className="text-[#15489f] underline decoration-dotted underline-offset-4"
-            href="https://conradchallenge.org"
-          >
-            Conrad Foundation
-          </a>
-          , and{" "}
+          </a>{" "}
+          and{" "}
           <a
             href="https://buttondown.email/kabir"
             className="text-[#382394] underline decoration-dotted underline-offset-4"
@@ -106,7 +106,14 @@ export default function Home({ posts }) {
           </a>{" "}
           about design, productivity, and programming.
         </p>
-        <h2 className="font-medium text-gray-500 text-sm">Quick Links</h2>
+        <p className="text-gray-700 mt-3 mb-7 text-lg max-w-prose">
+          This summer, I’m doing research in improving machine translation in
+          high-stakes settings, advised by{" "}
+          <a href="https://niloufar.org">Prof. Niloufar Salehi</a>.
+        </p>
+        <h2 className="font-medium text-gray-500 text-sm clear-both">
+          Quick Links
+        </h2>
         <QuickLinks />
         <section className="my-10">
           <div className="flex items-center justify-between">
