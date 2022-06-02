@@ -85,8 +85,8 @@ export async function getStaticProps({ params: { slug } }) {
     .use(remarkGfm)
     .use(retextSmartypants)
     .use(remarkPrism)
-    .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeStringify, { allowDangerousHtml: true });
+    .use(remarkRehype)
+    .use(rehypeStringify);
   const file = processor.processSync(fileContents);
 
   const html = String(file);
