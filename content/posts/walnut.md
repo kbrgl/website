@@ -49,7 +49,7 @@ This kind of programming might seem like it lends itself only to trivial program
 
 Cool, innit?
 
-The Walnut compiler has two "phases": parsing the source code into a meaningful data structure and generating Go code from this data structure. To write a Brainfuck compiler, you don't actually need to do any parsing; you can generate Go directly from the Brainfuck source. But I learned a lot about parsing by doing this anyway. In the following two sections, I talk about how these two phases are implemented.
+The Walnut compiler has two "phases": parsing the source code into a meaningful data structure and generating Go code from this data structure. To write a Brainfuck compiler, you don't actually need to do any parsing; you can generate Go directly from the Brainfuck source. But I learned so much about parsing by overengineering anyway. In the following two sections, I talk about how these two phases are implemented.
 
 ## Parsing the source
 
@@ -145,9 +145,9 @@ assignment:
     | single_target augassign ~ (yield_expr | star_expressions)
 ```
 
-A lot of modern compilers use a toolchain called LLVM behind the scenes. For example, `clang`, the default macOS C compiler, uses LLVM. What is LLVM for? Well, consider what happens when you want to compile to assembly. If your hand-rolled compiler generates x86_64 assembly, then your programs won't run on an ARM machine like an M1 Mac. So you'll have to go and manually implement another output format for your compiler.[^2] What LLVM enables you to do is simply write a "front end" that compiles your language down to what it calls an "Intermediate Representation" (IR). Then, LLVM takes care of compiling the IR to any number of instruction sets, from ARM and MIPS to x86_64 and WebAssembly.
+Modern compilers frequently use a toolchain called LLVM behind the scenes. For example, `clang`, the default macOS C compiler, uses LLVM. What is LLVM for? Well, consider what happens when you want to compile to assembly. If your hand-rolled compiler generates x86_64 assembly, then your programs won't run on an ARM machine like an M1 Mac. So you'll have to go and manually implement another output format for your compiler.[^2] What LLVM enables you to do is simply write a "front end" that compiles your language down to what it calls an "Intermediate Representation" (IR). Then, LLVM takes care of compiling the IR to any number of instruction sets, from ARM and MIPS to x86_64 and WebAssembly.
 
-A lot of people like to write compilers in functional languages like Haskell and OCaml. There's a lot of recursion when you're working with ASTs, and functional languages make that part a lot easier. Plus they're fast, safe, and expressive. As a byproduct, Haskell and OCaml also have very mature ecosystems for this kind of thing.
+People often like to write compilers in functional languages like Haskell and OCaml. There's loads of recursion when you're working with ASTs, and functional languages make that part significantly easier. Plus they're fast, safe, and expressive. As a byproduct, Haskell and OCaml also have very mature ecosystems for this kind of thing.
 
 ---
 
