@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }) {
         <title>Kabir Goel</title>
         <meta
           name="description"
-          content="The website and blog of Kabir Goel, a writer, maker, and sophomore at the University of California, Berkeley."
+          content="The website and blog of Kabir Goel, a writer, maker, and junior at the University of California, Berkeley."
         />
       </Head>
       {/* eslint-disable-next-line react/jsx-props-no-spreading */}

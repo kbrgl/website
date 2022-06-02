@@ -86,8 +86,8 @@ export default function Home({ posts }) {
           alt=""
         />
         <p className="text-gray-700 mt-7 text-lg max-w-prose">
-          I’m a rising junior at UC&nbsp;Berkeley studying computer science,
-          design, and public policy.
+          I’m a junior at UC&nbsp;Berkeley studying computer science, design,
+          and public policy.
         </p>
         <p className="text-gray-700 mt-3 text-lg max-w-prose">
           I build tech for nonprofits at{" "}
@@ -109,7 +109,13 @@ export default function Home({ posts }) {
         <p className="text-gray-700 mt-3 mb-7 text-lg max-w-prose">
           This summer, I’m doing research in improving machine translation in
           high-stakes settings, advised by{" "}
-          <a className="text-[#a5446d] underline decoration-dotted underline-offset-4" href="https://niloufar.org">Prof. Niloufar Salehi</a>.
+          <a
+            className="text-[#a5446d] underline decoration-dotted underline-offset-4"
+            href="https://niloufar.org"
+          >
+            Prof. Niloufar Salehi
+          </a>
+          .
         </p>
         <h2 className="font-medium text-gray-500 text-sm clear-both">
           Quick Links
