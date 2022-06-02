@@ -3,7 +3,7 @@
  */
 
 code:not([class*="language-"]) {
-  @apply p-0.5 rounded-lg border border-gray-100 bg-gray-50 font-mono text-sm;
+  @apply p-0.5 rounded-md bg-gray-100 font-mono text-base;
 }
 
 code[class*="language-"],
@@ -18,7 +18,7 @@ pre[class*="language-"] {
   tab-size: 4;
 
   hyphens: none;
-  color: #728fcb;
+  color: #4f6ca8;
 }
 
 pre > code[class*="language-"] {
@@ -49,11 +49,11 @@ code[class*="language-"] ::selection {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #b6ad9a;
+  color: #b29b6a;
 }
 
 .token.punctuation {
-  color: #b6ad9a;
+  color: #b29b6a;
 }
 
 .token.namespace {
@@ -63,7 +63,7 @@ code[class*="language-"] ::selection {
 .token.tag,
 .token.operator,
 .token.number {
-  color: #063289;
+  color: #3b5c9f;
 }
 
 .token.property,
@@ -94,7 +94,7 @@ code.language-scss,
 .token.statement,
 .token.regex,
 .token.atrule {
-  color: #728fcb;
+  color: #5c7ab8;
 }
 
 .token.string,
@@ -118,7 +118,6 @@ code.language-scss,
 }
 
 .token.inserted {
-  border-bottom: 1px dotted #2d2006;
   text-decoration: none;
 }
 
@@ -152,7 +151,7 @@ pre > code.highlight {
 }
 
 .line-numbers-rows > span::before {
-  color: #cdc4b1;
+  color: #c6b99b;
 }
 
 /* overrides color-values for the Line Highlight plugin
