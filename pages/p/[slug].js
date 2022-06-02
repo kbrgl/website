@@ -2,12 +2,13 @@ import Head from "next/head";
 import { promises as fs } from "fs";
 import path from "path";
 import matter from "gray-matter";
-import remark from "remark";
-import remarkHtml from "remark-html";
+import { remark } from "remark";
 import retextSmartypants from "retext-smartypants";
 import remarkFrontmatter from "remark-frontmatter";
-import remarkFootnotes from "remark-footnotes";
 import remarkPrism from "remark-prism";
+import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
 import calculateReadingTime from "reading-time";
 import formatDate from "../../utils/format-date";
 import Layout from "../../components/layout";
@@ -64,7 +65,7 @@ export default function Post({
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
-        <div className="pb-10">
+        <div className="pt-5 pb-10">
           <Subscribe />
         </div>
       </Container>
@@ -81,10 +82,11 @@ export async function getStaticProps({ params: { slug } }) {
   const frontmatter = matter(fileContents).data;
   const processor = remark()
     .use(remarkFrontmatter)
+    .use(remarkGfm)
     .use(retextSmartypants)
-    .use(remarkFootnotes)
     .use(remarkPrism)
-    .use(remarkHtml);
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeStringify, { allowDangerousHtml: true });
   const file = processor.processSync(fileContents);
 
   const html = String(file);

@@ -62,30 +62,30 @@
   content: counter(list-counter) ".";
 }
 
-.content :global(.footnotes) {
-  @apply text-gray-500 text-sm font-sans;
+.content :global(#footnote-label) {
+  @apply mt-0 border-t pt-5 pb-2 text-base font-medium;
 }
 
-.content :global(.footnotes) ol {
-  @apply py-5;
+.content :global([id^="user-content-fn-"]) {
+  @apply mb-1 text-gray-500 text-sm font-sans;
 }
 
-.content :global(.footnotes) li {
-  @apply mb-1;
-}
-
-.content :global(.footnotes) li:last-of-type {
-  @apply mb-0;
-}
-
-.content :global(.footnote-ref) {
-  @apply text-cyan-700;
-}
-
-.content :global(.footnote-backref) {
+.content :global([data-footnote-backref]) {
   @apply ml-auto pl-1 text-cyan-900;
 }
 
 .content blockquote {
   @apply m-0 pl-5 border-l-cyan-500 border-l-4;
+}
+
+.content table {
+  @apply border-collapse border;
+}
+
+.content th {
+  @apply font-sans font-medium text-left;
+}
+
+.content th, .content td {
+  @apply border border-gray-400 p-3;
 }
