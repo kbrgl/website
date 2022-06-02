@@ -20,7 +20,7 @@ import Subscribe from "../components/subscribe";
 
 function QuickLinks() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 md:auto-rows-fr gap-4 my-3">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-3">
       <Link href="/portfolio">
         <a className="p-4 bg-[#f2f5fa] text-[#1e5097] rounded-xl">
           <div className="flex space-x-1">
@@ -64,6 +64,15 @@ function QuickLinks() {
           </p>
         </div>
       </div>
+      <p className="text-sm text-gray-500 md:col-span-3">
+        See what I’m{" "}
+        <Link href="/spotify">
+          <a className="underline underline-offset-4 decoration-dotted decoration-gray-500">
+            listening to
+          </a>
+        </Link>{" "}
+        &rarr;
+      </p>
     </div>
   );
 }
@@ -85,11 +94,11 @@ export default function Home({ posts }) {
           aria-label="A photograph of Kabir Goel with his face covered in colors"
           alt=""
         />
-        <p className="text-gray-700 mt-7 text-lg max-w-prose">
+        <p className="mt-7 text-3xl md:text-4xl font-title font-bold max-w-prose">
           I’m a junior at UC&nbsp;Berkeley studying computer science, design,
           and public policy.
         </p>
-        <p className="text-gray-700 mt-3 text-lg max-w-prose">
+        <p className="text-gray-700 mt-7 text-lg max-w-prose">
           I build tech for nonprofits at{" "}
           <a
             className="text-[#3d78bb] underline decoration-dotted underline-offset-4"
@@ -104,10 +113,12 @@ export default function Home({ posts }) {
           >
             write a newsletter
           </a>{" "}
-          about design, productivity, and programming.
+          about design, productivity, and programming. When I’m not building or
+          writing I usually end up watching a Vox documentary or reading about
+          economics, history, or politics.
         </p>
-        <p className="text-gray-700 mt-3 mb-7 text-lg max-w-prose">
-          This summer, I’m doing research in improving machine translation in
+        <p className="text-gray-700 mt-3 text-lg max-w-prose">
+          This summer I’m doing research in improving machine translation in
           high-stakes settings, advised by{" "}
           <a
             className="text-[#a5446d] underline decoration-dotted underline-offset-4"
@@ -115,33 +126,44 @@ export default function Home({ posts }) {
           >
             Prof. Niloufar Salehi
           </a>
+          . Previously, I built a better way to invest in India at{" "}
+          <a
+            className="text-[#308141] underline decoration-dotted underline-offset-4"
+            href="https://niloufar.org"
+          >
+            Swadesh
+          </a>
           .
         </p>
-        <h2 className="font-medium text-gray-500 text-sm clear-both">
+        <p className="text-gray-700 mt-3 text-lg max-w-prose">
+          I grew up in New Delhi, India. In Delhi, I led my high school’s{" "}
+          <a
+            href="https://exunclan.com"
+            className="text-[#326bc7] underline decoration-dotted underline-offset-4"
+          >
+            tech club
+          </a>{" "}
+          and organized one of the largest high school hackathons in the
+          country. When I go home I typically gain about 5 lbs. in butter
+          chicken and naan.
+        </p>
+        <p className="text-gray-700 mt-3 text-lg max-w-prose">
+          You should follow me on Twitter. I think I’m pretty funny.
+        </p>
+        <h2 className="font-medium border-t mt-10 pt-10 text-gray-500 text-sm clear-both">
           Quick Links
         </h2>
         <QuickLinks />
-        <section className="my-10">
-          <div className="flex items-center justify-between">
-            <h2 className="text-3xl font-title font-bold">Posts</h2>
-            <button
-              type="button"
-              className="py-1 px-4 rounded-full border hover:bg-gray-50 transition-colors text-gray-500 flex items-center space-x-1"
-              onClick={handleSubscribeClick}
-            >
-              <RssIcon className="h-5 w-5" />
-              <span className="pb-px">Subscribe</span>
-            </button>
-          </div>
-          <p className="mt-1 font-sans text-gray-500 text-lg font-normal">
-            Favorites from my newsletter
+        <section className="border-t mt-10 pt-10 mb-7 text-center">
+          <h2 className="text-4xl font-title font-bold">Posts</h2>
+          <p className="mt-1 font-sans text-gray-500 font-normal">
+            <NavbarLink href="https://buttondown.email/kabir">
+              Get my writing in your inbox.
+            </NavbarLink>
           </p>
-          {subscribeFormOpen && (
-            <div className="mt-4">
-              <Subscribe minimal />
-            </div>
-          )}
-          <ul className="mt-5 mb-10 space-y-3">
+        </section>
+        <section>
+          <ul className="mb-10 space-y-3">
             {posts
               .map((post) => ({
                 ...post,
@@ -170,20 +192,6 @@ export default function Home({ posts }) {
                 </Link>
               ))}
           </ul>
-          <div>
-            <NowPlaying />
-            <p className="mt-3 text-gray-500">
-              See what I’ve been{" "}
-              <Link href="/spotify">
-                <a className="text-gray-700">
-                  <span className="decoration-gray-300 underline decoration-2">
-                    listening to
-                  </span>{" "}
-                  &rarr;
-                </a>
-              </Link>{" "}
-            </p>
-          </div>
         </section>
       </Container>
       <Footer />
