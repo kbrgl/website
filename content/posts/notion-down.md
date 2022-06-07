@@ -3,6 +3,7 @@ title: Notion is down
 subtitle: It appears they forgot to renew their domain. Oops.
 date: 2021-02-12
 preview: https://kabirgoel.com/static/notion-name-tweet.jpg
+hidden: true
 ---
 
 _Update: The issue has been fixed. See end of post._
