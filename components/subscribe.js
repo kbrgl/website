@@ -3,7 +3,7 @@ import SingleFieldForm from "./single-field-form";
 import StatusMessage from "./status-message";
 import Loader from "./loader";
 
-export default function Subscribe({ minimal = false }) {
+export default function Subscribe() {
   const [loading, setLoading] = useState(false);
   const [ok, setOk] = useState(null);
 
@@ -30,34 +30,13 @@ export default function Subscribe({ minimal = false }) {
   };
 
   return (
-    <div>
-      {!minimal && (
-        <>
-          <hr className="w-24 pb-8 md:pb-5" />
-          <div className="flex space-x-3 mb-5 items-end -mt-3">
-            <p className="leading-snug">
-              <span className="font-medium">Get my posts in your inbox.</span>{" "}
-              <span className="text-gray-500">
-                No spam, just occasional thoughts on design, productivity,
-                programming, and whatever else is on my mind.
-              </span>
-            </p>
-            <img
-              className="h-16 w-16 rounded-lg shadow-md rotate-3 -skew-x-3"
-              src="/newsletter-logo.png"
-              alt=""
-            />
-          </div>
-        </>
-      )}
-      <div className="mb-3">
-        <SingleFieldForm
-          action={loading ? <Loader /> : "Sign up"}
-          type="email"
-          placeholder="Your email..."
-          onSubmit={handleSubmit}
-        />
-      </div>
+    <div className="bg-gray-50 p-5 rounded-xl">
+      <SingleFieldForm
+        action={loading ? <Loader /> : "Sign up"}
+        type="email"
+        placeholder="Your email..."
+        onSubmit={handleSubmit}
+      />
       {ok !== null ? (
         <StatusMessage
           ok={ok}
@@ -66,7 +45,7 @@ export default function Subscribe({ minimal = false }) {
               ? "Thanks for signing up! Please check your inbox."
               : "Couldn’t sign you up. Are you sure your email is valid and you aren’t already subscribed?"
           }
-          className="my-1"
+          className="mt-3"
         />
       ) : null}
     </div>

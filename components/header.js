@@ -1,23 +1,6 @@
 import Link from "next/link";
 import Container from "./container";
 
-export function NavbarLink({ internal = false, href, children }) {
-  const link = (
-    <a
-      href={internal ? "#" : href}
-      target={!internal ? "_blank" : undefined}
-      rel="noreferrer"
-      className="hover:text-accent transition-colors duration-200"
-    >
-      {children} {!internal && "↗"}
-    </a>
-  );
-  if (internal) {
-    return <Link href={href}>{link}</Link>;
-  }
-  return link;
-}
-
 export default function Header() {
   return (
     <nav className="bg-gray-50 border-b border-black py-4">

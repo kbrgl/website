@@ -66,6 +66,9 @@ export default function Post({
         />
 
         <div className="py-12">
+          <p className="leading-snug font-medium mb-2">
+            Get more like this in your inbox.
+          </p>
           <Subscribe />
         </div>
       </Container>
@@ -85,8 +88,8 @@ export async function getStaticProps({ params: { slug } }) {
     .use(remarkGfm)
     .use(retextSmartypants)
     .use(remarkPrism)
-    .use(remarkRehype)
-    .use(rehypeStringify);
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypeStringify, { allowDangerousHtml: true });
   const file = processor.processSync(fileContents);
 
   const html = String(file);
