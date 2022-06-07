@@ -25,7 +25,7 @@ The Brainfuck commands each manipulate either the current cell or the pointer, a
 | `[`     | If the current cell is nonzero, execute the commands until the corresponding `]`. Otherwise skip to the command after the corresponding `]`. |
 | `]`     | Go back to the corresponding `[`.                                                                                                            |
 
-If you want to output `HW`, you push the ASCII values of `H` and `W`, which are 72 and 87, onto the data tape and print them:
+Let’s see a hello world example. If you want to output `HW`, you push the ASCII values of `H` and `W`, which are 72 and 87, onto the data tape and print them:
 
 ```brainfuck
 ++++++++++++++++++++++++++++++++++++
@@ -45,9 +45,9 @@ This can be compressed with a loop:
 
 This kind of programming might seem like it lends itself only to trivial programs. But get ready to have your mind blown. Here’s a Mandelbrot fractal viewer written in Brainfuck and compiled using Walnut:[^1]
 
-![](/static/walnut/mandelbrot.mov)
+<video controls source="/static/walnut/mandelbrot.mov">
 
-Cool, innit?
+How awesome is that?
 
 The Walnut compiler has two "phases": parsing the source code into a meaningful data structure and generating Go code from this data structure. To write a Brainfuck compiler, you don't actually need to do any parsing; you can generate Go directly from the Brainfuck source. But I learned so much about parsing by overengineering anyway. In the following two sections, I talk about how these two phases are implemented.
 
