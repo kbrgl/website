@@ -16,7 +16,7 @@ export default function SingleFieldForm({
       className="flex flex-col space-y-2"
     >
       <input
-        className="p-3 flex-1 border-2 focus:border-gray-700 outline-none h-12 rounded-lg transition-colors"
+        className="p-3 flex-1 bg-gray-100 outline-none h-12 rounded-lg transition-colors"
         value={value}
         onChange={(event) => {
           setValue(event.target.value);

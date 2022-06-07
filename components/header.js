@@ -20,25 +20,24 @@ export function NavbarLink({ internal = false, href, children }) {
 
 export default function Header() {
   return (
-    <nav className="bg-gradient-to-b from-gray-100 to-transparent py-5">
-      <Container className="flex flex-col md:flex-row md:items-center md:justify-between space-y-3 md:space-y-0">
-        <div>
+    <nav className="bg-gradient-to-b from-gray-100 to-transparent border-b py-6">
+      <Container className="text-sm flex items-center justify-between">
+        <div className="flex flex-col space-y-0.5">
           <Link href="/">
-            <a className="font-bold">Kabir Goel</a>
+            <a className="font-medium">Kabir Goel</a>
           </Link>
-        </div>
-        <div className="space-x-4 font-medium flex">
-          <Link href="/portfolio">
-            <a className="text-gray-500 flex items-center space-x-1">
-              <span>Portfolio</span>
+          <Link href="https://read.cv/kabirgoel">
+            <a className="text-gray-500 inline-flex items-center">
+              Engineer &amp; product designer
             </a>
           </Link>
-          <Link href="/recently">
-            <a className="text-gray-500 flex items-center space-x-1">
-              <span>Recently</span>
-            </a>
-          </Link>
+          <p className="text-gray-500">Berkeley, CA</p>
         </div>
+        <Link href="/">
+          <a href="">
+            <img class="h-24 w-24 rounded-full" src="/me.jpg" alt="" />
+          </a>
+        </Link>
       </Container>
     </nav>
   );
