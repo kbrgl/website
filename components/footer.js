@@ -3,7 +3,7 @@ import Container from "./container";
 
 export default function Footer() {
   return (
-    <footer className="border-t py-5">
+    <footer className="py-16">
       <Container>
         <p className="mb-3 text-gray-600">
           “Man who make mistake in elevator, wrong on many levels.”—Confucius

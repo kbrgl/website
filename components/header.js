@@ -20,14 +20,14 @@ export function NavbarLink({ internal = false, href, children }) {
 
 export default function Header() {
   return (
-    <nav className="bg-[#fafafacc] backdrop-blur-lg border-b border-black py-4">
+    <nav className="bg-gradient-to-b from-gray-100 to-transparent py-5">
       <Container className="flex flex-col md:flex-row md:items-center md:justify-between space-y-3 md:space-y-0">
         <div>
           <Link href="/">
             <a className="font-bold">Kabir Goel</a>
           </Link>
         </div>
-        <div className="space-x-4 font-medium text-sm flex">
+        <div className="space-x-4 font-medium flex">
           <Link href="/portfolio">
             <a className="text-gray-500 flex items-center space-x-1">
               <span>Portfolio</span>

@@ -5,7 +5,6 @@ import {
   GlobeAltIcon,
   SparklesIcon,
 } from "@heroicons/react/outline";
-import { RssIcon } from "@heroicons/react/solid";
 import path from "path";
 import Link from "next/link";
 import matter from "gray-matter";
@@ -15,8 +14,6 @@ import Layout from "../components/layout";
 import Container from "../components/container";
 import Header, { NavbarLink } from "../components/header";
 import Footer from "../components/footer";
-import NowPlaying from "../components/now-playing";
-import Subscribe from "../components/subscribe";
 
 function QuickLinks() {
   return (
@@ -78,27 +75,15 @@ function QuickLinks() {
 }
 
 export default function Home({ posts }) {
-  const [subscribeFormOpen, setSubscribeFormOpen] = useState(false);
-  const handleSubscribeClick = () => {
-    setSubscribeFormOpen(!subscribeFormOpen);
-  };
-
   return (
     <Layout>
       <Header />
       <Container>
-        <img
-          className="float-right h-32 w-32 rounded-full"
-          style={{ shapeOutside: "circle()" }}
-          src="/me.jpg"
-          aria-label="A photograph of Kabir Goel with his face covered in colors"
-          alt=""
-        />
-        <p className="mt-7 text-3xl md:text-4xl font-title font-bold max-w-prose">
-          I’m a junior at UC&nbsp;Berkeley studying computer science, design,
-          and public policy.
+        <p className="mt-12 text-5xl font-title max-w-prose leading-tight">
+          Junior at UC&nbsp;Berkeley studying computer science, design, and
+          public policy.
         </p>
-        <p className="text-gray-700 mt-7 text-lg max-w-prose">
+        <p className="text-gray-700 mt-12 text-lg max-w-prose">
           I build tech for nonprofits at{" "}
           <a
             className="text-[#3d78bb] underline decoration-dotted underline-offset-4"
