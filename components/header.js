@@ -20,7 +20,7 @@ export function NavbarLink({ internal = false, href, children }) {
 
 export default function Header() {
   return (
-    <nav className="bg-[#fafafacc] backdrop-blur-lg border-b border-black py-4">
+    <nav className="bg-[#fafafacc] border-b border-black py-4">
       <Container className="flex flex-col md:flex-row md:items-center md:justify-between space-y-3 md:space-y-0">
         <div>
           <Link href="/">
