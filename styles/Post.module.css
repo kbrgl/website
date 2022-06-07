@@ -63,7 +63,11 @@
 }
 
 .content :global(#footnote-label) {
-  @apply mt-0 border-t pt-5 pb-2 text-base font-medium;
+  @apply my-2 text-base font-medium;
+}
+
+.content :global(.footnotes) {
+  @apply mt-12 py-6 border-t-2 border-b-2;
 }
 
 .content :global([id^="user-content-fn-"]) {
@@ -79,7 +83,7 @@
 }
 
 .content table {
-  @apply border-collapse border;
+  @apply border-collapse;
 }
 
 .content th {
@@ -88,4 +92,8 @@
 
 .content th, .content td {
   @apply border border-gray-400 p-3;
+}
+
+.content hr {
+  @apply my-12 w-24 mx-auto border-dotted border-gray-400 border-t-2;
 }
