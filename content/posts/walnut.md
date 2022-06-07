@@ -8,6 +8,9 @@ preview: https://kabirgoel.com/static/walnut/preview.png
 In 2017, I wrote [Walnut](https://github.com/kbrgl/walnut), a toy compiler that converts Brainfuck code to its equivalent Go program. In this post, I describe how I built Walnut and how the process generalizes to writing useful compilers.
 
 [Brainfuck](https://en.wikipedia.org/wiki/Brainfuck) is an “esoteric programming language”—not meant to write software, but to show how small a programming language can be. There are only 8 possible commands you can use (`-+.,[]><`). This minimalism makes it trivial to write a compiler, since the set of possible inputs and outputs is tiny.
+
+## How Brainfuck works
+
 A Brainfuck program operates on a 30,000 cell “data tape” with a pointer. Each cell can contain either zero or a positive integer:
 
 ![](/static/walnut/bf-tape.jpeg)
@@ -43,13 +46,13 @@ This can be compressed with a loop:
 +++++++++++++++.
 ```
 
-This kind of programming might seem like it lends itself only to trivial programs. But get ready to have your mind blown. Here’s a Mandelbrot fractal viewer written in Brainfuck and compiled using Walnut:[^1]
+And voila: The program outputs `HW` as expected. Not very impressive; this kind of programming might seem like it lends itself only to trivial programs. But get ready to have your mind blown. Here’s a Mandelbrot fractal viewer written in Brainfuck and compiled using Walnut:[^1]
 
 <video controls autoplay src="/static/walnut/mandelbrot.mov">
 	Your browser doesn’t support embedded videos
 </video>
 
-How awesome is that?
+How awesome is that? One of the fun things about writing a compiler is that you get to marvel at the incredibly complex things it enables. So let’s see how the Walnut compiler works.
 
 The Walnut compiler has two "phases": parsing the source code into a meaningful data structure and generating Go code from this data structure. To write a Brainfuck compiler, you don't actually need to do any parsing; you can generate Go directly from the Brainfuck source. But I learned so much about parsing by overengineering anyway. In the following two sections, I talk about how these two phases are implemented.
 
@@ -147,13 +150,15 @@ assignment:
     | single_target augassign ~ (yield_expr | star_expressions)
 ```
 
-Modern compilers frequently use a toolchain called LLVM behind the scenes. For example, `clang`, the default macOS C compiler, uses LLVM. What is LLVM for? Well, consider what happens when you want to compile to assembly. If your hand-rolled compiler generates x86_64 assembly, then your programs won't run on an ARM machine like an M1 Mac. So you'll have to go and manually implement another output format for your compiler.[^2] What LLVM enables you to do is simply write a "front end" that compiles your language down to what it calls an "Intermediate Representation" (IR). Then, LLVM takes care of compiling the IR to any number of instruction sets, from ARM and MIPS to x86_64 and WebAssembly.
+The entire Python grammar is available [here](https://docs.python.org/3/reference/grammar.html). It’s great inspiration for specifying your own languages.
 
-People often like to write compilers in functional languages like Haskell and OCaml. There's loads of recursion when you're working with ASTs, and functional languages make that part significantly easier. Plus they're fast, safe, and expressive. As a byproduct, Haskell and OCaml also have very mature ecosystems for this kind of thing.
+There’s plenty of tooling available for code generation too. Modern compilers frequently use a toolchain called LLVM behind the scenes. For example, `clang`, the default macOS C compiler, uses LLVM. What does LLVM do? Well, consider what happens when you want to compile to assembly. If your hand-rolled compiler generates x86_64 assembly, then your programs won't run on an ARM machine like an M1 Mac. So you'll have to go and manually implement another output format for your compiler.[^2] What LLVM enables you to do is simply write a "front end" that compiles your language down to what it calls an "Intermediate Representation" (IR). Then, LLVM takes care of compiling the IR to any number of instruction sets, from ARM and MIPS to x86_64 and WebAssembly.
+
+Most languages that people use, from JavaScript to Python to Ruby, are written in C or C-derivatives like C++. However, many people swear by writing their compilers in functional languages like Haskell and OCaml. There's loads of recursion when you're working with ASTs, and functional languages make that part significantly easier. Plus they're fast, safe, and expressive. As a byproduct, Haskell and OCaml also have very mature ecosystems for this kind of thing.
 
 ---
 
-This has been a 15 minute intro to parsers and compilers. There's a lot of depth (and beauty) to the CS concepts that underpin these, much more than I know of or can reasonably write about. If my post piqued your interest, I'd suggest reading [the Dragon book](https://www.amazon.com/Compilers-Principles-Techniques-Tools-2nd/dp/0321486811/ref=sr_1_1?crid=93ROSLPAARAM&keywords=Compilers%3A+Principles%2C+Techniques%2C+and+Tools&qid=1654155718&s=books&sprefix=compilers+principles%2C+techniques%2C+and+tools%2Cstripbooks%2C225&sr=1-1), which is one of the classic compiler textbooks. There's also [Writing a C Compiler](https://norasandler.com/2017/11/29/Write-a-Compiler.html) by Nora Sandler, which Hacker News people seem to like. Finally, you can access the Walnut source code [on GitHub](https://github.com/kbrgl/walnut).
+If you enjoyed this intro to the Walnut compiler, I'd suggest reading [the Dragon book](https://www.amazon.com/Compilers-Principles-Techniques-Tools-2nd/dp/0321486811/ref=sr_1_1?crid=93ROSLPAARAM&keywords=Compilers%3A+Principles%2C+Techniques%2C+and+Tools&qid=1654155718&s=books&sprefix=compilers+principles%2C+techniques%2C+and+tools%2Cstripbooks%2C225&sr=1-1), which is one of the classic compiler textbooks. There's also [Writing a C Compiler](https://norasandler.com/2017/11/29/Write-a-Compiler.html) by Nora Sandler, which Hacker News people seem to like. Finally, you can access the Walnut source code [on GitHub](https://github.com/kbrgl/walnut).
 
 [^1]: This was written by Erik Bosman. It's not written directly in Brainfuck; Bosman created snippets of commands that accomplished high-level tasks and stitched them together. Abstraction abstraction abstraction!
 [^2]: Actually, this isn't strictly true; you could use tools that convert from one instruction set to another. But this will probably be more trouble than it's worth.
