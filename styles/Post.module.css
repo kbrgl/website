@@ -27,7 +27,7 @@
   @apply text-gray-500 text-sm pb-3 mt-3 font-sans;
 }
 
-.content img {
+.content img, .content video {
   @apply mx-auto my-3 rounded;
 }
 
