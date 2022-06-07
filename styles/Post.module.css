@@ -3,7 +3,7 @@
 }
 
 .content p {
-  @apply my-5;
+  @apply my-8;
 }
 
 .content a {
@@ -16,7 +16,7 @@
 .content h4,
 .content h5,
 .content h6 {
-  @apply mt-10 font-bold text-xl leading-tight font-sans;
+  @apply mt-12 font-bold text-xl leading-tight font-sans;
 }
 
 .content figure {
@@ -63,7 +63,7 @@
 }
 
 .content :global(#footnote-label) {
-  @apply mt-0 border-t pt-5 pb-2 text-base font-medium;
+  @apply mt-0 border-t pt-12 pb-2 text-base font-medium;
 }
 
 .content :global([id^="user-content-fn-"]) {
@@ -88,4 +88,8 @@
 
 .content th, .content td {
   @apply border border-gray-400 p-3;
+}
+
+.content hr {
+  @apply my-12;
 }

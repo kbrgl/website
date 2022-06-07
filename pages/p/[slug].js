@@ -65,7 +65,7 @@ export default function Post({
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
-        <div className="pt-5 pb-10">
+        <div className="pt-12 pb-10">
           <Subscribe />
         </div>
       </Container>

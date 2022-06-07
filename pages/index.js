@@ -20,7 +20,7 @@ export default function Home({ posts }) {
             I’m a junior studying computer science, design, and public policy at
             UC&nbsp;Berkeley.
           </Title>
-          <p className="text-gray-500 leading-relaxed max-w-prose">
+          <p className="text-gray-700 leading-relaxed max-w-prose">
             I build tech for nonprofits at{" "}
             <a className="link text-[#3d78bb]" href="https://calblueprint.org">
               Cal Blueprint
@@ -36,7 +36,7 @@ export default function Home({ posts }) {
             or writing I usually end up watching a Vox documentary or reading
             about economics, history, or politics.
           </p>
-          <p className="mt-6 text-gray-500 leading-relaxed max-w-prose">
+          <p className="mt-6 text-gray-700 leading-relaxed max-w-prose">
             This summer I’m doing research in improving machine translation in
             high-stakes settings, advised by{" "}
             <a className="link text-[#a5446d]" href="https://niloufar.org">
@@ -48,7 +48,7 @@ export default function Home({ posts }) {
             </a>
             .
           </p>
-          <p className="mt-6 text-gray-500 leading-relaxed max-w-prose">
+          <p className="mt-6 text-gray-700 leading-relaxed max-w-prose">
             I grew up in New Delhi, India. In Delhi, I led my high school’s{" "}
             <a href="https://exunclan.com" className="link text-[#326bc7]">
               tech club
@@ -57,12 +57,20 @@ export default function Home({ posts }) {
             country. When I go home I typically gain about 5 lbs. in butter
             chicken and naan.
           </p>
-          <p className="mt-6 text-gray-500 leading-relaxed max-w-prose">
+          <p className="mt-6 text-gray-700 leading-relaxed max-w-prose">
             You should follow me on{" "}
             <a className="link" href="https://twitter.com/KabirGoel">
               Twitter
             </a>
             . I think I’m pretty funny.
+          </p>
+          <p className="mt-12">
+            <a
+              className="font-serif rounded-full border px-3 py-0.5"
+              href="https://read.cv/kabirgoel"
+            >
+              Portfolio ↗
+            </a>
           </p>
         </section>
         <section className="border-t border-b mt-10 pt-10">
@@ -81,20 +89,12 @@ export default function Home({ posts }) {
               .sort((a, b) => +b.date - +a.date)
               .map((post) => (
                 <Link href={`/p/${post.slug}`} key={post.slug}>
-                  <a
-                    className="flex justify-between items-stretch"
-                    key={post.slug}
-                  >
-                    <div class="space-y-1 flex-1">
-                      <p className="font-medium link hover:text-accent transition-colors">
-                        {post.title}
-                      </p>
-                      <p className="text-gray-500 transition-colors pb-2">
-                        {post.subtitle}
-                      </p>
-                    </div>
-                    <p className="text-sm text-gray-500 transition-colors w-24 border-l flex items-center justify-end">
-                      {post.dateString}
+                  <a className="block space-y-1 group" key={post.slug}>
+                    <p className="font-medium link group-hover:text-accent transition-colors">
+                      {post.title}
+                    </p>
+                    <p className="text-gray-500 transition-colors pb-2">
+                      {post.subtitle}
                     </p>
                   </a>
                 </Link>

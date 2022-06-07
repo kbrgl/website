@@ -47,7 +47,7 @@ This kind of programming might seem like it lends itself only to trivial program
 
 ![](/static/walnut/mandelbrot.mov)
 
-Cool, innit?
+How cool is that?
 
 The Walnut compiler has two "phases": parsing the source code into a meaningful data structure and generating Go code from this data structure. To write a Brainfuck compiler, you don't actually need to do any parsing; you can generate Go directly from the Brainfuck source. But I learned so much about parsing by overengineering anyway. In the following two sections, I talk about how these two phases are implemented.
 

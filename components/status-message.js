@@ -11,7 +11,7 @@ export function SuccessIcon() {
 export default function StatusMessage({ ok, message, className = "" }) {
   return (
     <div
-      className={`text-sm max-w-prose ${
+      className={`text-sm max-w-sm ${
         ok ? "text-green-600" : "text-red-700"
       } ${className}`}
     >

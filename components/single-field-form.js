@@ -16,7 +16,7 @@ export default function SingleFieldForm({
       className="flex flex-col space-y-2"
     >
       <input
-        className="p-3 flex-1 bg-gray-100 outline-none h-12 rounded-lg transition-colors"
+        className="px-3 py-2 max-w-sm flex-1 bg-gray-100 outline-none rounded-lg transition-colors"
         value={value}
         onChange={(event) => {
           setValue(event.target.value);
@@ -25,7 +25,7 @@ export default function SingleFieldForm({
         placeholder={placeholder}
       />
       <button
-        className="bg-cyan-500 text-white h-10 w-24 font-bold text-sm border border-cyan-600 rounded-lg"
+        className="text-black h-9 w-20 font-medium text-sm border border-gray-200 rounded-lg"
         type="submit"
       >
         {action}
