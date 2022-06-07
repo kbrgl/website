@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+  .link {
+    @apply underline underline-offset-4 decoration-dotted text-black decoration-gray-400;
+  }
 }
 
 @layer base {
