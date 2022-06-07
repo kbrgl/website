@@ -45,7 +45,9 @@ This can be compressed with a loop:
 
 This kind of programming might seem like it lends itself only to trivial programs. But get ready to have your mind blown. Here’s a Mandelbrot fractal viewer written in Brainfuck and compiled using Walnut:[^1]
 
-![](/static/walnut/mandelbrot.mov)
+<video controls autoplay src="/static/walnut/mandelbrot.mov">
+	Your browser doesn’t support embedded videos
+</video>
 
 How awesome is that?
 
