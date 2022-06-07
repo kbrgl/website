@@ -4,7 +4,7 @@
 
 @layer components {
   .link {
-    @apply underline underline-offset-4 decoration-dotted text-black decoration-gray-400;
+    @apply underline underline-offset-2 decoration-dotted text-black decoration-gray-400;
   }
 }
 
