@@ -28,7 +28,7 @@ export default function Home({ posts }) {
             and public policy.
           </h1>
         </div>
-        <p className="text-gray-700 text-lg max-w-prose">
+        <p className="body-text">
           I build tech for nonprofits at{" "}
           <a className="link text-[#3d78bb]" href="https://calblueprint.org">
             Cal Blueprint
@@ -44,7 +44,7 @@ export default function Home({ posts }) {
           writing I usually end up watching a Vox documentary or reading about
           economics, history, or politics.
         </p>
-        <p className="text-gray-700 mt-4 text-lg max-w-prose">
+        <p className="mt-4 body-text">
           This summer I’m doing research in improving machine translation in
           high-stakes settings, advised by{" "}
           <a className="link text-[#a5446d]" href="https://niloufar.org">
@@ -56,7 +56,7 @@ export default function Home({ posts }) {
           </a>
           .
         </p>
-        <p className="text-gray-700 mt-4 text-lg max-w-prose">
+        <p className="mt-4 body-text">
           I grew up in New Delhi, India. In Delhi, I led my high school’s{" "}
           <a href="https://exunclan.com" className="link text-[#326bc7]">
             tech club
@@ -65,7 +65,7 @@ export default function Home({ posts }) {
           country. When I go home I typically gain about 5 lbs. in butter
           chicken and naan.
         </p>
-        <p className="text-gray-700 mt-4 text-lg max-w-prose">
+        <p className="mt-4 body-text">
           You should follow me on{" "}
           <a className="link" href="https://twitter.com/KabirGoel">
             Twitter

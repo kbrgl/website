@@ -6,6 +6,10 @@
   .link {
     @apply underline underline-offset-2 decoration-dotted text-black decoration-gray-400;
   }
+
+  .body-text {
+    @apply text-gray-700 text-lg;
+  }
 }
 
 @layer base {
