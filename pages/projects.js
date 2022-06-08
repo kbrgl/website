@@ -2,11 +2,17 @@ import Layout from "../components/layout";
 import Container from "../components/container";
 import Project from "../components/project";
 import Header from "../components/header";
-import SectionHeading from "../components/section-heading";
 import Title from "../components/title";
 import Footer from "../components/footer";
 
-const products = [
+const projects = [
+  {
+    name: "Svelte French Toast",
+    description:
+      "Buttery smooth toast notifications for Svelte. Lightweight, customizable, and beautiful by default. Inspired by React Hot Toast.",
+    link: "https://svelte-french-toast.com",
+    image: "svelte-french-toast.png",
+  },
   {
     name: "Lipwig",
     description:
@@ -42,9 +48,6 @@ const products = [
     link: "https://github.com/kbrgl/exun2018",
     image: "exun-2018.png",
   },
-];
-
-const code = [
   {
     name: "Aech",
     description:
@@ -88,33 +91,22 @@ const code = [
   },
 ];
 
-export default function Portfolio() {
+export default function Projects() {
   return (
     <Layout>
       <Header />
       <Container>
-        <div className="pt-10" />
-        <Title>Portfolio</Title>
-        <div className="pt-10" />
-        <section>
-          <SectionHeading>Products</SectionHeading>
-          <div className="pt-7" />
-          <div className="gap-5 grid auto-rows-max grid-cols-1">
-            {products.map((product) => (
-              <Project key={product.name} project={product} />
-            ))}
-          </div>
-        </section>
-        <div className="pt-20" />
-        <section>
-          <SectionHeading>Code</SectionHeading>
-          <div className="pt-7" />
-          <div className="space-y-5">
-            {code.map((project) => (
-              <Project key={project.name} project={project} />
-            ))}
-          </div>
-        </section>
+        <p className="mt-12 mb-5 text-sm uppercase font-bold text-gray-500 tracking-widest">
+          Projects
+        </p>
+        <Title className="mb-12">
+          My favorite projects, including hacks, libraries, and experiments.
+        </Title>
+        <div className="gap-5 grid auto-rows-max grid-cols-1">
+          {projects.map((product) => (
+            <Project key={product.name} project={product} />
+          ))}
+        </div>
         <div className="pt-10" />
       </Container>
       <Footer />

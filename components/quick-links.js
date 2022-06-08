@@ -8,13 +8,13 @@ import Link from "next/link";
 export function QuickLinks() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-3">
-      <Link href="/portfolio">
+      <Link href="/projects">
         <a className="p-4 bg-[#f2f5fa] text-[#1e5097] rounded-xl">
           <div className="flex space-x-1">
             <p className="mb-1">
               <CollectionIcon className="h-6 w-6" />
             </p>
-            <p className="mb-1 md:mb-3 font-medium">Portfolio</p>
+            <p className="mb-1 md:mb-3 font-medium">Projects</p>
           </div>
           <p className="font-normal text-zinc-600 text-sm">
             My projects, including products and open-source code.

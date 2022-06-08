@@ -11,6 +11,11 @@ module.exports = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/portfolio",
+        destination: "/projects",
+        permanent: true,
+      },
     ];
   },
 };

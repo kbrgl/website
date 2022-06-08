@@ -11,9 +11,9 @@ export default function Header() {
           </Link>
         </div>
         <div className="space-x-4 font-medium text-sm flex">
-          <Link href="/portfolio">
+          <Link href="/projects">
             <a className="text-gray-500 flex items-center space-x-1">
-              <span>Portfolio</span>
+              <span>Projects</span>
             </a>
           </Link>
           <Link href="/recently">
