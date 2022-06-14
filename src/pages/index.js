@@ -1,8 +1,4 @@
-import { promises as fs } from "fs";
-import path from "path";
-import matter from "gray-matter";
 import _ from "lodash";
-import formatDate from "../utils/format-date";
 import parseDate from "../utils/parse-date";
 import Layout from "../components/layout";
 import Container from "../components/container";
@@ -12,6 +8,7 @@ import Post from "../components/post";
 import SectionHeading from "../components/section-heading";
 import { QuickLinks } from "../components/quick-links";
 import Project from "../components/project";
+import getPosts from "../utils/get-posts";
 
 export default function Home({ postsByYear, years }) {
   return (
@@ -112,32 +109,7 @@ export default function Home({ postsByYear, years }) {
 }
 
 export async function getStaticProps() {
-  const postsDirectory = path.join(process.cwd(), "content", "posts");
-  const filenames = await fs.readdir(postsDirectory);
-
-  const posts = (
-    await Promise.all(
-      filenames.map(async (filename) => {
-        const filePath = path.join(postsDirectory, filename);
-        const fileContents = await fs.readFile(filePath, "utf8");
-        const frontmatter = matter(fileContents).data;
-
-        return {
-          ...frontmatter,
-          slug: path.basename(filename, path.extname(filename)),
-        };
-      })
-    )
-  )
-    .filter(({ hidden }) => !hidden)
-    .sort((a, b) => b.date - a.date)
-    .map(({ date, ...data }) => {
-      return {
-        ...data,
-        date: formatDate(date),
-      };
-    });
-
+  const posts = await getPosts();
   const postsByYear = _.groupBy(
     posts.sort((a, b) => parseDate(b.date) - parseDate(a.date)),
     (item) => parseDate(item.date).getUTCFullYear()

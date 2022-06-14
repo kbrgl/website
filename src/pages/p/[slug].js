@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { promises as fs } from "fs";
 import path from "path";
 import matter from "gray-matter";
@@ -18,6 +19,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 
 import styles from "../../styles/Post.module.css";
+import getPosts from "../../utils/get-posts";
 
 export default function Post({
   title,
@@ -28,6 +30,8 @@ export default function Post({
   slug,
   canonical,
   readingTime,
+  previous,
+  next,
 }) {
   const postLink = `https://kabirgoel.com/p/${slug}`;
   const imageLink =
@@ -65,11 +69,28 @@ export default function Post({
           dangerouslySetInnerHTML={{ __html: html }}
         />
 
-        <div className="py-12">
+        <div className="my-12">
           <p className="leading-snug font-medium mb-2">
             Get more like this in your inbox.
           </p>
           <Subscribe />
+        </div>
+
+        <div className="my-12 flex">
+          {previous && (
+            <Link href={`/p/${previous.slug}`}>
+              <a className="self-start block rounded-full py-3 px-5 bg-gray-50 ring-1 ring-gray-200 text-gray-500 leading-none">
+                &larr; Previous
+              </a>
+            </Link>
+          )}
+          {next && (
+            <Link href={`/p/${next.slug}`}>
+              <a className="ml-auto block rounded-full py-3 px-5 bg-gray-50 ring-1 ring-gray-200 text-gray-500 leading-none">
+                Next &rarr;
+              </a>
+            </Link>
+          )}
         </div>
       </Container>
       <Footer />
@@ -101,21 +122,33 @@ export async function getStaticProps({ params: { slug } }) {
     readingTime: calculateReadingTime(html).text,
   };
 
+  const posts = await getPosts();
+  const idx = posts.findIndex((post) => post.slug === slug);
+  let previous = null;
+  if (idx > 0) {
+    previous = posts[idx - 1];
+  }
+  let next = null;
+  if (idx < posts.length - 1) {
+    next = posts[idx + 1];
+  }
+
   return {
     props: {
       ...note,
+      previous,
+      next,
     },
   };
 }
 
 export async function getStaticPaths() {
-  const postsDirectory = path.join(process.cwd(), "content", "posts");
-  const filenames = await fs.readdir(postsDirectory, "utf8");
+  const posts = await getPosts();
 
   return {
-    paths: filenames.map((filename) => ({
+    paths: posts.map(({ slug }) => ({
       params: {
-        slug: path.basename(filename, path.extname(filename)),
+        slug,
       },
     })),
     fallback: false,
