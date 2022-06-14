@@ -15,6 +15,7 @@
     "formik": "^2.2.9",
     "framer-motion": "^6.3.6",
     "gray-matter": "^4.0.3",
+    "lodash": "^4.17.21",
     "next": "^12.1.6",
     "next-sitemap": "^2.5.28",
     "prismjs": "^1.28.0",
