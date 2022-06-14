@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Svelte French Toast",
+    "description": "Buttery smooth toast notifications for Svelte. Lightweight, customizable, and beautiful by default. Inspired by React Hot Toast.",
+    "link": "https://svelte-french-toast.com",
+    "image": "svelte-french-toast.png",
+    "date": "Jun 1, 2022"
+  },
+  {
+    "name": "Lipwig",
+    "description": "Provides an email address for your Discord or Slack community, which you can use to sign up for newsletters, forward emails from your support team’s inbox, and more.",
+    "link": "https://lipwig.email",
+    "image": "lipwig.png",
+    "date": "Aug 15, 2021"
+  },
+  {
+    "name": "Unslant",
+    "description": "Browser extension that surfaces contrasting takes on political news as you read. Available for Chrome.",
+    "link": "https://unslant.github.io",
+    "image": "unslant.png",
+    "date": "Jul 13, 2019"
+  },
+  {
+    "name": "Rucksack",
+    "description": "Open source, self-hosted alternative to Substack and Revue with subscriber analytics, theming, drafts, and a dashboard. Built on Rails and React.",
+    "link": "https://github.com/kbrgl/rucksack",
+    "image": "rucksack.png",
+    "date": "Jan 1, 2021"
+  },
+  {
+    "name": "Wayfer",
+    "description": "Wi-Fi based file transfer app. Just drop a file and scan the code.",
+    "link": "https://github.com/kbrgl/wayfer",
+    "image": "wayfer.png",
+    "date": "Apr 15, 2018"
+  },
+  {
+    "name": "Exun 2018",
+    "description": "Event app for Exun 2018, the 24th annual festival of my high school technology club. Used to deliver 55,000 notifications to hundreds of devices.",
+    "link": "https://github.com/kbrgl/exun2018",
+    "image": "exun-2018.png",
+    "date": "Oct 25, 2018"
+  },
+  {
+    "name": "Aech",
+    "description": "A CSS starter kit optimized to provide reasonable defaults so you need minimal styling to get something that looks pretty. Used on this website!",
+    "link": "https://kbrgl.github.io/aech",
+    "image": "aech.png",
+    "date": "Jan 11, 2021"
+  },
+  {
+    "name": "koa-auth-basic",
+    "description": "A Koa middleware for HTTP Basic authentication.",
+    "link": "https://github.com/kbrgl/koa-auth-basic",
+    "image": "koa-auth-basic.png",
+    "date": "Jun 11, 2018"
+  },
+  {
+    "name": "Walnut",
+    "description": "A Brainf*** to Go transpiler with some optimizations, including loops. Based on Rob Pike’s famous talk “Lexical Scanning in Go.”",
+    "link": "https://github.com/kbrgl/walnut",
+    "image": "walnut.png",
+    "date": "Aug 14, 2017"
+  },
+  {
+    "name": "Roller",
+    "description": "A fast and memory-efficient text truncation utility written in Rust, for use with window managers like i3 and bspwm.",
+    "link": "https://github.com/kbrgl/roller",
+    "image": "roller.png",
+    "date": "Dec 9, 2016"
+  },
+  {
+    "name": "Isnochys Syntax",
+    "description": "“In space, no one can hear you scream.” A high-contrast Atom syntax theme that's easy on the eyes.",
+    "link": "https://github.com/kbrgl/isnochys-syntax",
+    "image": "isnochys-syntax.png",
+    "date": "Mar 15, 2017"
+  },
+  {
+    "name": "Fu",
+    "description": "Unix’s Find, Unleashed. An intuitive alternative to the Unix “find” command.",
+    "link": "https://github.com/kbrgl/fu",
+    "image": "fu.png",
+    "date": "Sep 26, 2017"
+  }
+]
