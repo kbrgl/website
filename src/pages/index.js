@@ -1,16 +1,19 @@
 import { promises as fs } from "fs";
 import path from "path";
-import Link from "next/link";
 import matter from "gray-matter";
+import _ from "lodash";
 import formatDate from "../utils/format-date";
 import parseDate from "../utils/parse-date";
 import Layout from "../components/layout";
 import Container from "../components/container";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import Post from "../components/post";
+import SectionHeading from "../components/section-heading";
 import { QuickLinks } from "../components/quick-links";
+import Project from "../components/project";
 
-export default function Home({ posts }) {
+export default function Home({ postsByYear, years }) {
   return (
     <Layout>
       <Header />
@@ -82,37 +85,24 @@ export default function Home({ posts }) {
           <h2 className="text-4xl font-title font-bold text-center">Posts</h2>
           <p className="text-gray-500 mt-1 mb-6 text-center">
             <a href="https://buttondown.email/kabir">
-              Get them in your inbox ↗
+              Get posts in your inbox ↗
             </a>
           </p>
-          <ul className="mb-10 space-y-3">
-            {posts
-              .map((post) => ({
-                ...post,
-                date: parseDate(post.dateString),
-              }))
-              .sort((a, b) => +b.date - +a.date)
-              .map((post) => (
-                <Link href={`/p/${post.slug}`} key={post.slug}>
-                  <a
-                    className="block p-5 bg-gray-50 hover:text-white hover:bg-accent transition-colors rounded-xl group"
-                    key={post.slug}
-                  >
-                    <p className="text-lg font-medium mb-1">
-                      {post.title}&nbsp;
-                      <span className="group-hover:ml-2 transition-[margin]">
-                        &rarr;
-                      </span>
-                    </p>
-                    <p className="text-gray-500 group-hover:text-white transition-colors pb-2">
-                      {post.subtitle}
-                    </p>
-                    <p className="text-sm text-gray-500 group-hover:text-white transition-colors">
-                      {post.dateString}
-                    </p>
-                  </a>
-                </Link>
-              ))}
+          <ul className="mb-10 space-y-12">
+            {years.map((year) => (
+              <section className="space-y-6" key={year}>
+                <SectionHeading>{year}</SectionHeading>
+                <div className="gap-4 grid auto-rows-max grid-cols-1">
+                  {postsByYear[year].map((item) =>
+                    item.type === "project" ? (
+                      <Project key={item.name} project={item} />
+                    ) : (
+                      <Post key={item.title} post={item} />
+                    )
+                  )}
+                </div>
+              </section>
+            ))}
           </ul>
         </section>
       </Container>
@@ -140,14 +130,24 @@ export async function getStaticProps() {
     )
   )
     .filter(({ hidden }) => !hidden)
-    .map(({ date, ...data }) => ({
-      ...data,
-      dateString: formatDate(date),
-    }));
+    .sort((a, b) => b.date - a.date)
+    .map(({ date, ...data }) => {
+      return {
+        ...data,
+        date: formatDate(date),
+      };
+    });
+
+  const postsByYear = _.groupBy(
+    posts.sort((a, b) => parseDate(b.date) - parseDate(a.date)),
+    (item) => parseDate(item.date).getUTCFullYear()
+  );
+  const years = Object.keys(postsByYear).sort((a, b) => b - a);
 
   return {
     props: {
-      posts,
+      postsByYear,
+      years,
     },
   };
 }
