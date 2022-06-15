@@ -1,5 +1,12 @@
 [
   {
+    "name": "Me, But Online",
+    "description": "A collection of minimalist, original personal websites with great typography.",
+    "link": "https://www.mebut.online",
+    "image": "mebutonline.png",
+    "date": "Jun 14, 2022"
+  },
+  {
     "name": "Svelte French Toast",
     "description": "Buttery smooth toast notifications for Svelte. Lightweight, customizable, and beautiful by default. Inspired by React Hot Toast.",
     "link": "https://svelte-french-toast.com",
