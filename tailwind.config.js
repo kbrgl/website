@@ -1,5 +1,6 @@
 module.exports = {
   content: ["./_includes/**/*.pug", "./*.pug"],
+  darkMode: "class",
   theme: {
     fontFamily: {
       sans: "indivisible, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif",
@@ -11,7 +12,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#00f",
+        primary: "#22f",
       },
     },
   },

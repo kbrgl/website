@@ -5,13 +5,13 @@ layout: layouts/base
 include /stripes
 div(class="container mx-auto py-12 px-4")
     include /navbar
-    h1(class="text-gray-900 text-5xl mt-24 font-title font-black") Projects
+    h1(class="text-5xl mt-24 font-title font-black") Projects
     div(class="mt-8 grid md:grid-cols-2 gap-8")
         each project in projects
             section(class="flex flex-col space-y-6 items-start p-8 border rounded-xl")
                 img(class="rounded-xl border", src=`/projects/${project.image}`, width="150")
                 article(class="space-y-1")
                     a(href=project.link)
-                        h2(class="font-title font-bold text-lg hover:text-primary transition-colors") #{project.name} ↗ #[span(class="font-sans text-gray-400 text-sm pl-2 font-normal")= project.date.split(' ')[2]]
+                        h2(class="font-title font-bold text-lg hover:text-[#00f] hover:dark:text-[#ff8] transition-colors") #{project.name} ↗ #[span(class="font-sans text-gray-400 text-sm pl-2 font-normal")= project.date.split(' ')[2]]
                     p(class="text-gray-500")= project.description
-    p(class="mt-12 text-gray-400") © 2022 Kabir Goel
+    include /footer
