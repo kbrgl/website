@@ -1,0 +1,22 @@
+---
+layout: layouts/base
+---
+
+include /stripes
+div(class="container mx-auto py-12 px-4")
+    include /navbar
+    h1(class="text-primary text-5xl mt-24 font-title font-black") Kabir, But Online.
+    p(class="text-2xl mt-2 mb-8 text-gray-700") The website and blog of Kabir Goel
+    include /subscribe
+    div(class="space-y-12 mt-12")
+        each yearWithPosts in collections.postsByYear.reverse()
+            - const [year, yearPosts] = yearWithPosts
+            section
+                h2(class="flex items-center space-x-4")
+                    span(class="font-semibold text-gray-700")= year
+                    span(class="border-t flex-1")
+                each post in yearPosts.reverse()
+                    a(href=post.url)
+                        h3(class="font-title text-lg font-bold mt-6 text-gray-800 hover:text-primary transition-colors")= post.data.title
+                    p(class="text-gray-500")= post.data.subtitle
+    p(class="mt-24 text-gray-400") © 2022 Kabir Goel

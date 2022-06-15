@@ -1,67 +1,19 @@
 module.exports = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./_includes/**/*.pug", "./*.pug"],
   theme: {
     fontFamily: {
-      sans: [
-        "neue-haas-unica",
-        "system-ui",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "Segoe UI",
-        "Roboto",
-        "Oxygen",
-        "Ubuntu",
-        "Cantarell",
-        "Fira Sans",
-        "Droid Sans",
-        "Helvetica Neue",
-        "sans-serif",
-      ],
-      title: ["dashiell-fine", "Iowan Old Style", "Georgia", "serif"],
-      serif: [
-        "dashiell-text",
-        "neue-haas-unica",
-        "system-ui",
-        "-apple-system",
-        "BlinkMacSystemFont",
-        "Segoe UI",
-        "Roboto",
-        "Oxygen",
-        "Ubuntu",
-        "Cantarell",
-        "Fira Sans",
-        "Droid Sans",
-        "Helvetica Neue",
-        "sans-serif",
-      ],
-      mono: [
-        "consolas",
-        "menlo",
-        "monaco",
-        "Andale Mono WT",
-        "Andale Mono",
-        "Lucida Console",
-        "Lucida Sans Typewriter",
-        "DejaVu Sans Mono",
-        "Bitstream Vera Sans Mono",
-        "Liberation Mono",
-        "Nimbus Mono L",
-        "Courier New",
-        "courier",
-        "monospace",
-      ],
+      sans: "indivisible, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif",
+      title:
+        "sculpin, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif",
+      serif:
+        "Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+      mono: "Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace",
     },
     extend: {
       colors: {
-        accent: "#d4425c",
+        primary: "#00f",
       },
     },
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
-};
+  plugins: [require("@tailwindcss/typography")],
+}
