@@ -5,8 +5,8 @@ layout: layouts/base
 include /stripes
 div(class="container mx-auto py-12 px-4")
     include /navbar
-    h1(class="text-5xl mt-24 font-title font-black")= title
-    p(class="text-2xl mt-4 text-gray-700 dark:text-gray-400")= subtitle
+    h1(class="text-3xl sm:text-4xl md:text-5xl mt-24 font-title font-black")= title
+    p(class="text-lg md:text-2xl mt-4 text-gray-700 dark:text-gray-400")= subtitle
     div(class="mt-12 max-w-prose mx-auto")
         div(class="prose dark:prose-invert prose-lg prose-blockquote:not-italic prose-a:decoration-2 prose-a:decoration-gray-300 dark:prose-a:decoration-gray-600 hover:prose-a:text-[#00f] hover:dark:prose-a:text-[#ff8] prose-a:transition-colors") !{content}
         div(class="mt-12 border p-8 rounded-xl space-y-1.5")
