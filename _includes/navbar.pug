@@ -1,18 +1,17 @@
 nav(class="flex justify-between items-center font-title text-gray-600 dark:text-gray-300")
-    div(class="flex space-x-8")
-        ul(class="flex items-center space-x-4 rounded-full font-medium")
-            li
-                a(href="/", class="w-8 h-8 text-white dark:text-gray-900 bg-[#00f] dark:bg-[#ff8] rounded-full font-title font-black flex items-center justify-center") K
+    div(class="flex space-x-6")
+        a(href="/", class="w-8 h-8 text-white dark:text-gray-900 bg-[#00f] dark:bg-[#ff8] rounded-full font-title font-black flex items-center justify-center") K
+        ul(class="flex items-center space-x-2 rounded-full font-medium")
             li
                 a(href="https://read.cv/kabirgoel", class="hover:text-[#00f] hover:dark:text-[#ff8] transition-colors") About
             li
                 a(href="/projects", class="hover:text-[#00f] hover:dark:text-[#ff8] transition-colors") Projects
-        ul(class="flex items-center space-x-4 rounded-full font-medium")
+        ul(class="flex items-center space-x-2 rounded-full font-medium")
             li
                 a(href="https://twitter.com/KabirGoel", class="hover:text-[#00f] hover:dark:text-[#ff8] transition-colors")
                     include /icons/twitter.svg
             li
                 a(href="https://github.com/kbrgl", class="hover:text-[#00f] hover:dark:text-[#ff8] transition-colors")
                     include /icons/github.svg
-    div(class="theme-selector hover:bg-gray-200 hover:dark:bg-gray-700 rounded-full p-2 transition-colors")
+    button(type="button", class="theme-selector hover:bg-gray-200 hover:dark:bg-gray-700 rounded-full p-2 transition-colors")
         include /icons/sun.svg
