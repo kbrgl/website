@@ -1,0 +1,44 @@
+doctype
+html(lang="en")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= title || metadata.title
+        meta(name="description", content=description || metadata.description)
+        meta(name="generator", content=eleventy.generator)
+
+        link(rel="stylesheet", href="/prism-theme.css")
+        link(rel="stylesheet", href="https://use.typekit.net/fdo8xxu.css")
+        link(rel="stylesheet", href="/app.css")
+        link(rel="alternate", href=metadata.feed.path, type="application/atom+xml", title=metadata.title)
+        link(rel="alternate", href=metadata.jsonfeed.path, type="application/json", title=metadata.title)
+
+        script.
+            function setTheme() {
+                if (
+                    localStorage.theme === "dark" ||
+                    (!("theme" in localStorage) &&
+                        window.matchMedia("(prefers-color-scheme: dark)").matches)
+                ) {
+                    document.documentElement.classList.add("dark")
+                } else {
+                    document.documentElement.classList.remove("dark")
+                }
+            }
+
+            setTheme()
+
+    body(class="text-gray-900 dark:bg-gray-900 dark:text-white")
+        | !{ content }
+        script.
+            const selectorEl = document.querySelector('.theme-selector')
+            selectorEl.onclick = () => {
+                if (localStorage.theme === "dark" ||
+                    (!("theme" in localStorage) &&
+                        window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                    localStorage.theme = 'light'
+                } else {
+                    localStorage.theme = 'dark'
+                }
+                setTheme()
+            }
