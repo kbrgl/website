@@ -14,28 +14,5 @@ html(lang="en")
         link(rel="alternate" href=metadata.jsonfeed.path type="application/json" title=metadata.title)
         script(defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js")
 
-        script.
-            const isDark = () => 
-                localStorage.theme === "dark" ||
-                (!("theme" in localStorage) &&
-                    window.matchMedia("(prefers-color-scheme: dark)").matches)
-            function setTheme(isDark) {
-                if (isDark) {
-                    document.documentElement.classList.add("dark")
-                } else {
-                    document.documentElement.classList.remove("dark")
-                }
-            }
-            function invertTheme() {
-                const isDark_ = isDark()
-                if (isDark_) {
-                    localStorage.theme = 'light'
-                } else {
-                    localStorage.theme = 'dark'
-                }
-                setTheme(!isDark_)
-            }
-            window.onload = () => setTheme(isDark())
-
     body(class="text-gray-900 dark:bg-zinc-900 dark:text-white")
         | !{ content }
