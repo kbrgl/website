@@ -1,7 +1,7 @@
 nav(class="flex justify-between flex-col md:flex-row md:items-center font-title text-gray-600 dark:text-zinc-300 md:space-x-4")
     div(class="flex items-center justify-between flex-1")
         a(href="/" class="w-8 h-8 text-white dark:text-zinc-900 bg-[#00f] dark:bg-[#ff8] rounded-full font-title font-black flex items-center justify-center") K
-        button(type="button" x-data="" @click="invertTheme" class="hover:bg-gray-200 hover:dark:bg-gray-700 rounded-full p-2 transition-colors flex items-center")
+        button(type="button" x-data="" @click="invertTheme" class="hover:bg-gray-200 hover:dark:bg-zinc-700 rounded-full p-2 transition-colors flex items-center")
             include /icons/sun.svg
     ul(class="flex items-center space-x-4 rounded-full font-medium text-sm md:text-base mt-4 md:mt-0 overflow-x-auto")
         li
@@ -10,8 +10,8 @@ nav(class="flex justify-between flex-col md:flex-row md:items-center font-title 
         li
             a(href="/projects" class="block hover:text-[#00f] hover:dark:text-[#ff8] transition-colors") Projects
         li
-            a(href="https://twitter.com/KabirGoel" class="block hover:bg-gray-200 hover:dark:bg-gray-700 rounded-full p-2 transition-colors")
+            a(href="https://twitter.com/KabirGoel" class="block hover:bg-gray-200 hover:dark:bg-zinc-700 rounded-full p-2 transition-colors")
                 include /icons/twitter.svg
         li
-            a(href="https://github.com/kbrgl" class="block hover:bg-gray-200 hover:dark:bg-gray-700 rounded-full p-2 transition-colors")
+            a(href="https://github.com/kbrgl" class="block hover:bg-gray-200 hover:dark:bg-zinc-700 rounded-full p-2 transition-colors")
                 include /icons/github.svg
