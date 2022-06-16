@@ -1,6 +1,6 @@
 ---
 title: I wrote a Brainfuck to Go compiler
-subtitle: And it taught me about writing Actually Useful compilers.
+subtitle: And it taught me about writing actually useful compilers.
 date: 2022-06-02
 preview: https://kabirgoel.com/static/walnut/preview.png
 ---
