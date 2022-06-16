@@ -10,6 +10,6 @@
 
 @layer utilities {
     .border, .border-t, .border-b, .border-r, .border-l {
-        @apply dark:border-gray-700;
+        @apply dark:border-zinc-700;
     }
 }
