@@ -1,17 +1,18 @@
 {
   "title": "Kabir Goel",
   "url": "https://kabirgoel.com/",
+  "preview": "https://kabirgoel.com/preview.png",
   "language": "en",
   "description": "The website and blog of Kabir Goel, a writer, maker, and junior at the University of California, Berkeley.",
   "feed": {
     "subtitle": "The website and blog of Kabir Goel, a writer, maker, and junior at the University of California, Berkeley.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
-    "id": "https://example.com/"
+    "id": "https://kabirgoel.com/"
   },
   "jsonfeed": {
     "path": "/feed/feed.json",
-    "url": "https://example.com/feed/feed.json"
+    "url": "https://kabirgoel.com/feed/feed.json"
   },
   "author": {
     "name": "Kabir Goel",
