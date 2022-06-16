@@ -5,7 +5,9 @@ nav(class="flex justify-between flex-col md:flex-row md:items-center font-title 
             include /icons/sun.svg
     ul(class="flex items-center space-x-4 rounded-full font-medium mt-2 md:mt-0 overflow-x-auto")
         li
-            a(href="https://read.cv/kabirgoel" class="block hover:text-[#00f] hover:dark:text-[#ff8] transition-colors") About ↗
+            a(href="https://read.cv/kabirgoel" class="flex items-center space-x-0.5 hover:text-[#00f] hover:dark:text-[#ff8] transition-colors")
+                span About
+                include /icons/arrow-up-right.svg
         li
             a(href="/projects" class="block hover:text-[#00f] hover:dark:text-[#ff8] transition-colors") Projects
         li
