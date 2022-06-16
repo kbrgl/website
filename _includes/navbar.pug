@@ -3,11 +3,10 @@ nav(class="flex justify-between flex-col md:flex-row md:items-center font-title 
         a(href="/" class="w-8 h-8 text-white dark:text-zinc-900 bg-[#00f] dark:bg-[#ff8] rounded-full font-title font-black flex items-center justify-center") K
         button(type="button" x-data="" @click="invertTheme" class="hover:bg-gray-200 hover:dark:bg-gray-700 rounded-full p-2 transition-colors flex items-center")
             include /icons/sun.svg
-    ul(class="flex items-center space-x-4 rounded-full font-medium mt-2 md:mt-0 overflow-x-auto")
+    ul(class="flex items-center space-x-4 rounded-full font-medium text-sm md:text-base mt-2 md:mt-0 overflow-x-auto")
         li
             a(href="https://read.cv/kabirgoel" class="flex items-center space-x-0.5 hover:text-[#00f] hover:dark:text-[#ff8] transition-colors")
                 span About
-                include /icons/arrow-up-right.svg
         li
             a(href="/projects" class="block hover:text-[#00f] hover:dark:text-[#ff8] transition-colors") Projects
         li
