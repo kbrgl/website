@@ -3,15 +3,30 @@ html(lang="en")
     head
         meta(charset="utf-8")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        title= title || metadata.title
-        meta(name="description" content=description || metadata.description)
         meta(name="generator" content=eleventy.generator)
+
+        title= title || metadata.title
+        meta(name="title" content=title || metadata.title)
+        meta(name="description" content=description || metadata.description)
+
+        meta(property="og:type" content="website")
+        meta(property="og:url" content=metadata.url)
+        meta(property="og:title" content=title || metadata.title)
+        meta(property="og:description" content=description || metadata.description)
+        meta(property="og:image" content=preview || metadata.preview)
+
+        meta(property="twitter:card" content="summary_large_image")
+        meta(property="twitter:url" content=metadata.url)
+        meta(property="twitter:title" content=title || metadata.title)
+        meta(property="twitter:description" content=description || metadata.description)
+        meta(property="twitter:image" content=preview || metadata.preview)
+
+        link(rel="alternate" href=metadata.feed.path type="application/atom+xml" title=metadata.title)
+        link(rel="alternate" href=metadata.jsonfeed.path type="application/json" title=metadata.title)
 
         link(rel="stylesheet" href="/prism-theme.css")
         link(rel="stylesheet" href="https://use.typekit.net/fdo8xxu.css")
         link(rel="stylesheet" href="/app.css")
-        link(rel="alternate" href=metadata.feed.path type="application/atom+xml" title=metadata.title)
-        link(rel="alternate" href=metadata.jsonfeed.path type="application/json" title=metadata.title)
         script(defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js")
 
     body(class="text-gray-900 dark:bg-zinc-900 dark:text-white")
