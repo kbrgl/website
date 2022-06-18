@@ -1,11 +1,12 @@
-nav(class="flex justify-between flex-col md:flex-row md:items-center font-title text-gray-600 dark:text-zinc-300 md:space-x-8")
-    a(href="/" class="w-8 h-8 text-white dark:text-zinc-900 bg-[#2634f2] dark:bg-yellow-500 rounded-full font-title font-black flex items-center justify-center") K
+nav(x-data="{ theme: 'light' }" class="flex justify-between flex-col md:flex-row md:items-center font-title text-gray-500 dark:text-zinc-300 md:space-x-8")
+    a(href="/" class="w-16 h-16 bg-amber-500 dark:bg-yellow-500 rounded-full overflow-hidden")
+        img(src="/me-small.jpg" alt="")
     div(class="flex items-center justify-between flex-1 mt-4 md:mt-0")
-        ul(class="flex items-center space-x-4 rounded-full font-medium text-sm md:text-base overflow-x-auto")
+        ul(class="flex items-center space-x-4 font-bold text-sm md:text-base overflow-x-auto")
             li
-                a(href="https://read.cv/kabirgoel" class="hover:text-[#2634f2] hover:dark:text-yellow-500 transition-colors") About
+                a(href="https://read.cv/kabirgoel" class="hover:text-amber-500 hover:dark:text-yellow-500 transition-colors") About
             li
-                a(href="/projects" class="block hover:text-[#2634f2] hover:dark:text-yellow-500 transition-colors") Projects
+                a(href="/projects" class="block hover:text-amber-500 hover:dark:text-yellow-500 transition-colors") Projects
         button(type="button" x-data=`{
             isDark() {
                 return (
@@ -31,8 +32,7 @@ nav(class="flex justify-between flex-col md:flex-row md:items-center font-title 
                     localStorage.theme = 'dark'
                 }
                 return this.setTheme(!isDark_)
-            },
-            theme: 'light'
+            }
         }` x-init="theme = setTheme(isDark())" @click="theme = invertTheme()" class="hover:bg-gray-200 hover:dark:bg-zinc-700 rounded-full p-2 transition-colors flex items-center")
             span(x-show="theme === 'light'")
                 include /icons/sun.svg

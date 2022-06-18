@@ -10,11 +10,7 @@ module.exports = {
         "Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
       mono: "Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace",
     },
-    extend: {
-      colors: {
-        primary: "#22f",
-      },
-    },
+    extend: {},
   },
   plugins: [require("@tailwindcss/typography")],
 }
