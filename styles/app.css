@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    a {
+        -webkit-tap-highlight-color: transparent;
+    }
+}
+
 @layer components {
     .container {
         @apply max-w-screen-lg;

@@ -42,14 +42,14 @@ module.exports = function (eleventyConfig) {
     return Math.min.apply(null, numbers)
   })
 
-  eleventyConfig.addCollection("posts", (collection) => {
-    return collection
+  eleventyConfig.addCollection("posts", (collectionApi) => {
+    return collectionApi
       .getFilteredByGlob("p/*.md")
       .filter((post) => !post.data.hidden)
   })
 
-  eleventyConfig.addCollection("postsByYear", (collection) => {
-    return _.chain(collection.getAllSorted())
+  eleventyConfig.addCollection("postsByYear", (collectionApi) => {
+    return _.chain(collectionApi.getFilteredByGlob("p/*.md"))
       .filter((post) => !post.data.hidden)
       .groupBy((post) => post.date.getFullYear())
       .toPairs()
