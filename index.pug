@@ -1,5 +1,6 @@
 ---
 layout: layouts/page
+eleventyExcludeFromCollections: true
 ---
 
 h1(class="text-3xl sm:text-4xl md:text-5xl mt-24 font-title font-black") Kabir, But Online.
@@ -7,13 +8,15 @@ p(class="text-lg md:text-2xl mt-2 mb-8 text-gray-700 dark:text-zinc-200") The we
 include /subscribe
 p(class="mt-1.5 text-sm text-gray-500 dark:text-zinc-400") Or follow me on #[a(href="https://twitter.com/KabirGoel" class="underline") Twitter]
 div(class="space-y-12 mt-12")
-    each yearWithPosts in collections.postsByYear.reverse()
+    each yearWithPosts in collections.postsByYear.slice().reverse()
         - const [year, yearPosts] = yearWithPosts
         section
-            h2(class="flex items-center space-x-4")
+            h2(class="flex items-center space-x-4 mb-8")
                 span(class="font-semibold")= year
                 span(class="border-t flex-1")
-            each post in yearPosts.reverse()
-                a(href=post.url)
-                    h3(class="font-title text-lg font-bold mt-6 text-gray-800 dark:text-zinc-100 hover:text-amber-500 hover:dark:text-yellow-500 transition-colors")= post.data.title
-                p(class="text-gray-500 dark:text-zinc-400")= post.data.subtitle
+            div(class="grid gap-6 max-w-screen-sm")
+                each post in yearPosts.slice().reverse()
+                    a(href=post.url, class="block group p-6 border rounded-xl bg-white dark:bg-zinc-800")
+                        h3(class="leading-tight font-title text-lg text-gray-800 dark:text-zinc-100 group-hover:text-amber-500 group-hover:dark:text-yellow-500 transition-colors") #{post.data.title}
+                        p(class="mt-0.5 text-gray-500 dark:text-zinc-400")= post.data.subtitle
+                        p(class="mt-1 text-gray-500 dark:text-zinc-400 font-sans whitespace-nowrap text-sm")= filters.readableDate(post.date).split(' ').slice(0, ).join(' ')
