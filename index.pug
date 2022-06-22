@@ -10,14 +10,14 @@ include /subscribe
 p(class="mt-1.5 text-sm text-gray-500 dark:text-zinc-400") Or follow me on #[a(href="https://twitter.com/KabirGoel" class="underline") Twitter]
 div(class="space-y-12 mt-12")
     each yearWithPosts in collections.postsByYear.slice().reverse()
-            - const [year, yearPosts] = yearWithPosts
-            section
-                h2(class="flex items-center space-x-4 mb-8")
-                    span(class="font-semibold")= year
-                    span(class="border-t flex-1")
-                div(class="grid gap-6")
-                    each post in yearPosts.slice().reverse()
-                        a(href=post.url, class="block group")
-                            h3(class="leading-tight text-lg font-bold text-blue-800 dark:text-blue-300 group-hover:text-amber-500 dark:group-hover:text-yellow-500 transition-colors") #{post.data.title}
-                            p(class="mt-0.5 text-gray-500 dark:text-zinc-400")= post.data.subtitle
-                            p(class="mt-1 text-gray-500 dark:text-zinc-400 font-sans whitespace-nowrap text-sm")= filters.readableDate(post.date).split(' ').slice(0, ).join(' ')
+        - const [year, yearPosts] = yearWithPosts
+        section
+            h2(class="flex items-center space-x-4 mb-8")
+                span(class="font-semibold")= year
+                span(class="border-t flex-1")
+            div(class="grid gap-6")
+                each post in yearPosts.slice().reverse()
+                    a(href=post.url, class="block group")
+                        h3(class="leading-tight text-lg font-bold text-blue-800 dark:text-blue-300 group-hover:text-amber-500 dark:group-hover:text-yellow-500 transition-colors") #{post.data.title}
+                        p(class="mt-0.5 text-gray-500 dark:text-zinc-400")= post.data.subtitle
+                        p(class="mt-1 text-gray-500 dark:text-zinc-400 font-sans whitespace-nowrap text-sm")= filters.readableDate(post.date).split(' ').slice(0, ).join(' ')
