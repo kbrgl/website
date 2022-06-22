@@ -1,12 +1,11 @@
-nav(x-data="{ theme: 'light' }" class="flex justify-between flex-col md:flex-row md:items-center font-title text-gray-700 dark:text-zinc-200 md:space-x-8")
-    a(href="/" class="w-16 h-16 bg-amber-500 dark:bg-yellow-500 rounded-full overflow-hidden")
-        img(src="/me-small.jpg" alt="")
+nav(x-data="{ theme: 'light' }" class="flex justify-between flex-col md:flex-row md:items-center text-gray-700 dark:text-zinc-200 md:space-x-8")
+    a(href="/" class="text-black dark:text-white font-semibold") Kabir Goel
     div(class="flex items-center justify-between flex-1 mt-4 md:mt-0")
-        ul(class="flex items-center space-x-4 font-bold text-sm md:text-base overflow-x-auto")
+        ul(class="flex items-baseline space-x-4 text-sm overflow-x-auto")
             li
                 a(href="https://read.cv/kabirgoel" class="hover:text-amber-500 hover:dark:text-yellow-500 transition-colors") About
             li
-                a(href="/projects" class="block hover:text-amber-500 hover:dark:text-yellow-500 transition-colors") Projects
+                a(href="/projects" class="hover:text-amber-500 hover:dark:text-yellow-500 transition-colors") Projects
         button(type="button" x-data=`{
             isDark() {
                 return (
