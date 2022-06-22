@@ -15,8 +15,8 @@
 
     .markdown {
         @apply prose prose-lg leading-normal font-serif dark:prose-invert dark:text-zinc-300 prose-video:rounded-md prose-img:rounded-md prose-blockquote:not-italic 
-            prose-a:decoration-2 prose-a:decoration-gray-300 dark:prose-a:decoration-zinc-600
-            hover:prose-a:text-amber-500 hover:dark:prose-a:text-amber-500 prose-a:transition-colors
+            prose-a:decoration-1 prose-a:decoration-gray-400 dark:prose-a:decoration-zinc-600
+            hover:prose-a:text-amber-500 dark:hover:prose-a:text-amber-500 prose-a:transition-colors
             prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-h4:text-lg
             prose-headings:font-title dark:prose-tr:border-zinc-700 dark:prose-thead:border-zinc-700;
     }
