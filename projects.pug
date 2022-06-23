@@ -4,10 +4,9 @@ eleventyExcludeFromCollections: true
 ---
 
 h1(class="text-4xl mt-24 font-title font-black") Projects
-div(class="mt-8 grid gap-6")
+div(class="mt-8 grid gap-8 max-w-md")
     each project in projects
-        section(class="flex flex-col md:flex-row relative space-x-0 space-y-4 md:space-y-0 md:space-x-6 md:items-center max-w-lg")
-            article(class="space-y-0.5 flex-1")
-                a(href=project.link)
-                    h2(class="font-bold text-lg text-blue-800 dark:text-blue-300 hover:text-amber-500 hover:dark:text-yellow-500 transition-colors") #{project.name} #[span(class="font-sans text-gray-400 dark:text-zinc-500 text-sm pl-2 font-normal")= project.date.split(' ')[2]]
-                p(class="text-gray-500 dark:text-zinc-400")= project.description
+        section(class="space-y-0.5")
+            a(href=project.link)
+                h2(class="font-bold text-lg text-blue-800 dark:text-blue-300 hover:text-amber-500 hover:dark:text-yellow-500 transition-colors") #{project.name} #[span(class="font-sans text-gray-400 dark:text-zinc-500 text-sm pl-2 font-normal")= project.date.split(' ')[2]]
+            p(class="text-gray-500 dark:text-zinc-400")= project.description
