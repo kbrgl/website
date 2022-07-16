@@ -1,5 +1,12 @@
 [
   {
+    "name": "Blurbs.app",
+    "description": "A writing tool for applying to things. Save application responses for later and use them to autogenerate new ones.",
+    "link": "https://blurbs.app/",
+    "image": null,
+    "date": "Jul 12, 2022"
+  },
+  {
     "name": "Me, But Online",
     "description": "A collection of minimalist, original personal websites with great typography.",
     "link": "https://www.mebut.online",
