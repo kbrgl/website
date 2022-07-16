@@ -1,6 +1,6 @@
 ---
-title: What I want from my writing tools
-subtitle: A list of desiderata
+title: What I Want From My Writing Tools
+subtitle: A wishlist of features.
 date: 2022-07-16
 ---
 
