@@ -1,5 +1,12 @@
 [
   {
+    "name": "Flapioca",
+    "description": "A Flappy Bird-inspired terminal game with an SSH server",
+    "link": "https://github.com/kbrgl/flapioca",
+    "image": null,
+    "date": "Jul 18, 2022"
+  },
+  {
     "name": "Blurbs.app",
     "description": "A writing tool for applying to things. Save application responses for later and use them to autogenerate new ones.",
     "link": "https://blurbs.app/",
