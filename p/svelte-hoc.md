@@ -1,6 +1,6 @@
 ---
 title: Higher-order components in Svelte
-subtitle: Emulating the React function-as-child pattern
+subtitle: Emulating the React function-as-child pattern.
 date: 2022-07-17
 ---
 
