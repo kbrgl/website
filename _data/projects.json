@@ -1,7 +1,7 @@
 [
   {
     "name": "Flapioca",
-    "description": "A Flappy Bird-inspired terminal game with an SSH server",
+    "description": "A Flappy Bird-inspired terminal game written in Go.",
     "link": "https://github.com/kbrgl/flapioca",
     "image": null,
     "date": "Jul 18, 2022"
