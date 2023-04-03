@@ -3,7 +3,9 @@
   "private": true,
   "version": "0.1.0",
   "scripts": {
-    "serve": "concurrently --kill-others --raw \"tailwindcss -w -i ./styles/app.css -o ./_site/app.css\" \"eleventy --serve --quiet --incremental\"",
+    "serve": "concurrently --kill-others --raw npm:tailwind npm:eleventy",
+    "tailwind": "tailwindcss -w -i ./styles/app.css -o ./_site/app.css",
+    "eleventy": "eleventy --serve --quiet --incremental",
     "build": "tailwindcss -m -i ./styles/app.css -o ./_site/app.css && eleventy"
   },
   "keywords": [],
