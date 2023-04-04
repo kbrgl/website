@@ -3,18 +3,25 @@ layout: layouts/page
 eleventyExcludeFromCollections: true
 ---
 
-h1(class="mt-24 mb-8 text-4xl font-medium font-title dark:text-zinc-300")
+h1(class="mt-24 mb-12 text-4xl font-medium font-title dark:text-zinc-300")
     | Hi there! I’m Kabir, a junior studying computer science and public policy at UC Berkeley. Here, I write about programming, design, and the web.
 include /subscribe
-p(class="mt-1.5 text-sm text-gray-500 dark:text-zinc-400") Or follow on #[a(href="https://twitter.com/KabirGoel" class="underline") Twitter]
-div(class="space-y-12 mt-24")
+p(class="mt-1.5 text-xs text-gray-500 dark:text-zinc-400") Or follow on #[a(href="https://twitter.com/KabirGoel" class="border-b") Twitter]
+section(class="mt-24")
+    h2(class="flex items-center space-x-4 mb-8")
+        span(class="font-semibold") Recently
+        span(class="border-t flex-1")
+    p(class="text-gray-600 dark:text-gray-300")
+        | I work part-time as a software engineer at #[a(href="https://pynecone.io" class="text-blue-800 dark:text-blue-300") Pynecone] and serve as VP of Projects at #[a(href="https://calblueprint.org" class="text-blue-800 dark:text-blue-300") Cal&nbsp;Blueprint].
+        | Lately, I’ve been obsessed with low-code tools, AI, and end-user programming.
+div(class="space-y-12 mt-12")
     each yearWithPosts in collections.postsByYear.slice().reverse()
         - const [year, yearPosts] = yearWithPosts
         section
             h2(class="flex items-center space-x-4 mb-8")
                 span(class="font-semibold")= year
                 span(class="border-t flex-1")
-            div(class="grid gap-6 max-w-screen-md")
+            div(class="grid gap-6 max-w-screen-sm")
                 each post in yearPosts.slice().reverse()
                     a(href=post.url, class="block group")
                         h3(class="leading-tight text-lg font-bold text-blue-800 dark:text-blue-300 group-hover:text-amber-500 dark:group-hover:text-yellow-500 transition-colors") #{post.data.title}
