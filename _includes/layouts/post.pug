@@ -2,9 +2,10 @@
 layout: layouts/page
 ---
 
-h1(class="text-3xl mt-24 font-title font-black whitespace-pre-line")= title
-p(class="text-xl mt-1 text-gray-700 dark:text-zinc-400")= subtitle
-p(class="mt-4 text-gray-400 dark:text-zinc-500")= filters.readableDate(date)
+p(class="text-xs mt-4 text-gray-400 dark:text-zinc-500")
+    = filters.readableDate(date)
+h1(class="text-4xl mt-24 font-title font-black whitespace-pre-line")= title
+h2(class="text-lg mt-4")= subtitle
 div(class="mt-12 markdown")
     | !{content}
 div(class="border-t mt-12 pt-16 dark:bg-zinc-900")
