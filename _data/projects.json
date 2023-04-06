@@ -1,5 +1,12 @@
 [
   {
+    "name": "Smoothie",
+    "description": "An experiment in adapting computational notebooks to full-stack development.",
+    "link": "https://twitter.com/KabirGoel/status/1643868228865916928",
+    "image": null,
+    "date": "Apr 6, 2023"
+  },
+  {
     "name": "Flapioca",
     "description": "A Flappy Bird-inspired terminal game written in Go.",
     "link": "https://github.com/kbrgl/flapioca",
