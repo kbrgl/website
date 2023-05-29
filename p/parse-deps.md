@@ -1,6 +1,6 @@
 ---
 title: Extracting dependencies from JavaScript snippets
-subtitle: Befriending Babel to parse out identifiers referenced in code.
+subtitle: Where I befriend Babel to parse out identifiers referenced in code.
 date: 2023-05-28
 preview: https://kabirgoel.com/static/parse-deps.png
 ---
