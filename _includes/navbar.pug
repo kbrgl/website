@@ -1,5 +1,7 @@
 nav(x-data="{ theme: 'light' }" class="flex justify-between flex-col md:flex-row md:items-center text-gray-700 dark:text-zinc-200 md:space-x-8 pb-2")
-    a(href="/" class="text-black dark:text-white font-semibold") Kabir Goel
+    a(href="/" class="text-black dark:text-white font-semibold flex items-center gap-1")
+        include /icons/navbar-logo.svg
+        | Kabir Goel
     div(class="flex items-center justify-between flex-1 mt-1 md:mt-0")
         ul(class="flex items-baseline space-x-4 text-sm overflow-x-auto")
             li
