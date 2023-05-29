@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "concurrently --kill-others --raw npm:tailwind npm:eleventy",
     "tailwind": "tailwindcss -w -i ./styles/app.css -o ./_site/app.css",
-    "eleventy": "eleventy --serve --quiet --incremental",
+    "eleventy": "eleventy --serve --quiet",
     "build": "tailwindcss -m -i ./styles/app.css -o ./_site/app.css && eleventy"
   },
   "keywords": [],
