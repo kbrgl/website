@@ -19,8 +19,20 @@
             hover:prose-a:text-amber-500 dark:hover:prose-a:text-yellow-500 prose-a:transition-colors
             prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-h4:text-lg
             prose-code:font-normal prose-code:before:content-none prose-code:after:content-none
-            prose-pre:border prose-pre:rounded-none prose-pre:shadow-sm
-            prose-headings:font-title dark:prose-tr:border-zinc-700 dark:prose-thead:border-zinc-700;
+            prose-pre:border prose-pre:rounded-none prose-pre:shadow-sm dark:prose-hr:border-zinc-700
+            prose-headings:font-title dark:prose-tr:border-zinc-700 dark:prose-thead:border-zinc-700
+    }
+
+    .markdown summary {
+        @apply cursor-pointer font-semibold;
+    }
+
+    .markdown summary::marker {
+        @apply text-gray-400 dark:text-zinc-500;
+    }
+
+    .markdown details[open] {
+        @apply border-b pb-2
     }
 }
 
