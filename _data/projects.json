@@ -1,5 +1,12 @@
 [
   {
+    "name": "3 Demos For Crafting Text With LLMs",
+    "description": "A demo-of-demos I delivered at AI/UX: Beyond The Textbox, hosted at Notion HQ on April 19, 2023.",
+    "link": "https://www.latent.space/i/117011682/full-meetup-video",
+    "image": null,
+    "date": "Apr 19, 2023"
+  },
+  {
     "name": "Smoothie",
     "description": "An experiment in adapting computational notebooks to full-stack development.",
     "link": "https://twitter.com/KabirGoel/status/1643868228865916928",
