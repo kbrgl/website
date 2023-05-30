@@ -3,9 +3,9 @@
   "url": "https://kabirgoel.com/",
   "preview": "https://kabirgoel.com/preview.png",
   "language": "en",
-  "description": "The website and blog of Kabir Goel, a writer, maker, and junior at the University of California, Berkeley.",
+  "description": "The website and blog of Kabir Goel.",
   "feed": {
-    "subtitle": "The website and blog of Kabir Goel, a writer, maker, and junior at the University of California, Berkeley.",
+    "subtitle": "The website and blog of Kabir Goel.",
     "filename": "feed.xml",
     "path": "/feed/feed.xml",
     "id": "https://kabirgoel.com/"
