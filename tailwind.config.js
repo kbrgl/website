@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./_includes/**/*.pug", "./*.pug"],
+  content: ["./_includes/**/*.pug", "./_includes/**/*.svg", "./*.pug"],
   darkMode: "class",
   theme: {
     fontFamily: {
