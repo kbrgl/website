@@ -1,7 +1,7 @@
 [
   {
     "name": "3 Demos For Crafting Text With LLMs",
-    "description": "A demo-of-demos I delivered at AI/UX: Beyond The Textbox, hosted at Notion HQ on April 19, 2023.",
+    "description": "A collection of demos I delivered at AI/UX: Beyond The Textbox, hosted at Notion HQ on April 19, 2023.",
     "link": "https://www.latent.space/i/117011682/full-meetup-video",
     "image": null,
     "date": "Apr 19, 2023"
@@ -22,7 +22,7 @@
   },
   {
     "name": "Blurbs.app",
-    "description": "A writing tool for applying to things. Save application responses for later and use them to autogenerate new ones.",
+    "description": "A writing tool for application essays. Use earlier responses to autogenerate new ones with an LLM.",
     "link": "https://blurbs.app/",
     "image": null,
     "date": "Jul 12, 2022"
@@ -104,7 +104,6 @@
     "image": "walnut.png",
     "date": "Aug 14, 2017"
   },
-
   {
     "name": "Isnochys Syntax",
     "description": "“In space, no one can hear you scream.” A high-contrast Atom syntax theme that's easy on the eyes.",
