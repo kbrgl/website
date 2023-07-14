@@ -22,7 +22,7 @@
   },
   {
     "name": "Little Boy Blue",
-    "description": "A Slack bot I built for a Berkeley student org, to award and track points given to members.",
+    "description": "A Slack bot I built for a Berkeley student org, to award and track points in an internal leaderboard.",
     "link": "/p/little-boy-blue",
     "image": null,
     "date": "Jul 14, 2023"
