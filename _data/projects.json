@@ -1,5 +1,12 @@
 [
   {
+    "name": "Lipwig",
+    "description": "The most beautiful newsletter platform on the web. Built with Next.js and backed by Airtable.",
+    "link": "https://lipwig.email",
+    "image": null,
+    "date": "Jun 10, 2023"
+  },
+  {
     "name": "3 Demos For Crafting Text With LLMs",
     "description": "A collection of demos I delivered at AI/UX: Beyond The Textbox, hosted at Notion HQ on April 19, 2023.",
     "link": "https://www.latent.space/i/117011682/full-meetup-video",
@@ -12,6 +19,13 @@
     "link": "https://twitter.com/KabirGoel/status/1643868228865916928",
     "image": null,
     "date": "Apr 6, 2023"
+  },
+  {
+    "name": "Little Boy Blue",
+    "description": "A Slack bot I built for a Berkeley student org, to award and track points given to members.",
+    "link": "/p/little-boy-blue",
+    "image": null,
+    "date": "Jul 14, 2023"
   },
   {
     "name": "Flapioca",
