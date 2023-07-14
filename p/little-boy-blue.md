@@ -5,11 +5,15 @@ date: 2023-07-14
 preview: https://static.kabirgoel.com/little-boy-blue/cover.png
 ---
 
-![](https://static.kabirgoel.com/little-boy-blue/intro.png)For this post, I thought I’d talk about a fun little project I did for Blueprint, a student org at Berkeley that I recently led as VP of Projects.
+![](https://static.kabirgoel.com/little-boy-blue/intro.png)
+
+For this post, I thought I’d talk about a fun little project I did for Blueprint, a student org at Berkeley that I recently led as VP of Projects.
 
 Blueprint has an incredibly tight-knit community, and a big part of that is a strong culture of encouraging members to go the extra mile for each other. To make it fun and easy to recognize each other’s hard work, we’ve long had a Slack tradition of _plusplussing_ each other to award points on an internal kudos leaderboard.
 
-![](https://static.kabirgoel.com/example-plus-plus.png)When you want to recognize someone’s contributions to the community, you @-mention them and add a ++ after. A bot then reads your message and awards points on the leaderboard. From 2015 to 2022, this bot was Big Blue. This post chronicles the growing pains we faced with Big Blue and my journey building Little Boy Blue, a replacement for Big Blue, from the ground up.
+![](https://static.kabirgoel.com/example-plus-plus.png)
+
+When you want to recognize someone’s contributions to the community, you @-mention them and add a ++ after. A bot then reads your message and awards points on the leaderboard. From 2015 to 2022, this bot was Big Blue. This post chronicles the growing pains we faced with Big Blue and my journey building Little Boy Blue, a replacement for Big Blue, from the ground up.
 
 ## The Problem
 
