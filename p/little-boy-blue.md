@@ -27,8 +27,8 @@ My wistful message about Big Blue seemed to resonate:
 
 1. **Messy status messages:** Big Blue’s responses didn’t highlight usernames and the first line wasn’t aligned with the rest, making it harder to read.
 2. **False positives:** You couldn’t use `\++` when discussing Big Blue itself, since it would misinterpret it as you trying to literally ++ someone, so you had to tiptoe around it.
-3. **False negatives: **If your spacing wasn’t precise, Big Blue would ignore your message. For example, if you typed `@kabir ++@jay++` instead of `@kabir ++ @jay ++` . (@kelly ++ for pointing out the issue with leading ++s!)
-4. **Lack of threading: **Rather than replying in a thread, Big Blue would reply in the channel, making conversations harder to follow.
+3. **False negatives:** If your spacing wasn’t precise, Big Blue would ignore your message. For example, if you typed `@kabir ++@jay++` instead of `@kabir ++ @jay ++` . (@kelly ++ for pointing out the issue with leading ++s!)
+4. **Lack of threading:** Rather than replying in a thread, Big Blue would reply in the channel, making conversations harder to follow.
 
 ## Building it out
 
@@ -80,7 +80,9 @@ I asked Bry, a Blooper whose art style I really admire, to draw Little Boy Blue�
 
 Bry drew the mascot several different ways, enabling context-specific use and bringing Little Boy Blue to life:
 
-![](https://static.kabirgoel.com/little-boy-blue/cover.png)---
+![](https://static.kabirgoel.com/little-boy-blue/cover.png)
+
+---
 
 With Little Boy Blue built and brought to life, I officially retired Big Blue during a lightning talk at Blueprint’s general meeting—preceded, of course, by a customary one minute silence. (You can find my slides [here](https://static.kabirgoel.com/slides.pdf).)
 
