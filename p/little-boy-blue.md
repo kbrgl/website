@@ -13,7 +13,7 @@ Blueprint has an incredibly tight-knit community, and a big part of that is a st
 
 ![](https://static.kabirgoel.com/example-plus-plus.png)
 
-When you want to recognize someone’s contributions to the community, you @-mention them and add a ++ after. A bot then reads your message and awards points on the leaderboard. From 2015 to 2022, this bot was Big Blue. This post chronicles the growing pains we faced with Big Blue and my journey building Little Boy Blue, a replacement for Big Blue, from the ground up.
+When you want to recognize someone’s contributions to the community, you @-mention them and add a `++` after. A bot then reads your message and awards points on the leaderboard. From 2015 to 2022, this bot was Big Blue. This post chronicles the growing pains we faced with Big Blue and my journey building Little Boy Blue, a replacement for Big Blue, from the ground up.
 
 ## The Problem
 
@@ -21,17 +21,23 @@ Big Blue was much-loved, but it had started showing its age. The bot was built i
 
 Most importantly, downtime meant some kudos were just ignored, robbing their recipients of the opportunity to move up the leaderboard. Just look at some of the messages lost to the void:
 
-![](https://static.kabirgoel.com/little-boy-blue/into-the-void.png)Our troubles with Big Blue manifested themselves as a collective frustration voiced across dozens of Slack messages. Over a period of months, Big Blue went from a cherished piece of technology to a pariah whose name was invariably invoked with an accompanying sigh.
+![](https://static.kabirgoel.com/little-boy-blue/into-the-void.png)
+
+Our troubles with Big Blue manifested themselves as a collective frustration voiced across dozens of Slack messages. Over a period of months, Big Blue went from a cherished piece of technology to a pariah whose name was invariably invoked with an accompanying sigh.
 
 My wistful message about Big Blue seemed to resonate:
 
-![](https://static.kabirgoel.com/little-boy-blue/hater.png)Meanwhile, chaos reigned in the #hack-big-blue channel, with people frantically trying to revive the bot with the `/bigblue up` command, invented as a hacky way to get Big Blue back online:
+![](https://static.kabirgoel.com/little-boy-blue/hater.png)
 
-![](https://static.kabirgoel.com/little-boy-blue/panik.png)In this chaos, I saw an opportunity. We could not only rebuild Big Blue on a robust technical foundation to make it leaner and snappier, but we could also give the bot a fresh, fun personality and fix longstanding usability issues. In a detailed investigation of past Big Blue invocations, I found several usability issues:
+Meanwhile, chaos reigned in the #hack-big-blue channel, with people frantically trying to revive the bot with the `/bigblue up` command, invented as a hacky way to get Big Blue back online:
+
+![](https://static.kabirgoel.com/little-boy-blue/panik.png)
+
+In this chaos, I saw an opportunity. We could not only rebuild Big Blue on a robust technical foundation to make it leaner and snappier, but we could also give the bot a fresh, fun personality and fix longstanding usability issues. In a detailed investigation of past Big Blue invocations, I found several usability issues:
 
 1. **Messy status messages:** Big Blue’s responses didn’t highlight usernames and the first line wasn’t aligned with the rest, making it harder to read.
-2. **False positives:** You couldn’t use `\++` when discussing Big Blue itself, since it would misinterpret it as you trying to literally ++ someone, so you had to tiptoe around it.
-3. **False negatives:** If your spacing wasn’t precise, Big Blue would ignore your message. For example, if you typed `@kabir ++@jay++` instead of `@kabir ++ @jay ++` . (@kelly ++ for pointing out the issue with leading ++s!)
+2. **False positives:** You couldn’t use `++` when discussing Big Blue itself, since it would misinterpret it as you trying to literally ++ someone, so you had to tiptoe around it.
+3. **False negatives:** If your spacing wasn’t precise, Big Blue would ignore your message. For example, if you typed `@Kabir ++@Jay++` instead of `@Kabir ++ @Jay ++` . (`@Kelly ++` for pointing out a bug with leading plusplusses!)
 4. **Lack of threading:** Rather than replying in a thread, Big Blue would reply in the channel, making conversations harder to follow.
 
 ## Building it out
@@ -42,7 +48,9 @@ With that out of the way, I prototyped an MVP. To make it easy to develop, maint
 
 The first steps were easy: I set up Slack’s fantastic Bolt library for Python and scaffolded some code capable of reading and responding to messages. Naturally, the bot’s first babbles spelled out the infamous Navy SEAL copypasta:
 
-![](https://static.kabirgoel.com/little-boy-blue/copypasta.png)The base ++ functionality came easily as well. To store scores, I decided to use Replit’s built in key-value store; to parse mentioned entities out of messages, I relied on simple rules. Then, all I had to do was increment the keys corresponding to the mentioned entities. (I say “entity” because Blueprint likes to ++ random stuff as a meme.)
+![](https://static.kabirgoel.com/little-boy-blue/copypasta.png)
+
+The base plusplus functionality came easily as well. To store scores, I decided to use Replit’s built in key-value store; to parse mentioned entities out of messages, I relied on simple rules. Then, all I had to do was increment the keys corresponding to the mentioned entities. (I say “entity” because Blueprint likes to plusplus random stuff as a meme.)
 
 ## Closing infinite points loopholes
 
@@ -62,7 +70,9 @@ Finally, for #3, I deduplicated mentions in messages.
 
 With all the base functionality complete, I implemented the Little Boy Blue leaderboard. Big Blue used a custom message syntax to query the bot and invoke the leaderboard; for Little Boy Blue, I instead used a Slack slash-command, which provides better discoverability and easier invocation:
 
-![](https://static.kabirgoel.com/little-boy-blue/slash-command.png)I found that Big Blue’s leaderboard cluttered many of the channels it was invoked in, since the leaderboard could be quite long. Little Boy Blue’s leaderboard, on the other hand, is only visible to the user that invokes it. (With the notable exception of the #leaderboard channel, where all invocations are public.)
+![](https://static.kabirgoel.com/little-boy-blue/slash-command.png)
+
+I found that Big Blue’s leaderboard cluttered many of the channels it was invoked in, since the leaderboard could be quite long. Little Boy Blue’s leaderboard, on the other hand, is only visible to the user that invokes it. (With the notable exception of the `#leaderboard` channel, where all invocations are public.)
 
 Once I got the leaderboard working, all that was left to do was port the old scores to the new leaderboard. Since Slack deprecated usernames in 2018, I wanted to migrate the leaderboard from using usernames to simply @-mentioning the relevant users.
 
@@ -70,11 +80,13 @@ This was nontrivial; mentions require you to know the mentioned user’s unique 
 
 ## Refining the chat interface
 
-I wanted to make Little Boy Blue as easy and pleasant to use as possible, so I added hints to guide users when they make common mistakes. For instance, Little Boy Blue will remind you to invoke the leaderboard in #leaderboard if you want it to be publicly visible.
+I wanted to make Little Boy Blue as easy and pleasant to use as possible, so I added hints to guide users when they make common mistakes. For instance, Little Boy Blue will remind you to invoke the leaderboard in `#leaderboard` if you want it to be publicly visible.
 
-I also realized users often want to look up specific entries on the leaderboard, so I added a /score command to look up the scores of specific entities.
+I also realized users often want to look up specific entries on the leaderboard, so I added a `/score` command to look up the scores of specific entities.
 
 Next on my priority list were the quality-of-life improvements: threading, false positive/negative handling, and messy status messages. Threading just meant passing a couple of extra arguments to the Slack API, and has significantly neatened up the Slack; likewise, messy status messages were easily fixed by formatting every line in the status message identically, with the exception of a fun emoji at the beginning to visually separate distinct entries:
+
+![](https://static.kabirgoel.com/little-boy-blue/status-emoji.png)
 
 Finally, I added special-case logic to customize the leaderboard message according to the number of entries requested and to deal with pluralizing “points.” (I’ve always found generically writing “point(s)” a little annoying.)
 
@@ -88,7 +100,7 @@ Bry drew the mascot several different ways, enabling context-specific use and br
 
 ---
 
-With Little Boy Blue built and brought to life, I officially retired Big Blue during a lightning talk at Blueprint’s general meeting—preceded, of course, by a customary one minute silence. (You can find my slides [here](https://static.kabirgoel.com/slides.pdf).)
+With Little Boy Blue built—and brought to life by Bry—I officially retired Big Blue during a lightning talk at Blueprint’s general meeting—preceded, of course, by a customary one minute silence. (You can find my slides [here](https://static.kabirgoel.com/slides.pdf).)
 
 Little Boy Blue is by far one of the most rewarding projects I’ve undertaken. It enabled Blueprint to halve our spending on hosting thanks to the switch from AWS to Replit, and it’s allowed me the privilege of making a lasting mark on a community I really care about.
 
