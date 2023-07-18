@@ -36,7 +36,7 @@ Meanwhile, chaos reigned in the #hack-big-blue channel, with people frantically 
 In this chaos, I saw an opportunity. We could not only rebuild Big Blue on a robust technical foundation to make it leaner and snappier, but we could also give the bot a fresh, fun personality and fix longstanding usability issues. In a detailed investigation of past Big Blue invocations, I found several usability issues:
 
 1. **Messy status messages:** Big Blue’s responses didn’t highlight usernames and the first line wasn’t aligned with the rest, making it harder to read.
-2. **False positives:** You couldn’t use `++` when discussing Big Blue itself, since it would misinterpret it as you trying to literally ++ someone, so you had to tiptoe around it.
+2. **False positives:** You couldn’t use `++` when discussing Big Blue itself, since it would misinterpret it as you trying to literally plusplus someone, so you had to tiptoe around it.
 3. **False negatives:** If your spacing wasn’t precise, Big Blue would ignore your message. For example, if you typed `@Kabir ++@Jay++` instead of `@Kabir ++ @Jay ++` . (`@Kelly ++` for pointing out a bug with leading plusplusses!)
 4. **Lack of threading:** Rather than replying in a thread, Big Blue would reply in the channel, making conversations harder to follow.
 
@@ -56,13 +56,13 @@ The base plusplus functionality came easily as well. To store scores, I decided 
 
 After the initial MVP was ready, I wrote code that dealt with the three ways in which users would no doubt try to game the system and steal points for themselves:
 
-1. By ++ing themselves.
-2. By getting others to ++ them repeatedly.
+1. By plusplussing themselves.
+2. By getting others to plusplus them repeatedly.
 3. By repeating mentions in the same message.
 
-\#1 was simple: all I had to do was check if the list of ++ed entities included the sender.
+\#1 was simple: all I had to do was check if the list of plusplussed entities included the sender.
 
-\#2 was a bit more complicated. To defang this strategy, I reimplemented a “cooldown” feature from Big Blue that prevented someone from ++ing the same user again before a preset duration had elapsed. Every time someone awards a ++, Little Boy Blue checks if they’ve given a ++ to the same person within the last few minutes. If they have, it blocks the attempt and chides them.
+\#2 was a bit more complicated. To defang this strategy, I reimplemented a “cooldown” feature from Big Blue that prevented someone from plusplussing the same user again before a preset duration had elapsed. Every time someone awards a plusplus, Little Boy Blue checks if they’ve given a plusplus to the same person within the last few minutes. If they have, it blocks the attempt and chides them.
 
 Finally, for #3, I deduplicated mentions in messages.
 
