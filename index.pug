@@ -6,8 +6,8 @@ eleventyExcludeFromCollections: true
 .animate-fade-in
     section(class="mb-8 max-w-lg grid gap-4")
         h1(class="mt-12 text-4xl font-medium font-title dark:text-white")
-            | I study CS and public policy at Berkeley, and I’m working towards truly personal computing.
-        p I’m passionate about the future of coding, tools that make it fun and easy to build tools, and calm technology that helps us achieve our goals.
+            | I study CS and public policy at UC&nbsp;Berkeley and work as a founding engineer at #[a(href="https://cartesia.ai") Cartesia].
+        p I’m passionate about tools that make it fun and easy to build tools and calm technology that gets out of our way.
         p I like compilers, the web, and good design.
 
     include /subscribe
@@ -17,12 +17,8 @@ eleventyExcludeFromCollections: true
             span(class="font-semibold") Recently
             span(class="border-t flex-1")
         div(class="text-gray-600 dark:text-gray-300 markdown")
-            ul
-                li Fostering Berkeley’s startup ecosystem through #[a(href="https://thefuture.build" class="text-blue-800 dark:text-blue-300") Build&nbsp;the&nbsp;Future] and #[a(href="https://berkeleydemo.day" class="text-blue-800 dark:text-blue-300") Berkeley&nbsp;Demo&nbsp;Day].
-                li Running R&amp;D for the future of publishing at #[a(href="https://symbolic.ai" class="text-blue-800 dark:text-blue-300") Symbolic].
-                li Working at #[a(href="https://pynecone.io" class="text-blue-800 dark:text-blue-300") Pynecone], a startup making it possible to write full-stack apps in just Python.
-                li Finishing up my tenure as VP of Projects and low-code guy at #[a(href="https://calblueprint.org" class="text-blue-800 dark:text-blue-300") Cal&nbsp;Blueprint], a student org that builds digital systems to promote public welfare.
-                li Researching better ways to build web apps using reactive models like spreadsheets and notebooks. A tool I call #[a(href="https://twitter.com/KabirGoel/status/1643868228865916928" class="text-blue-800 dark:text-blue-300") Smoothie] is slowly taking shape through this research.
+            p I recently started as a founding engineer at #[a(href="https://cartesia.ai"  class="text-blue-800 dark:text-blue-300") Cartesia], where I work across product and infrastructure to serve next-gen experiences powered by subquadratic models.
+            p Before joining Cartesia, I was an AI/UX engineer at #[a(href="https://symbolic.ai" class="text-blue-800 dark:text-blue-300") Symbolic], where I built AI tools for journalists.
     div(class="space-y-12 mt-12")
         each yearWithPosts in collections.postsByYear.slice().reverse()
             - const [year, yearPosts] = yearWithPosts
