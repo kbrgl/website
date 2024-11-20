@@ -1,4 +1,4 @@
-nav(x-data="{ theme: 'light' }" class="flex justify-between flex-col md:flex-row md:items-center text-gray-700 dark:text-zinc-200 md:space-x-8 pb-2")
+nav(class="flex justify-between flex-col md:flex-row md:items-center text-gray-700 dark:text-zinc-200 md:space-x-8 pb-2")
     a(href="/" class="text-black dark:text-white font-semibold flex items-center gap-1")
         include /icons/navbar-logo.svg
         | Kabir Goel
@@ -6,34 +6,10 @@ nav(x-data="{ theme: 'light' }" class="flex justify-between flex-col md:flex-row
         ul(class="flex items-baseline space-x-4 text-sm overflow-x-auto")
             li
                 a(href="/projects" class="hover:text-amber-500 hover:dark:text-yellow-500 transition-colors") Projects
-        button(type="button" x-data=`{
-            isDark() {
-                return (
-                    localStorage.theme === 'dark' ||
-                    (!('theme' in localStorage) &&
-                        window.matchMedia('(prefers-color-scheme: dark)').matches)
-                )
-            },
-            setTheme(isDark) {
-                if (isDark) {
-                    document.documentElement.classList.add("dark")
-                    return 'dark'
-                } else {
-                    document.documentElement.classList.remove("dark")
-                    return 'light'
-                }
-            },
-            invertTheme() {
-                const isDark_ = this.isDark()
-                if (isDark_) {
-                    localStorage.theme = 'light'
-                } else {
-                    localStorage.theme = 'dark'
-                }
-                return this.setTheme(!isDark_)
-            }
-        }` x-init="theme = setTheme(isDark())" @click="theme = invertTheme()" class="hover:bg-gray-200 hover:dark:bg-zinc-700 rounded-full p-2 transition-colors flex items-center")
-            span(x-show="theme === 'light'")
+        button(type="button" onclick="switchThemes()" data-theme class="group hover:bg-gray-200 hover:dark:bg-zinc-700 rounded-full p-2 transition-colors flex items-center")
+            span(class="hidden group-data-[theme=light]:block")
                 include /icons/sun.svg
-            span(x-show="theme === 'dark'")
+            span(class="hidden group-data-[theme=dark]:block")
                 include /icons/moon.svg
+            span(class="hidden group-data-[theme=system]:block")
+                include /icons/system.svg

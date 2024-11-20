@@ -3,28 +3,29 @@ layout: layouts/page
 eleventyExcludeFromCollections: true
 ---
 
-section(class="mb-8 max-w-lg grid gap-4")
-    h1(class="mt-12 text-4xl font-medium font-title dark:text-white")
-        | I’m a product engineer currently working on serving real time intelligence at #[a(href="https://cartesia.ai") Cartesia].
-    p I’m passionate about tools that make it fun and easy to build tools and calm technology that gets out of our way.
-    p I like compilers, the web, and good design.
+section(class="mt-24 mb-8 grid gap-4")
+    h1(class="text-4xl font-medium font-title dark:text-white")
+        | Designing, building, and refining.
+    p(class="markdown") I engineer products at #[a(href="https://cartesia.ai") Cartesia] in San Francisco.
 
 include /subscribe
 p(class="mt-1.5 text-xs text-gray-500 dark:text-zinc-400") Or follow on #[a(href="https://twitter.com/KabirGoel" class="border-b") Twitter]
-section(class="mt-12")
+
+section(class="my-24")
     h2(class="flex items-center space-x-4 mb-4")
         span(class="font-semibold") Recently
-        span(class="border-t flex-1")
+        span(class="h-px bg-gradient-to-r from-transparent to-gray-200 dark:to-zinc-700 flex-1")
     div(class="text-gray-600 dark:text-gray-300 markdown")
         p I recently graduated from UC Berkeley, where I earned a degree in Computer Science with Honors and a minor in Public Policy.
         p Before joining Cartesia, I was an AI/UX engineer at #[a(href="https://symbolic.ai" class="text-blue-800 dark:text-blue-300") Symbolic], where I built AI tools for journalists.
-div(class="space-y-12 mt-12")
+
+div(class="space-y-12 my-24")
     each yearWithPosts in collections.postsByYear.slice().reverse()
         - const [year, yearPosts] = yearWithPosts
         section
             h2(class="flex items-center space-x-4 mb-8")
                 span(class="font-semibold")= year
-                span(class="border-t flex-1")
+                span(class="h-px bg-gradient-to-r from-transparent to-gray-200 dark:to-zinc-700 flex-1")
             div(class="grid gap-6 max-w-screen-sm")
                 each post in yearPosts.slice().reverse()
                     a(href=post.url, class="grid group gap-1")
