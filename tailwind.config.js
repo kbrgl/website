@@ -10,17 +10,6 @@ module.exports = {
         "Source Serif Pro, Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
       mono: "input-mono-condensed, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace",
     },
-    extend: {
-      keyframes: {
-        'fade-in': {
-          "0%": { opacity: 0, transform: "translateY(20px)" },
-          "100%": { opacity: 1, transform: "translateY(0)" },
-        },
-      },
-      animation: {
-        'fade-in': "fade-in 200ms cubic-bezier(0.16, 0, 0.13, 1)",
-      },
-    },
   },
   plugins: [require("@tailwindcss/typography")],
 }
