@@ -53,7 +53,7 @@ export default async function Post({
 				/>
 			</article>
 			<div className="mt-12 dark:bg-zinc-900">
-				<div className="h-px mb-16 bg-gradient-to-r from-transparent to-transparent via-gray-200 dark:via-zinc-700" />
+				<div className="mb-16 border-t" />
 				<p className="mb-1.5 text-sm font-semibold">
 					Get more like this in your inbox
 				</p>

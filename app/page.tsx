@@ -46,7 +46,7 @@ export default async function Home() {
 						<section key={year}>
 							<h2 className="flex items-center space-x-4 mb-8">
 								<span className="font-semibold">{year}</span>
-								<span className="h-px bg-gradient-to-r from-transparent to-gray-200 dark:to-zinc-700 flex-1" />
+								<span className="border-t flex-1" />
 							</h2>
 							<div className="grid gap-6 max-w-screen-sm">
 								{posts
