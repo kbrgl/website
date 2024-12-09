@@ -50,7 +50,7 @@ export async function getPosts(): Promise<Post[]> {
 			}),
 	);
 
-	return posts.sort((a, b) => a.date.getTime() - b.date.getTime());
+	return posts.filter((post) => !post.data.hidden).sort((a, b) => a.date.getTime() - b.date.getTime());
 }
 
 export async function getPostsByYear(): Promise<[string, Post[]][]> {
