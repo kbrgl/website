@@ -70,7 +70,7 @@ export default function RootLayout({
 				<link rel="stylesheet" href="/app.css" />
 			</head>
 			<body
-				className="bg-gray-100 text-gray-900 dark:bg-zinc-900 dark:text-white"
+				className="bg-white text-gray-900 dark:bg-zinc-900 dark:text-white"
 			>
 				<ThemeProvider
 					attribute="class"
