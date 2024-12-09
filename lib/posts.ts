@@ -2,7 +2,7 @@ import process from "node:process";
 import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
-import _ from "lodash-es";
+import {groupBy} from "lodash-es";
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
@@ -23,7 +23,13 @@ const processor = unified()
 
 const CONTENT_DIR = path.join(process.cwd(), "data");
 
-export async function getPosts() {
+type Post = {
+	slug: string;
+	data: { [key: string]: any };
+	date: Date;
+};
+
+export async function getPosts(): Promise<Post[]> {
 	const fileNames = await fs.readdir(path.join(CONTENT_DIR, "posts"));
 
 	const posts = await Promise.all(
@@ -47,16 +53,14 @@ export async function getPosts() {
 	return posts.sort((a, b) => a.date.getTime() - b.date.getTime());
 }
 
-export async function getPostsByYear() {
+export async function getPostsByYear(): Promise<[string, Post[]][]> {
 	const posts = await getPosts();
-	return _.chain(posts)
-		.filter((post) => !post.data.hidden)
-		.groupBy((post) => post.date.getFullYear())
-		.toPairs()
-		.value();
+	return Object.entries(groupBy(posts, (post) => post.date.getFullYear()));
 }
 
-export async function getPost(slug: string) {
+type PostWithContent = Post & { content: string };
+
+export async function getPost(slug: string): Promise<PostWithContent> {
 	const filePath = path.join(CONTENT_DIR, "posts", `${slug}.md`);
 	const source = await fs.readFile(filePath, "utf-8");
 
@@ -64,5 +68,5 @@ export async function getPost(slug: string) {
 
 	const result = await processor.process(content);
 
-	return { data, content: String(result), date: new Date(data.date) };
+	return { slug, data, content: String(result), date: new Date(data.date) };
 }
