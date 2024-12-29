@@ -21,6 +21,14 @@ export default function Navbar() {
 							Projects
 						</a>
 					</li>
+					<li>
+						<a
+							href="https://notes.kabirgoel.com"
+							className="hover:text-amber-500 hover:dark:text-yellow-500 transition-colors"
+						>
+							Notes
+						</a>
+					</li>
 				</ul>
 				<ThemeToggle />
 			</div>
