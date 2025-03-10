@@ -65,7 +65,7 @@ export default async function Home() {
 												{post.data.subtitle}
 											</p>
 											<p className="text-gray-500 dark:text-zinc-400 font-sans whitespace-nowrap text-sm">
-												{formatDate(post.data.date)}
+												{formatDate(post.date)}
 											</p>
 										</a>
 									))}
