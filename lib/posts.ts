@@ -2,7 +2,7 @@ import process from "node:process";
 import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
-import {groupBy} from "lodash-es";
+import { groupBy } from "lodash-es";
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
@@ -16,7 +16,7 @@ const processor = unified()
 	.use(remarkRehype, { allowDangerousHtml: true })
 	.use(rehypeShiki, {
 		theme: "vitesse-dark",
-	  })
+	})
 	.use(rehypeStringify, {
 		allowDangerousHtml: true,
 	});
@@ -25,7 +25,13 @@ const CONTENT_DIR = path.join(process.cwd(), "data");
 
 type Post = {
 	slug: string;
-	data: { [key: string]: any };
+	data: {
+		title: string;
+		subtitle: string;
+		canonical?: string;
+		preview?: string;
+		hidden?: boolean;
+	};
 	date: Date;
 };
 
@@ -50,7 +56,9 @@ export async function getPosts(): Promise<Post[]> {
 			}),
 	);
 
-	return posts.filter((post) => !post.data.hidden).sort((a, b) => a.date.getTime() - b.date.getTime());
+	return posts
+		.filter((post) => !post.data.hidden)
+		.sort((a, b) => a.date.getTime() - b.date.getTime()) as Post[];
 }
 
 export async function getPostsByYear(): Promise<[string, Post[]][]> {
@@ -68,5 +76,10 @@ export async function getPost(slug: string): Promise<PostWithContent> {
 
 	const result = await processor.process(content);
 
-	return { slug, data, content: String(result), date: new Date(data.date) };
+	return {
+		slug,
+		data,
+		content: String(result),
+		date: new Date(data.date),
+	} as PostWithContent;
 }
