@@ -48,7 +48,7 @@ export default async function Home() {
 								<span className="font-semibold">{year}</span>
 								<span className="border-t flex-1" />
 							</h2>
-							<div className="grid gap-6 max-w-screen-sm">
+							<div className="grid gap-6 max-w-(--breakpoint-sm)">
 								{posts
 									.slice()
 									.reverse()

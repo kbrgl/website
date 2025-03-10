@@ -7,7 +7,7 @@ export default function Footer() {
 
 	return (
 		<footer className="mt-16 pt-4 flex flex-col gap-4 text-sm">
-			<div className="h-px bg-gradient-to-r from-transparent to-transparent via-gray-200 dark:via-zinc-700" />
+			<div className="h-px bg-linear-to-r from-transparent to-transparent via-gray-200 dark:via-zinc-700" />
 			<div className="flex justify-between items-center text-gray-500 dark:text-zinc-400">
 				<a href="https://twitter.com/KabirGoel">© Kabir Goel</a>
 				<div className="flex items-center gap-2 text-blue-800 dark:text-blue-200">

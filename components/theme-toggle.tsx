@@ -33,7 +33,7 @@ export default function ThemeToggle() {
 		<button
 			type="button"
 			onClick={switchTheme}
-			className="group hover:bg-gray-200 hover:dark:bg-zinc-700 rounded-full p-2 transition-colors flex items-center"
+			className="group hover:bg-gray-200 dark:hover:bg-zinc-700 rounded-full p-2 transition-colors flex items-center"
 		>
 			{theme === "light" ? <Sun /> : theme === "dark" ? <Moon /> : <System />}
 		</button>

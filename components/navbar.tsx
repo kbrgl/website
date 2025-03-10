@@ -16,7 +16,7 @@ export default function Navbar() {
 					<li>
 						<a
 							href="/projects"
-							className="hover:text-amber-500 hover:dark:text-yellow-500 transition-colors"
+							className="hover:text-amber-500 dark:hover:text-yellow-500 transition-colors"
 						>
 							Projects
 						</a>
@@ -24,7 +24,7 @@ export default function Navbar() {
 					<li>
 						<a
 							href="https://notes.kabirgoel.com"
-							className="hover:text-amber-500 hover:dark:text-yellow-500 transition-colors"
+							className="hover:text-amber-500 dark:hover:text-yellow-500 transition-colors"
 						>
 							Notes
 						</a>

@@ -78,7 +78,7 @@ export default function RootLayout({
 					disableTransitionOnChange
 				>
 					<Cells />
-					<div className="max-w-screen-md mx-auto py-12 px-4">
+					<div className="max-w-(--breakpoint-md) mx-auto py-12 px-4">
 						<Navbar />
 						<main>{children}</main>
 						<Footer />

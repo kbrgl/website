@@ -13,7 +13,7 @@ export default function Projects() {
 						className="space-y-0.5"
 					>
 						<a href={project.link}>
-							<h2 className="font-semibold text-lg text-blue-800 dark:text-blue-300 hover:text-amber-500 hover:dark:text-yellow-500 transition-colors">
+							<h2 className="font-semibold text-lg text-blue-800 dark:text-blue-300 hover:text-amber-500 dark:hover:text-yellow-500 transition-colors">
 								{project.name}
 								<span className="font-sans text-gray-400 dark:text-zinc-500 text-sm pl-2 font-normal">
 									{project.date.split(" ")[2]}
