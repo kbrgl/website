@@ -1,6 +1,6 @@
 ---
 title: Minimizing first-byte latency for audio on the web
-subtitle: A few easy, high impact fixes, and one stretch fix
+subtitle: A few easy, high impact fixes, and one hard one.
 date: 2025-03-10
 hidden: true
 ---
@@ -9,7 +9,7 @@ At [Cartesia](https://github.com), we're building the world's fastest, most scal
 
 But that work doesn't matter if we can't deliver generated audio to the user as quickly as possible. So we also spend a lot of time thinking end-to-end about how to make that happen, whether that's by replicating our service across the globe or optimizing our client-side code.
 
-In this post, I'll share three fixes for lower first-byte latency—how long it takes the first byte to reach the user—that had the lowest effort-to-impact ratio for us.
+In this post, I'll share a few fixes for lower first-byte latency—how long it takes the first byte to reach the user—that had the lowest effort-to-impact ratio for us.
 
 ## 1. Avoid preflight requests by setting the `Access-Control-Max-Age` header
 
@@ -43,16 +43,13 @@ Some things you can tune:
 2. `-probesize <int>`: Set the probe size, which is how much of the input is used to detect the input format.
 3. `-flags low_delay`: Enable low-delay processing mode.
 
-## 5. Use the Web Audio API to take playbck into your own hands
+## 5. Use the Web Audio API to take playbck into your own hands (hard)
 
-The naive approach to playing audio on the web is to slap the URL into the audio tag and set the audio tag to autoplay:
+The naive approach to playing audio on the web is to slap the URL into an audio element and make it play with JavaScript:
 
 ```javascript
-const audio = document.createElement('audio');
-audio.src = 'https://example.com/audio.webm';
-audio.autoplay = true;
-// put it in the DOM
-document.body.appendChild(audio);
+const audio = new Audio("my-audio-file.mp3");
+audio.play();
 ```
 
 This is great for most use cases, because the browser truly does a lot for you here:
