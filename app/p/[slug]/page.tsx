@@ -22,7 +22,7 @@ export default async function Post({
 }: { params: Promise<{ slug: string }> }) {
 	const { slug } = await params;
 
-	let post;
+	let post: Awaited<ReturnType<typeof getPost>>;
 	try {
 		post = await getPost(slug);
 	} catch (error) {
@@ -49,6 +49,7 @@ export default async function Post({
 				</h2>
 				<div
 					className="mt-12 markdown"
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: Trusted content from the file system
 					dangerouslySetInnerHTML={{ __html: content }}
 				/>
 			</article>
