@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 
@@ -6,20 +6,16 @@
 
 @theme {
   --font-*: initial;
-  --font-sans:
-    indivisible, -apple-system, BlinkMacSystemFont, avenir next, avenir,
-    segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial,
-    sans-serif;
-  --font-title:
-    new-spirit-condensed, -apple-system, BlinkMacSystemFont, avenir next,
-    avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto,
-    noto, arial, sans-serif;
-  --font-serif:
-    Source Serif Pro, Iowan Old Style, Apple Garamond, Baskerville,
+  --font-sans: indivisible, -apple-system, BlinkMacSystemFont, avenir next,
+    avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
+    arial, sans-serif;
+  --font-title: new-spirit-condensed, -apple-system, BlinkMacSystemFont,
+    avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu,
+    roboto, noto, arial, sans-serif;
+  --font-serif: Source Serif Pro, Iowan Old Style, Apple Garamond, Baskerville,
     Times New Roman, Droid Serif, Times, serif, Apple Color Emoji,
     Segoe UI Emoji, Segoe UI Symbol;
-  --font-mono:
-    input-mono-condensed, Menlo, Consolas, Monaco, Liberation Mono,
+  --font-mono: input-mono-condensed, Menlo, Consolas, Monaco, Liberation Mono,
     Lucida Console, monospace;
 }
 
@@ -61,49 +57,47 @@
   }
 }
 
-@utility border {
-  @apply dark:border-zinc-700;
-}
-
-@utility border-t {
-  @apply dark:border-zinc-700;
-}
-
-@utility border-b {
-  @apply dark:border-zinc-700;
-}
-
-@utility border-r {
-  @apply dark:border-zinc-700;
-}
-
-@utility border-l {
-  @apply dark:border-zinc-700;
-}
-
 @layer base {
-    a {
-        -webkit-tap-highlight-color: transparent;
-    }
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 
-    :focus-visible {
-        @apply outline outline-zinc-500;
+  .dark {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+      border-color: var(--color-zinc-700, currentColor);
     }
+  }
 
-    html,
-    body {
-        scrollbar-gutter: stable;
-        scrollbar-color: #777 transparent;
-    }
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
 
-    /* Define a transition duration during page visits */
-    html.is-changing .transition-fade {
-        transition: opacity 0.25s;
-        opacity: 1;
-    }
+  :focus-visible {
+    @apply outline outline-zinc-500;
+  }
 
-    /* Define the styles for the unloaded pages */
-    html.is-animating .transition-fade {
-        opacity: 0;
-    }
+  html,
+  body {
+    scrollbar-gutter: stable;
+    scrollbar-color: #777 transparent;
+  }
+
+  /* Define a transition duration during page visits */
+  html.is-changing .transition-fade {
+    transition: opacity 0.25s;
+    opacity: 1;
+  }
+
+  /* Define the styles for the unloaded pages */
+  html.is-animating .transition-fade {
+    opacity: 0;
+  }
 }
