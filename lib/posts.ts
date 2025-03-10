@@ -35,7 +35,9 @@ type Post = {
 	date: Date;
 };
 
-export async function getPosts(): Promise<Post[]> {
+export async function getPosts({
+	includeHidden = false,
+}: { includeHidden?: boolean } = {}): Promise<Post[]> {
 	const fileNames = await fs.readdir(path.join(CONTENT_DIR, "posts"));
 
 	const posts = await Promise.all(
@@ -56,9 +58,15 @@ export async function getPosts(): Promise<Post[]> {
 			}),
 	);
 
-	return posts
-		.filter((post) => !post.data.hidden)
-		.sort((a, b) => a.date.getTime() - b.date.getTime()) as Post[];
+	const sortedPosts = posts.sort(
+		(a, b) => a.date.getTime() - b.date.getTime(),
+	) as Post[];
+
+	if (!includeHidden) {
+		return sortedPosts.filter((post) => !post.data.hidden);
+	}
+
+	return sortedPosts;
 }
 
 export async function getPostsByYear(): Promise<[string, Post[]][]> {

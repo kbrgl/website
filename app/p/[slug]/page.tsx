@@ -4,7 +4,7 @@ import { getPost, getPosts } from "@/lib/posts";
 import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
-	return getPosts();
+	return getPosts({ includeHidden: true });
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
