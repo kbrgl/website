@@ -1,5 +1,5 @@
 ---
-title: Minimizing first-byte latency for audio on the web
+title: Minimizing first-byte latency for real-time audio on the web
 subtitle: A few easy, high impact fixes, and one hard one.
 date: 2025-03-10
 ---
@@ -12,6 +12,8 @@ In this post, I'll share a few fixes for lower first-byte latency—how long it 
 
 ## 1. Avoid preflight requests by setting the `Access-Control-Max-Age` header
 
+If you fetch audio using request methods like POST, you might be wasting an entire round trip's worth of latency.
+
 Fetch requests that leave your web app's domain ("cross-origin" requests) face more security restrictions than those that don't ("same-origin" requests). If you've written an app that makes these kinds of requests (which is probably most apps these days), you may have heard of CORS headers, which you add to your server's responses to let the browser know the server is OK with requests from other (sub)domains.
 
 What you might not know is that every time you make certain types of cross-origin requests, the browser sends a preflight request (with the OPTIONS HTTP method) that checks if the server is comfortable with accepting that request. Specifically, preflight checks happen for ["non-simple" requests](https://stackoverflow.com/questions/29954037/why-is-an-options-request-sent-and-can-i-disable-it).
@@ -22,9 +24,9 @@ CORS middlewares usually handle responding to preflight requests. However, most 
 
 ## 2. Don't compress real-time responses
 
-> I will caveat this one by saying that if your users are on low-bandwidth Internet connections, this might not be the right choice. See #3 instead.
+I will caveat this one by saying that if your users are on low-bandwidth Internet connections, this might not be the right choice. See #3 instead.
 
-Compression is best for responses that are served from storage. If you're serving responses in real-time to users on good Internet connections, consider avoiding compression, since compression algorithms typically require buffering up a chunk before they can transmit the first byte.
+Compression can significantly delay real-time responses, and it can be sneaky since even if your app doesn't compress your responses, a reverse proxy might. If you're serving responses in real-time to users on good Internet connections, consider avoiding compression, since compression algorithms typically require buffering up a chunk before they can transmit the first byte.
 
 ## 3. Make your data smaller
 
@@ -42,7 +44,7 @@ Some things you can tune:
 2. `-probesize <int>`: Set the probe size, which is how much of the input is used to detect the input format.
 3. `-flags low_delay`: Enable low-delay processing mode.
 
-## 5. Use the Web Audio API to take playbck into your own hands (hard)
+## 5. Use the Web Audio API to take playback into your own hands (hard)
 
 The naive approach to playing audio on the web is to slap the URL into an audio element and make it play with JavaScript:
 
