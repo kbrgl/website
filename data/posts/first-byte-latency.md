@@ -2,7 +2,6 @@
 title: Minimizing first-byte latency for audio on the web
 subtitle: A few easy, high impact fixes, and one hard one.
 date: 2025-03-10
-hidden: true
 ---
 
 At [Cartesia](https://github.com), we're building the world's fastest, most scalable real-time models for AI voices.
