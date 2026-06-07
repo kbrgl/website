@@ -4,12 +4,13 @@ import sitemap from "@astrojs/sitemap";
 import { defineConfig, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
-// Some node_modules use createRequire(import.meta.url) to load files at paths
-// relative to their own location (e.g. css-tree loading patch.json or package.json).
-// When Vite bundles these into the prerender container, import.meta.url resolves to
-// the bundle path instead of the original file path, so relative requires break.
-// Rollup's resolveImportMeta hook lets us pin each module's import.meta.url to its
-// original source path before bundling, fixing the path calculations.
+// TODO: remove once astro/vite fixes bundling of packages that use
+// createRequire(import.meta.url) for relative file loading in the prerender
+// container. Tracked upstream: astro bundles its own dependencies (including
+// css-tree v2/v3) into the prerender container; when bundled, import.meta.url
+// resolves to the bundle path, breaking relative requires like
+// require('../data/patch.json'). This plugin pins each module's import.meta.url
+// to its original source path so the relative requires still resolve correctly.
 function preserveImportMetaUrlPlugin() {
   return {
     name: "preserve-import-meta-url",
@@ -27,9 +28,14 @@ export default defineConfig({
   site: "https://kabirgoel.com",
   integrations: [sitemap()],
   vite: {
-    plugins: [tailwindcss(), preserveImportMetaUrlPlugin()],
+    plugins: [
+      tailwindcss(),
+      preserveImportMetaUrlPlugin(), // TODO: remove when upstream is fixed (see above)
+    ],
     build: {
       rollupOptions: {
+        // TODO: remove "fsevents" once rollup stops trying to resolve this
+        // macOS-only optional dep on non-macOS platforms during prerender.
         external: ["fsevents"],
       },
     },
