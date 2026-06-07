@@ -1,0 +1,96 @@
+<svg
+    width="10"
+    height="10"
+    viewBox="0 0 30 30"
+    xmlns="http://www.w3.org/2000/svg"
+>
+    <g
+        fill="none"
+        class="nc-icon-wrapper"
+        stroke-linejoin="miter"
+        stroke-linecap="butt"
+    >
+        <path
+            d="M7 11H7.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+
+        <path
+            d="M11 7H11.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+        <path
+            d="M11 11H11.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+
+        <path
+            d="M15 7H15.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+        <path
+            d="M15 11H15.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+        <path
+            d="M15 15H15.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+        <path
+            d="M15 19H15.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+        <path
+            d="M15 23H15.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+        <path
+            d="M15 27H15.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+        <path
+            d="M19 7H19.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+        <path
+            d="M19 11H19.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+
+        <path
+            d="M23 11H23.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+
+        <path
+            d="M15 3H15.01"
+            stroke="currentColor"
+            stroke-width="4"
+            stroke-linecap="square"
+        ></path>
+    </g>
+</svg>

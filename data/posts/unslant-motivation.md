@@ -18,6 +18,9 @@ That’s why I created [Unslant](https://unslant.org), a browser extension that 
 So go ahead and give it a try, and shoot me an email if you have any feedback or want to talk.
 
 [^1]: [Researchers Find Everyone Has a Bias Blind Spot - News - Carnegie Mellon University](https://www.cmu.edu/news/stories/archives/2015/june/bias-blind-spot.html)
+
 [^2]: Of course, this isn’t the only reason outlets can be biased: some exist only to influence public opinion through their reporting.
+
 [^3]: [More Now Say It’s ‘Stressful’ to Discuss Politics With People They Disagree With | Pew Research Center](https://www.people-press.org/2018/11/05/more-now-say-its-stressful-to-discuss-politics-with-people-they-disagree-with/)
+
 [^4]: [Selective exposure partly relies on faulty affective forecasts - ScienceDirect](https://www.sciencedirect.com/science/article/pii/S001002771930037X)

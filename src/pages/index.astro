@@ -1,0 +1,76 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "#/layouts/base-layout.astro";
+import FormattedDate from "#/components/formatted-date.astro";
+import Container from "#/components/container.astro";
+import Card from "#/components/card.astro";
+
+const posts = (await getCollection("posts"))
+    .filter((post) => !post.data.hidden)
+    .map((post) => ({ type: "post" as const, date: post.data.date, post }))
+    .sort((a, b) => b.date.valueOf() - a.date.valueOf());
+---
+
+<BaseLayout>
+    <Container>
+        <section class="grid grid-cols-1 gap-4 mt-16">
+            <p>
+                Hey there! My name is Kabir. I lead product engineering at
+                <a href="https://cartesia.ai" class="link">Cartesia</a>.
+            </p>
+            <p>
+                In 2024, I graduated from UC Berkeley, where I studied
+                computer science and public policy.
+            </p>
+            <p>
+                I was born in North Carolina and grew up in New Delhi, India. I
+                now live in San Francisco, California.
+            </p>
+            <div>
+                <button data-click-me class="btn">Click me</button>
+            </div>
+
+            <script>
+                import { defineSound, ensureReady } from "@web-kits/audio";
+
+                const pop = defineSound({
+                    source: {
+                        type: "sine",
+                        frequency: { start: 200, end: 50 },
+                    },
+                    envelope: { decay: 0.01 },
+                    gain: 0.35,
+                });
+
+                document
+                    .querySelector("[data-click-me]")
+                    .addEventListener("click", async () => {
+                        await ensureReady();
+                        pop();
+                    });
+            </script>
+        </section>
+        <section class="mt-8">
+            <h2 class="mb-4 text-sm font-bold">Blog</h2>
+            <ul class="grid grid-cols-1 gap-4">
+                {
+                    posts.map((item) => (
+                        <li>
+                            <a
+                                href={`/p/${item.post.id}/`}
+                                class="flex flex-col gap-1.5"
+                            >
+                                <h4 class="text-primary">
+                                    {item.post.data.title}
+                                </h4>
+                                <p class="text-muted-foreground text-sm">
+                                    <FormattedDate date={item.date} />
+                                </p>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+    </Container>
+</BaseLayout>

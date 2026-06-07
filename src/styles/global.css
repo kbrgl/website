@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --theme-border-width-hairline: 1px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  :root {
+    --theme-border-width-hairline: 0.5px;
+  }
+}
+
+@theme {
+  --font-sans: var(--font-standard);
+  --font-mono: var(--font-jetbrains-mono);
+
+  --color-primary: var(--color-black);
+  --color-border: var(--color-neutral-300);
+  --color-background: var(--color-neutral-100);
+  --color-foreground: var(--color-neutral-950);
+  --color-surface: var(--color-white);
+  --color-surface-foreground: var(--color-muted-foreground);
+  --color-muted: var(--color-neutral-200);
+  --color-muted-foreground: var(--color-neutral-500);
+
+  --border-width-hairline: var(--theme-border-width-hairline);
+}
+
+:root {
+  @apply cursor-default;
+}
+
+@utility link {
+  @apply underline underline-offset-2 [text-decoration-skip-ink:auto] decoration-1 text-primary hover:text-muted-foreground transition-colors;
+}
+
+@utility btn {
+  @apply text-sm bg-surface border border-border px-4 py-1
+        shadow-[inset_0_-4px_0_0_var(--color-muted)]
+        active:shadow-[inset_0_var(--color-muted)]
+        pb-2 active:pb-1 active:mt-1 rounded transition-all;
+}
