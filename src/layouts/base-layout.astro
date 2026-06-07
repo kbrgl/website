@@ -43,7 +43,9 @@ const fullTitle = pageTitle ? `${pageTitle} \\ ${siteTitle}` : siteTitle;
             };
 
             darkModeQuery.addEventListener("change", ({ matches: isDark }) => {
-                setDarkMode(isDark);
+                document.startViewTransition(() => {
+                    setDarkMode(isDark);
+                });
             });
 
             setDarkMode(darkModeQuery.matches);

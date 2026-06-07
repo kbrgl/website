@@ -11,7 +11,7 @@ export const GET = (async (context) => {
   return rss({
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
-    site: context.site!,
+    site: context.site,
     items: posts.map((post) => ({
       ...post.data,
       link: `/p/${post.id}/`,
