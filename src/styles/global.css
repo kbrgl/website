@@ -22,6 +22,12 @@
     --card-foreground: var(--color-muted-foreground);
 }
 
+.dark .astro-code,
+.dark .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+}
+
 .dark {
     --primary: var(--color-white);
     --border: var(--color-neutral-600);
