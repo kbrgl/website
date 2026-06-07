@@ -28,5 +28,25 @@ const fullTitle = pageTitle ? `${pageTitle} \\ ${siteTitle}` : siteTitle;
             <slot />
         </div>
         <Footer />
+
+        <script is:inline>
+            const darkModeQuery = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            );
+
+            const setDarkMode = (isDark) => {
+                if (isDark) {
+                    document.documentElement.classList.add("dark");
+                } else {
+                    document.documentElement.classList.remove("dark");
+                }
+            };
+
+            darkModeQuery.addEventListener("change", ({ matches: isDark }) => {
+                setDarkMode(isDark);
+            });
+
+            setDarkMode(darkModeQuery.matches);
+        </script>
     </body>
 </html>

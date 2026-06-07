@@ -7,13 +7,15 @@ const grid = [
 ---
 
 <div
-    class="grid [--height:1em] [--dot-size:calc(var(--height)/3.5)] grid-cols-[repeat(7,var(--dot-size))] gap-[calc(var(--dot-size)/4)]"
+    class:list={[
+        "grid [--height:1em] [--dot-size:calc(var(--height)/3.5)] grid-cols-[repeat(7,var(--dot-size))] gap-[calc(var(--dot-size)/4)] [--dot-color:var(--color-muted-foreground)]",
+    ]}
 >
     {
         grid.map((row) =>
             row.map((cell) => (
                 <div
-                    class={`size-(--dot-size) ${cell ? "bg-muted-foreground rounded-full" : ""}`}
+                    class={`size-(--dot-size) ${cell ? "bg-(--dot-color) rounded-full" : ""}`}
                 />
             )),
         )

@@ -2,41 +2,69 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  --theme-border-width-hairline: 1px;
+    --hairline: 1px;
+
+    --primary: var(--color-black);
+    --border: var(--color-neutral-300);
+    --background: var(--color-neutral-50);
+    --foreground: var(--color-neutral-950);
+    --surface: var(--color-white);
+    --surface-foreground: var(--color-muted-foreground);
+    --muted: var(--color-neutral-200);
+    --muted-foreground: var(--color-neutral-500);
+    --card: var(--color-surface);
+    --card-foreground: var(--color-muted-foreground);
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
-  :root {
-    --theme-border-width-hairline: 0.5px;
-  }
+.dark {
+    --primary: var(--color-white);
+    --border: var(--color-neutral-600);
+    --background: var(--color-neutral-900);
+    --foreground: var(--color-neutral-50);
+    --surface: var(--color-neutral-700);
+    --surface-foreground: var(--color-muted-foreground);
+    --muted: var(--color-neutral-800);
+    --muted-foreground: var(--color-neutral-400);
+    --card: var(--color-muted);
+    --card-foreground: var(--color-muted-foreground);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    :root {
+        --hairline: 0.5px;
+    }
 }
 
 @theme {
-  --font-sans: var(--font-standard);
-  --font-mono: var(--font-jetbrains-mono);
+    --font-sans: var(--font-standard);
+    --font-mono: var(--font-jetbrains-mono);
 
-  --color-primary: var(--color-black);
-  --color-border: var(--color-neutral-300);
-  --color-background: var(--color-neutral-100);
-  --color-foreground: var(--color-neutral-950);
-  --color-surface: var(--color-white);
-  --color-surface-foreground: var(--color-muted-foreground);
-  --color-muted: var(--color-neutral-200);
-  --color-muted-foreground: var(--color-neutral-500);
+    --color-primary: var(--primary);
+    --color-border: var(--border);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-surface: var(--surface);
+    --color-surface-foreground: var(--surface-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
 
-  --border-width-hairline: var(--theme-border-width-hairline);
+    --border-width-hairline: var(--hairline);
 }
 
 :root {
-  @apply cursor-default;
+    @apply cursor-default;
 }
 
 @utility link {
-  @apply underline underline-offset-2 [text-decoration-skip-ink:auto] decoration-1 text-primary hover:text-muted-foreground transition-colors;
+    @apply underline underline-offset-2 [text-decoration-skip-ink:auto] decoration-1 text-primary hover:text-muted-foreground transition-colors;
 }
 
 @utility btn {
-  @apply text-sm bg-surface border border-border px-4 py-1
+    @apply text-sm bg-surface border border-border px-4 py-1
         shadow-[inset_0_-4px_0_0_var(--color-muted)]
         active:shadow-[inset_0_var(--color-muted)]
         pb-2 active:pb-1 active:mt-1 rounded transition-all;

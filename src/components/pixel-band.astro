@@ -1,0 +1,95 @@
+---
+import { twMerge } from "tailwind-merge";
+
+const grid = [
+    [1, 0, 1, 0, 1, 1, 0],
+    [1, 1, 0, 0, 1, 0, 1],
+    [1, 0, 1, 0, 0, 1, 1],
+];
+
+const gridReverse = grid.map((row) => row.slice().reverse());
+
+type Props = {
+    class: string;
+};
+
+const { class: className } = Astro.props;
+---
+
+<div
+    class:list={twMerge([
+        "flex items-center justify-center overflow-hidden",
+        className,
+    ])}
+>
+    <div
+        class="[--dot-size:1em] [--dot-gap:calc(var(--dot-size)/4)] flex gap-(--dot-gap)"
+    >
+        <div class="grid grid-cols-[repeat(7,var(--dot-size))] gap-(--dot-gap)">
+            {
+                grid.map((row) =>
+                    row.map((cell) => (
+                        <div
+                            class={`h-0.5 w-[--dot-size] ${cell ? "bg-muted" : ""}`}
+                        />
+                    )),
+                )
+            }
+        </div>
+        <div class="grid grid-cols-[repeat(7,var(--dot-size))] gap-(--dot-gap)">
+            {
+                grid.map((row) =>
+                    row.map((cell) => (
+                        <div
+                            class={`h-0.5 w-[--dot-size] ${cell ? "bg-muted" : ""}`}
+                        />
+                    )),
+                )
+            }
+        </div>
+        <div class="grid grid-cols-[repeat(7,var(--dot-size))] gap-(--dot-gap)">
+            {
+                grid.map((row) =>
+                    row.map((cell) => (
+                        <div
+                            class={`h-0.5 w-[--dot-size] ${cell ? "bg-muted" : ""}`}
+                        />
+                    )),
+                )
+            }
+        </div>
+        <div class="grid grid-cols-[repeat(7,var(--dot-size))] gap-(--dot-gap)">
+            {
+                gridReverse.map((row) =>
+                    row.map((cell) => (
+                        <div
+                            class={`h-0.5 w-[--dot-size] ${cell ? "bg-muted" : ""}`}
+                        />
+                    )),
+                )
+            }
+        </div>
+        <div class="grid grid-cols-[repeat(7,var(--dot-size))] gap-(--dot-gap)">
+            {
+                gridReverse.map((row) =>
+                    row.map((cell) => (
+                        <div
+                            class={`h-0.5 w-[--dot-size] ${cell ? "bg-muted" : ""}`}
+                        />
+                    )),
+                )
+            }
+        </div>
+        <div class="grid grid-cols-[repeat(7,var(--dot-size))] gap-(--dot-gap)">
+            {
+                gridReverse.map((row) =>
+                    row.map((cell) => (
+                        <div
+                            class={`h-0.5 w-[--dot-size] ${cell ? "bg-muted" : ""}`}
+                        />
+                    )),
+                )
+            }
+        </div>
+    </div>
+</div>

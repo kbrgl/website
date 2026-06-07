@@ -12,6 +12,11 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  markdown: {
+    shikiConfig: {
+      theme: "vitesse-light",
+    },
+  },
   fonts: [
     {
       provider: fontProviders.local(),
