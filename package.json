@@ -17,7 +17,6 @@
     "fmt:check": "oxfmt --check"
   },
   "dependencies": {
-    "@astrojs/mdx": "^6.0.2",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
     "@paper-design/shaders": "^0.0.76",
