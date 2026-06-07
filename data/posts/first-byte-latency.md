@@ -66,7 +66,7 @@ An alternative is to use the (very finnicky) Web Audio API, in tandem with `fetc
 Beware, though—here be dragons. There are a lot of footguns in the API:
 
 1. Different timing properties use different units and epochs.
-2. Scheduling of audio buffers is done by the browser on a best-effort basis, rather than 
+2. Scheduling of audio buffers is done by the browser on a best-effort basis, rather than
 3. You have to come up with your own workarounds to deal with artifacts such as popping, such as [finding zero-crossings in your audio data](https://alemangui.github.io/ramp-to-value).
 
 ---

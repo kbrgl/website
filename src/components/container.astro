@@ -1,0 +1,13 @@
+---
+import { twMerge } from "tailwind-merge";
+
+type Props = {
+    class?: string;
+};
+
+const { class: className } = Astro.props;
+---
+
+<div class={twMerge(["container mx-auto max-w-xl", className])}>
+    <slot />
+</div>

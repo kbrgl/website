@@ -1,0 +1,54 @@
+---
+import BaseHead from "#/components/base-head.astro";
+import Footer from "#/components/footer.astro";
+import Nav from "#/components/nav.astro";
+
+type Props = {
+    title?: string;
+    description?: string;
+};
+
+const {
+    title: pageTitle,
+    description = "The website and blog of Kabir Goel.",
+} = Astro.props;
+
+const siteTitle = "Kabir Goel";
+const fullTitle = pageTitle ? `${pageTitle} \\ ${siteTitle}` : siteTitle;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <BaseHead title={fullTitle} description={description} />
+    </head>
+    <body class="antialiased bg-background text-foreground leading-normal">
+        <Nav />
+        <div class="m-4">
+            <slot />
+        </div>
+        <Footer />
+
+        <script is:inline>
+            const darkModeQuery = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            );
+
+            const setDarkMode = (isDark) => {
+                if (isDark) {
+                    document.documentElement.classList.add("dark");
+                } else {
+                    document.documentElement.classList.remove("dark");
+                }
+            };
+
+            darkModeQuery.addEventListener("change", ({ matches: isDark }) => {
+                document.startViewTransition(() => {
+                    setDarkMode(isDark);
+                });
+            });
+
+            setDarkMode(darkModeQuery.matches);
+        </script>
+    </body>
+</html>

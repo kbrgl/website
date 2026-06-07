@@ -10,15 +10,15 @@ I’m working on a way to build apps using a spreadsheet-like system called Smoo
 To run a snippet, Smoothie wraps it in a function and calls the function. But that’s not enough. Consider this snippet:
 
 ```js
-return A1 + B2 * 5
+return A1 + B2 * 5;
 ```
 
 If we just wrap this in a function and call it, we’ll get an error:
 
 ```js
-;(function () {
-  return A1 + B2 * 5
-})()
+(function () {
+  return A1 + B2 * 5;
+})();
 ```
 
 ```txt
@@ -28,9 +28,9 @@ ReferenceError: A1 is not defined
 You can probably see that `A1` and `B2` need to be in scope to evaluate this expression. We can make them available by passing them as arguments:
 
 ```js
-;(function (A1, B2) {
-  return A1 + B2 * 5
-})(A1, B2)
+(function (A1, B2) {
+  return A1 + B2 * 5;
+})(A1, B2);
 ```
 
 It’s clear to us that `A1` and `B2` need to be passed, but how can we program the computer to figure that out for us? The problem we’re faced with is parsing out the dependencies of a snippet of code. Let’s dig into the details.
@@ -40,13 +40,13 @@ It’s clear to us that `A1` and `B2` need to be passed, but how can we program 
 On a cursory look, it seems like a simple approach could work: split on spaces and collect the parts that look like identifiers, perhaps using a regex. But this kind of approach breaks down on complex code. Consider this multiline snippet that takes parses `B1` into a number, adds `A1`, and returns a status message:
 
 ```js
-const sum = (a, b) => Promise.resolve(a + b)
-let B2
+const sum = (a, b) => Promise.resolve(a + b);
+let B2;
 {
-  const B1 = parseInt(B1.value)
-  B2 = await sum(B1, A1)
+  const B1 = parseInt(B1.value);
+  B2 = await sum(B1, A1);
 }
-return `${B2} is the sum of ${B1} and ${A1}.`
+return `${B2} is the sum of ${B1} and ${A1}.`;
 ```
 
 From this example, it should be clear that splitting on spaces won’t work. There's too much going on syntactically.
@@ -66,24 +66,24 @@ It’s literally impossible to use a pattern-based approach to analyze a languag
 Let’s try and use the Babel parser to reliably figure out what identifiers our snippet needs:
 
 ```jsx
-import { parse } from "@babel/parser"
-import traverse from "@babel/traverse"
+import { parse } from "@babel/parser";
+import traverse from "@babel/traverse";
 
 const ast = parse("return A1 + B2 * 5", {
   strictMode: true,
   allowAwaitOutsideFunction: true,
   allowReturnOutsideFunction: true,
-})
+});
 
-const identifiers = []
+const identifiers = [];
 traverse(ast, {
   Identifier(path) {
-    const { name } = path.node
-    identifiers.push(name)
+    const { name } = path.node;
+    identifiers.push(name);
   },
-})
+});
 
-console.log(identifiers)
+console.log(identifiers);
 ```
 
 This simple script outputs `["A1", "B2"]`. Neat!
@@ -103,15 +103,15 @@ Fortunately, [the Babel handbook tells us](https://github.com/jamiebuilds/babel-
 ```tsx
 traverse(ast, {
   Identifier(path) {
-    const { name } = path.node
+    const { name } = path.node;
 
     if (!path.isReferencedIdentifier()) {
-      return
+      return;
     }
 
-    identifiers.push(name)
+    identifiers.push(name);
   },
-})
+});
 ```
 
 This accounts for those edge cases.
@@ -177,13 +177,13 @@ This code uses `es2020` from the [globals](https://npmjs.com/package/globals) pa
 Recall the complex example from earlier:
 
 ```jsx
-const sum = (a, b) => Promise.resolve(a + b)
-let B2
+const sum = (a, b) => Promise.resolve(a + b);
+let B2;
 {
-  const B1 = parseInt(B1.value)
-  B2 = await sum(B1, A1)
+  const B1 = parseInt(B1.value);
+  B2 = await sum(B1, A1);
 }
-return `${B2} is the sum of ${B1} and ${A1}.`
+return `${B2} is the sum of ${B1} and ${A1}.`;
 ```
 
 Running my code on this example returns `["B1", "A1", "B2"]`. We’ve mostly solved the problem, but we’re still left with `B2`, which is bound before its use.
@@ -193,7 +193,7 @@ Fortunately, we can use `path.scope.hasBinding(name)` to figure out if an identi
 ```tsx
 if (path.scope.hasBinding(name)) {
   // Ignore declared variables.
-  return
+  return;
 }
 ```
 
@@ -202,4 +202,5 @@ With this final addition, the output for our example becomes `["B1", "A1"]`.
 In practice, it’s probably bad for users to shadow cell references. Shadowing can result in hard-to-debug issues, which is why [ESLint has a rule disallowing it](https://eslint.org/docs/latest/rules/no-shadow). But it’s still good to account for it in our analyzer.
 
 [^redundantglobals]: It would be redundant to pass globals to the formula unless I’ve modified them in some way.
+
 [^whynotpatterns]: JavaScript isn't a regular language, so it cannot be parsed using a regular expression or other pattern-based approaches.

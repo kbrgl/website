@@ -1,0 +1,78 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "#/layouts/base-layout.astro";
+import FormattedDate from "#/components/formatted-date.astro";
+import Container from "#/components/container.astro";
+import Card from "#/components/card.astro";
+import PixelBand from "#/components/pixel-band.astro";
+
+const posts = (await getCollection("posts"))
+    .filter((post) => !post.data.hidden)
+    .map((post) => ({ type: "post" as const, date: post.data.date, post }))
+    .sort((a, b) => b.date.valueOf() - a.date.valueOf());
+---
+
+<BaseLayout>
+    <Container>
+        <section class="grid grid-cols-1 gap-4 mt-16">
+            <p>
+                Hey, I’m Kabir! I lead product engineering at
+                <a href="https://cartesia.ai" class="link">Cartesia</a>.
+            </p>
+            <p>
+                In 2024, I graduated from UC Berkeley, where I studied
+                computer science and public policy.
+            </p>
+            <p>
+                I was born in North Carolina and grew up in New Delhi, India. I
+                now live in San Francisco, California.
+            </p>
+        </section>
+
+        <div class="mt-12">
+            <a
+                href="https://x.com/KabirGoel"
+                class="btn inline-flex items-center"
+            >
+                Follow on&nbsp;
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 32 32"
+                >
+                    <g class="nc-icon-wrapper" fill="currentColor">
+                        <path
+                            d="M18.42,14.009L27.891,3h-2.244l-8.224,9.559L10.855,3H3.28l9.932,14.455L3.28,29h2.244l8.684-10.095,6.936,10.095h7.576l-10.301-14.991h0Zm-3.074,3.573l-1.006-1.439L6.333,4.69h3.447l6.462,9.243,1.006,1.439,8.4,12.015h-3.447l-6.854-9.804h0Z"
+                        ></path>
+                    </g>
+                </svg>
+            </a>
+        </div>
+
+        <PixelBand class="my-12" />
+
+        <section class="mt-8">
+            <h2 class="mb-4 text-sm font-bold">Blog</h2>
+            <ul class="grid grid-cols-1 gap-4">
+                {
+                    posts.map((item) => (
+                        <li>
+                            <a
+                                href={`/p/${item.post.id}/`}
+                                class="flex flex-col gap-1.5"
+                            >
+                                <h4 class="text-primary">
+                                    {item.post.data.title}
+                                </h4>
+                                <p class="text-muted-foreground text-sm">
+                                    <FormattedDate date={item.date} />
+                                </p>
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </section>
+    </Container>
+</BaseLayout>

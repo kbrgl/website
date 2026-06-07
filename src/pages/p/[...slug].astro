@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "#/layouts/base-layout.astro";
+import FormattedDate from "#/components/formatted-date.astro";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import PageTitle from "../../components/page-title.astro";
+import Container from "../../components/container.astro";
+
+export async function getStaticPaths() {
+    const posts = await getCollection("posts");
+    return posts.map((post) => ({
+        params: { slug: post.id },
+        props: post,
+    }));
+}
+type Props = CollectionEntry<"posts">;
+
+const post = Astro.props;
+const { title, subtitle, preview, date } = post.data;
+const { Content } = await render(post);
+---
+
+<BaseLayout title={title} description={subtitle}>
+    <Container class="mt-16">
+        <main>
+            <article>
+                <h1 class="text-lg font-bold">{title}</h1>
+                <p class="mt-2 text-muted-foreground">{subtitle}</p>
+
+                <div
+                    class:list={[
+                        "mt-8 prose prose-neutral dark:prose-invert",
+                        "prose-a:link",
+                        // Code
+                        // Background and padding
+                        "prose-code:px-1.5 prose-pre:prose-code:px-[revert] prose-code:bg-muted prose-pre:prose-code:bg-transparent",
+                        // Remove `` that prose utility adds
+                        "prose-code:before:content-none prose-code:after:content-none",
+                        // Reset font size and weight
+                        "prose-code:text-[size:inherit] prose-code:font-[weight:inherit]",
+                    ]}
+                >
+                    <Content />
+                </div>
+            </article>
+        </main>
+    </Container>
+</BaseLayout>

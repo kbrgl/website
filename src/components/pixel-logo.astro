@@ -1,0 +1,23 @@
+---
+const grid = [
+    [1, 0, 1, 0, 1, 1, 0],
+    [1, 1, 0, 0, 1, 0, 1],
+    [1, 0, 1, 0, 0, 1, 1],
+];
+---
+
+<div
+    class:list={[
+        "grid [--height:1em] [--dot-size:calc(var(--height)/3.5)] grid-cols-[repeat(7,var(--dot-size))] gap-[calc(var(--dot-size)/4)] [--dot-color:var(--color-muted-foreground)]",
+    ]}
+>
+    {
+        grid.map((row) =>
+            row.map((cell) => (
+                <div
+                    class={`size-(--dot-size) ${cell ? "bg-(--dot-color) rounded-full" : ""}`}
+                />
+            )),
+        )
+    }
+</div>
