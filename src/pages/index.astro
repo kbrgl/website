@@ -4,7 +4,7 @@ import BaseLayout from "#/layouts/base-layout.astro";
 import FormattedDate from "#/components/formatted-date.astro";
 import Container from "#/components/container.astro";
 import Card from "#/components/card.astro";
-import PixelBand from "#/components/pixel-band.astro";
+import PixelBand from "#/components/band.astro";
 
 const posts = (await getCollection("posts"))
     .filter((post) => !post.data.hidden)
