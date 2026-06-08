@@ -1,6 +1,6 @@
 ---
 import { twMerge } from "tailwind-merge";
-import { mapFilledCells, getBarRect, VIEW_W, BAND_VIEW_H } from "./dots";
+import { buildBarRects, VIEW_W, BAND_VIEW_H } from "./dots";
 
 type Props = {
     class?: string;
@@ -8,11 +8,8 @@ type Props = {
 
 const { class: className } = Astro.props;
 
-const rects = mapFilledCells((c, r) => {
-    const { x, y, width, height } = getBarRect(c, r);
-    return `<rect x="${x}" y="${y}" width="${width}" height="${height}"/>`;
-}).join("");
-const mask = `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${VIEW_W} ${BAND_VIEW_H}">${rects}</svg>`)}")`;
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${VIEW_W} ${BAND_VIEW_H}">${buildBarRects()}</svg>`;
+const mask = `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
 ---
 
 <div

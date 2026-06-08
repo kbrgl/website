@@ -22,6 +22,20 @@ export function getCellCenter(c: number, r: number) {
   return { cx: c * STEP + 0.5, cy: r * STEP + 0.5 };
 }
 
-export function getBarRect(c: number, r: number) {
+function getBarRect(c: number, r: number) {
   return { x: c * STEP, y: r * BAND_ROW_STEP, width: 1, height: BAR_HEIGHT };
+}
+
+export function buildDotCircles(): string {
+  return mapFilledCells((c, r) => {
+    const { cx, cy } = getCellCenter(c, r);
+    return `<circle cx="${cx}" cy="${cy}" r="0.5"/>`;
+  }).join("");
+}
+
+export function buildBarRects(): string {
+  return mapFilledCells((c, r) => {
+    const { x, y, width, height } = getBarRect(c, r);
+    return `<rect x="${x}" y="${y}" width="${width}" height="${height}"/>`;
+  }).join("");
 }
