@@ -1,13 +1,6 @@
 ---
 import { twMerge } from "tailwind-merge";
-import {
-    mapFilledCells,
-    STEP,
-    VIEW_W,
-    BAR_HEIGHT,
-    ROW_GAP,
-    ROWS,
-} from "./dots";
+import { mapFilledCells, getBarRect, VIEW_W, BAND_VIEW_H } from "./dots";
 
 type Props = {
     class?: string;
@@ -15,16 +8,15 @@ type Props = {
 
 const { class: className } = Astro.props;
 
-const rowStep = BAR_HEIGHT + ROW_GAP;
-const viewH = ROWS * rowStep - ROW_GAP;
-const rects = mapFilledCells(
-    (c, r) => `<rect x="${c * STEP}" y="${r * rowStep}" width="1" height="${BAR_HEIGHT}"/>`,
-).join("");
-const mask = `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${VIEW_W} ${viewH}">${rects}</svg>`)}")`;
+const rects = mapFilledCells((c, r) => {
+    const { x, y, width, height } = getBarRect(c, r);
+    return `<rect x="${x}" y="${y}" width="${width}" height="${height}"/>`;
+}).join("");
+const mask = `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${VIEW_W} ${BAND_VIEW_H}">${rects}</svg>`)}")`;
 ---
 
 <div
     class={twMerge(className)}
-    style={`--dot-size:1em;height:calc(${viewH}*var(--dot-size));background-color:var(--color-muted);-webkit-mask-image:${mask};mask-image:${mask};mask-size:calc(${VIEW_W}*var(--dot-size)) 100%;mask-repeat:repeat-x`}
+    style={`--dot-size:1em;height:calc(${BAND_VIEW_H}*var(--dot-size));background-color:var(--color-muted);-webkit-mask-image:${mask};mask-image:${mask};mask-size:calc(${VIEW_W}*var(--dot-size)) 100%;mask-repeat:repeat-x`}
 >
 </div>

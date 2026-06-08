@@ -14,56 +14,23 @@ const darkDotColor = "#fff";
 const icoDotColor = "#737373";
 const icoSizes = [16, 32, 48];
 
-function getLogoGeometry() {
-  const scale = iconSize / VIEW_W;
-  const width = VIEW_W * scale;
-  const height = VIEW_H * scale;
-
-  return {
-    offsetX: (iconSize - width) / 2,
-    offsetY: (iconSize - height) / 2,
-    scale,
-  };
-}
-
 function buildCircles() {
-  const { offsetX, offsetY, scale } = getLogoGeometry();
+  const scale = iconSize / VIEW_W;
+  const offsetY = (iconSize - VIEW_H * scale) / 2;
 
   return mapFilledCells((c, r) => {
-    const { cx: baseCx, cy: baseCy } = getCellCenter(c, r);
-    const cx = offsetX + baseCx * scale;
-    const cy = offsetY + baseCy * scale;
+    const { cx, cy } = getCellCenter(c, r);
     const radius = 0.5 * scale;
-
-    return `  <circle cx="${cx.toFixed(3)}" cy="${cy.toFixed(3)}" r="${radius.toFixed(3)}" />`;
-  })
-    .join("\n");
+    return `  <circle cx="${(cx * scale).toFixed(3)}" cy="${(offsetY + cy * scale).toFixed(3)}" r="${radius.toFixed(3)}" />`;
+  }).join("\n");
 }
 
-function buildFaviconSvg() {
-  const circles = buildCircles();
-
+function buildSvg(style) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${iconSize} ${iconSize}">
   <style>
-    :root { color: ${dotColor}; }
-    @media (prefers-color-scheme: dark) {
-      :root { color: ${darkDotColor}; }
-    }
-    circle { fill: currentColor; }
+    ${style}
   </style>
-${circles}
-</svg>
-`;
-}
-
-function buildIcoSvg() {
-  const circles = buildCircles();
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${iconSize} ${iconSize}">
-  <style>
-    circle { fill: ${icoDotColor}; }
-  </style>
-${circles}
+${buildCircles()}
 </svg>
 `;
 }
@@ -99,8 +66,14 @@ function buildIco(pngImages) {
 }
 
 async function main() {
-  const svg = buildFaviconSvg();
-  const icoSvgBuffer = Buffer.from(buildIcoSvg());
+  const faviconStyle = `:root { color: ${dotColor}; }
+    @media (prefers-color-scheme: dark) {
+      :root { color: ${darkDotColor}; }
+    }
+    circle { fill: currentColor; }`;
+
+  const svg = buildSvg(faviconStyle);
+  const icoSvgBuffer = Buffer.from(buildSvg(`circle { fill: ${icoDotColor}; }`));
   const pngImages = await Promise.all(
     icoSizes.map(async (size) => ({
       size,
