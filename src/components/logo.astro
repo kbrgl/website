@@ -13,10 +13,10 @@ import { buildDotCircles, VIEW_W, VIEW_H } from "./dots";
 </a>
 
 <style>
-    [data-pixel-logo] circle {
+    [data-pixel-logo] :global(circle) {
         fill: var(--dot-color, var(--color-muted-foreground));
     }
-    [data-pixel-logo] circle.lit {
+    [data-pixel-logo] :global(circle.lit) {
         fill: var(--dot-color-lit, var(--color-secondary));
     }
 </style>
