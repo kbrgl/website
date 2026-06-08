@@ -1,23 +1,9 @@
 ---
-const grid = [
-    [1, 0, 1, 0, 1, 1, 0],
-    [1, 1, 0, 0, 1, 0, 1],
-    [1, 0, 1, 0, 0, 1, 1],
-];
+import { circleMask, VIEW_W, VIEW_H } from "./pixel-pattern";
+
+const { mask, viewH } = circleMask();
 ---
 
 <div
-    class:list={[
-        "grid [--height:1em] [--dot-size:calc(var(--height)/3.5)] grid-cols-[repeat(7,var(--dot-size))] gap-[calc(var(--dot-size)/4)] [--dot-color:var(--color-muted-foreground)]",
-    ]}
->
-    {
-        grid.map((row) =>
-            row.map((cell) => (
-                <div
-                    class={`size-(--dot-size) ${cell ? "bg-(--dot-color) rounded-full" : ""}`}
-                />
-            )),
-        )
-    }
-</div>
+    style={`--dot-size:calc(var(--height,1em)/${viewH});width:calc(${VIEW_W}*var(--dot-size));height:calc(${viewH}*var(--dot-size));background-color:var(--dot-color,var(--color-muted-foreground));-webkit-mask-image:${mask};mask-image:${mask};mask-size:100% 100%`}
+/>
