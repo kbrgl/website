@@ -1,11 +1,12 @@
 ---
 import { twMerge } from "tailwind-merge";
 import {
-    getFilledCells,
+    mapFilledCells,
     STEP,
     VIEW_W,
     BAR_HEIGHT,
     ROW_GAP,
+    ROWS,
 } from "./dots";
 
 type Props = {
@@ -15,13 +16,10 @@ type Props = {
 const { class: className } = Astro.props;
 
 const rowStep = BAR_HEIGHT + ROW_GAP;
-const viewH = 3 * rowStep - ROW_GAP;
-const rects = getFilledCells()
-    .map(
-        ({ c, r }) =>
-            `<rect x="${c * STEP}" y="${r * rowStep}" width="1" height="${BAR_HEIGHT}"/>`,
-    )
-    .join("");
+const viewH = ROWS * rowStep - ROW_GAP;
+const rects = mapFilledCells(
+    (c, r) => `<rect x="${c * STEP}" y="${r * rowStep}" width="1" height="${BAR_HEIGHT}"/>`,
+).join("");
 const mask = `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${VIEW_W} ${viewH}">${rects}</svg>`)}")`;
 ---
 

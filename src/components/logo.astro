@@ -1,6 +1,5 @@
 ---
-import { getFilledCells, STEP, VIEW_W, VIEW_H } from "./dots";
-const cells = getFilledCells();
+import { mapFilledCells, getCellCenter, VIEW_W, VIEW_H } from "./dots";
 ---
 
 <a href="/" class="font-bold flex items-center gap-2" data-pixel-logo>
@@ -9,7 +8,7 @@ const cells = getFilledCells();
         style={`--dot-size:calc(var(--height,1em)/${VIEW_H});width:calc(${VIEW_W}*var(--dot-size));height:calc(${VIEW_H}*var(--dot-size))`}
         aria-hidden="true"
     >
-        {cells.map(({ c, r }) => <circle cx={c * STEP + 0.5} cy={r * STEP + 0.5} r="0.5" />)}
+        {mapFilledCells((c, r) => <circle {...getCellCenter(c, r)} r="0.5" />)}
     </svg>
     <span class="leading-none">Kabir Goel</span>
 </a>

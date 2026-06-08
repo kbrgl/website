@@ -2,7 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 
 import sharp from "sharp";
 
-import { getFilledCells, STEP, VIEW_H, VIEW_W } from "#/components/dots.ts";
+import { getCellCenter, mapFilledCells, VIEW_H, VIEW_W } from "#/components/dots.ts";
 
 const publicDir = new URL("../public/", import.meta.url);
 const faviconSvgPath = new URL("favicon.svg", publicDir);
@@ -29,14 +29,14 @@ function getLogoGeometry() {
 function buildCircles() {
   const { offsetX, offsetY, scale } = getLogoGeometry();
 
-  return getFilledCells()
-    .map(({ c, r }) => {
-      const cx = offsetX + (c * STEP + 0.5) * scale;
-      const cy = offsetY + (r * STEP + 0.5) * scale;
-      const radius = 0.5 * scale;
+  return mapFilledCells((c, r) => {
+    const { cx: baseCx, cy: baseCy } = getCellCenter(c, r);
+    const cx = offsetX + baseCx * scale;
+    const cy = offsetY + baseCy * scale;
+    const radius = 0.5 * scale;
 
-      return `  <circle cx="${cx.toFixed(3)}" cy="${cy.toFixed(3)}" r="${radius.toFixed(3)}" />`;
-    })
+    return `  <circle cx="${cx.toFixed(3)}" cy="${cy.toFixed(3)}" r="${radius.toFixed(3)}" />`;
+  })
     .join("\n");
 }
 
