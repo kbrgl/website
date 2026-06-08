@@ -1,6 +1,12 @@
 ---
 import { twMerge } from "tailwind-merge";
-import { barMask, VIEW_W, VIEW_H } from "./pixel-pattern";
+import {
+    getFilledCells,
+    STEP,
+    VIEW_W,
+    BAR_HEIGHT,
+    ROW_GAP,
+} from "./pixel-pattern";
 
 type Props = {
     class?: string;
@@ -8,7 +14,15 @@ type Props = {
 
 const { class: className } = Astro.props;
 
-const { mask, viewH } = barMask();
+const rowStep = BAR_HEIGHT + ROW_GAP;
+const viewH = 3 * rowStep - ROW_GAP;
+const rects = getFilledCells()
+    .map(
+        ({ c, r }) =>
+            `<rect x="${c * STEP}" y="${r * rowStep}" width="1" height="${BAR_HEIGHT}"/>`,
+    )
+    .join("");
+const mask = `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${VIEW_W} ${viewH}">${rects}</svg>`)}")`;
 ---
 
 <div

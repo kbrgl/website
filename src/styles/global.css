@@ -11,6 +11,10 @@
   --hairline: 1px;
 
   --primary: var(--color-black);
+  --primary-foreground: var(--color-white);
+  --secondary: var(--color-pink-500);
+  --secondary-foreground: var(--color-white);
+
   --border: var(--color-neutral-300);
   --background: var(--color-neutral-50);
   --foreground: var(--color-neutral-950);
@@ -30,6 +34,10 @@
 
 .dark {
   --primary: var(--color-white);
+  --primary-foreground: var(--color-black);
+  --secondary: var(--color-pink-500);
+  --secondary-foreground: var(--color-white);
+
   --border: var(--color-neutral-600);
   --background: var(--color-neutral-900);
   --foreground: var(--color-neutral-50);
@@ -52,6 +60,10 @@
   --font-mono: var(--font-jetbrains-mono);
 
   --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
   --color-border: var(--border);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
