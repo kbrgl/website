@@ -1,9 +1,9 @@
 ---
-import { twMerge } from "tailwind-merge";
+import { cn } from "#/lib/utils.ts";
 import { buildBarRects, VIEW_W, BAND_VIEW_H } from "./dots";
 
 type Props = {
-    class?: string;
+	class?: string;
 };
 
 const { class: className } = Astro.props;
@@ -13,7 +13,7 @@ const mask = `url("data:image/svg+xml,${encodeURIComponent(svg)}")`;
 ---
 
 <div
-    class={twMerge(className)}
-    style={`--dot-size:1em;height:calc(${BAND_VIEW_H}*var(--dot-size));background-color:var(--color-muted);-webkit-mask-image:${mask};mask-image:${mask};mask-size:calc(${VIEW_W}*var(--dot-size)) 100%;mask-repeat:repeat-x`}
+	class={cn(className)}
+	style={`--dot-size:1em;height:calc(${BAND_VIEW_H}*var(--dot-size));background-color:var(--color-muted);-webkit-mask-image:${mask};mask-image:${mask};mask-size:calc(${VIEW_W}*var(--dot-size)) 100%;mask-repeat:repeat-x`}
 >
 </div>

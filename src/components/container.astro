@@ -1,13 +1,13 @@
 ---
-import { twMerge } from "tailwind-merge";
+import { cn } from "#/lib/utils.ts";
 
 type Props = {
-    class?: string;
+	class?: string;
 };
 
 const { class: className } = Astro.props;
 ---
 
-<div class={twMerge(["container mx-auto max-w-xl", className])}>
-    <slot />
+<div class={cn(["container mx-auto max-w-xl", className])}>
+	<slot />
 </div>

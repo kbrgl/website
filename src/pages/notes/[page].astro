@@ -1,0 +1,84 @@
+---
+import ArrowUpIcon from "#/assets/icons/nucleo-arcade-arrow-up.svg";
+import { getCollection, render } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import BaseLayout from "#/layouts/base-layout.astro";
+import Container from "#/components/container.astro";
+import Card from "#/components/card.astro";
+import FormattedDate from "#/components/formatted-date.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+	const notes = (
+		await Promise.all(
+			(await getCollection("notes")).map(async (note) => ({
+				date: note.data.created_at,
+				note,
+				Content: (await render(note)).Content,
+			})),
+		)
+	).sort((a, b) => b.date.valueOf() - a.date.valueOf());
+
+	return paginate(notes, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<BaseLayout>
+	<Container>
+		<section class="mt-8">
+			<h2 class="mb-6 text-sm font-bold">Notes</h2>
+			<ul class="grid grid-cols-1 gap-6">
+				{
+					page.data.map((item) => (
+						<li>
+							<Card class="flex flex-col p-0">
+								<div class="flex items-center justify-between p-3">
+									<p class="text-muted-foreground text-sm">
+										<FormattedDate date={item.date} />
+									</p>
+									<a
+										class="text-xs link text-muted-foreground"
+										href={`/n/${item.note.id}`}
+									>
+										View
+									</a>
+								</div>
+								<hr class="border-muted" />
+								<div class="markdown p-3">
+									<item.Content />
+								</div>
+							</Card>
+						</li>
+					))
+				}
+			</ul>
+
+			{
+				(page.url.prev || page.url.next) && (
+					<nav class="flex justify-between mt-8 text-sm relative">
+						{page.url.prev ? (
+							<a href={page.url.prev} class="link no-underline">
+								<ArrowUpIcon class="inline-block -rotate-90" />
+								Newer
+							</a>
+						) : (
+							<span />
+						)}
+						<span class="text-muted-foreground absolute left-1/2 transform -translate-x-1/2">
+							Page {page.currentPage} of {page.lastPage}
+						</span>
+						{page.url.next ? (
+							<a href={page.url.next} class="link no-underline">
+								Older
+								<ArrowUpIcon class="inline-block rotate-90" />
+							</a>
+						) : (
+							<span />
+						)}
+					</nav>
+				)
+			}
+		</section>
+	</Container>
+</BaseLayout>

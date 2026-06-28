@@ -1,0 +1,40 @@
+---
+import BaseLayout from "#/layouts/base-layout.astro";
+import FormattedDate from "../../components/formatted-date.astro";
+import { type CollectionEntry, getCollection, render } from "astro:content";
+import Container from "../../components/container.astro";
+import Card from "../../components/card.astro";
+
+export async function getStaticPaths() {
+	const notes = await getCollection("notes");
+	return notes.map((note) => ({
+		params: { id: note.id },
+		props: note,
+	}));
+}
+type Props = CollectionEntry<"notes">;
+
+const note = Astro.props;
+const { created_at: date } = note.data;
+const { Content } = await render(note);
+---
+
+<BaseLayout>
+	<Container class="mt-16">
+		<main>
+			<article>
+				<Card class="flex flex-col p-0">
+					<div class="flex items-center justify-between p-3">
+						<p class="text-muted-foreground text-sm">
+							<FormattedDate date={date} />
+						</p>
+					</div>
+					<hr class="border-muted" />
+					<div class="markdown p-3">
+						<Content />
+					</div>
+				</Card>
+			</article>
+		</main>
+	</Container>
+</BaseLayout>

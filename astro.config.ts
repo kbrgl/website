@@ -5,6 +5,9 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   site: "https://kabirgoel.com",
+  redirects: {
+    "/notes": "/notes/1",
+  },
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],

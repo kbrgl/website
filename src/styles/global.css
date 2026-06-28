@@ -91,3 +91,24 @@
         active:shadow-[inset_0_var(--color-muted)]
         pb-2 active:pb-1 active:mt-1 rounded transition-all;
 }
+
+.markdown {
+  @apply prose prose-neutral dark:prose-invert
+  	/**
+     * Links
+     */
+    prose-a:link
+    /**
+     * Paragraphs
+     */
+    prose-p:first:mt-0 prose-p:last:mb-0
+    /**
+     * Code
+     */
+    /* Background and padding */
+    prose-code:px-1.5 prose-pre:prose-code:px-[revert] prose-code:bg-muted prose-pre:prose-code:bg-transparent
+    /* Remove `` that prose utility adds */
+    prose-code:before:content-none prose-code:after:content-none
+    /* Reset font size and weight */
+    prose-code:text-[size:inherit] prose-code:font-[weight:inherit];
+}
